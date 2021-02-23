@@ -128,17 +128,6 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -298,51 +287,51 @@
 <blockquote>
 <p>这中间用到了组合数学的一些知识，那一个盒子放数的模型也要等到后面再研究了。</p>
 </blockquote>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 typedef long long ll;
-const int maxn &#x3D; 1e6 + 8;
-const int p &#x3D; 998244353;
+const int maxn = 1e6 + 8;
+const int p = 998244353;
 
-ll n, m, ans &#x3D; 0;
+ll n, m, ans = 0;
 ll f[maxn];
 
 ll power(ll a, ll b, ll p) &#123;
-    ll res &#x3D; 1 % p;
+    ll res = 1 % p;
     while(b) &#123;
-        if (b&amp;1) res &#x3D; (ll) res * a % p ;
-        a &#x3D; (ll) a * a % p;
-        b &gt;&gt;&#x3D; 1;
+        if (b&amp;1) res = (ll) res * a % p ;
+        a = (ll) a * a % p;
+        b &gt;&gt;= 1;
     &#125;
     return res;
 &#125;
 
 inline ll inv(ll x) &#123;
-	return power(x, p-2, p);
+    return power(x, p-2, p);
 &#125;
 
 void init() &#123;
-	cin &gt;&gt; n &gt;&gt; m;
-	f[0] &#x3D; f[1] &#x3D; 1;
-	for (int i&#x3D;2;i&lt;&#x3D;maxn;++i) 
-		f[i] &#x3D; f[i - 1] * i % p; 
+    cin &gt;&gt; n &gt;&gt; m;
+    f[0] = f[1] = 1;
+    for (int i=2;i&lt;=maxn;++i) 
+        f[i] = f[i - 1] * i % p; 
 &#125;
 
 inline ll C(ll n, ll m) &#123;
-	if (n &#x3D;&#x3D; m|| m &#x3D;&#x3D; 0)	return 1;
-	return (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);
+    if (n == m|| m == 0)    return 1;
+    return (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);
 &#125;
 
 int main() &#123;
-	init();
-	for (int d&#x3D;1;d&lt;&#x3D;n-1;++d) &#123;
-		ll tmp &#x3D; d * (n - d) % p;
-		ans &#x3D; (ans + tmp * C(d + m - 2, m - 2) % p) %p;
-	&#125;
-	cout &lt;&lt; ans;
-	return 0;
-&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    init();
+    for (int d=1;d&lt;=n-1;++d) &#123;
+        ll tmp = d * (n - d) % p;
+        ans = (ans + tmp * C(d + m - 2, m - 2) % p) %p;
+    &#125;
+    cout &lt;&lt; ans;
+    return 0;
+&#125; 
+</code></pre>
 <p>这篇题解是从csdn上我的账号搬运过来的，新的博客搭好啦，开始搬运计划√</p>
 
   </div>
@@ -482,13 +471,13 @@ int main() &#123;
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
-    
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
-    
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

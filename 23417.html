@@ -124,17 +124,6 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -221,7 +210,7 @@
     
     
     <span class="dot"></span>
-    <span>694 字</span>
+    <span>651 字</span>
     
   </div>
   
@@ -242,56 +231,58 @@
 
 <h1 id="A题-切蛋糕"><a href="#A题-切蛋糕" class="headerlink" title="A题 切蛋糕"></a>A题 切蛋糕</h1><p>题目链接 ：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/11746/A">https://ac.nowcoder.com/acm/contest/11746/A</a><br>基本思路是将1/k进行二进制拆分，比如说对于k=5，1 / 5 的二进制为 0.001100110011，则应存在5份大小为0.001的蛋糕，5份大小为0.0001的蛋糕，以此类推。<br>（看到2的几次方相加就应该想到二进制拆分）<br>代码不会写Orz，还不会实现，先留着之后补。</p>
 <h1 id="B题-小宝的幸运数组"><a href="#B题-小宝的幸运数组" class="headerlink" title="B题 小宝的幸运数组"></a>B题 小宝的幸运数组</h1><p>题目链接 ：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/11746/B">https://ac.nowcoder.com/acm/contest/11746/B</a><br>题目的思路大概是一个同余的相互跳的一个搜索之类的东西，很巧妙。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
-const int maxn &#x3D; 1e5 + 10;
+const int maxn = 1e5 + 10;
 typedef long long ll;
 ll T, n, k, ans, sum, t;
 ll head[maxn];
 int main() &#123;
-	for (scanf(&quot;%ld&quot;, &amp;T);T;T--) &#123;&#x2F;&#x2F;学来的多组处理
-		scanf(&quot;%ld%ld&quot;, &amp;n, &amp;k);
-		ans &#x3D; sum &#x3D; 0;
-		for (int i&#x3D;0;i&lt;&#x3D;k;++i)	head[i] &#x3D; -1;&#x2F;&#x2F;head[x]表示的是第一次出现总和加到一起的余数为x的时候的a的位置是多少。这样可以一边加一边处理，如果某个数加到总和上之后和之前第一次的余数对应上了，说明这之间的数字的和可以被K整除。
-		head[0] &#x3D; 0;&#x2F;&#x2F;显然对于余数为0来说，不需要有数字加上就行。
-		for (int i&#x3D;1;i&lt;&#x3D;n;++i) &#123;
-			scanf(&quot;%ld&quot;, &amp;t);
-			sum &#x3D; (sum + t) % k;&#x2F;&#x2F;维持一个加上当前值然后在k里的一个特征值。
-			if (head[sum] !&#x3D; -1) 
-				ans &#x3D; max(ans, i - head[sum]);&#x2F;&#x2F;维护答案 
-			else 
-				head[sum] &#x3D; i;&#x2F;&#x2F;如果第一次出现的话就保存位置
-		&#125;
-		ans &#x3D; ans &#x3D;&#x3D; 0 ? -1 : ans;
-		printf(&quot;%ld\n&quot;, ans);
-	&#125;
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    for (scanf(&quot;%ld&quot;, &amp;T);T;T--) &#123;//学来的多组处理
+        scanf(&quot;%ld%ld&quot;, &amp;n, &amp;k);
+        ans = sum = 0;
+        for (int i=0;i&lt;=k;++i)    head[i] = -1;//head[x]表示的是第一次出现总和加到一起的余数为x的时候的a的位置是多少。这样可以一边加一边处理，如果某个数加到总和上之后和之前第一次的余数对应上了，说明这之间的数字的和可以被K整除。
+        head[0] = 0;//显然对于余数为0来说，不需要有数字加上就行。
+        for (int i=1;i&lt;=n;++i) &#123;
+            scanf(&quot;%ld&quot;, &amp;t);
+            sum = (sum + t) % k;//维持一个加上当前值然后在k里的一个特征值。
+            if (head[sum] != -1) 
+                ans = max(ans, i - head[sum]);//维护答案 
+            else 
+                head[sum] = i;//如果第一次出现的话就保存位置
+        &#125;
+        ans = ans == 0 ? -1 : ans;
+        printf(&quot;%ld\n&quot;, ans);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
 <h1 id="C题-上进的凡凡"><a href="#C题-上进的凡凡" class="headerlink" title="C题 上进的凡凡"></a>C题 上进的凡凡</h1><p>这道题的思路是：<br>一个非降序数组的所有子串都为非降序，只要把给定数组分为若干个非降序部分（每个部分要尽可能长），然后计算子串数，对于长度为n的数组子串数为 n * (n + 1) / 2，遍历然后相加。<br>思路的正确性：一个非降序数组的所有子串都为非降序串。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 
-const int maxn &#x3D; 100005;
+const int maxn = 100005;
 typedef long long ll;
 
 ll a[maxn];
 ll sum, n;
 int main() &#123;
-	ios :: sync_with_stdio(false);
-	cin &gt;&gt; n;
-	for (int i &#x3D; 1; i &lt;&#x3D; n; i++)	cin &gt;&gt; a[i];
-	for (ll i &#x3D; 1,t &#x3D; 1; i &lt;&#x3D; n; ) &#123;
-		t &#x3D; i;
-		t++;
-		while (a[t] &gt;&#x3D; a[t - 1] &amp;&amp; t &lt;&#x3D; n)
-			t++;
-		ll ans &#x3D; t - i;
-		sum +&#x3D; ans * (ans + 1)&#x2F;2;
-		i &#x3D; t;
-	&#125;
-	cout &lt;&lt; sum &lt;&lt; endl;
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    ios :: sync_with_stdio(false);
+    cin &gt;&gt; n;
+    for (int i = 1; i &lt;= n; i++)    cin &gt;&gt; a[i];
+    for (ll i = 1,t = 1; i &lt;= n; ) &#123;
+        t = i;
+        t++;
+        while (a[t] &gt;= a[t - 1] &amp;&amp; t &lt;= n)
+            t++;
+        ll ans = t - i;
+        sum += ans * (ans + 1)/2;
+        i = t;
+    &#125;
+    cout &lt;&lt; sum &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
 <h1 id="D-Seek-the-Joker-I"><a href="#D-Seek-the-Joker-I" class="headerlink" title="D    Seek the Joker I"></a>D    Seek the Joker I</h1><p>这题是个：巴什博弈（终于要学新东西了啊）。</p>
 
   </div>
@@ -443,13 +434,13 @@ int main() &#123;
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
-    
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
-    
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
