@@ -287,51 +287,8 @@
 <blockquote>
 <p>这中间用到了组合数学的一些知识，那一个盒子放数的模型也要等到后面再研究了。</p>
 </blockquote>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const int maxn = 1e6 + 8;
-const int p = 998244353;
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre class="highlight"><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e6</span> + <span class="hljs-number">8</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> p = <span class="hljs-number">998244353</span>;<br><br>ll n, m, ans = <span class="hljs-number">0</span>;<br>ll f[maxn];<br><br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b, ll p)</span> </span>&#123;<br>    ll res = <span class="hljs-number">1</span> % p;<br>    <span class="hljs-keyword">while</span>(b) &#123;<br>        <span class="hljs-keyword">if</span> (b&amp;<span class="hljs-number">1</span>) res = (ll) res * a % p ;<br>        a = (ll) a * a % p;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">inv</span><span class="hljs-params">(ll x)</span> </span>&#123;<br>	<span class="hljs-keyword">return</span> power(x, p<span class="hljs-number">-2</span>, p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; m;<br>	f[<span class="hljs-number">0</span>] = f[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=maxn;++i) <br>		f[i] = f[i - <span class="hljs-number">1</span>] * i % p; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">C</span><span class="hljs-params">(ll n, ll m)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n == m|| m == <span class="hljs-number">0</span>)	<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">return</span> (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	init();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> d=<span class="hljs-number">1</span>;d&lt;=n<span class="hljs-number">-1</span>;++d) &#123;<br>		ll tmp = d * (n - d) % p;<br>		ans = (ans + tmp * C(d + m - <span class="hljs-number">2</span>, m - <span class="hljs-number">2</span>) % p) %p;<br>	&#125;<br>	<span class="hljs-built_in">cout</span> &lt;&lt; ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre>
 
-ll n, m, ans = 0;
-ll f[maxn];
-
-ll power(ll a, ll b, ll p) &#123;
-    ll res = 1 % p;
-    while(b) &#123;
-        if (b&amp;1) res = (ll) res * a % p ;
-        a = (ll) a * a % p;
-        b &gt;&gt;= 1;
-    &#125;
-    return res;
-&#125;
-
-inline ll inv(ll x) &#123;
-    return power(x, p-2, p);
-&#125;
-
-void init() &#123;
-    cin &gt;&gt; n &gt;&gt; m;
-    f[0] = f[1] = 1;
-    for (int i=2;i&lt;=maxn;++i) 
-        f[i] = f[i - 1] * i % p; 
-&#125;
-
-inline ll C(ll n, ll m) &#123;
-    if (n == m|| m == 0)    return 1;
-    return (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);
-&#125;
-
-int main() &#123;
-    init();
-    for (int d=1;d&lt;=n-1;++d) &#123;
-        ll tmp = d * (n - d) % p;
-        ans = (ans + tmp * C(d + m - 2, m - 2) % p) %p;
-    &#125;
-    cout &lt;&lt; ans;
-    return 0;
-&#125; 
-</code></pre>
 <p>这篇题解是从csdn上我的账号搬运过来的，新的博客搭好啦，开始搬运计划√</p>
 
   </div>
@@ -469,17 +426,17 @@ int main() &#123;
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
-    
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
   </div>
 </div>
