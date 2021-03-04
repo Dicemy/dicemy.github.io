@@ -305,6 +305,7 @@
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题的思路其实就是题中所说的进行模拟即可，素数筛法选择快一点的筛子，用线性筛O（n）的时间复杂度，然后维护一个 f[i] 数组即可。可以叫做：筛法DP。其中有一个细节需要注意的是写了两次都被卡到的一个点。对一个数进行数的长度处理的时候还进行了取模运算，这个时候之前的数字的长度其实是不准的。需要用一个数组将这些数据记录下来。</p>
 <p>注意：并不是在模运算下不出现除法得到的结果就一定是正确的了，还要考虑一个数取模之后长度的变化问题。</p>
+<p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210304174618.png" class="lozad post-image"src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210304174618.png"></p>
 <h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre class="highlight"><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt; </span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">4e6</span> + <span class="hljs-number">10</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br>ll n, ans;<br>ll prime[maxn], size = <span class="hljs-number">0</span>;<br>ll f[maxn];<br>ll P[maxn];<br><span class="hljs-keyword">bool</span> vis[maxn]; <br><span class="hljs-function">ll <span class="hljs-title">F</span><span class="hljs-params">(ll x)</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(x) x /= <span class="hljs-number">10</span>, c++;<br>	<span class="hljs-keyword">return</span> c;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b)</span> </span>&#123;<br>	ll res = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = ll(res * a % mod);<br>		a = ll(a * a % mod); <br>	&#125;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">true</span>, <span class="hljs-keyword">sizeof</span>(vis));<br>    <span class="hljs-built_in">memset</span>(prime, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(vis));<br>    vis[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (ll i=<span class="hljs-number">2</span>;i&lt;=n;++i) &#123;<br>        <span class="hljs-keyword">if</span> (vis[i]) &#123;<br>			prime[++size] = i;<br>			f[i] = i;<br>			P[i] = F(i);<br>		&#125;<br>        <span class="hljs-keyword">for</span> (ll j=<span class="hljs-number">1</span>;j&lt;=size&amp;&amp;i*prime[j]&lt;=n;++j) &#123;<br>          	vis[i * prime[j]] = <span class="hljs-literal">false</span>;<br>          	<span class="hljs-keyword">int</span> p = P[i];<br>            f[i * prime[j]] = ((prime[j] * power(<span class="hljs-number">10</span>, p) % mod) % mod + f[i]) % mod;<br>        	P[i * prime[j]] = F(prime[j]) + P[i];<br>            <span class="hljs-keyword">if</span> (i % prime[j] == <span class="hljs-number">0</span>)	<span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">cin</span> &gt;&gt; n;<br>	init();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i)	ans = (ans + f[i]) % mod;<br>	<span class="hljs-built_in">cout</span> &lt;&lt; ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre>
 
 
@@ -463,15 +464,15 @@
     
     <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
-    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
     <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
-    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
