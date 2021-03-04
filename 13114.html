@@ -210,7 +210,7 @@
     
     
     <span class="dot"></span>
-    <span>0 字</span>
+    <span>708 字</span>
     
   </div>
   
@@ -226,7 +226,39 @@
   
   </header>
   <div id="section" class="post-content">
-    
+    <p>刚开始，先进行一个demo的学习。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lu_embedded/article/details/86181251">https://blog.csdn.net/lu_embedded/article/details/86181251</a></p>
+<h2 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h2><p>微信小程序的基本文件构造和项目目录结构说明如下：</p>
+<pre><code>.
+├── app.js     # 小程序的逻辑文件
+├── app.json   # 小程序的配置文件
+├── app.wxss   # 全局公共样式文件
+├── pages      # 存放小程序的各个页面
+│   ├── index  # index页面
+│   │   ├── index.js     # 页面逻辑
+│   │   ├── index.wxml   # 页面结构
+│   │   └── index.wxss   # 页面样式表
+│   └── logs   # logs页面
+│       ├── logs.js      # 页面逻辑
+│       ├── logs.json    # 页面配置
+│       ├── logs.wxml    # 页面结构
+│       └── logs.wxss    # 页面样式表
+├── project.config.json
+└── utils
+    └── util.js
+</code></pre>
+<h2 id="页头页尾"><a href="#页头页尾" class="headerlink" title="页头页尾"></a>页头页尾</h2><p>pages 属性用来设置页面路径，它是一个数组，每一项都是字符串来指定小程序由哪些页面组成。数组的第一项代表小程序的初始页面。小程序中新增或减少页面，都需要对 pages 数组进行修改。</p>
+<p>window 属性用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+<p>我们把页头的标题和颜色修改一下，页尾部分我们做一个 tab 栏来切换页面，这个属性叫做 tabBar，代码如下：</p>
+<pre class="highlight"><code class="hljs livescript">&#123;<br>  <span class="hljs-string">&quot;pages&quot;</span>:[<br>    <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>    <span class="hljs-string">&quot;pages/logs/logs&quot;</span><br>  ],<br>  <span class="hljs-string">&quot;window&quot;</span>:&#123;<br>    <span class="hljs-string">&quot;backgroundTextStyle&quot;</span>:<span class="hljs-string">&quot;light&quot;</span>,<br>    <span class="hljs-string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="hljs-string">&quot;#2f2f8f&quot;</span>,	<br>    <span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;GoZeroWaste&quot;</span>,	<span class="hljs-comment"># 标题</span><br>    <span class="hljs-string">&quot;navigationBarTextStyle&quot;</span>:<span class="hljs-string">&quot;white&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;tabBar&quot;</span>:&#123;					<br>    <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#bfc1ab</span>&quot;</span>,<br>    <span class="hljs-string">&quot;selectedColor&quot;</span>: <span class="hljs-string">&quot;#13b11c&quot;</span>,<br>    <span class="hljs-string">&quot;backgroundColor&quot;</span>: <span class="hljs-string">&quot;#1f1f4f&quot;</span>,<br>    <span class="hljs-string">&quot;list&quot;</span>: [	<span class="hljs-comment"># 导航栏的两个按钮</span><br>      &#123;<br>        <span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>        <span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_component.png&quot;</span>,	<span class="hljs-comment"># 第一个按钮的图标</span><br>        <span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_component_HL.png&quot;</span>,	<span class="hljs-comment"># 选择第二个按钮后第一个的按钮的图标</span><br>        <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;个人中心&quot;</span>	<span class="hljs-comment"># 按钮的名字</span><br>      &#125;,<br>      &#123;<br>        <span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/details/details&quot;</span>,<br>        <span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_API.png&quot;</span>,	<span class="hljs-comment"># 第二个按钮的图标</span><br>        <span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_API_HL.png&quot;</span>,	<span class="hljs-comment"># 选择第一个按钮后第二个的按钮的图标</span><br>        <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;生活指南&quot;</span>	<span class="hljs-comment"># 按钮的名字</span><br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br><br></code></pre>
+
+<p>（所用到的图片放在项目的 image 目录，你也可以使用自己的图片）</p>
+<p>这里用到几个 tabBar 的属性是 color、selectedColor、backgroundColor 和 list，list 是一个数组，主要用于设定导航的路径。</p>
+<p>因为导航栏中一个按钮关联的是另一个页面，但是这个页面还没有存在，所以我们需要在app.json文件的list中直接添加，修改app.json文件：</p>
+<pre class="highlight"><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;pages&quot;</span>:[<br>    <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>    <span class="hljs-string">&quot;pages/logs/logs&quot;</span>,<br>    <span class="hljs-string">&quot;pages/details/details&quot;</span><br>    ],<br>    <br></code></pre>
+
+<p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。</p>
+<p>保存刷新之后就会发现，目录结构里自动创建了这一页。对应的，也要修改 app.json 中的 tabBar 的链接（实际上我们已经做了）：</p>
+
   </div>
   <div>
   
@@ -285,7 +317,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -340,7 +372,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
     </div>
   </article>
   
@@ -370,9 +402,9 @@
     
     <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
-    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
-    
     <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
@@ -407,7 +439,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
   </article>
   
   
