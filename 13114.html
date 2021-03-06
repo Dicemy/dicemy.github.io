@@ -23,7 +23,7 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:published_time" content="2021-03-03">
-  <meta property="og:article:modified_time" content="2021-03-04">
+  <meta property="og:article:modified_time" content="2021-03-06">
   <meta property="og:article:author" content="Dicemy">
   
   
@@ -210,7 +210,7 @@
     
     
     <span class="dot"></span>
-    <span>708 字</span>
+    <span>1.2k 字</span>
     
   </div>
   
@@ -256,8 +256,13 @@
 <p>因为导航栏中一个按钮关联的是另一个页面，但是这个页面还没有存在，所以我们需要在app.json文件的list中直接添加，修改app.json文件：</p>
 <pre class="highlight"><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;pages&quot;</span>:[<br>    <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>    <span class="hljs-string">&quot;pages/logs/logs&quot;</span>,<br>    <span class="hljs-string">&quot;pages/details/details&quot;</span><br>    ],<br>    <br></code></pre>
 
-<p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。</p>
-<p>保存刷新之后就会发现，目录结构里自动创建了这一页。对应的，也要修改 app.json 中的 tabBar 的链接（实际上我们已经做了）：</p>
+<p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。<br>保存刷新之后就会发现，目录结构里自动创建了这一页。</p>
+<p>简单起见，我们就在 pages/index 目录下实现 “个人中心” 页面好了。双击打开 index.wxml，初始内容如下：</p>
+<p>这里已经有一些代码了，虽然现在可能还看不懂，但我们知道，这就是现在页面的源代码。我们把 “Hello World” 部分注释掉，增加我们希望显示的内容：</p>
+<pre class="highlight"><code class="hljs html"><span class="hljs-comment">&lt;!--index.wxml--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;&#123;&#123;!hasUserInfo &amp;&amp; canIUse&#125;&#125;&quot;</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">&quot;getUserInfo&quot;</span> <span class="hljs-attr">bindgetuserinfo</span>=<span class="hljs-string">&quot;getUserInfo&quot;</span>&gt;</span> 获取头像昵称 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:else</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;bindViewTap&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo-avatar&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot;</span> <span class="hljs-attr">background-size</span>=<span class="hljs-string">&quot;cover&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo-nickname&quot;</span>&gt;</span>&#123;&#123;userInfo.nickName&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>   <span class="hljs-comment">&lt;!-- &lt;view class=&quot;usermotto&quot;&gt;</span><br><span class="hljs-comment">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</span><br><span class="hljs-comment">  &lt;/view&gt;  --&gt;</span>	<span class="hljs-comment">&lt;!--注释内容--&gt;</span><br>    <span class="hljs-comment">&lt;!--页面的三行字--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ID_Badge&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ID_info&quot;</span>&gt;</span>&#123;&#123;company&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>	<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#x27;ID_info&#x27;</span>&gt;</span>&#123;&#123;position&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#x27;ID_info&#x27;</span>&gt;</span>&#123;&#123;lesson&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre>
+
+<pre class="highlight"><code class="hljs html">发现HTML的几种特性，自己总结的：<br>1.一个标签出现之后会有一个相同的带反斜线的作为结尾，所以每一个标签都是成对出现的比如：<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>  <br>2.在一个标签可以修饰一个变量，然后这个变化的量有一个类，用class来说明，比如<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;ID_Badge&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;ID_info&quot;</span>&gt;</span><br>3.一个变量可以与.js文件中的date中的值相互关联，所以html只作为一个最前面的一个框架的作用，后面的.js文件支撑整个页面逻辑。<br>4.只有html文件和js文件并不行，每一个类都需要在本页面的css文件内进行声明，并且设置这个类的样式属性。<br>5.每一个text或者image的标签必须被一对view标签包围。<br></code></pre>
+
 
   </div>
   <div>
@@ -433,11 +438,11 @@
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
-    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
-    
     <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
     
     <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
