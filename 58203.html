@@ -205,7 +205,7 @@
     
     
     <span class="dot"></span>
-    <span>201 字</span>
+    <span>329 字</span>
     
   </div>
   
@@ -215,6 +215,8 @@
 <p>这道题的解法是维护三个单调队列，由题可知蚯蚓切完的性质仍然满足蚯蚓的长度是依次递减的，由于是按照比例切的，那么切的是相同比例的蚯蚓放到一个队列中，由于靠前切的蚯蚓一定切出来的也是比之后切出来的蚯蚓长，所以当前的最长的蚯蚓只需从这三个队列中找到队头即可。</p>
 <h2 id="Cow-Line"><a href="#Cow-Line" class="headerlink" title="Cow Line"></a>Cow Line</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/24876">https://ac.nowcoder.com/acm/problem/24876</a></p>
 <p>这道题就是一个简单的双端队列的模拟，题中数据的范围是模拟可以接受的，看出来题考的数据结构是双端队列就行了，维护两边的进队和出队即可。</p>
+<h2 id="Team-Queue"><a href="#Team-Queue" class="headerlink" title="Team Queue"></a>Team Queue</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50966">https://ac.nowcoder.com/acm/problem/50966</a></p>
+<p>又是一道模拟题，团队队列只需用团队编号作为大队伍的标志，然后再委会每一个团队队列的内部次序即可。用一个queue和一个queue数组和一个map即可，细节还行，难度适中。出现的问题是数组越界了。最后发现标志该团队是否入大队列的bool数组并不是必要的。可以用检查该团队队列是否为空来代替。</p>
 
   </div>
   <div>
@@ -274,7 +276,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -329,7 +331,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li></ol>
     </div>
   </article>
   
@@ -400,11 +402,11 @@
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
     <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
     
     <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
-    
-    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
     
@@ -421,7 +423,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line"><span class="toc-text">Cow Line</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li></ol>
   </article>
   
   
