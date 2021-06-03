@@ -212,7 +212,7 @@
     
     
     <span class="dot"></span>
-    <span>2k 字</span>
+    <span>2.4k 字</span>
     
   </div>
   
@@ -228,12 +228,16 @@
   
   </header>
   <div id="section" class="post-content">
-    <h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><pre class="highlight"><code class="hljs mysql">#创建一个数据库<br>create database [database_name]; <br><br>#创建一个表<br>create table [table_name] (<br>    &lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt; ]<br> [，&lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt;] ] …<br> [，&lt;表级完整性约束条件&gt; ] <br>); <br><br>#创建一个视图<br>create view &lt;视图名&gt;  [(&lt;列名&gt;  [，&lt;列名&gt;]…)]<br>as<br>select [查询内容]<br>[WITH  CHECK  OPTION]；<br>&#x2F;*<br>子查询不允许含有 order by 和 distinct 语句。<br>视图只是一个表结构，不储存数据。<br>使用视图和使用表的语法基本相同。<br>*&#x2F;<br></code></pre>
+    <h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><pre class="highlight"><code class="hljs mysql">#创建一个数据库<br>create database [database_name]; <br><br>#创建一个表<br>create table [table_name] (<br>    &lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt; ]<br> [，&lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt;] ] …<br> [，&lt;表级完整性约束条件&gt; ] <br>); <br><br>#创建一个视图<br>create view &lt;视图名&gt;  [(&lt;列名&gt;  [，&lt;列名&gt;]…)]<br>as<br>select [查询内容]<br>[WITH  CHECK  OPTION]；<br>&#x2F;*<br>子查询不允许含有 order by 和 distinct 语句。<br>视图只是一个表结构，不储存数据。<br>使用视图和使用表的语法基本相同。<br>WITH CHECK OPTION 语句使得插入操作只能插入满足视图的限制条件的元组。<br>*&#x2F;<br><br>#创建登录用户 <br>create user [user_name] identified by [user_password]<br>#创建一个普通用户<br><br>#创建数据库角色<br>create role &#39;R1&#39;;<br></code></pre>
 
 <p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png" class="lozad post-image"src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"></p>
+<h2 id="Grant-命令"><a href="#Grant-命令" class="headerlink" title="Grant 命令"></a>Grant 命令</h2><pre class="highlight"><code class="hljs mysql">#授予某个用户权限<br>Grant &lt;权限&gt;[,&lt;权限&gt;]...<br>[on &lt;对象类型&gt; &lt;对象名&gt;] #对象可以是一个表或者是一个视图，或者是一个数据库<br>to &lt;用户&gt;[,&lt;用户&gt;]<br>with grant option.<br><br>#with grant option子句表示该权限可以进行传播，否则不能。<br>#grant权限时可以用all表示所有的权限，或者也可以是select等具体的权限。<br>#在进行授权的时候可以具体到某一个列比如说: Grant update(cname) on ...<br>#to的后面也可是一个角色。<br><br>#将某个角色授予某个用户<br>Grant &#39;role_name&#39; to [user_name];<br>#这样可以批量修改一类用户的权限。<br></code></pre>
+
+<h2 id="Revoke命令"><a href="#Revoke命令" class="headerlink" title="Revoke命令"></a>Revoke命令</h2><pre class="highlight"><code class="hljs mysql">#收回某个用户的权限<br>Revoke &lt;权限&gt;[,&lt;权限&gt;]...<br>[on&lt;对象类型&gt;&lt;对象名&gt;]<br>From &lt;用户&gt;[,&lt;用户&gt;]...<br><br>#Revoke权限时可以用all表示收回所有的权限，或者也可以是select等具体的权限。<br>#From的后面也可是一个角色。<br></code></pre>
+
 <h2 id="Alter命令"><a href="#Alter命令" class="headerlink" title="Alter命令"></a>Alter命令</h2><pre class="highlight"><code class="hljs mysql">#Alter命令是在建好表后修改表结构时使用的语句。<br>alter table [table_name] <br>add [column_name] [数据类型] [完整性约束] <br>#在表中添加一个新列<br>alter table [table_name] <br>add foreign key([column_name]) references [table_name]([column_name])<br>#在表中添加一外键<br>alter table [table_name] <br>modify column [column_name] &lt;数据类型&gt; [完整性约束]；<br>#修改表中的一列<br>alter table [table_name] drop column [column_name]<br>#删除表中的一列<br>alter table [table_name] drop primary key;<br>#删除表的主键<br>alter table [table_name] drop foreign key [key_name];<br>#删除表的一个外键<br></code></pre>
 
-<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><pre class="highlight"><code class="hljs mysql">#Drop命令是删除表或者数据库结构时使用的语句。<br>drop database [database_name]; # 删除一个数据库<br>drop table [table_name]; # 删除一个数据库中的表<br>#注意：如果有外键，不能删除表，应该先删除外键或者先删除外键连接的表。<br></code></pre>
+<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><pre class="highlight"><code class="hljs mysql">#Drop命令是删除表或者数据库结构时使用的语句。<br>drop database [database_name]; # 删除一个数据库<br>drop table [table_name]; # 删除一个数据库中的表<br>#注意：如果有外键，不能删除表，应该先删除外键或者先删除外键连接的表。<br><br>#删除登录用户<br>drop user [user_name]<br></code></pre>
 
 <hr>
 <h2 id="Insert命令"><a href="#Insert命令" class="headerlink" title="Insert命令"></a>Insert命令</h2><pre class="highlight"><code class="hljs mysql">#插入一条元组<br>insert into [table_name]([column_name1], [column_name2] ...)<br>values([column_name1_value], [column_name2_value] ...);<br>#如果table_name后面属性列为空，则默认为定义表时的属性和顺序。<br>#在table_name后面的属性可以自定义顺序。<br>#插入的属性值可以是default, null或者具体的值。<br><br>#插入子查询的结果<br>insert into [table_name]([column_name1], [column_name2] ...)<br>select ...<br>from ...<br>where ...<br><br>#插入多条元组<br>insert into [table_name]([column_name1], [column_name2] ...)<br>values([column_name1_value], [column_name2_value] ...),<br>([column_name1_value], [column_name2_value] ...),<br>([column_name1_value], [column_name2_value] ...),<br>... ;<br></code></pre>
@@ -246,7 +250,7 @@
 
 <h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><pre class="highlight"><code class="hljs mysql">#带查询的删除（删除满足条件的元组）<br>delete <br>from [table_name]<br>where ...<br>#where中的语句格式和select的where一样。<br></code></pre>
 
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><pre class="highlight"><code class="hljs mysql">show databases;<br>select database();<br>use [database_name];<br>DESC [table_name];#查看该表的结构<br></code></pre>
+<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><pre class="highlight"><code class="hljs mysql">show databases;<br>select database();<br>use [database_name];<br>DESC [table_name];#查看该表的结构<br>select user();#查看当前用户<br>select * from mysql.user #查看所有用户<br>#用户授权<br></code></pre>
 
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><pre class="highlight"><code class="hljs mysql">int<br>smallint<br>char([num])<br>varchar([num])#变长字符串<br>date<br>enum(a, b, ...) #枚举类型，值只能是枚举集合中的一个元素<br></code></pre>
 
@@ -323,7 +327,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grant-%E5%91%BD%E4%BB%A4"><span class="toc-text">Grant 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Revoke%E5%91%BD%E4%BB%A4"><span class="toc-text">Revoke命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -378,7 +382,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grant-%E5%91%BD%E4%BB%A4"><span class="toc-text">Grant 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Revoke%E5%91%BD%E4%BB%A4"><span class="toc-text">Revoke命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
     </div>
   </article>
   
@@ -427,35 +431,35 @@
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
-    
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
-    
-    <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
-    
-    <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
-    
-    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
     
-    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
-    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    <a href="\tags\高数" title="高数"><div class="tags-list-item">高数</div></a>
     
     <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
   </div>
 </div>
@@ -470,7 +474,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Create%E5%91%BD%E4%BB%A4"><span class="toc-text">Create命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grant-%E5%91%BD%E4%BB%A4"><span class="toc-text">Grant 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Revoke%E5%91%BD%E4%BB%A4"><span class="toc-text">Revoke命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alter%E5%91%BD%E4%BB%A4"><span class="toc-text">Alter命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Drop%E5%91%BD%E4%BB%A4"><span class="toc-text">Drop命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Insert%E5%91%BD%E4%BB%A4"><span class="toc-text">Insert命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update%E5%91%BD%E4%BB%A4"><span class="toc-text">Update命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E5%91%BD%E4%BB%A4"><span class="toc-text">Select命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Select%E6%9F%A5%E8%AF%A2%E8%BF%9B%E9%98%B6"><span class="toc-text">Select查询进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delete%E5%91%BD%E4%BB%A4"><span class="toc-text">Delete命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">其他常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6"><span class="toc-text">常用约束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%88%97%E5%87%BD%E6%95%B0"><span class="toc-text">常用列函数</span></a></li></ol>
   </article>
   
   
