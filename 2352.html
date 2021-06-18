@@ -25,7 +25,7 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:published_time" content="2021-04-07">
-  <meta property="og:article:modified_time" content="2021-06-03">
+  <meta property="og:article:modified_time" content="2021-06-18">
   <meta property="og:article:author" content="Dicemy">
   
   
@@ -212,7 +212,7 @@
     
     
     <span class="dot"></span>
-    <span>2.4k 字</span>
+    <span>2.6k 字</span>
     
   </div>
   
@@ -246,7 +246,7 @@
 
 <h2 id="Select命令"><a href="#Select命令" class="headerlink" title="Select命令"></a>Select命令</h2><pre class="highlight"><code class="hljs mysql">#一个查询语句的基本结构<br>select [all&#x2F;distinct]  <br>&lt;目标列表达式1&gt;, &lt;目标列表达式2&gt;,  ... <br>from &lt;table_name1&gt;, &lt;table_name2&gt;, ...<br>where &lt;条件表达式&gt;<br>group by &lt;column_name1&gt;	having &lt;条件表达式&gt;<br>order by &lt;column_name1&gt; [asc&#x2F;desc]	limit (num)<br><br>&#x2F;*选择表中的若干列*&#x2F;<br>#如果选中所有的属性列那么用*来表示<br>#DISTINCT关键词消除取值重复的行，如果没有指定，则缺省为ALL <br>#如果要将属性列更名的话在需要更名的列后面加上 as 新名字<br>#在查询语句中还可以自定义表名，方法为 from [table_name] as [new_name]<br>#在定义别名的时候可以省略 as ，但是不建议。<br>#目标列表达式可以为：<br>&#x2F;*<br>算术表达式	2016 - Sage<br>字符串常量	&#39;出生年份：&#39;<br>函数	year(curdate()) &#x2F;&#x2F;表示当前的年份<br>列别名 sno as 学号<br>*&#x2F;<br><br>&#x2F;*<br>常用的查询条件:<br>比较运算符：&#x3D;，&gt;，&lt;，&gt;&#x3D;，&lt;&#x3D;，!&#x3D;，&lt;&gt;，!&gt;，!&lt;；<br>确定范围：<br>	BETWEEN &lt;..&gt; AND &lt;..&gt;，<br>	NOT BETWEEN &lt;..&gt; AND &lt;..&gt;<br>确定集合:<br>	IN(...)，<br>	NOT IN(...)<br>字符匹配：<br>	LIKE &#39;&#39;，<br>	NOT LIKE &#39;&#39;<br>通配符：<br>	% 任意长度的字符<br>	_ 一个长度的字符<br>	&#x2F; 将后面紧跟的一个符号转义成正常符号<br>空值：<br>	IS NULL，<br>	IS NOT NULL<br>多重条件（逻辑运算）:<br>	AND，OR，NOT	<br>	可以用括号改变优先级<br>*&#x2F;<br><br>&#x2F;*ORDER BY子句*&#x2F;<br>#可以按照一个或者多个属性进行排序<br>#升序：ASC；降序：DESC；缺省值为升序<br>#当排序列含空值时<br>#ASC：排序列为空值的元组最后显示<br>#DESC：排序列为空值的元组最先显示 <br>#e.g.	ORDER BY Grade DESC；<br>#e.g.	ORDER BY Sdept，Sage DESC； <br>#limit后面跟的数字为输出表中的前几行。<br><br>&#x2F;*自然连接*&#x2F;<br>SELECT  Student.*，SC.*<br>FROM    Student，SC<br>WHERE   Student.Sno &#x3D; SC.Sno；<br>#将student和sc表将sno相同的元组自然连接然后输出<br><br>&#x2F;*聚集函数*&#x2F;<br>#聚集函数：<br>&#x2F;*<br>计数<br>	COUNT（[ DISTINCT | ALL ] *）<br>	COUNT（[ DISTINCT | ALL ] &lt;列名&gt;）&#x2F;&#x2F;这两个值在all条件下是相等的<br>计算总和<br>	SUM（[ DISTINCT | ALL ] &lt;列名&gt;）	<br>计算平均值<br>	AVG（[ DISTINCT | ALL ] &lt;列名&gt;）<br>最大最小值<br>	MAX（[ DISTINCT | ALL ] &lt;列名&gt;）<br>	MIN（[ DISTINCT | ALL ] &lt;列名&gt;）<br>*&#x2F;<br><br>&#x2F;*GROUP BY子句*&#x2F;<br>#细化聚集函数的作用对象<br>&#x2F;*<br> 未对查询结果分组，聚集函数将作用于整个查询结果<br> 对查询结果分组后，聚集函数将分别作用于每个组 <br> 作用对象是查询的中间结果表<br> 按指定的一列或多列值分组，值相等的为一组<br>*&#x2F;<br><br>&#x2F;*Having子句*&#x2F;<br>#Having短语作用于组，从中选择满足条件的组<br>#Where子句作用于基表或者视图，从中选择满足条件的元组<br><br>&#x2F;*ORDER BY子句*&#x2F;<br>#将结果进行排序之后再输出<br>&#x2F;*<br>ASC 升序（小的在前面）<br>DESC 降序（大的在前面）<br>缺省为升序<br>order by 后面可以跟多个列名，按照顺序进行排序。<br>*&#x2F;<br>#当排序存在空值时<br>&#x2F;*<br>ASC 空值的元组最后显示<br>DESC 空值的元组最先显示<br>*&#x2F;<br><br>&#x2F;*limit子句*&#x2F;<br>#只输出排序结果中的前num个元组。<br>#limit 3 的意思是输出前三行，limit 1,3 的意思是输出2道4行<br>#表中的元组的序号是从0开始的<br><br>&#x2F;*Percent子句（！该知识点没有细讲，考试不考）*&#x2F;<br>&#x2F;*<br>select top &lt;n&gt; percent ...<br>from ...<br>where ...<br>表示输出前半分之n的数据，如果结果不够一条的话会向上取整为一条。<br>*&#x2F;<br><br>&#x2F;*into子句（！该知识点没有细讲，考试不考）*&#x2F;<br>&#x2F;*<br>select * into [table_name] <br>from ...<br>where ...<br>表示将查询结果保存到table_name的表中。<br>*&#x2F;<br></code></pre>
 
-<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><pre class="highlight"><code class="hljs mysql">&#x2F;*连接查询*&#x2F;<br>#将两个表进行自然连接<br>select *<br>from A, b<br>where A.a &#x3D; B.a;<br>#将三个表进行自然连接<br>select *<br>from A, B, C<br>where A.a &#x3D; B.a and A.a &#x3D; C.a;<br>#将一个表进行自身连接<br>select A.a, A.pa, B.pa<br>from table1 as A, table1 as B<br>where A.pa &#x3D; B.a;<br>&#x2F;*<br>[例35]查询每一门课的间接先修课（即先修课的先修课），输出：课程号、先修课的课程号、先修课的先修课的课程号。<br>*&#x2F;<br>&#x2F;*<br>SELECT  FIRST.Cno, FIRST.Cpno, SECOND.Cpno<br>FROM  Course As FIRST，Course As SECOND<br>WHERE FIRST.Cpno &#x3D; SECOND.Cno；<br>*&#x2F;<br>#两个表用inner join来写自然连接<br>select *<br>from A inner join B on (A.a &#x3D; A.b)<br>where ...<br>#两个表用left outer join来写左外连接<br>select *<br>from A left outer join B on(A.a &#x3D; B.a)<br>where ...<br>#两个表用right outer join来写右外连接<br>select *<br>from A right outer join B on(A.a &#x3D; B.a)<br>where ...<br><br></code></pre>
+<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><pre class="highlight"><code class="hljs mysql">&#x2F;*连接查询*&#x2F;<br>#将两个表进行自然连接<br>select *<br>from A, b<br>where A.a &#x3D; B.a;<br>#将三个表进行自然连接<br>select *<br>from A, B, C<br>where A.a &#x3D; B.a and A.a &#x3D; C.a;<br>#将一个表进行自身连接<br>select A.a, A.pa, B.pa<br>from table1 as A, table1 as B<br>where A.pa &#x3D; B.a;<br>&#x2F;*<br>[例35]查询每一门课的间接先修课（即先修课的先修课），输出：课程号、先修课的课程号、先修课的先修课的课程号。<br>*&#x2F;<br>&#x2F;*<br>SELECT  FIRST.Cno, FIRST.Cpno, SECOND.Cpno<br>FROM  Course As FIRST，Course As SECOND<br>WHERE FIRST.Cpno &#x3D; SECOND.Cno；<br>*&#x2F;<br>#两个表用inner join来写自然连接<br>select *<br>from A inner join B on (A.a &#x3D; A.b)<br>where ...<br>#两个表用left outer join来写左外连接<br>select *<br>from A left outer join B on(A.a &#x3D; B.a)<br>where ...<br>#两个表用right outer join来写右外连接<br>select *<br>from A right outer join B on(A.a &#x3D; B.a)<br>where ...<br>#嵌套查询<br>&#x2F;*将一个查询块嵌套在另一个查询块的WHERE子句或HAVING短语的条件中的查询称为嵌套查询*&#x2F;<br>#不相关子查询<br>select *<br>from A <br>where a in (<br>    select a<br>    from B<br>    where ...<br>);<br>#相关子查询<br>select *<br>from A <br>where a in (<br>    select a<br>    from B<br>    where A.b &#x3D; B.b and ... <br>);<br>&#x2F;*可以进行多层嵌套，当可以确定内层返回为单值的话，in可以用&#x3D;或者&lt;，&gt;等代替。*&#x2F;<br>#带有ANY和ALL谓词的子查询<br>select *<br>from A<br>where a &gt;&#x3D; ANY(<br>    select a<br>    from B<br>    where ...<br>);<br>&#x2F;*ANY表示查询结果中的某个值，ALL表示查询结果中的所有值*&#x2F;<br>#带有EXISTS谓词的子查询<br>&#x2F;*存在谓词谓词的查询不返回任何数据，只产生逻辑真值或者逻辑假值，若内层查询为空则返回假，若内层查询为非空则返回为真。<br>EXISTS内层只要有结果，外层对应的记录就输出。<br>NOT EXISTS内层只要没有结果，外层就被输出。<br>*&#x2F;<br>select *<br>from A<br>where exists (<br>    select *<br>    from B<br>    where ...<br>)<br>#集合查询：交并差查询<br>#Union, Intersect, Except。<br>&#x2F;**&#x2F;<br></code></pre>
 
 <h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><pre class="highlight"><code class="hljs mysql">#带查询的删除（删除满足条件的元组）<br>delete <br>from [table_name]<br>where ...<br>#where中的语句格式和select的where一样。<br></code></pre>
 
@@ -339,7 +339,7 @@
 <p class="author-description">软件工程在读大学生</p>
 <div class="author-message">
   <a class="author-posts-count" href="/archives">
-    <span>22</span>
+    <span>23</span>
     <span>文章</span>
   </a>
   <a class="author-categories-count" href="/categories">
@@ -447,13 +447,13 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
     
@@ -484,6 +484,11 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-06-18</div>
+        <a href="/51347.html"><div class="recent-posts-item-content">数据库复习</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-05-23</div>
         <a href="/390.html"><div class="recent-posts-item-content">kuangbin刷题柱</div></a>
       </div>
@@ -496,11 +501,6 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-05-05</div>
         <a href="/58203.html"><div class="recent-posts-item-content">牛客刷题柱</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-04-27</div>
-        <a href="/33146.html"><div class="recent-posts-item-content">常见积分方法</div></a>
       </div>
     
   </div>
