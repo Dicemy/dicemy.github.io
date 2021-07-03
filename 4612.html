@@ -8,13 +8,13 @@
   <meta name="theme-color" content="#fff" id="theme-color">
   <meta name="description" content="月光照着月光,月光普照">
   <link rel="icon" href="/img/biaoti.png">
-  <title>大计划！微信小程序学习笔记</title>
+  <title>大学物理复习笔记</title>
   
   
-  <meta property="og:title" content="大计划！微信小程序学习笔记">
+  <meta property="og:title" content="大学物理复习笔记">
   
   
-  <meta property="og:url" content="https://dicemy.github.io/13114.html">
+  <meta property="og:url" content="https://dicemy.github.io/4612.html">
   
   
   <meta property="og:img" content="/img/touxiang.jpg">
@@ -24,12 +24,10 @@
   
   
   <meta property="og:type" content="article">
-  <meta property="og:article:published_time" content="2021-03-03">
-  <meta property="og:article:modified_time" content="2021-03-16">
+  <meta property="og:article:published_time" content="2021-06-28">
+  <meta property="og:article:modified_time" content="2021-07-03">
   <meta property="og:article:author" content="Dicemy">
   
-  
-  <meta property="og:article:tag" content="学习笔记">
   
   
   
@@ -200,75 +198,61 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      大计划！微信小程序学习笔记
+      大学物理复习笔记
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2021-03-03T06:51:20.000Z">
+    <time datetime="2021-06-28T14:01:23.000Z">
       <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
-      <span>2021-03-03</span>
+      <span>2021-06-28</span>
     </time>
     
-    <span class="dot"></span>
-    
-    <a href="/categories/技术/" class="post-meta-link">技术</a>
-    
-    
     
     <span class="dot"></span>
-    <span>1.2k 字</span>
+    <span>761 字</span>
     
-  </div>
-  
-  <div class="post-meta post-show-meta" style="margin-top: -10px;">
-    <div style="display: flex; align-items: center;">
-      <i class="iconfont icon-biaoqian" style="margin-right: 2px; font-size: 1.15rem;"></i>
-      
-      
-        <a href="/tags/学习笔记/" class="post-meta-link">学习笔记</a>
-      
-    </div>
   </div>
   
   </header>
   <div id="section" class="post-content">
-    <p>刚开始，先进行一个demo的学习。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lu_embedded/article/details/86181251">https://blog.csdn.net/lu_embedded/article/details/86181251</a></p>
-<h2 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h2><p>微信小程序的基本文件构造和项目目录结构说明如下：</p>
-<pre><code>.
-├── app.js     # 小程序的逻辑文件
-├── app.json   # 小程序的配置文件
-├── app.wxss   # 全局公共样式文件
-├── pages      # 存放小程序的各个页面
-│   ├── index  # index页面
-│   │   ├── index.js     # 页面逻辑
-│   │   ├── index.wxml   # 页面结构
-│   │   └── index.wxss   # 页面样式表
-│   └── logs   # logs页面
-│       ├── logs.js      # 页面逻辑
-│       ├── logs.json    # 页面配置
-│       ├── logs.wxml    # 页面结构
-│       └── logs.wxss    # 页面样式表
-├── project.config.json
-└── utils
-    └── util.js
-</code></pre>
-<h2 id="页头页尾"><a href="#页头页尾" class="headerlink" title="页头页尾"></a>页头页尾</h2><p>pages 属性用来设置页面路径，它是一个数组，每一项都是字符串来指定小程序由哪些页面组成。数组的第一项代表小程序的初始页面。小程序中新增或减少页面，都需要对 pages 数组进行修改。</p>
-<p>window 属性用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
-<p>我们把页头的标题和颜色修改一下，页尾部分我们做一个 tab 栏来切换页面，这个属性叫做 tabBar，代码如下：</p>
-<pre class="highlight"><code class="hljs livescript">&#123;<br>  <span class="hljs-string">&quot;pages&quot;</span>:[<br>    <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>    <span class="hljs-string">&quot;pages/logs/logs&quot;</span><br>  ],<br>  <span class="hljs-string">&quot;window&quot;</span>:&#123;<br>    <span class="hljs-string">&quot;backgroundTextStyle&quot;</span>:<span class="hljs-string">&quot;light&quot;</span>,<br>    <span class="hljs-string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="hljs-string">&quot;#2f2f8f&quot;</span>,	<br>    <span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;GoZeroWaste&quot;</span>,	<span class="hljs-comment"># 标题</span><br>    <span class="hljs-string">&quot;navigationBarTextStyle&quot;</span>:<span class="hljs-string">&quot;white&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;tabBar&quot;</span>:&#123;					<br>    <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#bfc1ab</span>&quot;</span>,<br>    <span class="hljs-string">&quot;selectedColor&quot;</span>: <span class="hljs-string">&quot;#13b11c&quot;</span>,<br>    <span class="hljs-string">&quot;backgroundColor&quot;</span>: <span class="hljs-string">&quot;#1f1f4f&quot;</span>,<br>    <span class="hljs-string">&quot;list&quot;</span>: [	<span class="hljs-comment"># 导航栏的两个按钮</span><br>      &#123;<br>        <span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>        <span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_component.png&quot;</span>,	<span class="hljs-comment"># 第一个按钮的图标</span><br>        <span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_component_HL.png&quot;</span>,	<span class="hljs-comment"># 选择第二个按钮后第一个的按钮的图标</span><br>        <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;个人中心&quot;</span>	<span class="hljs-comment"># 按钮的名字</span><br>      &#125;,<br>      &#123;<br>        <span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/details/details&quot;</span>,<br>        <span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_API.png&quot;</span>,	<span class="hljs-comment"># 第二个按钮的图标</span><br>        <span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;image/icon_API_HL.png&quot;</span>,	<span class="hljs-comment"># 选择第一个按钮后第二个的按钮的图标</span><br>        <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;生活指南&quot;</span>	<span class="hljs-comment"># 按钮的名字</span><br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br><br></code></pre>
+    <h2 id="第16章"><a href="#第16章" class="headerlink" title="第16章"></a>第16章</h2><h3 id="第1-3节："><a href="#第1-3节：" class="headerlink" title="第1-3节："></a>第1-3节：</h3><p>q = ne    电荷是量子化的<br>e = 1.62 * 10 ^ -19 C<br>密立根油滴实验：电荷的量子性。</p>
+<p>mC        uC        nC        pC<br>10-3    10-6    10-9    10-12</p>
+<p>库伦定律：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png" class="lozad post-image"><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png" class="lozad post-image"><br>同号相斥，异号相吸</p>
+<p>场是一种物质，无静止质量</p>
+<h3 id="第4节："><a href="#第4节：" class="headerlink" title="第4节："></a>第4节：</h3><p>电场强度：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png" class="lozad post-image">单位： N/C  or   V/m   是电场中某一点的一个性质</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png" alt="image-20210630193622185" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png" class="lozad post-image"><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png" alt="image-20210630193734725" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png" class="lozad post-image">    q是场源电荷    </p>
+<p>两条电场线不会相交，电场线不闭合</p>
+<p>电偶极子：<br>电偶极矩：p ⃑ = ql ⃑   方向从负电荷指向正电荷<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png" alt="image-20210630194628305" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png" alt="image-20210630194802126" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png" class="lozad post-image">薄金属球壳中电场线的分布</p>
+<h3 id="第5节："><a href="#第5节：" class="headerlink" title="第5节："></a>第5节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png" alt="image-20210630194856019" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png" class="lozad post-image">“无限大”带电平面所激发的电场</p>
+<p>σ:平面上的电荷面密度。<br>“无限大”带电平面所激发的电场强度与离平面的距离无关，即在平面两侧形成一均匀场.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png" alt="image-20210630195050166" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png" class="lozad post-image">带有等量异号的平行金属板所产生的电场</p>
+<p>σ:平面上的电荷面密度</p>
+<h3 id="第6节："><a href="#第6节：" class="headerlink" title="第6节："></a>第6节：</h3><p>导体处于静电平衡时，内部电场为0。静电荷分布在导体表面，尖端电荷密度最高。<br>导体内部没有电场线，电场线垂直与导体表面<br>尖端放电现象。</p>
+<p>当腔内无导体时：空腔导体不接地的时候外面的电场不会影响腔内<br>当腔内有导体时：空腔导体接地时外面的电场不会影响腔内</p>
+<p>在空腔中的导体位置进行移动的话，对腔内和腔外的电场分布没有影响。</p>
+<h3 id="第7节："><a href="#第7节：" class="headerlink" title="第7节："></a>第7节：</h3><p>电通量：通过电场中某一给定平面的电场线的总条数叫做通过该面的电通量（垂直穿过或者斜着穿过对电通量的大小相同）<br>电通量计算公式：</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png" alt="image-20210703194656590" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png" class="lozad post-image">
 
-<p>（所用到的图片放在项目的 image 目录，你也可以使用自己的图片）</p>
-<p>这里用到几个 tabBar 的属性是 color、selectedColor、backgroundColor 和 list，list 是一个数组，主要用于设定导航的路径。</p>
-<p>因为导航栏中一个按钮关联的是另一个页面，但是这个页面还没有存在，所以我们需要在app.json文件的list中直接添加，修改app.json文件：</p>
-<pre class="highlight"><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;pages&quot;</span>:[<br>    <span class="hljs-string">&quot;pages/index/index&quot;</span>,<br>    <span class="hljs-string">&quot;pages/logs/logs&quot;</span>,<br>    <span class="hljs-string">&quot;pages/details/details&quot;</span><br>    ],<br>    <br></code></pre>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png" alt="image-20210703194721726" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png" class="lozad post-image">
 
-<p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。<br>保存刷新之后就会发现，目录结构里自动创建了这一页。</p>
-<p>简单起见，我们就在 pages/index 目录下实现 “个人中心” 页面好了。双击打开 index.wxml，初始内容如下：</p>
-<p>这里已经有一些代码了，虽然现在可能还看不懂，但我们知道，这就是现在页面的源代码。我们把 “Hello World” 部分注释掉，增加我们希望显示的内容：</p>
-<pre class="highlight"><code class="hljs html"><span class="hljs-comment">&lt;!--index.wxml--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;&#123;&#123;!hasUserInfo &amp;&amp; canIUse&#125;&#125;&quot;</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">&quot;getUserInfo&quot;</span> <span class="hljs-attr">bindgetuserinfo</span>=<span class="hljs-string">&quot;getUserInfo&quot;</span>&gt;</span> 获取头像昵称 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:else</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;bindViewTap&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo-avatar&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot;</span> <span class="hljs-attr">background-size</span>=<span class="hljs-string">&quot;cover&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;userinfo-nickname&quot;</span>&gt;</span>&#123;&#123;userInfo.nickName&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>   <span class="hljs-comment">&lt;!-- &lt;view class=&quot;usermotto&quot;&gt;</span><br><span class="hljs-comment">    &lt;text class=&quot;user-motto&quot;&gt;&#123;&#123;motto&#125;&#125;&lt;/text&gt;</span><br><span class="hljs-comment">  &lt;/view&gt;  --&gt;</span>	<span class="hljs-comment">&lt;!--注释内容--&gt;</span><br>    <span class="hljs-comment">&lt;!--页面的三行字--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ID_Badge&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ID_info&quot;</span>&gt;</span>&#123;&#123;company&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>	<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#x27;ID_info&#x27;</span>&gt;</span>&#123;&#123;position&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#x27;ID_info&#x27;</span>&gt;</span>&#123;&#123;lesson&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre>
+<p>简单来说，就是某块平面的电场强度乘以这块平面的面积。几何意义：通过闭合曲面的电场线的净条数。</p>
+<p>高斯定理：</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png" alt="image-20210703195124311" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png" class="lozad post-image">
 
-<pre class="highlight"><code class="hljs html">发现HTML的几种特性，自己总结的：<br>1.一个标签出现之后会有一个相同的带反斜线的作为结尾，所以每一个标签都是成对出现的比如：<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>  <br>2.在一个标签可以修饰一个变量，然后这个变化的量有一个类，用class来说明，比如<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;ID_Badge&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;ID_info&quot;</span>&gt;</span><br>3.一个变量可以与.js文件中的date中的值相互关联，所以html只作为一个最前面的一个框架的作用，后面的.js文件支撑整个页面逻辑。<br>4.只有html文件和js文件并不行，每一个类都需要在本页面的css文件内进行声明，并且设置这个类的样式属性。<br>5.每一个text或者image的标签必须被一对view标签包围。<br></code></pre>
-
+<p>静电场的高斯定理(Gauss’s law) 的表述:<br>在静电场内,任一闭合面的电通量等于这<strong>闭合面所包围的电量的代数和</strong>(净电荷)除以ε0 .<br>该定理将一任意闭合曲面上的电场和闭合曲面内所包围的净电荷联系起来。静电场是有源场。</p>
+<p>高斯定理在求解场强方面的应用：</p>
+<ol>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png" alt="image-20210703200140064" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png" class="lozad post-image">均匀带电球面的电场分布，设球面半径为R，球面上所带总电量为q。</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png" alt="image-20210703200424482" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png" class="lozad post-image">电荷均匀分布在一条长直细线上。线上单位长度所带电荷恒定为λ。求距离细线r处电场的大小，假设此处与线的两端相距很远。</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png" alt="image-20210703201251340" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png" class="lozad post-image">求无限大均匀带电平面的电场分布。已知带电平面电荷面密度为σ。</p>
+</li>
+</ol>
+<h2 id="第17章"><a href="#第17章" class="headerlink" title="第17章"></a>第17章</h2><h3 id="第1节："><a href="#第1节：" class="headerlink" title="第1节："></a>第1节：</h3><p>保守力：力所做的功和始末位置有关，和路径无关。<br>静电场环路定理：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png" alt="image-20210703202315913" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png" class="lozad post-image"></p>
+<p>凡保守力都有与其相关的势能，静电场是有势场。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png" alt="image-20210703202449682" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png" class="lozad post-image">势能与做功的关系</p>
 
   </div>
   <div>
@@ -277,25 +261,13 @@
 </article>
 <div class="nav">
   
-  <div class="nav-item-prev">
-    <a href="/11830.html" class="nav-link">
-      <i class="iconfont icon-left nav-prev-icon"></i>
-      <div>
-        <div class="nav-label">上一篇</div>
-        
-        <div class="nav-title">Linux系统操作学习 </div>
-        
-      </div>
-    </a>
-  </div>
-  
   
   <div class="nav-item-next">
-    <a href="/50660.html" class="nav-link">
+    <a href="/8520.html" class="nav-link">
       <div>
         <div class="nav-label">下一篇</div>
         
-        <div class="nav-title">2021牛客寒假算法基础集训营6 </div>
+        <div class="nav-title">Git学习笔记 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -340,7 +312,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li></ol></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -395,7 +367,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li></ol></li></ol>
     </div>
   </article>
   
@@ -487,7 +459,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">项目目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E5%A4%B4%E9%A1%B5%E5%B0%BE"><span class="toc-text">页头页尾</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li></ol></li></ol>
   </article>
   
   
