@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html  lang="zh-CN" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff" id="theme-color">
+  <meta name="description" content="月光照着月光,月光普照">
+  <link rel="icon" href="/img/biaoti.png">
+  <title>牛客刷题柱</title>
+  
+  
+  <meta property="og:title" content="牛客刷题柱">
+  
+  
+  <meta property="og:url" content="https://dicemy.github.io/58203.html">
+  
+  
+  <meta property="og:img" content="/img/touxiang.jpg">
+  
+  
+  <meta property="og:img" content="月光照着月光,月光普照">
+  
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:published_time" content="2021-05-05">
+  <meta property="og:article:modified_time" content="2021-05-15">
+  <meta property="og:article:author" content="Dicemy">
+  
+  
+  
+  
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+    var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+      }
+    };
+    setDarkmode();
+  </script>
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  </script>
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+  <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+
+  
+  
+<link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <div class="wrapper">
+    
+    <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+      <img class="navbar-logo-img" src="/img/biaoti.png" alt="logo">
+      
+      <span class="navbar-logo-dsc">Dicemy 的博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+    <a href="/" class="navbar-menu-item">
+    
+    首页
+    
+    </a>
+    
+    <a href="/archives" class="navbar-menu-item">
+    
+    归档
+    
+    </a>
+    
+    <a href="/tags" class="navbar-menu-item">
+    
+    标签
+    
+    </a>
+    
+    <a href="/categories" class="navbar-menu-item">
+    
+    分类
+    
+    </a>
+    
+    <a href="/about" class="navbar-menu-item">
+    
+    关于
+    
+    </a>
+    
+    <a href="/links" class="navbar-menu-item">
+    
+    友链
+    
+    </a>
+    
+    <a class="navbar-menu-item darknavbar" id="dark"><i class="iconfont icon-weather"></i></a>
+    <a class="navbar-menu-item searchnavbar" id="search"><i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;"></i></a>
+  </div>
+</nav>
+    
+    <div id="local-search" style="display: none;">
+      <input class="navbar-menu-item" id="search-input" placeholder="请输入搜索内容...">
+      <div id="search-content"></div>
+    </div>
+    
+    <div class="section-wrap">
+      <div class="container">
+        <div class="columns">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      牛客刷题柱
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-05-05T13:58:58.000Z">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2021-05-05</span>
+    </time>
+    
+    
+    <span class="dot"></span>
+    <span>1.7k 字</span>
+    
+  </div>
+  
+  </header>
+  <div id="section" class="post-content">
+    <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><h2 id="蚯蚓（5-4）"><a href="#蚯蚓（5-4）" class="headerlink" title="蚯蚓（5.4）"></a>蚯蚓（5.4）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16430">https://ac.nowcoder.com/acm/problem/16430</a></p>
+<p>这道题的解法是维护三个单调队列，由题可知蚯蚓切完的性质仍然满足蚯蚓的长度是依次递减的，由于是按照比例切的，那么切的是相同比例的蚯蚓放到一个队列中，由于靠前切的蚯蚓一定切出来的也是比之后切出来的蚯蚓长，所以当前的最长的蚯蚓只需从这三个队列中找到队头即可。</p>
+<h2 id="Cow-Line（5-5）"><a href="#Cow-Line（5-5）" class="headerlink" title="Cow Line（5.5）"></a>Cow Line（5.5）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/24876">https://ac.nowcoder.com/acm/problem/24876</a></p>
+<p>这道题就是一个简单的双端队列的模拟，题中数据的范围是模拟可以接受的，看出来题考的数据结构是双端队列就行了，维护两边的进队和出队即可。</p>
+<h2 id="Team-Queue"><a href="#Team-Queue" class="headerlink" title="Team Queue"></a>Team Queue</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50966">https://ac.nowcoder.com/acm/problem/50966</a></p>
+<p>又是一道模拟题，团队队列只需用团队编号作为大队伍的标志，然后再委会每一个团队队列的内部次序即可。用一个queue和一个queue数组和一个map即可，细节还行，难度适中。出现的问题是数组越界了。最后发现标志该团队是否入大队列的bool数组并不是必要的。可以用检查该团队队列是否为空来代替。</p>
+<h2 id="长跑（5-6）"><a href="#长跑（5-6）" class="headerlink" title="长跑（5.6）"></a>长跑（5.6）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14570">https://ac.nowcoder.com/acm/problem/14570</a></p>
+<p>是道队列bfs，从起点开始搜索，如果当前节点加上maxn可以到达并且钱够的商店就入队，然后如果碰到终点就退出。就是一道朴素的bfs，但是如果看不出来的还是有点迷惑的。</p>
+<h2 id="道路铺设（5-8）"><a href="#道路铺设（5-8）" class="headerlink" title="道路铺设（5.8）"></a>道路铺设（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21222">https://ac.nowcoder.com/acm/problem/21222</a></p>
+<p>再次做到NOIP2018提高组的题，感慨万千。隐约记得在考场上发现是前两天做过的原题的兴奋的心情了。当时的我先发现是差分，处理出差分数组之后经过观察是差分数组为正值的所有值的和即为答案，当时并没有经过严谨的证明，隐约感觉正值和负值之间一定会相互抵消。今天重新写到，当时的感觉重新涌上心头。</p>
+<p>其实就是一道水题，并不是优先队列，差分之后将正值加到一块即可。可以进行一个简单的证明，一个数列的差分数组的所有元素的和一定为0，那么想要将这个差分数组的正数变为0，那么每一个正数都要和负数相对应结合。其中一个问题是如果确定进行变化的一对差分中间没有0，其实这也好证明，因为每一个正数会找到最近的一个负数进行中和，那么可以保证在对更远的负数进行中和的时候，比较最近的负数已经进行了中和，级这个比较大的数通过和附近的数进行中和，已经和周围的数的大小基本相同，所以不会出现跨过一个比较小的数然后进行更行的情况发生。第二个问题是，会不会出现前面的正数不能将一个比较大的负数使用完就直接跳到后面的正数了，显然也是不会的，因为这个数列是一个正整数列。</p>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><h2 id="好串（5-7）"><a href="#好串（5-7）" class="headerlink" title="好串（5.7）"></a>好串（5.7）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21874">https://ac.nowcoder.com/acm/problem/21874</a></p>
+<p>一个栈的水题。</p>
+<h2 id="吐泡泡"><a href="#吐泡泡" class="headerlink" title="吐泡泡"></a>吐泡泡</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/15029">https://ac.nowcoder.com/acm/problem/15029</a></p>
+<p>一个栈的应用，水题。</p>
+<h2 id="表达式计算4（5-8）"><a href="#表达式计算4（5-8）" class="headerlink" title="表达式计算4（5.8）"></a>表达式计算4（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50999">https://ac.nowcoder.com/acm/problem/50999</a></p>
+<p>栈的经典应用，表达式求值。这是一个中缀表达式求值。维护两个栈，一个栈存数字，一个栈存符号，数字进栈没有什么要求，如果有一个符号要进栈的话，先把比该符号优先级高的在符号栈中的符号都先弹出栈，符号两边的数字进行运算。这样就保证了每一个运算都是优先级高的先运算。<br>模拟的过程会比较繁琐，而且注意栈如果为空的话调用栈的.top()会报错，所以把原来的表达式的最外层加一对括号来保护。</p>
+<h2 id="括号画家"><a href="#括号画家" class="headerlink" title="括号画家"></a>括号画家</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50998">https://ac.nowcoder.com/acm/problem/50998</a></p>
+<p>括号匹配，寻找最长合法括号匹配串。由于如果出现不合法的情况，那么之前的合法的长度就不能加到后面的括号序列上了。所以只需维护一个括号匹配栈即可，如果出现了不合法的情况就将最长串和目前的最长串进行一个更新即可，最后答案中的长度就是最长的合法括号字串的长度。</p>
+<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="奶酪（5-8）"><a href="#奶酪（5-8）" class="headerlink" title="奶酪（5.8）"></a>奶酪（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16417">https://ac.nowcoder.com/acm/problem/16417</a></p>
+<p>经典并查集例题，怎么写都能过的无极数据友好的题，只用将两两洞进行测距然后看距离满足，如果满足就直接将两个洞用并查集连在一起。然后看离地下比较近的洞和离上面比较近的洞是否联通即可。这道题应该也可以用其他测联通的方法写出来。</p>
+<h2 id="关押罪犯"><a href="#关押罪犯" class="headerlink" title="关押罪犯"></a>关押罪犯</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16591">https://ac.nowcoder.com/acm/problem/16591</a></p>
+<p>并查集的经典应用，一个非常好的思路是：我们将并查集的f数组进行拓展一下来表示更多的状态，来简化一些比较困难的逻辑表示。我们将f数组拓展一倍，i表示一个监狱i+n表示另一个监狱。我们对于每一对罪犯，都默认将他们装到不同的两个监狱中即a和b+n，a+n和b，然后检查他们在相同的监狱中是否出现冲突。这个做法其实是将一个状态拆成了比较好表示的两个状态。将逻辑上很复杂才能检测的问题变成一些很简单能判断的问题。<br>这种方法叫做建立虚点。</p>
+<p>虚点的建立可以拓展表示一个点的多个状态。</p>
+<h2 id="食物链（5-9）"><a href="#食物链（5-9）" class="headerlink" title="食物链（5.9）"></a>食物链（5.9）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16884">https://ac.nowcoder.com/acm/problem/16884</a></p>
+<p>这题本质上应该是然用带权的并查集来写，但是有一种比较好写的方法是开虚点。用三倍的n的数组来表示每一个点的三个不同性质，对不同性质之间进行操作，这样就减小了处理复杂问题的难度。</p>
+<h2 id="棋盘问题（5-15）"><a href="#棋盘问题（5-15）" class="headerlink" title="棋盘问题（5.15）"></a>棋盘问题（5.15）</h2><p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=1321">http://poj.org/problem?id=1321</a></p>
+<p>一道经典的搜索题，用dfs进行搜索，一个控制层数，一个控制放了几个棋子。注意dfs中需要将每一层的情况都列出来。</p>
+
+  </div>
+  <div>
+  
+  </div>
+</article>
+<div class="nav">
+  
+  <div class="nav-item-prev">
+    <a href="/18382.html" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">上一篇</div>
+        
+        <div class="nav-title">刷题打卡 </div>
+        
+      </div>
+    </a>
+  </div>
+  
+  
+  <div class="nav-item-next">
+    <a href="/50736.html" class="nav-link">
+      <div>
+        <div class="nav-label">下一篇</div>
+        
+        <div class="nav-title">html学习笔记 </div>
+        
+      </div>
+      <i class="iconfont icon-right nav-next-icon"></i>
+    </a>
+  </div>
+  
+</div>
+
+<div class="card card-content comment-card" style="margin-top: 16px;">
+  <div class="comment-card-title">评论</div>
+  
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va',
+        appKey: 'CLLAhwQhbW5KCgp3CCPkAItO',
+        placeholder: 'Just go go',
+        path: window.location.pathname,
+        avatar: 'mp',
+        meta: ["nick","mail","link"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'false',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'true',
+        requiredFields: [],
+      });
+    };
+  </script>
+
+</div>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+</div></main>
+          <aside class="left-column">
+            
+            <div class="card card-author">
+              
+<img src="/img/touxiang.jpg" class="author-img">
+
+<p class="author-name">Dicemy</p>
+<p class="author-description">软件工程在读大学生</p>
+<div class="author-message">
+  <a class="author-posts-count" href="/archives">
+    <span>36</span>
+    <span>文章</span>
+  </a>
+  <a class="author-categories-count" href="/categories">
+    <span>4</span>
+    <span>分类</span>
+  </a>
+  <a class="author-tags-count" href="/tags">
+    <span>17</span>
+    <span>标签</span>
+  </a>
+</div>
+
+<div class="author-card-society">
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
+        <i class="iconfont icon-bilibili society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a href="tencent://message/?uin=1583925267">
+        <i class="iconfont icon-wechat society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
+        <i class="iconfont icon-github society-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+            </div>
+            
+            <div class="sticky-tablet">
+  
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+    </div>
+  </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>分类</div>
+  <div class="categories-list">
+    
+      <a href="/categories/编程">
+        <div class="categories-list-item">
+          编程
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/技术">
+        <div class="categories-list-item">
+          技术
+          <span class="categories-list-item-badge">8</span>
+        </div>
+      </a>
+    
+      <a href="/categories/文化课">
+        <div class="categories-list-item">
+          文化课
+          <span class="categories-list-item-badge">4</span>
+        </div>
+      </a>
+    
+      <a href="/categories/生活">
+        <div class="categories-list-item">
+          生活
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header"><i class="iconfont icon-biaoqian" style="padding-right: 2px;"></i>热门标签</div>
+  <div class="tags-list">
+    
+    <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
+    
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
+    
+    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
+    
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    
+    <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
+    
+    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
+    
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
+    <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+          <aside class="right-column">
+            <div class="sticky-widescreen">
+  
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header"><i class="iconfont icon-wenzhang_huaban" style="padding-right: 2px;"></i>最近文章</div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-22</div>
+        <a href="/17868.html"><div class="recent-posts-item-content">myNewTestBlog</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/43344.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（4）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/56657.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（3）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/12868.html"><div class="recent-posts-item-content">Spring Boot入门</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>Copyright ©
+          
+          2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a href="/" class="footer-link">Dicemy 的博客 </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+        <span>&nbsp;|&nbsp;</span>
+        
+        
+        本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer>
+  <a role="button" id="scrollbutton" class="basebutton"  aria-label="回到顶部">
+  <i class="iconfont icon-arrowleft button-icon"></i>
+</a>
+<a role="button" id="menubutton" class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a role="button" id="popbutton" class="basebutton" aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a role="button" id="darkbutton" class="basebutton darkwidget" aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a role="button" id="searchbutton" class="basebutton searchwidget" aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a>
+
+  
+  
+  
+  <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img');
+    var i;
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a');
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'));
+      wrapper.setAttribute('aria-label', 'illustration');
+      wrapper.style.cssText = 'width: 100%; display: flex; justify-content: center;';
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt;
+      wrapper.dataset.nolink = true;
+      img[i].before(wrapper);
+      wrapper.append(img[i]);
+      var divWrap = document.createElement('div');
+      divWrap.classList.add('gallery');
+      wrapper.before(divWrap);
+      divWrap.append(wrapper);
+    }
+    baguetteBox.run('.gallery');
+  }
+</script>
+<script>loadScript("/js/lib/lightbox/baguetteBox.min.js", addImgLayout)</script>
+  
+  
+  
+<script src="/js/main.js"></script>
+
+  
+  <script>loadScript("/js/lib/busuanzi.min.js")</script>
+  
+  
+  <script>
+    var addLazyload = function () {
+      var observer = lozad('.lozad', {
+        load: function (el) {
+          el.srcset = el.getAttribute('data-src');
+        },
+        loaded: function (el) {
+          el.classList.add('loaded');
+        }
+      });
+      observer.observe();
+    }
+  </script>
+  <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
+  
+  
+</body>
+
+</html>

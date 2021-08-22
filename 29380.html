@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html  lang="zh-CN" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff" id="theme-color">
+  <meta name="description" content="月光照着月光,月光普照">
+  <link rel="icon" href="/img/biaoti.png">
+  <title>Matlab学习笔记</title>
+  
+  
+  <meta property="og:title" content="Matlab学习笔记">
+  
+  
+  <meta property="og:url" content="https://dicemy.github.io/29380.html">
+  
+  
+  <meta property="og:img" content="/img/touxiang.jpg">
+  
+  
+  <meta property="og:img" content="月光照着月光,月光普照">
+  
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:published_time" content="2021-07-17">
+  <meta property="og:article:modified_time" content="2021-07-24">
+  <meta property="og:article:author" content="Dicemy">
+  
+  
+  
+  
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+    var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+      }
+    };
+    setDarkmode();
+  </script>
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  </script>
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+  <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+
+  
+  
+<link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <div class="wrapper">
+    
+    <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+      <img class="navbar-logo-img" src="/img/biaoti.png" alt="logo">
+      
+      <span class="navbar-logo-dsc">Dicemy 的博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+    <a href="/" class="navbar-menu-item">
+    
+    首页
+    
+    </a>
+    
+    <a href="/archives" class="navbar-menu-item">
+    
+    归档
+    
+    </a>
+    
+    <a href="/tags" class="navbar-menu-item">
+    
+    标签
+    
+    </a>
+    
+    <a href="/categories" class="navbar-menu-item">
+    
+    分类
+    
+    </a>
+    
+    <a href="/about" class="navbar-menu-item">
+    
+    关于
+    
+    </a>
+    
+    <a href="/links" class="navbar-menu-item">
+    
+    友链
+    
+    </a>
+    
+    <a class="navbar-menu-item darknavbar" id="dark"><i class="iconfont icon-weather"></i></a>
+    <a class="navbar-menu-item searchnavbar" id="search"><i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;"></i></a>
+  </div>
+</nav>
+    
+    <div id="local-search" style="display: none;">
+      <input class="navbar-menu-item" id="search-input" placeholder="请输入搜索内容...">
+      <div id="search-content"></div>
+    </div>
+    
+    <div class="section-wrap">
+      <div class="container">
+        <div class="columns">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Matlab学习笔记
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-07-17T08:37:41.000Z">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2021-07-17</span>
+    </time>
+    
+    <span class="dot"></span>
+    
+    <a href="/categories/技术/" class="post-meta-link">技术</a>
+    
+    
+    
+    <span class="dot"></span>
+    <span>1.3k 字</span>
+    
+  </div>
+  
+  </header>
+  <div id="section" class="post-content">
+    <p>语法小知识：</p>
+<ul>
+<li>同一行中间用逗号分隔，也可以不用逗号，直接用空格 分号可以用来分隔每一行的元素就是说逗号是一行中的数据，分号分割行与行之间。</li>
+<li>矩阵E(:)表示矩阵的所有元素，E(:,1)表示第一列，E(1,:)表示第一行。</li>
+<li>2:5表示从第2到第5，1:3:10表示从1到10，每次递增3。2:end表示从第二行到最后一行，</li>
+<li>~=是不等号</li>
+<li>Matlab函数的声明要单独放在一个.m文件中，不能直接放在主函数里面。函数声明格式：function [输出变量] = 函数名称(输入变量）  最后用end结束声明</li>
+</ul>
+<pre class="highlight"><code class="hljs matlab"><span class="hljs-comment">% 常用指令操作</span><br>clc <span class="hljs-comment">% 清屏</span><br>clear all <span class="hljs-comment">% 清除工作区的所有变量</span><br><span class="hljs-built_in">hold</span> on <br><span class="hljs-built_in">hold</span> off <span class="hljs-comment">% 控制图像是否被刷新</span><br><span class="hljs-comment">% 常用字符串函数</span><br>char(<span class="hljs-number">65</span>) <span class="hljs-comment">% ascii码对应的字符，A</span><br><span class="hljs-built_in">length</span>(s) <span class="hljs-comment">% 字符串长度</span><br>strcmp() <span class="hljs-comment">% 字符串比较函数</span><br>strcat() <span class="hljs-comment">% 将多个字符串合并成一个</span><br>num2str() <span class="hljs-comment">% 将数字转换为字符串</span><br><span class="hljs-comment">% 常用数学函数</span><br><span class="hljs-built_in">size</span>() <span class="hljs-comment">% 数组大小，第二个参数也是dim表示矩阵的维度。</span><br><span class="hljs-built_in">magic</span>() <span class="hljs-comment">% 生成一个幻方</span><br><span class="hljs-built_in">abs</span>(s) <span class="hljs-comment">% 求s的ascii码</span><br><span class="hljs-built_in">floor</span>()	<span class="hljs-comment">% 取整函数</span><br>sum() <span class="hljs-comment">% 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim=1</span><br><span class="hljs-built_in">repmat</span>() <span class="hljs-comment">% 复制扩展矩阵</span><br><span class="hljs-built_in">sort</span>() <span class="hljs-comment">% 将数组或矩阵排序</span><br>prod() <span class="hljs-comment">% 计算矩阵每一列的乘积</span><br>eig() <span class="hljs-comment">% 计算矩阵的特征值</span><br>inv() <span class="hljs-comment">% 求矩阵的逆矩阵</span><br><span class="hljs-built_in">rand</span>() <span class="hljs-comment">% 产生（0,1）之间均匀分布的伪随机数组成的数组</span><br><span class="hljs-built_in">randn</span>() <span class="hljs-comment">% 生成标准正态分布的伪随机数（均值为0，方差为1）</span><br>randperm() <span class="hljs-comment">% 将一序号随机打乱，序号必须是整数</span><br>normrnd(MU,SIGMA) <span class="hljs-comment">% 生成服从正态分布的随机数</span><br><span class="hljs-comment">% 常用数据输入输出函数</span><br><span class="hljs-built_in">disp</span>() <span class="hljs-comment">% 向命令行输出字符或数字</span><br>input() <span class="hljs-comment">% 从命令行读取数据</span><br>xlsread(<span class="hljs-string">&#x27;xls_name_string&#x27;</span>) <span class="hljs-comment">% Excel表格读取</span><br>save <span class="hljs-comment">% 用来将数据保存为.mat文件</span><br>load <span class="hljs-comment">% 用来加载之间生成的.mat文件</span><br><span class="hljs-comment">% 常用绘图函数</span><br><span class="hljs-built_in">plot</span>(x, y) <span class="hljs-comment">% 创建2维直线图</span><br>stem(Y) <span class="hljs-comment">% 绘制数据序列Y的茎状图</span><br><span class="hljs-built_in">meshgrid</span>(a, b) <span class="hljs-comment">% 生成二维网格</span><br>contour3(x, y, z) <span class="hljs-comment">% 三维等值线绘图</span><br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;string1&#x27;</span>,<span class="hljs-string">&#x27;string2&#x27;</span>) <span class="hljs-comment">% 标注绘制的图形的名称</span><br>xlabel() ylabel() zlabel() <span class="hljs-comment">% 标注x,y,z轴</span><br>title()	<span class="hljs-comment">% matlab绘图标题设置</span><br>set() <span class="hljs-comment">% 设置图像属性</span><br>axis() <span class="hljs-comment">% 对坐标轴进行缩放操作</span><br></code></pre>
+
+
+
+<pre class="highlight"><code class="hljs matlab"><span class="hljs-comment">% matlab里的一些基本规范</span><br><span class="hljs-comment">% 数值</span><br><span class="hljs-comment">% 字符串</span><br></code></pre>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ph101LOVE/article/details/78454907">floor函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuxinrk/article/details/80961657">randperm函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuxinrk/article/details/80581303">normrnd函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38549334/article/details/94645995">repmat函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40533355/article/details/88426755">size函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhmjunjun/article/details/79840305?utm_term=magic%E7%9F%A9%E9%98%B5matlab&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-4-79840305&spm=3001.4430">magic函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sp353846548/article/details/80692256">sum函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012365383/article/details/16965721/">prod函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013457382/article/details/48270497">eig函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/anzhiwu815/p/5907033.html">find函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaotao_1/article/details/79100163">plot命令详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013346007/article/details/54581253">meshgrid函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44044161/article/details/116742144">contour3函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010545732/article/details/26804641">stem函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/smf0504/article/details/51830963/">hold on 和 hold off 语句详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zerobyzero/articles/5948318.html">legend函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010142437/article/details/23740745">xlabel函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41554884/article/details/79913272">set函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25018077/article/details/87873702">axis函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42542669/article/details/112159162">title函数详解+matlab二维画图基本操作</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41325698/article/details/95251829">xlsread函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_34165087/article/details/79048423">disp函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43914889/article/details/87800145">input函数详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunzhao1000/article/details/80590333">save 和 load详解</a></li>
+</ul>
+<p>一、矩阵及数组操作例题：</p>
+<pre class="highlight"><code class="hljs matlab"><span class="hljs-comment">% 生成一个3x3和15x8的单位矩阵</span><br><span class="hljs-built_in">eye</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)<br><span class="hljs-built_in">eye</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 生成全1矩阵</span><br><span class="hljs-built_in">ones</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">ones</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 全0矩阵</span><br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 均匀分布随机矩阵（[-1, 1]之间）</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>) - <span class="hljs-number">1</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>) - <span class="hljs-number">1</span><br><span class="hljs-comment">% 正态分布矩阵（均值为1，方差为4）</span><br><span class="hljs-number">1</span>+<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">4</span>)*<span class="hljs-built_in">randn</span>(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)<br><span class="hljs-comment">% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。</span><br>a = <span class="hljs-built_in">fix</span>(<span class="hljs-number">10</span>*<span class="hljs-built_in">rand</span>(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>));<br>b = [a&gt;=<span class="hljs-number">5</span>];<br>c = [sum(b)];<br>sum(c&#x27;)<br><span class="hljs-comment">% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。</span><br>a = [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span>;<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>; <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span>];<br>a(:,<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>)) = [];<br>a(<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>),:) = [] <span class="hljs-comment">% 没看懂，该写法待确认</span><br></code></pre>
+
+<p>二、绘图：</p>
+<pre class="highlight"><code class="hljs matlab"><span class="hljs-comment">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：</span><br>x=<span class="hljs-number">0</span> : <span class="hljs-number">1</span> : <span class="hljs-number">10</span>;<br>y1=<span class="hljs-number">2</span>*x+<span class="hljs-number">5</span>;<br>y2=x.^<span class="hljs-number">2</span><span class="hljs-number">-3</span>*x+<span class="hljs-number">1</span>;<br><span class="hljs-built_in">plot</span>(x, y1, x, y2);<br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;y1&#x27;</span>,<span class="hljs-string">&#x27;y2&#x27;</span>)<br><span class="hljs-comment">% 画出下列函数的曲面及等高线</span><br><span class="hljs-comment">% z = x^2 + y^2 + sin(xy).</span><br>[x, y] = <span class="hljs-built_in">meshgrid</span>(<span class="hljs-number">0</span>:<span class="hljs-number">0.25</span>:<span class="hljs-number">4</span>*<span class="hljs-built_in">pi</span>);<br>z=x.^<span class="hljs-number">2</span>+y.^<span class="hljs-number">2</span>+<span class="hljs-built_in">sin</span>(x*y);<br>contour3(x, y, z);<br>meshc(x, y, z)<br></code></pre>
+
+<p>三、简单程序设计</p>
+<pre class="highlight"><code class="hljs matlab"><span class="hljs-comment">% 求分段函数</span><br>x=input(<span class="hljs-string">&#x27;请输入x的值：&#x27;</span>);<br><span class="hljs-keyword">if</span> x&gt;=<span class="hljs-number">-3</span> &amp;&amp; x &lt; <span class="hljs-number">-1</span><br>    y=(-x^<span class="hljs-number">2</span><span class="hljs-number">-4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">-1</span> &amp;&amp; x&lt;<span class="hljs-number">1</span><br>    y=-x^<span class="hljs-number">2</span>+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">1</span> &amp;&amp; x&lt;=<span class="hljs-number">3</span><br>    y=(-x^<span class="hljs-number">2</span>+<span class="hljs-number">4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">else</span><br>    y=<span class="hljs-string">&#x27;error&#x27;</span><br><span class="hljs-keyword">end</span><br>y<br><span class="hljs-comment">% 分数序列求和</span><br>m = <span class="hljs-number">1</span>;<br>n = <span class="hljs-number">2</span>;<br>sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">15</span><br>    f=n/m;<br>    sum=sum+f;<br>    t=n;<br>    n=m+n;<br>    m=t;<br><span class="hljs-keyword">end</span><br>sum<br></code></pre>
+
+<p>一些注意事项:</p>
+<ul>
+<li>在变量定义的时候多写注释，注明每个变量的作用。</li>
+<li>好的数学建模matlab的代码部分注释都很详细。</li>
+<li>可以将代码分成几个部分，这样更加清晰，e.g. 数据清除，导入数据，数据预处理，相关步骤等….</li>
+<li>在很多代码开头会遇到：clear;clc 这两条一起使用，起到“初始化”的作用，防止之前的结果对新脚本文件（后缀名是 .m）产生干扰。</li>
+</ul>
+
+  </div>
+  <div>
+  
+  </div>
+</article>
+<div class="nav">
+  
+  <div class="nav-item-prev">
+    <a href="/35840.html" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">上一篇</div>
+        
+        <div class="nav-title">数学建模常用算法学习 </div>
+        
+      </div>
+    </a>
+  </div>
+  
+  
+  <div class="nav-item-next">
+    <a href="/29920.html" class="nav-link">
+      <div>
+        <div class="nav-label">下一篇</div>
+        
+        <div class="nav-title">Hyperledger Fabric平台搭建笔记 </div>
+        
+      </div>
+      <i class="iconfont icon-right nav-next-icon"></i>
+    </a>
+  </div>
+  
+</div>
+
+<div class="card card-content comment-card" style="margin-top: 16px;">
+  <div class="comment-card-title">评论</div>
+  
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va',
+        appKey: 'CLLAhwQhbW5KCgp3CCPkAItO',
+        placeholder: 'Just go go',
+        path: window.location.pathname,
+        avatar: 'mp',
+        meta: ["nick","mail","link"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'false',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'true',
+        requiredFields: [],
+      });
+    };
+  </script>
+
+</div>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+
+</div></main>
+          <aside class="left-column">
+            
+            <div class="card card-author">
+              
+<img src="/img/touxiang.jpg" class="author-img">
+
+<p class="author-name">Dicemy</p>
+<p class="author-description">软件工程在读大学生</p>
+<div class="author-message">
+  <a class="author-posts-count" href="/archives">
+    <span>36</span>
+    <span>文章</span>
+  </a>
+  <a class="author-categories-count" href="/categories">
+    <span>4</span>
+    <span>分类</span>
+  </a>
+  <a class="author-tags-count" href="/tags">
+    <span>17</span>
+    <span>标签</span>
+  </a>
+</div>
+
+<div class="author-card-society">
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
+        <i class="iconfont icon-bilibili society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a href="tencent://message/?uin=1583925267">
+        <i class="iconfont icon-wechat society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
+        <i class="iconfont icon-github society-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+            </div>
+            
+            <div class="sticky-tablet">
+  
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+
+    </div>
+  </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>分类</div>
+  <div class="categories-list">
+    
+      <a href="/categories/编程">
+        <div class="categories-list-item">
+          编程
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/技术">
+        <div class="categories-list-item">
+          技术
+          <span class="categories-list-item-badge">8</span>
+        </div>
+      </a>
+    
+      <a href="/categories/文化课">
+        <div class="categories-list-item">
+          文化课
+          <span class="categories-list-item-badge">4</span>
+        </div>
+      </a>
+    
+      <a href="/categories/生活">
+        <div class="categories-list-item">
+          生活
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header"><i class="iconfont icon-biaoqian" style="padding-right: 2px;"></i>热门标签</div>
+  <div class="tags-list">
+    
+    <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
+    
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
+    
+    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
+    
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    
+    <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
+    
+    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
+    
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
+    <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+          <aside class="right-column">
+            <div class="sticky-widescreen">
+  
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header"><i class="iconfont icon-wenzhang_huaban" style="padding-right: 2px;"></i>最近文章</div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-22</div>
+        <a href="/17868.html"><div class="recent-posts-item-content">myNewTestBlog</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/43344.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（4）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/56657.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（3）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/12868.html"><div class="recent-posts-item-content">Spring Boot入门</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>Copyright ©
+          
+          2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a href="/" class="footer-link">Dicemy 的博客 </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+        <span>&nbsp;|&nbsp;</span>
+        
+        
+        本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer>
+  <a role="button" id="scrollbutton" class="basebutton"  aria-label="回到顶部">
+  <i class="iconfont icon-arrowleft button-icon"></i>
+</a>
+<a role="button" id="menubutton" class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a role="button" id="popbutton" class="basebutton" aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a role="button" id="darkbutton" class="basebutton darkwidget" aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a role="button" id="searchbutton" class="basebutton searchwidget" aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a>
+
+  
+  
+  
+  <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img');
+    var i;
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a');
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'));
+      wrapper.setAttribute('aria-label', 'illustration');
+      wrapper.style.cssText = 'width: 100%; display: flex; justify-content: center;';
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt;
+      wrapper.dataset.nolink = true;
+      img[i].before(wrapper);
+      wrapper.append(img[i]);
+      var divWrap = document.createElement('div');
+      divWrap.classList.add('gallery');
+      wrapper.before(divWrap);
+      divWrap.append(wrapper);
+    }
+    baguetteBox.run('.gallery');
+  }
+</script>
+<script>loadScript("/js/lib/lightbox/baguetteBox.min.js", addImgLayout)</script>
+  
+  
+  
+<script src="/js/main.js"></script>
+
+  
+  <script>loadScript("/js/lib/busuanzi.min.js")</script>
+  
+  
+  <script>
+    var addLazyload = function () {
+      var observer = lozad('.lozad', {
+        load: function (el) {
+          el.srcset = el.getAttribute('data-src');
+        },
+        loaded: function (el) {
+          el.classList.add('loaded');
+        }
+      });
+      observer.observe();
+    }
+  </script>
+  <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
+  
+  
+</body>
+
+</html>

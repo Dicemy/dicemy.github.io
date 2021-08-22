@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html  lang="zh-CN" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#fff" id="theme-color">
+  <meta name="description" content="月光照着月光,月光普照">
+  <link rel="icon" href="/img/biaoti.png">
+  <title>Web复习</title>
+  
+  
+  <meta property="og:title" content="Web复习">
+  
+  
+  <meta property="og:url" content="https://dicemy.github.io/48416.html">
+  
+  
+  <meta property="og:img" content="/img/touxiang.jpg">
+  
+  
+  <meta property="og:img" content="月光照着月光,月光普照">
+  
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:published_time" content="2021-06-24">
+  <meta property="og:article:modified_time" content="2021-07-08">
+  <meta property="og:article:author" content="Dicemy">
+  
+  
+  
+  
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+    var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+      }
+    };
+    setDarkmode();
+  </script>
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  </script>
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+  <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+  <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+
+  
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+
+  
+  
+<link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <div class="wrapper">
+    
+    <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+      <img class="navbar-logo-img" src="/img/biaoti.png" alt="logo">
+      
+      <span class="navbar-logo-dsc">Dicemy 的博客</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+    <a href="/" class="navbar-menu-item">
+    
+    首页
+    
+    </a>
+    
+    <a href="/archives" class="navbar-menu-item">
+    
+    归档
+    
+    </a>
+    
+    <a href="/tags" class="navbar-menu-item">
+    
+    标签
+    
+    </a>
+    
+    <a href="/categories" class="navbar-menu-item">
+    
+    分类
+    
+    </a>
+    
+    <a href="/about" class="navbar-menu-item">
+    
+    关于
+    
+    </a>
+    
+    <a href="/links" class="navbar-menu-item">
+    
+    友链
+    
+    </a>
+    
+    <a class="navbar-menu-item darknavbar" id="dark"><i class="iconfont icon-weather"></i></a>
+    <a class="navbar-menu-item searchnavbar" id="search"><i class="iconfont icon-search" style="font-size: 1.2rem; font-weight: 400;"></i></a>
+  </div>
+</nav>
+    
+    <div id="local-search" style="display: none;">
+      <input class="navbar-menu-item" id="search-input" placeholder="请输入搜索内容...">
+      <div id="search-content"></div>
+    </div>
+    
+    <div class="section-wrap">
+      <div class="container">
+        <div class="columns">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Web复习
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-06-24T08:39:48.000Z">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2021-06-24</span>
+    </time>
+    
+    <span class="dot"></span>
+    
+    <a href="/categories/文化课/" class="post-meta-link">文化课</a>
+    
+    
+    
+    <span class="dot"></span>
+    <span>3.9k 字</span>
+    
+  </div>
+  
+  </header>
+  <div id="section" class="post-content">
+    <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="标题类元素：h1，h2，h3，h4，h5，h6"><a href="#标题类元素：h1，h2，h3，h4，h5，h6" class="headerlink" title="标题类元素：h1，h2，h3，h4，h5，h6"></a><strong>标题类</strong>元素：h1，h2，h3，h4，h5，h6</h3><p><strong>p</strong>元素：段落文字<br><strong>br</strong>元素：段内换行<br><strong>&amp;nbsp</strong>：空格<br><strong>pre</strong>元素：预留格式<br><strong>hr</strong>元素：水平标记线</p>
+<h3 id="div-元素属性："><a href="#div-元素属性：" class="headerlink" title="div 元素属性："></a><strong>div</strong> 元素属性：</h3><p>id<br>name<br>height<br>width<br>padding    内边距<br>margin    外边距<br>border<br>div是块级元素，独占一行，用于页面的分区（相当于容器） </p>
+<h3 id="span-元素属性："><a href="#span-元素属性：" class="headerlink" title="span 元素属性："></a><strong>span</strong> 元素属性：</h3><p>span是行级标签，宽度会根据内容变化，一行内可以并列多个行级标签。</p>
+<h3 id="img-元素属性："><a href="#img-元素属性：" class="headerlink" title="img 元素属性："></a><strong>img</strong> 元素属性：</h3><p>src    图像源文件<br>alt    提示文字<br>width<br>height<br>border    表框</p>
+<h3 id="a-元素的常用属性："><a href="#a-元素的常用属性：" class="headerlink" title="a 元素的常用属性："></a><strong>a</strong> 元素的常用属性：</h3><p>id    超链接的唯一标识<br>name    给超链接命名<br>href    链接目标的url，可以是一个a标签的name或者id来完成页内跳转格式#name<br>href = “mailto: …”    电子邮箱<br>target    指定链接的目标窗口，取值有_self, _blank, _parent, _top等<br>title    给链接提示文字<br>rel    规定当前文档与目标文档之间的关系</p>
+<h3 id="列表元素："><a href="#列表元素：" class="headerlink" title="列表元素："></a><strong>列表</strong>元素：</h3><p>ul    无序列表<br>ol    有序列表<br>dl    定义列表</p>
+<h3 id="表格常用元素："><a href="#表格常用元素：" class="headerlink" title="表格常用元素："></a><strong>表格</strong>常用元素：</h3><p>table    定义表格<br>caption    表格标题<br>th    表格表头<br>tr    行<br>td    表格单元<br>thead    页眉<br>tfoot    页脚<br>colgroup    列的组</p>
+<h3 id="table-的常用属性："><a href="#table-的常用属性：" class="headerlink" title="table 的常用属性："></a><strong>table</strong> 的常用属性：</h3><p>bgcolor    背景色<br>border    边框宽度<br>cellspacing    单元格之间的大小<br>cellpadding    单元格边框和内容之间的大小<br>width    表格宽度<br>heigth    表格高度</p>
+<h3 id="tr-的常用属性："><a href="#tr-的常用属性：" class="headerlink" title="tr 的常用属性："></a><strong>tr</strong> 的常用属性：</h3><p>width<br>heigh<br>align    行的对齐方式（水平）left, right, center<br>valign    行的对齐方式（垂直）left, right, center<br>bgcolor    行的底色<br>bordercolor    边框颜色</p>
+<h3 id="td-的常用属性："><a href="#td-的常用属性：" class="headerlink" title="td 的常用属性："></a><strong>td</strong> 的常用属性：</h3><p>width<br>heigh<br>colspan    向右通栏的栏数<br>rowspan    向下通栏的栏数<br>align<br>valign<br>bgcolor<br>bordercolor</p>
+<h3 id="audio-和-video-的常用属性："><a href="#audio-和-video-的常用属性：" class="headerlink" title="audio 和 video 的常用属性："></a><strong>audio</strong> 和 <strong>video</strong> 的常用属性：</h3><p>src    音频或者视频的路径<br>width    video独有<br>height    video独有<br>autoplay    文件是否自动播放<br>controls    文件是否显示控制面板<br>loop    文件循环播放的次数<br>poster    video独有，如果视频播放失败，则展示一副替代的图片<br>preload    是否预加载</p>
+<h3 id="表单元素："><a href="#表单元素：" class="headerlink" title="表单元素："></a><strong>表单</strong>元素：</h3><p>form    供用户输入的表单<br>input    定义输入域<br>textarea    定义文本域<br>label    控制的标签<br>select    选择列表<br>option    下拉列表中的选项<br>button    定义一个按钮</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>外部样式表<br>内部样式表<br>内嵌样式</p>
+<p>外部样式表的引入：<br>在head区内使用link来引入外部的样式表。</p>
+<p>内部样式表的使用：<br>在head区内使用style type = “text/css” 来进行样式的定义。</p>
+<p>内嵌样式的使用：<br>在body内元素里加入style属性，style属性的内容就是CSS的内嵌样式</p>
+<h3 id="选择器："><a href="#选择器：" class="headerlink" title="选择器："></a><strong>选择器：</strong></h3><p>*    通用选择器<br>.    类选择器<br>#    id选择器<br>E    标签选择器<br>E F    后代选择器    选择E元素的所有后代F元素<br>E &gt; F    子代选择器    选择E元素下所有的子（第一代）元素F<br>E + F    相邻兄弟选择器    选择紧接在E元素后的F元素<br>E ~ F    通用兄弟选择器    选择E元素后面的所有兄弟元素<br>E, F    群组选择器    E和F都被选择<br>:link    链接伪类选择器    定义了超链接的元素    未被访问过的<br>:visited    链接伪类选择器    定义了超链接元素    已被访问过<br>:active    用户行为伪类选择器        元素被激活（鼠标点击不动时超链接的状态）<br>:hover    用户行为伪类选择器        鼠标悬停在元素上<br>:focus    用户行为伪类选择器        获得焦点</p>
+<p>:first-child    匹配父元素的第一个元素<br>:nth-child(n)    匹配父元素的第n个子元素<br>:first-of-type    匹配父元素第一个类型为E的元素<br>E[att]    选择具有属性att的E元素<br>E[att=val]    选择具有属性att并且属性值为<em>val</em>的E元素<br>E[att | = val]    选择属性值是有一个具有val或者以<em>val</em>-开始的属性值。<br>E[att $ = val]    选择具有属性att并且属性值后缀为<em>val</em>的E元素<br>E[att ^ = val]    选择具有属性att并且属性值为以<em>val</em>开头的字符串的E元素</p>
+<h3 id="border："><a href="#border：" class="headerlink" title="border："></a><strong>border：</strong></h3><p>border-width    边框的宽度<br>border-color<br>border-style    设置边框的样式：none(无边框),hidden(隐藏),soild(实线),double(双线框)<br>border-radius    边框圆角提供两个参数，参数之间用/来分割</p>
+<h3 id="background"><a href="#background" class="headerlink" title="background:"></a><strong>background:</strong></h3><p>background-color    设置背景颜色<br>background-image    设置背景图像<br>background-position    设置背景图像的起始位置:<br>background-repeat    背景图像是否重复</p>
+<h3 id="text"><a href="#text" class="headerlink" title="text:"></a><strong>text:</strong></h3><p>text-align    设置文本对齐方式：left, right, center<br>vertical-align    设置文本垂直对齐方式<br>text-indent    设置首行缩进<br>line-height    设置行高<br>text-shadow    产生阴影：text-shadow: color（阴影颜色） x-offset（X轴位移） y-offset（Y轴位移） blur-radius（阴影模糊半径）</p>
+<h3 id="盒子模型："><a href="#盒子模型：" class="headerlink" title="盒子模型："></a><strong>盒子模型：</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210708153508.png" alt="image-20210708153500979" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210708153508.png" class="lozad post-image"><br>白色边框和内容会显示出来，剩下的灰色的部分都是空白。</p>
+<p>padding    元素边框和内容之间的距离，padding-top等四个<br>margin:    元素周围的空间的距离，margin-top等四个<br>box-shadow    定义元素的盒子阴影</p>
+<h3 id="浮动和定位："><a href="#浮动和定位：" class="headerlink" title="浮动和定位："></a><strong>浮动和定位：</strong></h3><p>float:    将元素进行浮动,脱离文档流    属性有：none, left, right<br>position:    定位是指将某个元素放在某个位置上    属性有：static(静态定位，默认值，top等属性无效), relative(相对位置，相对正常的位置), absolute(绝对定位，相对于 static 定位以外的第一个父元素进行定位), fixed(固定定位，相对于window固定)</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a><strong>数据类型</strong></h3><p>Number<br>String    用单引号和双引号包围<br>Boolean<br>Object<br>Undefined    未被赋值之前的值<br>Null    没有任何值<br>JS变量区分大小写</p>
+<h3 id="JS内置对象"><a href="#JS内置对象" class="headerlink" title="JS内置对象"></a><strong>JS内置对象</strong></h3><p>Object    对象<br>String    字符串<br>Date    时间对象<br>Array    数组对象</p>
+<p>如何去创建一个自定义的对象？</p>
+<p>1.通过对象字面量的方式创建对象：<br>var obj = {}<br>2.通过new object的方式创建对象:<br>var obj = new Object()//创建一个空对象<br>var arr = new Array()/创建一个空数组对象<br>3.通过构造函数的形式创建对象：<br>function Person(){};<br>或者：var Person=function(){};<br>4.通过Object.create()创建</p>
+<p>Array常用方法：<br>join()    将数组中的元素通过一个分隔符拼接为一个字符串，默认的分隔符是逗号<br>pop()<br>push()<br>reverse()    翻转</p>
+<p>Date常用方法：<br>getDate()    返回月份的第几天<br>getDay()    返回星期几，0是周日<br>getMonth()    返回月份值，0表示1月<br>getFullYear()    返回四位数的年份<br>getHours()    返回小时<br>getMinutes()<br>getSeconds()<br>getMilliseconds()    返回毫秒值<br>getTime()    返回1970年1月1日至今的毫秒总数<br>getTimezoneOffset()    </p>
+<p>setDate()    传递参数为月份的第几天<br>setMonth()<br>setFullYear()<br>setHours()<br>setMinutes()<br>setSeconds()<br>setMilliseconds()<br>setTime()</p>
+<p>Math常用方法：<br>E    数学常量e的值<br>LN2    2的自然对数值<br>PI    圆周率的值<br>SQRT2    2的平方根<br>rand()    返回0~1之间的随机数<br>ceil()    对参数向上取整<br>floor()    对参数向下取整</p>
+<h3 id="JS内置事件："><a href="#JS内置事件：" class="headerlink" title="JS内置事件："></a><strong>JS内置事件：</strong></h3><p>鼠标事件：<br>onclick    鼠标单击（在当前区域按下并且在当前区域内抬起）<br>onmouseover    鼠标滑入<br>onmouseout    鼠标滑出<br>onmousedown    鼠标按下（在当前区域内按下）<br>onmouseup        鼠标按下并释放（在当前区域内抬起即可）</p>
+<p>键盘事件：<br>onkeypress    某个键盘上的按键按下并释放<br>onkeydown    某个按键被按下<br>onkeyup</p>
+<p>网页相关事件：<br>onload    页面加载时<br>onunload    页面关闭或者重载时<br>onerror    脚本出现错误时<br>onresize    窗口大小发生改变时<br>onscroll    网页滚动条发生变化时<br>onmove    网页窗口移动时</p>
+<p>表单相关事件：<br>onblur    失去键盘焦点时<br>onfocus    获得键盘焦点时<br>onreset    表单重置时<br>onsubmit    表单提交时</p>
+<p>DOM是一个树形结构，当一个元素被触发时，路径所经过的结点都会收到该事件，这个传播过程的顺序可称为DOM事件流。</p>
+<p><strong>事件动态绑定：</strong><br>JS所有事物都是对象，如果获得对象使用：<br>document.getElemenByID(“ID”)</p>
+<p><strong>事件监听器：</strong><br>addElementListener(event, function, useCapture)<br>参数event表示监听的事件，不加on，比如click，touchstart等。<br>函数可以是外部函数或者匿名函数。<br>useCapture选择true表示捕获，false表示冒泡。</p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><img src="https:/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210625000140.png" class="lozad post-image"/cdn.jsdelivr.net/gh/Dicemy/blog-img/20210625000140.png"/>
+
+<p>DOM是一个树</p>
+<h3 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h3><p><strong>访问元素节点：</strong><br>getElementById(“”)<br>getElementByName(“”)    通过name属性值来查找<br>getElementByTagName(“”)    通过标签名来查找，返回一个对象集合，返回的顺序是它们在文档中的顺序<br>getElementByClassName(“”)    通过样式名来查找</p>
+<p><strong>创建，插入节点：</strong><br>createElement()    创建元素节点<br>createTextNode()    创建文本节点<br>createAttribute()    创建属性节点<br>appendChild()    把新的子节点添加到指定节点<br>insertBefore()    在指定的节点前面插入新的子节点</p>
+<p><strong>替换，删除节点：</strong><br>removeChild()    删除子节点<br>replaceChild()    替换子节点</p>
+<p><strong>获取，设置属性节点：</strong><br>getAttribute()    获取元素节点的属性<br>setAttribute()    可以新增一个属性或者修改原来的属性节点    </p>
+<h3 id="DOM属性"><a href="#DOM属性" class="headerlink" title="DOM属性"></a>DOM属性</h3><p>innerHTML    innerHTML可与获取或者修改子节点的HTML结构，可以代替createElement()<br>innerText    innerText可以获取或者修改节点的文本，<br>nodeValue    规定了节点的值，元素的nodeValue是undefined或者Null；文本节点的nodeValue是文本本身；属性节点的nodeValue是属性值。<br>nodeType    返回节点的类型</p>
+<h3 id="DOM操作样式"><a href="#DOM操作样式" class="headerlink" title="DOM操作样式"></a>DOM操作样式</h3><p>style属性    修改样式使用style.属性名<br>class属性    通过className属性读取或者设置类样式</p>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><img src="https:/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210625000002.png" class="lozad post-image"/cdn.jsdelivr.net/gh/Dicemy/blog-img/20210625000002.png"/>
+
+<p>BOM和DOM的关系：DOM中的document对象也是window的子对象<br>使用window对象时可以省略window，例如window.alert()可以略写成alert()。</p>
+<h3 id="window对象常用方法"><a href="#window对象常用方法" class="headerlink" title="window对象常用方法"></a>window对象常用方法</h3><p>prompt()    显示可以输入的对话框<br>confirm()    显示一段消息，以及确认和取消按钮的对话框<br>open()    打开某一个窗口<br>close()    关闭浏览器窗口<br>setInterval()    每隔指定的时间执行代码。<br>clearInterval()    取消setInterval()的设置。<br>setTimeout()    在指定的延迟时间之后来执行代码。<br>clearTimeout()    取消setTimeout()的设置</p>
+<h2 id="错题小记"><a href="#错题小记" class="headerlink" title="错题小记"></a>错题小记</h2><p>以下句子为正确易错的句子：</p>
+<ol>
+<li><p>静态网页都会显示固定的信息</p>
+</li>
+<li><p>WEB 就是我们说网页，它是一系列技术的复合总称（包括网站的前台布局、后台程序、美工、数据库开发等），我们称它为网页，HTTP (英文Hypertext transfer protocol的缩写) 中文译为超文本传输协议，DNS （英文Domain Name System的缩写）是域名解析系统。这三个都是网页术语。</p>
+</li>
+<li><p>Web标准是由W3C与其他标准化组织共同制定的，不是各大厂商联合制定的。</p>
+</li>
+<li><p>XHTML是更严谨纯净的HTML版本</p>
+</li>
+<li><p>HTTP和HTTPS的差异：简单来说，HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比HTTP协议安全。</p>
+</li>
+<li><p>JavaScript可以做很多事情，但最主流的应用是在Web上创建网页特效或验证信息。</p>
+</li>
+<li><p>标签就是放在“&lt; &gt;”标签符中表示某个功能的编码命令。</p>
+</li>
+<li><p>HTML5扩展名：.html和.htm</p>
+</li>
+<li><p>可以调整图像垂直边距的属性是：vspace</p>
+</li>
+<li><p>HTML5的优势主要体现在兼容、合理、易用三个方面。</p>
+</li>
+<li><p>cite标签可以创建一个引用，用于对文档引用参考文献的说明，一旦在文档中使用了该标签，被标注的文档内容将以斜体的样式展示在页面中，以区别于段落中的其他字符。</p>
+</li>
+<li><p>层叠性是指多种CSS样式的叠加。而不是子标签会继承父标签的某些样式。</p>
+</li>
+<li><p>CSS注释只有一种写法：/* 注释语句 */</p>
+</li>
+<li><p>如果使用RGB代码的百分比颜色值，取值为0时也不能省略百分号，必须写为0%。</p>
+</li>
+<li><p>并不是所有的CSS属性都可以继承。下面的属性就不具有继承性：<br>边框属性，如border、border-top、border-right、border-bottom等<br>外边距属性，如margin、margin-top、margin-bottom、margin-left等<br>内边距属性，如padding、padding-top、padding-right、padding-bottom等<br>背景属性，如background、background-image、background-repeat等<br>定位属性，如position、top、right、bottom、left、z-index 等<br>布局属性，如clear、float、clip、display、overflow等<br>元素宽高属性，如width、height</p>
+</li>
+<li><p>CSS3最突出的优势主要体现在节约成本和提高性能两方面。</p>
+</li>
+<li><p>临近兄弟选择器使用加号“+”来链接前后两个选择器。</p>
+</li>
+<li><p>子元素择器主要用来选择某个元素的第一级子元素。</p>
+</li>
+<li><p>E[att$=value] 属性选择器是指选择名称为E的标签，且该标签定义了att属性，att属性值包含后缀为value的子字符串。</p>
+</li>
+<li><p>：not选择器：如果对某个结构标签使用样式，但是想排除这个结构元素下面的子结构元素，让子结构元素不使用这个样式，可以使用:not选择器。</p>
+</li>
+<li><p>RGBA模式用于设置背景与图片的不透明度。</p>
+</li>
+<li><p>padding属性不允许使用负值。</p>
+</li>
+<li><p>无序列表是网页中最常用的列表，之所以称为“无序列表”，是因为其各个列表项之间没有顺序级别之分，通常是并列的，并不存在主导从属的关系。</p>
+</li>
+<li><p>当不设置list-style-position属性时，列表项目符号位于列表文本以外（默认值）。</p>
+</li>
+<li><p>在HTML语言中，&lt;th&gt;标签用于设置表格的表头。</p>
+</li>
+<li><p>在&lt;textarea&gt;表单控件中，cols用来定义多行文本输入框每行中的字符数</p>
+</li>
+<li><p>autocomplete属性用于指定表单是否有自动完成功能，所谓“自动完成”是指将表单控件输入的内容记录下来，当再次输入时，会将输入的历史记录显示在一个下拉列表里，以实现自动完成输入。</p>
+</li>
+<li><p>“overflow:visible;”：内容不会被修剪，会呈现在元素框之外（默认值）。</p>
+</li>
+<li><p>z-index属性取值可为正整数、负整数和0</p>
+</li>
+<li><p>在网页中，常用的命名方式有“驼峰式命名”和“帕斯卡命名”两种。 </p>
+</li>
+<li><p>在HTML5中嵌入的视频格式主要包括ogg、mpeg4、webm</p>
+</li>
+<li><p>transition-duration属性用于定义完成过渡效果需要花费的时间。</p>
+<p>animation-timing-function用来规定动画的速度曲线。</p>
+<p>animation-duration属性用于定义整个动画效果完成所需要的时间。</p>
+<p>animation-name属性用于定义要应用的动画名称。<br>transition-delay的属性值可以为正整数、负整数和0。当设置为负数时，过渡动作会从该时间点开始，之前的动作被截断；设置为正数时，过渡动作会延迟触发。</p>
+</li>
+<li><p>在CSS3中，transform属性可以实现网页中元素的变形效果。CSS3变形效果是一系列效果的集合，例如平移、缩放、倾斜和旋转。使用transform属性实现的变形效果，无需加载额外文件，可以极大提高网页开发者的工作效率和页面的执行速度。transform属性的基本语法如下：<br>transform：none|transform-functions;<br>在上面的语法格式中，transform属性的默认值为none，适用于行内元素和块元素，表示元素不进行变形。transform-function用于设置变形，可以是一个或多个变形样式，主要包括translate ()、scale()、skew()和rotate()等，具体说明如下：<br> translate()：移动元素对象，即基于X和Y坐标重新定位元素。<br> scale()：缩放元素对象，可以使任意元素对象尺寸发生变化，取值包括正数、负数和小数。<br> skew()：倾斜元素对象，取值为一个度数值。<br> rotate()：旋转元素对象，取值为一个度数值。</p>
+</li>
+<li><p>animation属性是一个简写属性，用于在一个属性中设置animation-name、animation-duration、animation-timing-function、animation-delay、animation-iteration-count和animation-direction六个动画属性。其基本语法格式如下：<br>animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction;<br>在上述语法中，使用animation属性时必须指定animation-name和animation-duration属性，否则动画效果将不会播放。</p>
+</li>
+</ol>
+
+  </div>
+  <div>
+  
+  </div>
+</article>
+<div class="nav">
+  
+  <div class="nav-item-prev">
+    <a href="/8520.html" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">上一篇</div>
+        
+        <div class="nav-title">Git学习笔记 </div>
+        
+      </div>
+    </a>
+  </div>
+  
+  
+  <div class="nav-item-next">
+    <a href="/51347.html" class="nav-link">
+      <div>
+        <div class="nav-label">下一篇</div>
+        
+        <div class="nav-title">数据库复习 </div>
+        
+      </div>
+      <i class="iconfont icon-right nav-next-icon"></i>
+    </a>
+  </div>
+  
+</div>
+
+<div class="card card-content comment-card" style="margin-top: 16px;">
+  <div class="comment-card-title">评论</div>
+  
+  <div id="vcomments"></div>
+  
+  <script>
+    loadScript("//unpkg.com/valine/dist/Valine.min.js");
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+      new Valine({
+        el: '#vcomments',
+        appId: 'FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va',
+        appKey: 'CLLAhwQhbW5KCgp3CCPkAItO',
+        placeholder: 'Just go go',
+        path: window.location.pathname,
+        avatar: 'mp',
+        meta: ["nick","mail","link"],
+        pageSize: '10',
+        lang: '',
+        visitor: 'false',
+        highlight: true,
+        recordIP: false,
+        
+        
+        
+        enableQQ: 'true',
+        requiredFields: [],
+      });
+    };
+  </script>
+
+</div>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E7%B1%BB%E5%85%83%E7%B4%A0%EF%BC%9Ah1%EF%BC%8Ch2%EF%BC%8Ch3%EF%BC%8Ch4%EF%BC%8Ch5%EF%BC%8Ch6"><span class="toc-text">标题类元素：h1，h2，h3，h4，h5，h6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#div-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">div 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">span 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#img-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">img 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E5%85%83%E7%B4%A0%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">a 元素的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">列表元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表格常用元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#table-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">table 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tr-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">tr 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#td-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">td 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#audio-%E5%92%8C-video-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">audio 和 video 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表单元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="toc-text">选择器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border%EF%BC%9A"><span class="toc-text">border：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background"><span class="toc-text">background:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text"><span class="toc-text">text:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-text">盒子模型：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D%EF%BC%9A"><span class="toc-text">浮动和定位：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS"><span class="toc-text">JS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-text">JS内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-text">JS内置事件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%96%B9%E6%B3%95"><span class="toc-text">DOM方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E5%B1%9E%E6%80%A7"><span class="toc-text">DOM属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%93%8D%E4%BD%9C%E6%A0%B7%E5%BC%8F"><span class="toc-text">DOM操作样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM"><span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">window对象常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%98%E5%B0%8F%E8%AE%B0"><span class="toc-text">错题小记</span></a></li></ol>
+</div></main>
+          <aside class="left-column">
+            
+            <div class="card card-author">
+              
+<img src="/img/touxiang.jpg" class="author-img">
+
+<p class="author-name">Dicemy</p>
+<p class="author-description">软件工程在读大学生</p>
+<div class="author-message">
+  <a class="author-posts-count" href="/archives">
+    <span>36</span>
+    <span>文章</span>
+  </a>
+  <a class="author-categories-count" href="/categories">
+    <span>4</span>
+    <span>分类</span>
+  </a>
+  <a class="author-tags-count" href="/tags">
+    <span>17</span>
+    <span>标签</span>
+  </a>
+</div>
+
+<div class="author-card-society">
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
+        <i class="iconfont icon-bilibili society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a href="tencent://message/?uin=1583925267">
+        <i class="iconfont icon-wechat society-icon"></i>
+      </a>
+    </div>
+  
+    <div class="author-card-society-icon">
+      <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
+        <i class="iconfont icon-github society-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+            </div>
+            
+            <div class="sticky-tablet">
+  
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E7%B1%BB%E5%85%83%E7%B4%A0%EF%BC%9Ah1%EF%BC%8Ch2%EF%BC%8Ch3%EF%BC%8Ch4%EF%BC%8Ch5%EF%BC%8Ch6"><span class="toc-text">标题类元素：h1，h2，h3，h4，h5，h6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#div-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">div 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">span 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#img-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">img 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E5%85%83%E7%B4%A0%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">a 元素的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">列表元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表格常用元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#table-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">table 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tr-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">tr 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#td-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">td 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#audio-%E5%92%8C-video-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">audio 和 video 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表单元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="toc-text">选择器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border%EF%BC%9A"><span class="toc-text">border：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background"><span class="toc-text">background:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text"><span class="toc-text">text:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-text">盒子模型：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D%EF%BC%9A"><span class="toc-text">浮动和定位：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS"><span class="toc-text">JS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-text">JS内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-text">JS内置事件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%96%B9%E6%B3%95"><span class="toc-text">DOM方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E5%B1%9E%E6%80%A7"><span class="toc-text">DOM属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%93%8D%E4%BD%9C%E6%A0%B7%E5%BC%8F"><span class="toc-text">DOM操作样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM"><span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">window对象常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%98%E5%B0%8F%E8%AE%B0"><span class="toc-text">错题小记</span></a></li></ol>
+    </div>
+  </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>分类</div>
+  <div class="categories-list">
+    
+      <a href="/categories/编程">
+        <div class="categories-list-item">
+          编程
+          <span class="categories-list-item-badge">12</span>
+        </div>
+      </a>
+    
+      <a href="/categories/技术">
+        <div class="categories-list-item">
+          技术
+          <span class="categories-list-item-badge">8</span>
+        </div>
+      </a>
+    
+      <a href="/categories/文化课">
+        <div class="categories-list-item">
+          文化课
+          <span class="categories-list-item-badge">4</span>
+        </div>
+      </a>
+    
+      <a href="/categories/生活">
+        <div class="categories-list-item">
+          生活
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header"><i class="iconfont icon-biaoqian" style="padding-right: 2px;"></i>热门标签</div>
+  <div class="tags-list">
+    
+    <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
+    
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
+    
+    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
+    
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    
+    <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
+    
+    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    
+    <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
+    
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
+    
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    
+    <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
+    
+    <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+          <aside class="right-column">
+            <div class="sticky-widescreen">
+  
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E7%B1%BB%E5%85%83%E7%B4%A0%EF%BC%9Ah1%EF%BC%8Ch2%EF%BC%8Ch3%EF%BC%8Ch4%EF%BC%8Ch5%EF%BC%8Ch6"><span class="toc-text">标题类元素：h1，h2，h3，h4，h5，h6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#div-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">div 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#span-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">span 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#img-%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">img 元素属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E5%85%83%E7%B4%A0%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">a 元素的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">列表元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表格常用元素：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#table-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">table 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tr-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">tr 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#td-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">td 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#audio-%E5%92%8C-video-%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="toc-text">audio 和 video 的常用属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%EF%BC%9A"><span class="toc-text">表单元素：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%9A"><span class="toc-text">选择器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#border%EF%BC%9A"><span class="toc-text">border：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background"><span class="toc-text">background:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text"><span class="toc-text">text:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-text">盒子模型：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D%EF%BC%9A"><span class="toc-text">浮动和定位：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS"><span class="toc-text">JS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-text">JS内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E7%BD%AE%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-text">JS内置事件：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%96%B9%E6%B3%95"><span class="toc-text">DOM方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E5%B1%9E%E6%80%A7"><span class="toc-text">DOM属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E6%93%8D%E4%BD%9C%E6%A0%B7%E5%BC%8F"><span class="toc-text">DOM操作样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM"><span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">window对象常用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%98%E5%B0%8F%E8%AE%B0"><span class="toc-text">错题小记</span></a></li></ol>
+  </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header"><i class="iconfont icon-wenzhang_huaban" style="padding-right: 2px;"></i>最近文章</div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-22</div>
+        <a href="/17868.html"><div class="recent-posts-item-content">myNewTestBlog</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/43344.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（4）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/56657.html"><div class="recent-posts-item-content">河南大学暑假集训的日常（3）</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-10</div>
+        <a href="/12868.html"><div class="recent-posts-item-content">Spring Boot入门</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>Copyright ©
+          
+          2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a href="/" class="footer-link">Dicemy 的博客 </a>
+      </div>
+    </div>
+
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+        <span>&nbsp;|&nbsp;</span>
+        
+        
+        本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer>
+  <a role="button" id="scrollbutton" class="basebutton"  aria-label="回到顶部">
+  <i class="iconfont icon-arrowleft button-icon"></i>
+</a>
+<a role="button" id="menubutton" class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a role="button" id="popbutton" class="basebutton" aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a role="button" id="darkbutton" class="basebutton darkwidget" aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a role="button" id="searchbutton" class="basebutton searchwidget" aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a>
+
+  
+  
+  
+  <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img');
+    var i;
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a');
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'));
+      wrapper.setAttribute('aria-label', 'illustration');
+      wrapper.style.cssText = 'width: 100%; display: flex; justify-content: center;';
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt;
+      wrapper.dataset.nolink = true;
+      img[i].before(wrapper);
+      wrapper.append(img[i]);
+      var divWrap = document.createElement('div');
+      divWrap.classList.add('gallery');
+      wrapper.before(divWrap);
+      divWrap.append(wrapper);
+    }
+    baguetteBox.run('.gallery');
+  }
+</script>
+<script>loadScript("/js/lib/lightbox/baguetteBox.min.js", addImgLayout)</script>
+  
+  
+  
+<script src="/js/main.js"></script>
+
+  
+  <script>loadScript("/js/lib/busuanzi.min.js")</script>
+  
+  
+  <script>
+    var addLazyload = function () {
+      var observer = lozad('.lozad', {
+        load: function (el) {
+          el.srcset = el.getAttribute('data-src');
+        },
+        loaded: function (el) {
+          el.classList.add('loaded');
+        }
+      });
+      observer.observe();
+    }
+  </script>
+  <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
+  
+  
+</body>
+
+</html>
