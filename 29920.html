@@ -128,7 +128,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -214,7 +214,7 @@
     
     
     <span class="dot"></span>
-    <span>831 字</span>
+    <span>928 字</span>
     
   </div>
   
@@ -241,36 +241,36 @@
 <h3 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h3><ol start="2">
 <li><p>Go语言安装</p>
 <p>从官网下载最新的linux-amd64.tar.gz压缩包（这里是go1.15.6.linux-amd64.tar.gz）</p>
-<pre class="highlight"><code class="hljs apache"><span class="hljs-attribute">wget</span> https://golang.google.cn/dl/go<span class="hljs-number">1</span>.<span class="hljs-number">15</span>.<span class="hljs-number">6</span>.linux-amd<span class="hljs-number">64</span>.tar.gz<br></code></pre>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs apache"><span class="hljs-attribute">wget</span> https://golang.google.cn/dl/go<span class="hljs-number">1</span>.<span class="hljs-number">15</span>.<span class="hljs-number">6</span>.linux-amd<span class="hljs-number"><code class="language-hljs apache"><span class="hljs-attribute">wget</span> https://golang.google.cn/dl/go<span class="hljs-number">1</span>.<span class="hljs-number">15</span>.<span class="hljs-number">6</span>.linux-amd<span class="hljs-number">64</span>.tar.gz<br></code></pre></td></tr></table></figure>
 
 <p>将其解压到/usr/local目录下：</p>
-<pre class="highlight"><code class="hljs awk">sudo tar -C <span class="hljs-regexp">/usr/</span>local -zxf [压缩包名]<br></code></pre>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs awk">sudo tar -C <span class="hljs-regexp"><code class="language-hljs awk">sudo tar -C <span class="hljs-regexp">/usr/</span>local -zxf [压缩包名]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>配置环境变量，在/etc/profile文件的末尾加入（在加入之前创建/home/gopath目录）</p>
-<pre class="highlight"><code class="hljs elixir">export GOPATH=<span class="hljs-regexp">/home/gopath</span><br>export PATH=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/usr/local/go/bin</span><br></code></pre>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs elixir">export GOPATH=<span class="hljs-regexp">/home/gopath</span><br>export PATH=<span class="hljs-variable">$PATH</span><span class="hljs-symbol"><code class="language-hljs elixir">export GOPATH=<span class="hljs-regexp">/home/gopath</span><br>export PATH=<span class="hljs-variable">$PATH</span><span class="hljs-symbol">:/usr/local/go/bin</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>配置中国的代理</p>
-<pre class="highlight"><code class="hljs vim"><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GO111MODULE=<span class="hljs-keyword">on</span><br><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GOPROXY=http<span class="hljs-variable">s:</span>//goproxy.<span class="hljs-keyword">cn</span>,direct<br></code></pre>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs vim"><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GO111MODULE=<span class="hljs-keyword">on</span><br><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GOPROXY=http<span class="hljs-variable">s:</span>//goproxy.<span class="hljs-keyword"><code class="language-hljs vim"><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GO111MODULE=<span class="hljs-keyword">on</span><br><span class="hljs-keyword">go</span> env -<span class="hljs-keyword">w</span> GOPROXY=http<span class="hljs-variable">s:</span>//goproxy.<span class="hljs-keyword">cn</span>,direct<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>查看是否配置成功</p>
-<pre class="highlight"><code class="hljs dockerfile">go <span class="hljs-keyword">env</span><br></code></pre>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs dockerfile">go <span class="hljs-keyword"><code class="language-hljs dockerfile">go <span class="hljs-keyword">env</span><br></code></pre></td></tr></table></figure>
 
 
 </li>
 </ol>
 <h3 id="mwget安装"><a href="#mwget安装" class="headerlink" title="mwget安装"></a>mwget安装</h3><p>wget太慢使用mwget</p>
-<pre class="highlight"><code class="hljs bash">wget http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2<br>yum install bzip2 gcc-c++ openssl-devel intltool -y<br>bzip2 -d mwget_0.1.0.orig.tar.bz2<br>tar -xvf mwget_0.1.0.orig.tar <br><span class="hljs-built_in">cd</span> mwget_0.1.0.orig<br>./configure <br>make<br>make install　　<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;至此，安装完成&quot;</span><br>% 断点续传<br>wget -c 要下载的文件，实现断点续传。<br></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs bash">wget http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2<br>yum install bzip2 gcc-c++ openssl-devel intltool -y<br>bzip2 -d mwget_0.1.0.orig.tar.bz2<br>tar -xvf mwget_0.1.0.orig.tar <br><span class="hljs-built_in">cd</span> mwget_0.1.0.orig<br>./configure <br>make<br>make install　　<span class="hljs-built_in">echo</span> <span class="hljs-string"><code class="language-hljs bash">wget http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2<br>yum install bzip2 gcc-c++ openssl-devel intltool -y<br>bzip2 -d mwget_0.1.0.orig.tar.bz2<br>tar -xvf mwget_0.1.0.orig.tar <br><span class="hljs-built_in">cd</span> mwget_0.1.0.orig<br>./configure <br>make<br>make install　　<span class="hljs-built_in">echo</span> <span class="hljs-string">"至此，安装完成"</span><br>% 断点续传<br>wget -c 要下载的文件，实现断点续传。<br></code></pre></td></tr></table></figure>
 
 <h3 id="最后的配置工作"><a href="#最后的配置工作" class="headerlink" title="最后的配置工作"></a>最后的配置工作</h3><p>生成身份材料</p>
 <ol>
 <li><p>进入BasicNetwork-2.0/artifacts/channel目录，执行</p>
-<pre class="highlight"><code class="hljs gauss">./<span class="hljs-keyword">create</span>-artifacts.sh<br></code></pre>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs gauss">./<span class="hljs-keyword"><code class="language-hljs gauss">./<span class="hljs-keyword">create</span>-artifacts.sh<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>进入BasicNetwork-2.0/artifacts目录执行</p>
-<pre class="highlight"><code class="hljs jboss-cli"><span class="hljs-string">./docker-compose</span> up -d<br></code></pre>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs jboss-cli"><span class="hljs-string"><code class="language-hljs jboss-cli"><span class="hljs-string">./docker-compose</span> up -d<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>进入BasicNetwork-2.0</p>
-<pre class="highlight"><code class="hljs jboss-cli"><span class="hljs-string">./createChannel.sh</span><br></code></pre>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs jboss-cli"><span class="hljs-string"><code class="language-hljs jboss-cli"><span class="hljs-string">./createChannel.sh</span><br></code></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -278,47 +278,47 @@
 <ol>
 <li>进入BasicNetwork-2.0/artifacts/src/github.com/fabcar/go/目录下，执行（为智能合约安装依赖）</li>
 </ol>
-<pre class="highlight"><code class="hljs ini"><span class="hljs-attr">GO111MODULE</span>=<span class="hljs-literal">on</span> go mod vendor<br></code></pre>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs ini"><span class="hljs-attr">GO111MODULE</span>=<span class="hljs-literal"><code class="language-hljs ini"><span class="hljs-attr">GO111MODULE</span>=<span class="hljs-literal">on</span> go mod vendor<br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>进入BasicNetwork-2.0/，执行智能合约的部署和测试在执行<code>deployChaincode.sh</code>之前，按以下命令修改文件夹的权限</li>
 </ol>
-<pre class="highlight"><code class="hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/home/g</span>opath/*<br></code></pre>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp"><code class="language-hljs awk">sudo chmod <span class="hljs-number">777</span> <span class="hljs-regexp">/home/g</span>opath/*<br></code></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>开始部署</li>
 </ol>
-<pre class="highlight"><code class="hljs jboss-cli"><span class="hljs-string">./deployChaincode.sh</span><br></code></pre>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs jboss-cli"><span class="hljs-string"><code class="language-hljs jboss-cli"><span class="hljs-string">./deployChaincode.sh</span><br></code></pre></td></tr></table></figure>
 
 <p>部署explorer</p>
 <ol>
 <li><p>启动Explorer, 进入ContainerisingBlockchainExplorer目录下</p>
-<pre class="highlight"><code class="hljs ebnf"><span class="hljs-attribute">docker-compose up -d</span><br></code></pre>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs ebnf"><span class="hljs-attribute"><code class="language-hljs ebnf"><span class="hljs-attribute">docker-compose up -d</span><br></code></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <p>服务全部启动成功，可以在windows上查看相关的服务。</p>
 <p><strong>注意：</strong>hyperledge Fabric搭建完成后将虚拟机挂起后再重新开启并不能恢复所有的服务，需要重新开启一遍。</p>
 <h3 id="平台使用"><a href="#平台使用" class="headerlink" title="平台使用"></a>平台使用</h3><p>查看可视化的区块链信息，访问：</p>
-<pre class="highlight"><code class="hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link">8080</span><br></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link"><code class="language-hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link">8080</span><br></code></pre></td></tr></table></figure>
 
 <p>查看产的最新状态，访问：</p>
-<pre class="highlight"><code class="hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link">5984/_utils</span><br></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link"><code class="language-hljs markdown">[<span class="hljs-symbol">ip地址</span>]:<span class="hljs-link">5984/_utils</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>超级账本的下载地址：</p>
-<pre class="highlight"><code class="hljs bash">wget -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><code class="language-hljs bash">wget -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre></td></tr></table></figure>
 
 <p>超级账本的解压缩：</p>
-<pre class="highlight"><code class="hljs shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre></td></tr></table></figure>
 
 <p>超级账本的bin目录内的东西放到/usr/local/bin下</p>
-<pre class="highlight"><code class="hljs shell">sudo mv ./bin/* /usr/local/bin<br></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">sudo mv ./bin/* /usr/local/bin<br></code></pre></td></tr></table></figure>
 
 <p>启动docker服务</p>
-<pre class="highlight"><code class="hljs maxima">systemctl <span class="hljs-built_in">restart</span> docker.service<br></code></pre>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs maxima">systemctl <span class="hljs-built_in"><code class="language-hljs maxima">systemctl <span class="hljs-built_in">restart</span> docker.service<br></code></pre></td></tr></table></figure>
 
 <p>关闭所有运行着的docker容器</p>
-<pre class="highlight"><code class="hljs reasonml">docker rm -f <span class="hljs-constructor">$(<span class="hljs-params">docker</span> <span class="hljs-params">ps</span> -<span class="hljs-params">a</span> -<span class="hljs-params">q</span>)</span><br></code></pre>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs reasonml">docker rm -f <span class="hljs-constructor">$(<span class="hljs-params">docker</span> <span class="hljs-params">ps</span> -<span class="hljs-params">a</span> -<span class="hljs-params"><code class="language-hljs reasonml">docker rm -f <span class="hljs-constructor">$(<span class="hljs-params">docker</span> <span class="hljs-params">ps</span> -<span class="hljs-params">a</span> -<span class="hljs-params">q</span>)</span><br></code></pre></td></tr></table></figure>
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
   </div>
