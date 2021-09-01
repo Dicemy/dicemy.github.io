@@ -128,6 +128,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -218,7 +229,7 @@
     
     
     <span class="dot"></span>
-    <span>1k 字</span>
+    <span>694 字</span>
     
   </div>
   
@@ -244,9 +255,56 @@
 
 <h1 id="A题-切蛋糕"><a href="#A题-切蛋糕" class="headerlink" title="A题 切蛋糕"></a>A题 切蛋糕</h1><p>题目链接 ：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/11746/A">https://ac.nowcoder.com/acm/contest/11746/A</a><br>基本思路是将1/k进行二进制拆分，比如说对于k=5，1 / 5 的二进制为 0.001100110011，则应存在5份大小为0.001的蛋糕，5份大小为0.0001的蛋糕，以此类推。<br>（看到2的几次方相加就应该想到二进制拆分）<br>代码不会写Orz，还不会实现，先留着之后补。</p>
 <h1 id="B题-小宝的幸运数组"><a href="#B题-小宝的幸运数组" class="headerlink" title="B题 小宝的幸运数组"></a>B题 小宝的幸运数组</h1><p>题目链接 ：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/11746/B">https://ac.nowcoder.com/acm/contest/11746/B</a><br>题目的思路大概是一个同余的相互跳的一个搜索之类的东西，很巧妙。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br>ll T, n, k, ans, sum, t;<br>ll head[maxn];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld&quot;</span>, &amp;T);T;T--) &#123;<span class="hljs-comment">//学来的多组处理</span><br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld%ld&quot;</span>, &amp;n, &amp;k);<br>		ans = sum = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=k;++i)	head[i] = <span class="hljs-number">-1</span>;<span class="hljs-comment">//head[x]表示的是第一次出现总和加到一起的余数为x的时候的a的位置是多少。这样可以一边加一边处理，如果某个数加到总和上之后和之前第一次的余数对应上了，说明这之间的数字的和可以被K整除。</span><br>		head[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<span class="hljs-comment">//显然对于余数为0来说，不需要有数字加上就行。</span><br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i) &#123;<br>			<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld&quot;</span>, &amp;t);<br>			sum = (sum + t) % k;<span class="hljs-comment">//维持一个加上当前值然后在k里的一个特征值。</span><br>			<span class="hljs-keyword">if</span> (head[sum] != <span class="hljs-number">-1</span>) <br>				ans = <span class="hljs-built_in">max</span>(ans, i - head[sum]);<span class="hljs-comment">//维护答案 </span><br>			<span class="hljs-keyword">else</span> <br>				head[sum] = i;<span class="hljs-comment">//如果第一次出现的话就保存位置</span><br>		&#125;<br>		ans = ans == <span class="hljs-number">0</span> ? <span class="hljs-number">-1</span> : ans;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%ld\n&quot;</span>, ans);<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e5</span> + <span class="hljs-number">10</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br>ll T, n, k, ans, sum, t;<br>ll head[maxn];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld&quot;</span>, &amp;T);T;T--) &#123;<span class="hljs-comment">//学来的多组处理</span><br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld%ld&quot;</span>, &amp;n, &amp;k);<br>		ans = sum = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=k;++i)	head[i] = <span class="hljs-number">-1</span>;<span class="hljs-comment">//head[x]表示的是第一次出现总和加到一起的余数为x的时候的a的位置是多少。这样可以一边加一边处理，如果某个数加到总和上之后和之前第一次的余数对应上了，说明这之间的数字的和可以被K整除。</span><br>		head[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<span class="hljs-comment">//显然对于余数为0来说，不需要有数字加上就行。</span><br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i) &#123;<br>			<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld&quot;</span>, &amp;t);<br>			sum = (sum + t) % k;<span class="hljs-comment">//维持一个加上当前值然后在k里的一个特征值。</span><br>			<span class="hljs-keyword">if</span> (head[sum] != <span class="hljs-number">-1</span>) <br>				ans = <span class="hljs-built_in">max</span>(ans, i - head[sum]);<span class="hljs-comment">//维护答案 </span><br>			<span class="hljs-keyword">else</span> <br>				head[sum] = i;<span class="hljs-comment">//如果第一次出现的话就保存位置</span><br>		&#125;<br>		ans = ans == <span class="hljs-number">0</span> ? <span class="hljs-number">-1</span> : ans;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%ld\n&quot;</span>, ans);<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+const int maxn &#x3D; 1e5 + 10;
+typedef long long ll;
+ll T, n, k, ans, sum, t;
+ll head[maxn];
+int main() &#123;
+	for (scanf(&quot;%ld&quot;, &amp;T);T;T--) &#123;&#x2F;&#x2F;学来的多组处理
+		scanf(&quot;%ld%ld&quot;, &amp;n, &amp;k);
+		ans &#x3D; sum &#x3D; 0;
+		for (int i&#x3D;0;i&lt;&#x3D;k;++i)	head[i] &#x3D; -1;&#x2F;&#x2F;head[x]表示的是第一次出现总和加到一起的余数为x的时候的a的位置是多少。这样可以一边加一边处理，如果某个数加到总和上之后和之前第一次的余数对应上了，说明这之间的数字的和可以被K整除。
+		head[0] &#x3D; 0;&#x2F;&#x2F;显然对于余数为0来说，不需要有数字加上就行。
+		for (int i&#x3D;1;i&lt;&#x3D;n;++i) &#123;
+			scanf(&quot;%ld&quot;, &amp;t);
+			sum &#x3D; (sum + t) % k;&#x2F;&#x2F;维持一个加上当前值然后在k里的一个特征值。
+			if (head[sum] !&#x3D; -1) 
+				ans &#x3D; max(ans, i - head[sum]);&#x2F;&#x2F;维护答案 
+			else 
+				head[sum] &#x3D; i;&#x2F;&#x2F;如果第一次出现的话就保存位置
+		&#125;
+		ans &#x3D; ans &#x3D;&#x3D; 0 ? -1 : ans;
+		printf(&quot;%ld\n&quot;, ans);
+	&#125;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="C题-上进的凡凡"><a href="#C题-上进的凡凡" class="headerlink" title="C题 上进的凡凡"></a>C题 上进的凡凡</h1><p>这道题的思路是：<br>一个非降序数组的所有子串都为非降序，只要把给定数组分为若干个非降序部分（每个部分要尽可能长），然后计算子串数，对于长度为n的数组子串数为 n * (n + 1) / 2，遍历然后相加。<br>思路的正确性：一个非降序数组的所有子串都为非降序串。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">100005</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br>ll a[maxn];<br>ll sum, n;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	ios :: <span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)	cin &gt;&gt; a[i];<br>	<span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>,t = <span class="hljs-number">1</span>; i &lt;= n; ) &#123;<br>		t = i;<br>		t++;<br>		<span class="hljs-keyword">while</span> (a[t] &gt;= a[t - <span class="hljs-number">1</span>] &amp;&amp; t &lt;= n)<br>			t++;<br>		ll ans = t - i;<br>		sum += ans * (ans + <span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;<br>		i = t;<br>	&#125;<br>	cout &lt;&lt; sum &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">100005</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br>ll a[maxn];<br>ll sum, n;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	ios :: <span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)	cin &gt;&gt; a[i];<br>	<span class="hljs-keyword">for</span> (ll i = <span class="hljs-number">1</span>,t = <span class="hljs-number">1</span>; i &lt;= n; ) &#123;<br>		t = i;<br>		t++;<br>		<span class="hljs-keyword">while</span> (a[t] &gt;= a[t - <span class="hljs-number">1</span>] &amp;&amp; t &lt;= n)<br>			t++;<br>		ll ans = t - i;<br>		sum += ans * (ans + <span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;<br>		i = t;<br>	&#125;<br>	cout &lt;&lt; sum &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+
+const int maxn &#x3D; 100005;
+typedef long long ll;
+
+ll a[maxn];
+ll sum, n;
+int main() &#123;
+	ios :: sync_with_stdio(false);
+	cin &gt;&gt; n;
+	for (int i &#x3D; 1; i &lt;&#x3D; n; i++)	cin &gt;&gt; a[i];
+	for (ll i &#x3D; 1,t &#x3D; 1; i &lt;&#x3D; n; ) &#123;
+		t &#x3D; i;
+		t++;
+		while (a[t] &gt;&#x3D; a[t - 1] &amp;&amp; t &lt;&#x3D; n)
+			t++;
+		ll ans &#x3D; t - i;
+		sum +&#x3D; ans * (ans + 1)&#x2F;2;
+		i &#x3D; t;
+	&#125;
+	cout &lt;&lt; sum &lt;&lt; endl;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="D-Seek-the-Joker-I"><a href="#D-Seek-the-Joker-I" class="headerlink" title="D    Seek the Joker I"></a>D    Seek the Joker I</h1><p>这题是个：巴什博弈（终于要学新东西了啊）。</p>
 
   </div>
@@ -437,9 +495,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

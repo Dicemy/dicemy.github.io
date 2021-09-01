@@ -130,6 +130,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -220,7 +231,7 @@
     
     
     <span class="dot"></span>
-    <span>1.6k 字</span>
+    <span>1.4k 字</span>
     
   </div>
   
@@ -290,7 +301,50 @@
 <blockquote>
 <p>这中间用到了组合数学的一些知识，那一个盒子放数的模型也要等到后面再研究了。</p>
 </blockquote>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e6</span> + <span class="hljs-number">8</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> p = <span class="hljs-number">998244353</span>;<br><br>ll n, m, ans = <span class="hljs-number">0</span>;<br>ll f[maxn];<br><br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b, ll p)</span> </span>&#123;<br>    ll res = <span class="hljs-number">1</span> % p;<br>    <span class="hljs-keyword">while</span>(b) &#123;<br>        <span class="hljs-keyword">if</span> (b&amp;<span class="hljs-number">1</span>) res = (ll) res * a % p ;<br>        a = (ll) a * a % p;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">inv</span><span class="hljs-params">(ll x)</span> </span>&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-built_in">power</span>(x, p<span class="hljs-number">-2</span>, p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; m;<br>	f[<span class="hljs-number">0</span>] = f[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=maxn;++i) <br>		f[i] = f[i - <span class="hljs-number">1</span>] * i % p; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">C</span><span class="hljs-params">(ll n, ll m)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n == m|| m == <span class="hljs-number">0</span>)	<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">return</span> (f[n] * <span class="hljs-built_in">inv</span>(f[m]) % p * <span class="hljs-built_in">inv</span>(f[n - m]) % p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">init</span>();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> d=<span class="hljs-number">1</span>;d&lt;=n<span class="hljs-number">-1</span>;++d) &#123;<br>		ll tmp = d * (n - d) % p;<br>		ans = (ans + tmp * <span class="hljs-built_in">C</span>(d + m - <span class="hljs-number">2</span>, m - <span class="hljs-number">2</span>) % p) %p;<br>	&#125;<br>	cout &lt;&lt; ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1e6</span> + <span class="hljs-number">8</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> p = <span class="hljs-number">998244353</span>;<br><br>ll n, m, ans = <span class="hljs-number">0</span>;<br>ll f[maxn];<br><br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b, ll p)</span> </span>&#123;<br>    ll res = <span class="hljs-number">1</span> % p;<br>    <span class="hljs-keyword">while</span>(b) &#123;<br>        <span class="hljs-keyword">if</span> (b&amp;<span class="hljs-number">1</span>) res = (ll) res * a % p ;<br>        a = (ll) a * a % p;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">inv</span><span class="hljs-params">(ll x)</span> </span>&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-built_in">power</span>(x, p<span class="hljs-number">-2</span>, p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; m;<br>	f[<span class="hljs-number">0</span>] = f[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=maxn;++i) <br>		f[i] = f[i - <span class="hljs-number">1</span>] * i % p; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">C</span><span class="hljs-params">(ll n, ll m)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n == m|| m == <span class="hljs-number">0</span>)	<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">return</span> (f[n] * <span class="hljs-built_in">inv</span>(f[m]) % p * <span class="hljs-built_in">inv</span>(f[n - m]) % p);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">init</span>();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> d=<span class="hljs-number">1</span>;d&lt;=n<span class="hljs-number">-1</span>;++d) &#123;<br>		ll tmp = d * (n - d) % p;<br>		ans = (ans + tmp * <span class="hljs-built_in">C</span>(d + m - <span class="hljs-number">2</span>, m - <span class="hljs-number">2</span>) % p) %p;<br>	&#125;<br>	cout &lt;&lt; ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></td></tr></table></figure>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int maxn &#x3D; 1e6 + 8;
+const int p &#x3D; 998244353;
+
+ll n, m, ans &#x3D; 0;
+ll f[maxn];
+
+ll power(ll a, ll b, ll p) &#123;
+    ll res &#x3D; 1 % p;
+    while(b) &#123;
+        if (b&amp;1) res &#x3D; (ll) res * a % p ;
+        a &#x3D; (ll) a * a % p;
+        b &gt;&gt;&#x3D; 1;
+    &#125;
+    return res;
+&#125;
+
+inline ll inv(ll x) &#123;
+	return power(x, p-2, p);
+&#125;
+
+void init() &#123;
+	cin &gt;&gt; n &gt;&gt; m;
+	f[0] &#x3D; f[1] &#x3D; 1;
+	for (int i&#x3D;2;i&lt;&#x3D;maxn;++i) 
+		f[i] &#x3D; f[i - 1] * i % p; 
+&#125;
+
+inline ll C(ll n, ll m) &#123;
+	if (n &#x3D;&#x3D; m|| m &#x3D;&#x3D; 0)	return 1;
+	return (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);
+&#125;
+
+int main() &#123;
+	init();
+	for (int d&#x3D;1;d&lt;&#x3D;n-1;++d) &#123;
+		ll tmp &#x3D; d * (n - d) % p;
+		ans &#x3D; (ans + tmp * C(d + m - 2, m - 2) % p) %p;
+	&#125;
+	cout &lt;&lt; ans;
+	return 0;
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这篇题解是从csdn上我的账号搬运过来的，新的博客搭好啦，开始搬运计划√</p>
 
@@ -482,9 +536,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

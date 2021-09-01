@@ -126,6 +126,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -216,7 +227,7 @@
     
     
     <span class="dot"></span>
-    <span>1.6k 字</span>
+    <span>1.1k 字</span>
     
   </div>
   
@@ -234,30 +245,139 @@
   <div id="section" class="post-content">
     <h1 id="树与图"><a href="#树与图" class="headerlink" title="树与图"></a>树与图</h1><p>邻接表用head数组为表头，使用ver和edge数组分别存储边的终点和权值，用next数组模拟链表指针。</p>
 <p>在一个图中添加一个从x到y边的权值为z的有向边：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">int</span> head[maxn &lt;&lt; <span class="hljs-number">2</span>], ver[maxn], edge[maxn], next[maxn &lt;&lt; <span class="hljs-number">2</span>];<br><span class="hljs-keyword">int</span> tot;<span class="hljs-comment">//tot表示边的编号 </span><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">adde</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> z)</span> </span>&#123;<br>	ver[++tot] = y;	next[tot] = head[x]; <span class="hljs-comment">//这句话表示原来x指向的所有边都挂到tot这条新的边的后面。 </span><br>	head[x] = tot;	edge[tot] = z;<span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-keyword">int</span> head[maxn &lt;&lt; <span class="hljs-number">2</span>], ver[maxn], edge[maxn], next[maxn &lt;&lt; <span class="hljs-number">2</span>];<br><span class="hljs-keyword">int</span> tot;<span class="hljs-comment">//tot表示边的编号 </span><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">adde</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> z)</span> </span>&#123;<br>	ver[++tot] = y;	next[tot] = head[x]; <span class="hljs-comment">//这句话表示原来x指向的所有边都挂到tot这条新的边的后面。 </span><br>	head[x] = tot;	edge[tot] = z;<span class="hljs-comment">//这句话表示在x原来指向的tot边的前面插入了新来的这个边。 </span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int head[maxn &lt;&lt; 2], ver[maxn], edge[maxn], next[maxn &lt;&lt; 2];
+int tot;&#x2F;&#x2F;tot表示边的编号 
+inline void adde(int x, int y, int z) &#123;
+	ver[++tot] &#x3D; y;	next[tot] &#x3D; head[x]; &#x2F;&#x2F;这句话表示原来x指向的所有边都挂到tot这条新的边的后面。 
+	head[x] &#x3D; tot;	edge[tot] &#x3D; z;&#x2F;&#x2F;这句话表示在x原来指向的tot边的前面插入了新来的这个边。 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图从x访问所有x相连的点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">serch</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">serch</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-comment">//从x的最后输入的那条边开始，便利所有x为出发点的边。next数组是为指出x出发的每一条边之间的关系。</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void serch() &#123;
+	for (int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
+		&#x2F;&#x2F;从x的最后输入的那条边开始，便利所有x为出发点的边。next数组是为指出x出发的每一条边之间的关系。
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图从x的一个深度优先遍历。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">bool</span> v[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-keyword">bool</span> v[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-comment">//这个搜索的时间复杂度是O(n+m)。</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool v[maxn];
+void dfs(int x) &#123;
+	v[x] &#x3D; 1;
+	for (int i&#x3D;head[x]; i; i &#x3D; next[i]) &#123;
+		int y &#x3D; ver[i];
+		if (v[y])	continue;
+		dfs(y);
+	&#125;
+&#125;
+&#x2F;&#x2F;这个搜索的时间复杂度是O(n+m)。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>树的dfs序。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">int</span><span class="hljs-params">(x)</span> </span>&#123;<br>	a[++m] = x;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span>(v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in"><code class="language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">int</span><span class="hljs-params">(x)</span> </span>&#123;<br>	a[++m] = x;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span>(v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>	a[++m] = x;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void int(x) &#123;
+	a[++m] &#x3D; x;
+	v[x] &#x3D; 1;
+	for (int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
+		int y &#x3D; ver[i];
+		if(v[y])	continue;
+		dfs(y);
+	&#125;
+	a[++m] &#x3D; x;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>树的深度。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">int</span> d[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span>(v[y])	<span class="hljs-keyword">continue</span>;<br>		d[y] = d[x] + <span class="hljs-number">1</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-keyword">int</span> d[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = head[x]; i; i = next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span>(v[y])	<span class="hljs-keyword">continue</span>;<br>		d[y] = d[x] + <span class="hljs-number">1</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-comment">//d[i]中储存的是编号为i的节点从根节点往下的深度。</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int d[maxn];
+void dfs(int x) &#123;
+	v[x] &#x3D; 1;
+	for(int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
+		int y &#x3D; ver[i];
+		if(v[y])	continue;
+		d[y] &#x3D; d[x] + 1;
+		dfs(y);
+	&#125;
+&#125;
+&#x2F;&#x2F;d[i]中储存的是编号为i的节点从根节点往下的深度。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>树的重心。</p>
 <p>定义：设max_part(x)表示再删除节点x后产生的子树中，最大的一颗的大小。是max_part函数取到最小值的节点p就成为整棵树的重心。下面的代码我们可以统计出size数组，并且找到这棵树的重心。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">int</span> size[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>; size[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">int</span> max_part = <span class="hljs-number">0</span>;<span class="hljs-comment">//删掉子树x之后分成的若干个子树中最大的那个的大小 </span><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>		size[x] += size[y];<span class="hljs-comment">//从子节点向上更新 </span><br>		max_part = <span class="hljs-built_in">max</span>(max_part, size[y]);<span class="hljs-comment">//x的子节点中最大的那个节点的size </span><br>	&#125;<br>	max_part = <span class="hljs-built_in">max</span>(max_part, n - size[x]);<span class="hljs-comment">//现在max_part中储存的是删掉x之后形成的若干个子树中最大的那个大小 </span><br>	<span class="hljs-keyword">if</span> (max_part &lt; ans) &#123;<br>		ans = max_part;<br>		pos = x;<span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-keyword">int</span> size[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = <span class="hljs-number">1</span>; size[x] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">int</span> max_part = <span class="hljs-number">0</span>;<span class="hljs-comment">//删掉子树x之后分成的若干个子树中最大的那个的大小 </span><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>		size[x] += size[y];<span class="hljs-comment">//从子节点向上更新 </span><br>		max_part = <span class="hljs-built_in">max</span>(max_part, size[y]);<span class="hljs-comment">//x的子节点中最大的那个节点的size </span><br>	&#125;<br>	max_part = <span class="hljs-built_in">max</span>(max_part, n - size[x]);<span class="hljs-comment">//现在max_part中储存的是删掉x之后形成的若干个子树中最大的那个大小 </span><br>	<span class="hljs-keyword">if</span> (max_part &lt; ans) &#123;<br>		ans = max_part;<br>		pos = x;<span class="hljs-comment">//pos中储存的就是这个树的重心的节点号。</span><br>	&#125; <br>&#125; <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int size[maxn];
+void dfs(int x) &#123;
+	v[x] &#x3D; 1; size[x] &#x3D; 1;
+	int max_part &#x3D; 0;&#x2F;&#x2F;删掉子树x之后分成的若干个子树中最大的那个的大小 
+	for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
+		int y &#x3D; ver[i];
+		if (v[y])	continue;
+		dfs(y);
+		size[x] +&#x3D; size[y];&#x2F;&#x2F;从子节点向上更新 
+		max_part &#x3D; max(max_part, size[y]);&#x2F;&#x2F;x的子节点中最大的那个节点的size 
+	&#125;
+	max_part &#x3D; max(max_part, n - size[x]);&#x2F;&#x2F;现在max_part中储存的是删掉x之后形成的若干个子树中最大的那个大小 
+	if (max_part &lt; ans) &#123;
+		ans &#x3D; max_part;
+		pos &#x3D; x;&#x2F;&#x2F;pos中储存的就是这个树的重心的节点号。
+	&#125; 
+&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>图的连通块的划分</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">int</span> cnt;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = cnt;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i) &#123;<br>	<span class="hljs-keyword">if</span>(v[i]) <span class="hljs-keyword">continue</span>;<br>	cnt++;<br>	<span class="hljs-built_in">dfs</span>(i);<br>&#125;<span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-keyword">int</span> cnt;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>	v[x] = cnt;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>		<span class="hljs-keyword">int</span> y = ver[i];<br>		<span class="hljs-keyword">if</span> (v[y])	<span class="hljs-keyword">continue</span>;<br>		<span class="hljs-built_in">dfs</span>(y);<br>	&#125;<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i) &#123;<br>	<span class="hljs-keyword">if</span>(v[i]) <span class="hljs-keyword">continue</span>;<br>	cnt++;<br>	<span class="hljs-built_in">dfs</span>(i);<br>&#125;<span class="hljs-comment">//cnt值相同的节点在同一个连通块中，cnt值表示连通块的个数。</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int cnt;
+void dfs(int x) &#123;
+	v[x] &#x3D; cnt;
+	for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
+		int y &#x3D; ver[i];
+		if (v[y])	continue;
+		dfs(y);
+	&#125;
+&#125;
+for (int i&#x3D;1;i&lt;&#x3D;n;++i) &#123;
+	if(v[i]) continue;
+	cnt++;
+	dfs(i);
+&#125;&#x2F;&#x2F;cnt值相同的节点在同一个连通块中，cnt值表示连通块的个数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>图的广度优先遍历<br>按照层级进行遍历。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(d, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(d));<span class="hljs-comment">//d中存储的是每一个节点的深度。</span><br>	queue&lt;<span class="hljs-keyword">int</span>&gt; q;<br>	q.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);d[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()) &#123;<br>		<span class="hljs-keyword">int</span> x = q.<span class="hljs-built_in">front</span>();	q.<span class="hljs-built_in">pop</span>();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>			<span class="hljs-keyword">int</span> y = ver[i];<br>			<span class="hljs-keyword">if</span> (d[y]) <span class="hljs-keyword">continue</span>;<br>			d[y] = d[x] + <span class="hljs-number">1</span>;<br>			q.<span class="hljs-built_in"><code class="language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(d, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(d));<span class="hljs-comment">//d中存储的是每一个节点的深度。</span><br>	queue&lt;<span class="hljs-keyword">int</span>&gt; q;<br>	q.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);d[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()) &#123;<br>		<span class="hljs-keyword">int</span> x = q.<span class="hljs-built_in">front</span>();	q.<span class="hljs-built_in">pop</span>();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>			<span class="hljs-keyword">int</span> y = ver[i];<br>			<span class="hljs-keyword">if</span> (d[y]) <span class="hljs-keyword">continue</span>;<br>			d[y] = d[x] + <span class="hljs-number">1</span>;<br>			q.<span class="hljs-built_in">push</span>(y);<br>		&#125; <br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void bfs() &#123;
+	memset(d, 0, sizeof(d));&#x2F;&#x2F;d中存储的是每一个节点的深度。
+	queue&lt;int&gt; q;
+	q.push(1);d[1] &#x3D; 1;
+	while(q.size()) &#123;
+		int x &#x3D; q.front();	q.pop();
+		for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
+			int y &#x3D; ver[i];
+			if (d[y]) continue;
+			d[y] &#x3D; d[x] + 1;
+			q.push(y);
+		&#125; 
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>拓扑排序<br>这个算法可以判断是否存在环：如果cnt和n不相等的话，那么存在环，因为环中的每一个点的入度都不可能为0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-keyword">int</span> deg[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> z)</span> </span>&#123;<br>	ver[++tot] = y;	next[tot] = head[x];<br>	head[x] = tot;	edge[tot] = z;<br>	deg[y]++;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">topsort</span><span class="hljs-params">()</span> </span>&#123;<br>	queue&lt;<span class="hljs-keyword">int</span>&gt; q;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)<br>		<span class="hljs-keyword">if</span> (deg[i] == <span class="hljs-number">0</span>)	q.<span class="hljs-built_in">push</span>(i);<span class="hljs-comment">//如果点的入度为0那么将这个点入队。</span><br>	<span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()) &#123;<br>		<span class="hljs-keyword">int</span> x = q.<span class="hljs-built_in">front</span>(); 	q.<span class="hljs-built_in">pop</span>();<br>		a[++cnt] = x;<span class="hljs-comment">//将入度为0的那个点输出。</span><br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>			<span class="hljs-keyword">int</span> y = ver[i];<br>			<span class="hljs-keyword">if</span> (--deg[y] == <span class="hljs-number">0</span>)	q.<span class="hljs-built_in">push</span>(y);<br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; m;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;++i) &#123;<br>		<span class="hljs-keyword">int</span> x, y;<br>		cin &gt;&gt; x &gt;&gt; y;<br>		<span class="hljs-built_in">adde</span>(x, y, <span class="hljs-number">0</span>);<br>	&#125;<br>	<span class="hljs-built_in">topsort</span>();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=cnt;++i) &#123;<br>		cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string"><code class="language-hljs cpp"><span class="hljs-keyword">int</span> deg[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> z)</span> </span>&#123;<br>	ver[++tot] = y;	next[tot] = head[x];<br>	head[x] = tot;	edge[tot] = z;<br>	deg[y]++;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">topsort</span><span class="hljs-params">()</span> </span>&#123;<br>	queue&lt;<span class="hljs-keyword">int</span>&gt; q;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)<br>		<span class="hljs-keyword">if</span> (deg[i] == <span class="hljs-number">0</span>)	q.<span class="hljs-built_in">push</span>(i);<span class="hljs-comment">//如果点的入度为0那么将这个点入队。</span><br>	<span class="hljs-keyword">while</span>(q.<span class="hljs-built_in">size</span>()) &#123;<br>		<span class="hljs-keyword">int</span> x = q.<span class="hljs-built_in">front</span>(); 	q.<span class="hljs-built_in">pop</span>();<br>		a[++cnt] = x;<span class="hljs-comment">//将入度为0的那个点输出。</span><br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=head[x];i;i=next[i]) &#123;<br>			<span class="hljs-keyword">int</span> y = ver[i];<br>			<span class="hljs-keyword">if</span> (--deg[y] == <span class="hljs-number">0</span>)	q.<span class="hljs-built_in">push</span>(y);<br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; m;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;++i) &#123;<br>		<span class="hljs-keyword">int</span> x, y;<br>		cin &gt;&gt; x &gt;&gt; y;<br>		<span class="hljs-built_in">adde</span>(x, y, <span class="hljs-number">0</span>);<br>	&#125;<br>	<span class="hljs-built_in">topsort</span>();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=cnt;++i) &#123;<br>		cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int deg[maxn];
+void add(int x, int y, int z) &#123;
+	ver[++tot] &#x3D; y;	next[tot] &#x3D; head[x];
+	head[x] &#x3D; tot;	edge[tot] &#x3D; z;
+	deg[y]++;
+&#125;
+void topsort() &#123;
+	queue&lt;int&gt; q;
+	for (int i&#x3D;1;i&lt;&#x3D;n;++i)
+		if (deg[i] &#x3D;&#x3D; 0)	q.push(i);&#x2F;&#x2F;如果点的入度为0那么将这个点入队。
+	while(q.size()) &#123;
+		int x &#x3D; q.front(); 	q.pop();
+		a[++cnt] &#x3D; x;&#x2F;&#x2F;将入度为0的那个点输出。
+		for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
+			int y &#x3D; ver[i];
+			if (--deg[y] &#x3D;&#x3D; 0)	q.push(y);
+		&#125;
+	&#125;
+&#125;
+int main() &#123;
+	cin &gt;&gt; n &gt;&gt; m;
+	for (int i&#x3D;1;i&lt;&#x3D;m;++i) &#123;
+		int x, y;
+		cin &gt;&gt; x &gt;&gt; y;
+		adde(x, y, 0);
+	&#125;
+	topsort();
+	for (int i&#x3D;1;i&lt;&#x3D;cnt;++i) &#123;
+		cout &lt;&lt; a[i] &lt;&lt; &#39; &#39;;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
   </div>
@@ -448,9 +568,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

@@ -124,6 +124,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -214,7 +225,7 @@
     
     
     <span class="dot"></span>
-    <span>2.1k 字</span>
+    <span>1.4k 字</span>
     
   </div>
   
@@ -228,11 +239,54 @@
 <li>~=是不等号</li>
 <li>Matlab函数的声明要单独放在一个.m文件中，不能直接放在主函数里面。函数声明格式：function [输出变量] = 函数名称(输入变量）  最后用end结束声明</li>
 </ul>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre class=" language-hljs matlab"><span class="hljs-comment">% 常用指令操作</span><br>clc <span class="hljs-comment">% 清屏</span><br>clear all <span class="hljs-comment">% 清除工作区的所有变量</span><br><span class="hljs-built_in">hold</span> on <br><span class="hljs-built_in">hold</span> off <span class="hljs-comment">% 控制图像是否被刷新</span><br><span class="hljs-comment">% 常用字符串函数</span><br>char(<span class="hljs-number">65</span>) <span class="hljs-comment">% ascii码对应的字符，A</span><br><span class="hljs-built_in">length</span>(s) <span class="hljs-comment">% 字符串长度</span><br>strcmp() <span class="hljs-comment">% 字符串比较函数</span><br>strcat() <span class="hljs-comment">% 将多个字符串合并成一个</span><br>num2str() <span class="hljs-comment">% 将数字转换为字符串</span><br><span class="hljs-comment">% 常用数学函数</span><br><span class="hljs-built_in">size</span>() <span class="hljs-comment">% 数组大小，第二个参数也是dim表示矩阵的维度。</span><br><span class="hljs-built_in">magic</span>() <span class="hljs-comment">% 生成一个幻方</span><br><span class="hljs-built_in">abs</span>(s) <span class="hljs-comment">% 求s的ascii码</span><br><span class="hljs-built_in">floor</span>()	<span class="hljs-comment">% 取整函数</span><br>sum() <span class="hljs-comment">% 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim=1</span><br><span class="hljs-built_in">repmat</span>() <span class="hljs-comment">% 复制扩展矩阵</span><br><span class="hljs-built_in">sort</span>() <span class="hljs-comment">% 将数组或矩阵排序</span><br>prod() <span class="hljs-comment">% 计算矩阵每一列的乘积</span><br>eig() <span class="hljs-comment">% 计算矩阵的特征值</span><br>inv() <span class="hljs-comment">% 求矩阵的逆矩阵</span><br><span class="hljs-built_in">rand</span>() <span class="hljs-comment">% 产生（0,1）之间均匀分布的伪随机数组成的数组</span><br><span class="hljs-built_in">randn</span>() <span class="hljs-comment">% 生成标准正态分布的伪随机数（均值为0，方差为1）</span><br>randperm() <span class="hljs-comment">% 将一序号随机打乱，序号必须是整数</span><br>normrnd(MU,SIGMA) <span class="hljs-comment">% 生成服从正态分布的随机数</span><br><span class="hljs-comment">% 常用数据输入输出函数</span><br><span class="hljs-built_in">disp</span>() <span class="hljs-comment">% 向命令行输出字符或数字</span><br>input() <span class="hljs-comment">% 从命令行读取数据</span><br>xlsread(<span class="hljs-string">&#x27;xls_name_string&#x27;</span>) <span class="hljs-comment">% Excel表格读取</span><br>save <span class="hljs-comment">% 用来将数据保存为.mat文件</span><br>load <span class="hljs-comment">% 用来加载之间生成的.mat文件</span><br><span class="hljs-comment">% 常用绘图函数</span><br><span class="hljs-built_in">plot</span>(x, y) <span class="hljs-comment">% 创建2维直线图</span><br>stem(Y) <span class="hljs-comment">% 绘制数据序列Y的茎状图</span><br><span class="hljs-built_in">meshgrid</span>(a, b) <span class="hljs-comment">% 生成二维网格</span><br>contour3(x, y, z) <span class="hljs-comment">% 三维等值线绘图</span><br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;string1&#x27;</span>,<span class="hljs-string">&#x27;string2&#x27;</span>) <span class="hljs-comment">% 标注绘制的图形的名称</span><br>xlabel() ylabel() zlabel() <span class="hljs-comment">% 标注x,y,z轴</span><br>title()	<span class="hljs-comment">% matlab绘图标题设置</span><br>set() <span class="hljs-comment">% 设置图像属性</span><br>axis() <span class="hljs-comment"><code class="language-hljs matlab"><span class="hljs-comment">% 常用指令操作</span><br>clc <span class="hljs-comment">% 清屏</span><br>clear all <span class="hljs-comment">% 清除工作区的所有变量</span><br><span class="hljs-built_in">hold</span> on <br><span class="hljs-built_in">hold</span> off <span class="hljs-comment">% 控制图像是否被刷新</span><br><span class="hljs-comment">% 常用字符串函数</span><br>char(<span class="hljs-number">65</span>) <span class="hljs-comment">% ascii码对应的字符，A</span><br><span class="hljs-built_in">length</span>(s) <span class="hljs-comment">% 字符串长度</span><br>strcmp() <span class="hljs-comment">% 字符串比较函数</span><br>strcat() <span class="hljs-comment">% 将多个字符串合并成一个</span><br>num2str() <span class="hljs-comment">% 将数字转换为字符串</span><br><span class="hljs-comment">% 常用数学函数</span><br><span class="hljs-built_in">size</span>() <span class="hljs-comment">% 数组大小，第二个参数也是dim表示矩阵的维度。</span><br><span class="hljs-built_in">magic</span>() <span class="hljs-comment">% 生成一个幻方</span><br><span class="hljs-built_in">abs</span>(s) <span class="hljs-comment">% 求s的ascii码</span><br><span class="hljs-built_in">floor</span>()	<span class="hljs-comment">% 取整函数</span><br>sum() <span class="hljs-comment">% 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim=1</span><br><span class="hljs-built_in">repmat</span>() <span class="hljs-comment">% 复制扩展矩阵</span><br><span class="hljs-built_in">sort</span>() <span class="hljs-comment">% 将数组或矩阵排序</span><br>prod() <span class="hljs-comment">% 计算矩阵每一列的乘积</span><br>eig() <span class="hljs-comment">% 计算矩阵的特征值</span><br>inv() <span class="hljs-comment">% 求矩阵的逆矩阵</span><br><span class="hljs-built_in">rand</span>() <span class="hljs-comment">% 产生（0,1）之间均匀分布的伪随机数组成的数组</span><br><span class="hljs-built_in">randn</span>() <span class="hljs-comment">% 生成标准正态分布的伪随机数（均值为0，方差为1）</span><br>randperm() <span class="hljs-comment">% 将一序号随机打乱，序号必须是整数</span><br>normrnd(MU,SIGMA) <span class="hljs-comment">% 生成服从正态分布的随机数</span><br><span class="hljs-comment">% 常用数据输入输出函数</span><br><span class="hljs-built_in">disp</span>() <span class="hljs-comment">% 向命令行输出字符或数字</span><br>input() <span class="hljs-comment">% 从命令行读取数据</span><br>xlsread(<span class="hljs-string">&#x27;xls_name_string&#x27;</span>) <span class="hljs-comment">% Excel表格读取</span><br>save <span class="hljs-comment">% 用来将数据保存为.mat文件</span><br>load <span class="hljs-comment">% 用来加载之间生成的.mat文件</span><br><span class="hljs-comment">% 常用绘图函数</span><br><span class="hljs-built_in">plot</span>(x, y) <span class="hljs-comment">% 创建2维直线图</span><br>stem(Y) <span class="hljs-comment">% 绘制数据序列Y的茎状图</span><br><span class="hljs-built_in">meshgrid</span>(a, b) <span class="hljs-comment">% 生成二维网格</span><br>contour3(x, y, z) <span class="hljs-comment">% 三维等值线绘图</span><br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;string1&#x27;</span>,<span class="hljs-string">&#x27;string2&#x27;</span>) <span class="hljs-comment">% 标注绘制的图形的名称</span><br>xlabel() ylabel() zlabel() <span class="hljs-comment">% 标注x,y,z轴</span><br>title()	<span class="hljs-comment">% matlab绘图标题设置</span><br>set() <span class="hljs-comment">% 设置图像属性</span><br>axis() <span class="hljs-comment">% 对坐标轴进行缩放操作</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 常用指令操作
+clc % 清屏
+clear all % 清除工作区的所有变量
+hold on 
+hold off % 控制图像是否被刷新
+% 常用字符串函数
+char(65) % ascii码对应的字符，A
+length(s) % 字符串长度
+strcmp() % 字符串比较函数
+strcat() % 将多个字符串合并成一个
+num2str() % 将数字转换为字符串
+% 常用数学函数
+size() % 数组大小，第二个参数也是dim表示矩阵的维度。
+magic() % 生成一个幻方
+abs(s) % 求s的ascii码
+floor()	% 取整函数
+sum() % 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim&#x3D;1
+repmat() % 复制扩展矩阵
+sort() % 将数组或矩阵排序
+prod() % 计算矩阵每一列的乘积
+eig() % 计算矩阵的特征值
+inv() % 求矩阵的逆矩阵
+rand() % 产生（0,1）之间均匀分布的伪随机数组成的数组
+randn() % 生成标准正态分布的伪随机数（均值为0，方差为1）
+randperm() % 将一序号随机打乱，序号必须是整数
+normrnd(MU,SIGMA) % 生成服从正态分布的随机数
+% 常用数据输入输出函数
+disp() % 向命令行输出字符或数字
+input() % 从命令行读取数据
+xlsread(&#39;xls_name_string&#39;) % Excel表格读取
+save % 用来将数据保存为.mat文件
+load % 用来加载之间生成的.mat文件
+% 常用绘图函数
+plot(x, y) % 创建2维直线图
+stem(Y) % 绘制数据序列Y的茎状图
+meshgrid(a, b) % 生成二维网格
+contour3(x, y, z) % 三维等值线绘图
+legend(&#39;string1&#39;,&#39;string2&#39;) % 标注绘制的图形的名称
+xlabel() ylabel() zlabel() % 标注x,y,z轴
+title()	% matlab绘图标题设置
+set() % 设置图像属性
+axis() % 对坐标轴进行缩放操作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs matlab"><span class="hljs-comment">% matlab里的一些基本规范</span><br><span class="hljs-comment">% 数值</span><br><span class="hljs-comment"><code class="language-hljs matlab"><span class="hljs-comment">% matlab里的一些基本规范</span><br><span class="hljs-comment">% 数值</span><br><span class="hljs-comment">% 字符串</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% matlab里的一些基本规范
+% 数值
+% 字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ph101LOVE/article/details/78454907">floor函数详解</a></li>
@@ -261,13 +315,69 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunzhao1000/article/details/80590333">save 和 load详解</a></li>
 </ul>
 <p>一、矩阵及数组操作例题：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre class=" language-hljs matlab"><span class="hljs-comment">% 生成一个3x3和15x8的单位矩阵</span><br><span class="hljs-built_in">eye</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)<br><span class="hljs-built_in">eye</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 生成全1矩阵</span><br><span class="hljs-built_in">ones</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">ones</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 全0矩阵</span><br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 均匀分布随机矩阵（[-1, 1]之间）</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>) - <span class="hljs-number">1</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>) - <span class="hljs-number">1</span><br><span class="hljs-comment">% 正态分布矩阵（均值为1，方差为4）</span><br><span class="hljs-number">1</span>+<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">4</span>)*<span class="hljs-built_in">randn</span>(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)<br><span class="hljs-comment">% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。</span><br>a = <span class="hljs-built_in">fix</span>(<span class="hljs-number">10</span>*<span class="hljs-built_in">rand</span>(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>));<br>b = [a&gt;=<span class="hljs-number">5</span>];<br>c = [sum(b)];<br>sum(c&#x27;)<br><span class="hljs-comment">% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。</span><br>a = [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span>;<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>; <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span>];<br>a(:,<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>)) = [];<br>a(<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>),:) = [] <span class="hljs-comment"><code class="language-hljs matlab"><span class="hljs-comment">% 生成一个3x3和15x8的单位矩阵</span><br><span class="hljs-built_in">eye</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)<br><span class="hljs-built_in">eye</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 生成全1矩阵</span><br><span class="hljs-built_in">ones</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">ones</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 全0矩阵</span><br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">3</span>)<br><span class="hljs-built_in">zeros</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>)<br><span class="hljs-comment">% 均匀分布随机矩阵（[-1, 1]之间）</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>) - <span class="hljs-number">1</span><br><span class="hljs-number">2</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-number">15</span>, <span class="hljs-number">8</span>) - <span class="hljs-number">1</span><br><span class="hljs-comment">% 正态分布矩阵（均值为1，方差为4）</span><br><span class="hljs-number">1</span>+<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">4</span>)*<span class="hljs-built_in">randn</span>(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)<br><span class="hljs-comment">% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。</span><br>a = <span class="hljs-built_in">fix</span>(<span class="hljs-number">10</span>*<span class="hljs-built_in">rand</span>(<span class="hljs-number">10</span>,<span class="hljs-number">10</span>));<br>b = [a&gt;=<span class="hljs-number">5</span>];<br>c = [sum(b)];<br>sum(c&#x27;)<br><span class="hljs-comment">% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。</span><br>a = [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">0</span> <span class="hljs-number">4</span>;<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>; <span class="hljs-number">9</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">2</span>];<br>a(:,<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>)) = [];<br>a(<span class="hljs-built_in">find</span>(sum(<span class="hljs-built_in">abs</span>(a&#x27;))==<span class="hljs-number">0</span>),:) = [] <span class="hljs-comment">% 没看懂，该写法待确认</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 生成一个3x3和15x8的单位矩阵
+eye(3, 3)
+eye(15, 8)
+% 生成全1矩阵
+ones(3)
+ones(15, 8)
+% 全0矩阵
+zeros(3)
+zeros(15, 8)
+% 均匀分布随机矩阵（[-1, 1]之间）
+2 * rand(3, 3) - 1
+2 * rand(15, 8) - 1
+% 正态分布矩阵（均值为1，方差为4）
+1+sqrt(4)*randn(3,3)
+% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。
+a &#x3D; fix(10*rand(10,10));
+b &#x3D; [a&gt;&#x3D;5];
+c &#x3D; [sum(b)];
+sum(c&#39;)
+% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。
+a &#x3D; [1 2 0 4;0 0 0 0;5 6 0 8; 9 1 0 2];
+a(:,find(sum(abs(a&#39;))&#x3D;&#x3D;0)) &#x3D; [];
+a(find(sum(abs(a&#39;))&#x3D;&#x3D;0),:) &#x3D; [] % 没看懂，该写法待确认<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>二、绘图：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre class=" language-hljs matlab"><span class="hljs-comment">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：</span><br>x=<span class="hljs-number">0</span> : <span class="hljs-number">1</span> : <span class="hljs-number">10</span>;<br>y1=<span class="hljs-number">2</span>*x+<span class="hljs-number">5</span>;<br>y2=x.^<span class="hljs-number">2</span><span class="hljs-number">-3</span>*x+<span class="hljs-number">1</span>;<br><span class="hljs-built_in">plot</span>(x, y1, x, y2);<br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;y1&#x27;</span>,<span class="hljs-string">&#x27;y2&#x27;</span>)<br><span class="hljs-comment">% 画出下列函数的曲面及等高线</span><br><span class="hljs-comment">% z = x^2 + y^2 + sin(xy).</span><br>[x, y] = <span class="hljs-built_in">meshgrid</span>(<span class="hljs-number">0</span>:<span class="hljs-number">0.25</span>:<span class="hljs-number">4</span>*<span class="hljs-built_in">pi</span>);<br>z=x.^<span class="hljs-number">2</span>+y.^<span class="hljs-number">2</span>+<span class="hljs-built_in"><code class="language-hljs matlab"><span class="hljs-comment">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：</span><br>x=<span class="hljs-number">0</span> : <span class="hljs-number">1</span> : <span class="hljs-number">10</span>;<br>y1=<span class="hljs-number">2</span>*x+<span class="hljs-number">5</span>;<br>y2=x.^<span class="hljs-number">2</span><span class="hljs-number">-3</span>*x+<span class="hljs-number">1</span>;<br><span class="hljs-built_in">plot</span>(x, y1, x, y2);<br><span class="hljs-built_in">legend</span>(<span class="hljs-string">&#x27;y1&#x27;</span>,<span class="hljs-string">&#x27;y2&#x27;</span>)<br><span class="hljs-comment">% 画出下列函数的曲面及等高线</span><br><span class="hljs-comment">% z = x^2 + y^2 + sin(xy).</span><br>[x, y] = <span class="hljs-built_in">meshgrid</span>(<span class="hljs-number">0</span>:<span class="hljs-number">0.25</span>:<span class="hljs-number">4</span>*<span class="hljs-built_in">pi</span>);<br>z=x.^<span class="hljs-number">2</span>+y.^<span class="hljs-number">2</span>+<span class="hljs-built_in">sin</span>(x*y);<br>contour3(x, y, z);<br>meshc(x, y, z)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：
+x&#x3D;0 : 1 : 10;
+y1&#x3D;2*x+5;
+y2&#x3D;x.^2-3*x+1;
+plot(x, y1, x, y2);
+legend(&#39;y1&#39;,&#39;y2&#39;)
+% 画出下列函数的曲面及等高线
+% z &#x3D; x^2 + y^2 + sin(xy).
+[x, y] &#x3D; meshgrid(0:0.25:4*pi);
+z&#x3D;x.^2+y.^2+sin(x*y);
+contour3(x, y, z);
+meshc(x, y, z)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>三、简单程序设计</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre class=" language-hljs matlab"><span class="hljs-comment">% 求分段函数</span><br>x=input(<span class="hljs-string">&#x27;请输入x的值：&#x27;</span>);<br><span class="hljs-keyword">if</span> x&gt;=<span class="hljs-number">-3</span> &amp;&amp; x &lt; <span class="hljs-number">-1</span><br>    y=(-x^<span class="hljs-number">2</span><span class="hljs-number">-4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">-1</span> &amp;&amp; x&lt;<span class="hljs-number">1</span><br>    y=-x^<span class="hljs-number">2</span>+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">1</span> &amp;&amp; x&lt;=<span class="hljs-number">3</span><br>    y=(-x^<span class="hljs-number">2</span>+<span class="hljs-number">4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">else</span><br>    y=<span class="hljs-string">&#x27;error&#x27;</span><br><span class="hljs-keyword">end</span><br>y<br><span class="hljs-comment">% 分数序列求和</span><br>m = <span class="hljs-number">1</span>;<br>n = <span class="hljs-number">2</span>;<br>sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">15</span><br>    f=n/m;<br>    sum=sum+f;<br>    t=n;<br>    n=m+n;<br>    m=t;<br><span class="hljs-keyword"><code class="language-hljs matlab"><span class="hljs-comment">% 求分段函数</span><br>x=input(<span class="hljs-string">&#x27;请输入x的值：&#x27;</span>);<br><span class="hljs-keyword">if</span> x&gt;=<span class="hljs-number">-3</span> &amp;&amp; x &lt; <span class="hljs-number">-1</span><br>    y=(-x^<span class="hljs-number">2</span><span class="hljs-number">-4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">-1</span> &amp;&amp; x&lt;<span class="hljs-number">1</span><br>    y=-x^<span class="hljs-number">2</span>+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">elseif</span> x&gt;=<span class="hljs-number">1</span> &amp;&amp; x&lt;=<span class="hljs-number">3</span><br>    y=(-x^<span class="hljs-number">2</span>+<span class="hljs-number">4</span>*x<span class="hljs-number">-3</span>)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">else</span><br>    y=<span class="hljs-string">&#x27;error&#x27;</span><br><span class="hljs-keyword">end</span><br>y<br><span class="hljs-comment">% 分数序列求和</span><br>m = <span class="hljs-number">1</span>;<br>n = <span class="hljs-number">2</span>;<br>sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">15</span><br>    f=n/m;<br>    sum=sum+f;<br>    t=n;<br>    n=m+n;<br>    m=t;<br><span class="hljs-keyword">end</span><br>sum<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 求分段函数
+x&#x3D;input(&#39;请输入x的值：&#39;);
+if x&gt;&#x3D;-3 &amp;&amp; x &lt; -1
+    y&#x3D;(-x^2-4*x-3)&#x2F;2;
+elseif x&gt;&#x3D;-1 &amp;&amp; x&lt;1
+    y&#x3D;-x^2+1;
+elseif x&gt;&#x3D;1 &amp;&amp; x&lt;&#x3D;3
+    y&#x3D;(-x^2+4*x-3)&#x2F;2;
+else
+    y&#x3D;&#39;error&#39;
+end
+y
+% 分数序列求和
+m &#x3D; 1;
+n &#x3D; 2;
+sum &#x3D; 0;
+for k&#x3D;1:15
+    f&#x3D;n&#x2F;m;
+    sum&#x3D;sum+f;
+    t&#x3D;n;
+    n&#x3D;m+n;
+    m&#x3D;t;
+end
+sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>一些注意事项:</p>
 <ul>
@@ -465,9 +575,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

@@ -128,6 +128,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -218,7 +229,7 @@
     
     
     <span class="dot"></span>
-    <span>2.5k 字</span>
+    <span>1.9k 字</span>
     
   </div>
   
@@ -250,27 +261,54 @@
 </blockquote>
 <h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><blockquote>
 <p>输入</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number"><code class="language-hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">2 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>输出</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs diff"><span class="hljs-deletion"><code class="language-hljs diff"><span class="hljs-deletion">-1</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">-1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>说明</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs dust"><span class="xml">长度为2的排列有2个：</span><span class="hljs-template-variable">&#123;1,2&#125;</span><span class="xml">和</span><span class="hljs-template-variable">&#123;2,1&#125;</span><span class="xml"><code class="language-hljs dust"><span class="xml">长度为2的排列有2个：</span><span class="hljs-template-variable">&#123;1,2&#125;</span><span class="xml">和</span><span class="hljs-template-variable">&#123;2,1&#125;</span><span class="xml">，显然都不符合题意</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">长度为2的排列有2个：&#123;1,2&#125;和&#123;2,1&#125;，显然都不符合题意<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><blockquote>
 <p>输入</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number"><code class="language-hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">6 3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>输出</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number"><code class="language-hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">2</span> <span class="hljs-number">4</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">5 3 6 2 4 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>说明</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs dust"><span class="xml">共有3对相邻数不互素：</span><span class="hljs-template-variable">&#123;3,6&#125;</span><span class="xml">、</span><span class="hljs-template-variable">&#123;6,2&#125;</span><span class="xml">和</span><span class="hljs-template-variable">&#123;2,4&#125;</span><span class="xml">。</span><br><span class="xml"><code class="language-hljs dust"><span class="xml">共有3对相邻数不互素：</span><span class="hljs-template-variable">&#123;3,6&#125;</span><span class="xml">、</span><span class="hljs-template-variable">&#123;6,2&#125;</span><span class="xml">和</span><span class="hljs-template-variable">&#123;2,4&#125;</span><span class="xml">。</span><br><span class="xml">这并不是唯一解，只要构造任意合法解即可。</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">共有3对相邻数不互素：&#123;3,6&#125;、&#123;6,2&#125;和&#123;2,4&#125;。
+这并不是唯一解，只要构造任意合法解即可。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h2><p>由题中给的一个很重要的信息可知，k&lt;=n/2的，而且我们可以轻易地知道对于所有的偶数，他们的最大公因数是2满足大于1的条件，并且n以内偶数的个数正好也是n/2个。所以可以比较轻易的凑够n/2-1对儿满足条件的数对儿。这就是k&lt;=n/2-1的方法。<br>对于k = n/2的情况，我们只需将6放到n/2个偶数的最后一个即可，然后后面放一个3来保证出现第n/2对儿。</p>
 <p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210226164740.png" class="lozad post-image"src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210226164740.png"></p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> n, k;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work1</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k+<span class="hljs-number">1</span>;++i)	cout &lt;&lt; i * <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=k*<span class="hljs-number">2</span>+<span class="hljs-number">3</span>;i&lt;=n;++i)	cout &lt;&lt; i &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k+<span class="hljs-number">1</span>;++i)	cout &lt;&lt; <span class="hljs-number">2</span> * i - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work2</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">6</span>)	&#123;<br>		cout &lt;&lt; <span class="hljs-number">-1</span>;<br>		<span class="hljs-keyword">return</span>;<br>	&#125;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">4</span>;i&lt;=k;++i)	cout &lt;&lt; i * <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	cout &lt;&lt; <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">6</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">3</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>   	cout &lt;&lt; <span class="hljs-number">1</span>;<span class="hljs-comment">// 问题出在这一句上，按照之前的写法，会出现9 4, 答案中 3 和 9 碰到一起的情况，这时候就不对了，所以我们用1来隔开。</span><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=k*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>;i&lt;=n;++i)	cout &lt;&lt; i &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>;i&lt;=k;++i)	cout &lt;&lt; <span class="hljs-number">2</span> * i - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;       <span class="hljs-comment">//	cout &lt;&lt; 1;// 问题出在这一句上</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; k;<br>	<span class="hljs-keyword">if</span> (k &lt;= n / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>) <span class="hljs-built_in">work1</span>();<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">work2</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-comment">//有问题的代码，状态：已订正</span><br><span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> n, k;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work1</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k+<span class="hljs-number">1</span>;++i)	cout &lt;&lt; i * <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=k*<span class="hljs-number">2</span>+<span class="hljs-number">3</span>;i&lt;=n;++i)	cout &lt;&lt; i &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k+<span class="hljs-number">1</span>;++i)	cout &lt;&lt; <span class="hljs-number">2</span> * i - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work2</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">6</span>)	&#123;<br>		cout &lt;&lt; <span class="hljs-number">-1</span>;<br>		<span class="hljs-keyword">return</span>;<br>	&#125;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">4</span>;i&lt;=k;++i)	cout &lt;&lt; i * <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	cout &lt;&lt; <span class="hljs-number">2</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">6</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">3</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>   	cout &lt;&lt; <span class="hljs-number">1</span>;<span class="hljs-comment">// 问题出在这一句上，按照之前的写法，会出现9 4, 答案中 3 和 9 碰到一起的情况，这时候就不对了，所以我们用1来隔开。</span><br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=k*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>;i&lt;=n;++i)	cout &lt;&lt; i &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>;i&lt;=k;++i)	cout &lt;&lt; <span class="hljs-number">2</span> * i - <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;       <span class="hljs-comment">//	cout &lt;&lt; 1;// 问题出在这一句上</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	cin &gt;&gt; n &gt;&gt; k;<br>	<span class="hljs-keyword">if</span> (k &lt;= n / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>) <span class="hljs-built_in">work1</span>();<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">work2</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-comment">//有问题的代码，状态：已订正</span><br><span class="hljs-comment">//一些奇妙的性质：相邻的两个数一定互质，相邻的两个奇数一定互质。</span><br></code></pre></td></tr></table></figure>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt; 
+using namespace std;
+int n, k;
+void work1() &#123;
+	for (int i&#x3D;1;i&lt;&#x3D;k+1;++i)	cout &lt;&lt; i * 2 &lt;&lt; &#39; &#39;;
+	for (int i&#x3D;k*2+3;i&lt;&#x3D;n;++i)	cout &lt;&lt; i &lt;&lt; &#39; &#39;;
+	for (int i&#x3D;1;i&lt;&#x3D;k+1;++i)	cout &lt;&lt; 2 * i - 1 &lt;&lt; &#39; &#39;;
+&#125;
+void work2() &#123;
+	if (n &lt; 6)	&#123;
+		cout &lt;&lt; -1;
+		return;
+	&#125;
+	for (int i&#x3D;4;i&lt;&#x3D;k;++i)	cout &lt;&lt; i * 2 &lt;&lt; &#39; &#39;;
+	cout &lt;&lt; 2 &lt;&lt; &#39; &#39; &lt;&lt; 4 &lt;&lt; &#39; &#39; &lt;&lt; 6 &lt;&lt; &#39; &#39; &lt;&lt; 3 &lt;&lt; &#39; &#39;;
+   	cout &lt;&lt; 1;&#x2F;&#x2F; 问题出在这一句上，按照之前的写法，会出现9 4, 答案中 3 和 9 碰到一起的情况，这时候就不对了，所以我们用1来隔开。
+	for (int i&#x3D;k*2+1;i&lt;&#x3D;n;++i)	cout &lt;&lt; i &lt;&lt; &#39; &#39;;
+	for (int i&#x3D;3;i&lt;&#x3D;k;++i)	cout &lt;&lt; 2 * i - 1 &lt;&lt; &#39; &#39;;       &#x2F;&#x2F;	cout &lt;&lt; 1;&#x2F;&#x2F; 问题出在这一句上
+&#125;
+int main() &#123;
+	cin &gt;&gt; n &gt;&gt; k;
+	if (k &lt;&#x3D; n &#x2F; 2 - 1) work1();
+	else work2();
+	return 0;
+&#125;
+&#x2F;&#x2F;有问题的代码，状态：已订正
+&#x2F;&#x2F;一些奇妙的性质：相邻的两个数一定互质，相邻的两个奇数一定互质。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="J-一群小青蛙呱蹦呱蹦呱"><a href="#J-一群小青蛙呱蹦呱蹦呱" class="headerlink" title="J.一群小青蛙呱蹦呱蹦呱"></a>J.一群小青蛙呱蹦呱蹦呱</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9981/J">https://ac.nowcoder.com/acm/contest/9981/J</a><br>来源：牛客网</p>
 <h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h2><p>有n个格子，每个格子里有一个数，1,2,3,4…n</p>
@@ -279,31 +317,105 @@
 <h2 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h2><p>如果所有数都被吃掉了，请输出一个字符串”empty”<br>否则输出所有没有被吃掉的数的lcm，对 1 0 9 + 7 10^9+710 9+7 取模</p>
 <h2 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1:"></a>示例1:</h2><blockquote>
 <p>输入</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">7<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>输出</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">6<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>说明</p>
-<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs tap">数字<span class="hljs-number"> 1 </span>可以被所有青蛙吃掉；<br>数字<span class="hljs-number"> 2 </span>可以被第<span class="hljs-number"> 1 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 3 </span>可以被第<span class="hljs-number"> 2 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 4 </span>可以被第<span class="hljs-number"> 1 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 5 </span>可以被第<span class="hljs-number"> 3 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 6 </span>无法被吃掉；<br>数字<span class="hljs-number"> 7 </span>可以被第<span class="hljs-number"> 4 </span>只青蛙吃掉。<br>所以剩下的数字只有一个<span class="hljs-number"><code class="language-hljs tap">数字<span class="hljs-number"> 1 </span>可以被所有青蛙吃掉；<br>数字<span class="hljs-number"> 2 </span>可以被第<span class="hljs-number"> 1 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 3 </span>可以被第<span class="hljs-number"> 2 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 4 </span>可以被第<span class="hljs-number"> 1 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 5 </span>可以被第<span class="hljs-number"> 3 </span>只青蛙吃掉；<br>数字<span class="hljs-number"> 6 </span>无法被吃掉；<br>数字<span class="hljs-number"> 7 </span>可以被第<span class="hljs-number"> 4 </span>只青蛙吃掉。<br>所以剩下的数字只有一个<span class="hljs-number"> 6 </span>，所有数的 lcm 为 6<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">数字 1 可以被所有青蛙吃掉；
+数字 2 可以被第 1 只青蛙吃掉；
+数字 3 可以被第 2 只青蛙吃掉；
+数字 4 可以被第 1 只青蛙吃掉；
+数字 5 可以被第 3 只青蛙吃掉；
+数字 6 无法被吃掉；
+数字 7 可以被第 4 只青蛙吃掉。
+所以剩下的数字只有一个 6 ，所有数的 lcm 为 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <h2 id="示例2-1"><a href="#示例2-1" class="headerlink" title="示例2:"></a>示例2:</h2><blockquote>
 <p>输入</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs dns"><span class="hljs-number"><code class="language-hljs dns"><span class="hljs-number">123456789</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">123456789<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>输出</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs dns"><span class="hljs-number"><code class="language-hljs dns"><span class="hljs-number">539747460</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">539747460<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>性质一：由题可知按照顺序划掉的是每一个素数的几次方，所以很明显的是最后留下来的数一定是由两个以上的素数相乘得到的。</p>
 <p>性质二：我们可以知道lcm是指两个数的最小公倍数，所以最后的答案一定是这些剩下的数字的质因数的某次方中最高那一个互相相乘的答案。</p>
 <p>性质三：我们可以知道一个数进行质因数分解的结果应该是唯一的。</p>
 <p>所以解法来了，先求出n / 2以内的质因数，然后对于2来说，找到log2(n/3)即为2的次方数。对于大于2小于n / 2的所有质数pi来说，logpi(n/2) 就是pi的次方数，然后将这些数都乘到一起就可以得到答案的lcm了。</p>
 <p>知识点复习：<br>线性筛素数：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre class=" language-hljs cpp">ll prime[maxn], size = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">bool</span> vis[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Prime</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">true</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(vis));<br>	<span class="hljs-built_in">memset</span>(prime, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(prime));<br>	vis[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i) &#123;<br>		<span class="hljs-keyword">if</span> (vis[i])	prime[++size] = i;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=size&amp;&amp;i*prime[j]&lt;=n;++j) &#123;<br>			vis[i * prime[j]] = <span class="hljs-literal">false</span>;<br>			<span class="hljs-keyword">if</span> (i % prime[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword"><code class="language-hljs cpp">ll prime[maxn], size = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">bool</span> vis[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Prime</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">true</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(vis));<br>	<span class="hljs-built_in">memset</span>(prime, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(prime));<br>	vis[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i) &#123;<br>		<span class="hljs-keyword">if</span> (vis[i])	prime[++size] = i;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=size&amp;&amp;i*prime[j]&lt;=n;++j) &#123;<br>			vis[i * prime[j]] = <span class="hljs-literal">false</span>;<br>			<span class="hljs-keyword">if</span> (i % prime[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ll prime[maxn], size &#x3D; 0;
+bool vis[maxn];
+void Prime() &#123;
+	memset(vis, true, sizeof(vis));
+	memset(prime, 0, sizeof(prime));
+	vis[1] &#x3D; true;
+	for (int i&#x3D;2;i&lt;&#x3D;n;++i) &#123;
+		if (vis[i])	prime[++size] &#x3D; i;
+		for (int j&#x3D;1;j&lt;&#x3D;size&amp;&amp;i*prime[j]&lt;&#x3D;n;++j) &#123;
+			vis[i * prime[j]] &#x3D; false;
+			if (i % prime[j] &#x3D;&#x3D; 0) break;
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>快速幂：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b)</span> </span>&#123;<br>	ll res = <span class="hljs-number">1</span> % mod;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = <span class="hljs-built_in">ll</span>(res * a % mod);<br>		a = <span class="hljs-built_in">ll</span>(a * a % mod);<br>	&#125;<br>	<span class="hljs-keyword"><code class="language-hljs cpp"><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b)</span> </span>&#123;<br>	ll res = <span class="hljs-number">1</span> % mod;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = <span class="hljs-built_in">ll</span>(res * a % mod);<br>		a = <span class="hljs-built_in">ll</span>(a * a % mod);<br>	&#125;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ll power(ll a, ll b) &#123;
+	ll res &#x3D; 1 % mod;
+	for (; b; b &gt;&gt;&#x3D; 1) &#123;
+		if (b &amp; 1) res &#x3D; ll(res * a % mod);
+		a &#x3D; ll(a * a % mod);
+	&#125;
+	return res;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">8e7</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br>ll n, ans = <span class="hljs-number">1</span>; <br>ll prime[maxn / <span class="hljs-number">10</span>], size = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">bool</span> vis[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Prime</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">true</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(vis));<br>	<span class="hljs-built_in">memset</span>(prime, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(prime));<br>	vis[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>	<span class="hljs-keyword">int</span> t = maxn;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=t;++i) &#123;<br>		<span class="hljs-keyword">if</span> (vis[i])	prime[++size] = i;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=size&amp;&amp;i*prime[j]&lt;=t;++j) &#123;<br>			vis[i * prime[j]] = <span class="hljs-literal">false</span>;<br>			<span class="hljs-keyword">if</span> (i % prime[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b)</span> </span>&#123;<br>	ll res = <span class="hljs-number">1</span> % mod;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = <span class="hljs-built_in">ll</span>(res * a % mod);<br>		a = <span class="hljs-built_in">ll</span>(a * a % mod);<br>	&#125;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">Prime</span>();<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">6</span>)  &#123;<br>		cout &lt;&lt; <span class="hljs-string">&quot;empty&quot;</span>;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	&#125;<br>	ll tmp = n / <span class="hljs-number">3</span>, c = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(tmp &gt;= <span class="hljs-number">2</span>) tmp /= <span class="hljs-number">2</span>, c++;<span class="hljs-comment">//细节是当tmp小于prime数之后就不要除了，不然次数都会大个1.</span><br>	ans = (ans * <span class="hljs-built_in">power</span>(<span class="hljs-number">2</span>, c) % mod) % mod;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=size;++i) &#123;<br>		<span class="hljs-keyword">if</span>(prime[i] &gt; n / <span class="hljs-number">2</span>)  <span class="hljs-keyword">break</span>;<span class="hljs-comment">//这也是一个小优化</span><br>		tmp = n / <span class="hljs-number">2</span>, c = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">while</span>(tmp &gt;= prime[i]) tmp /= prime[i], c++;<br>		ans = (ans * <span class="hljs-built_in">power</span>(prime[i], c) % mod) % mod;<br>	&#125;<br>	cout &lt;&lt; ans % mod;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">8e7</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br>ll n, ans = <span class="hljs-number">1</span>; <br>ll prime[maxn / <span class="hljs-number">10</span>], size = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">bool</span> vis[maxn];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Prime</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">true</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(vis));<br>	<span class="hljs-built_in">memset</span>(prime, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(prime));<br>	vis[<span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>	<span class="hljs-keyword">int</span> t = maxn;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=t;++i) &#123;<br>		<span class="hljs-keyword">if</span> (vis[i])	prime[++size] = i;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=size&amp;&amp;i*prime[j]&lt;=t;++j) &#123;<br>			vis[i * prime[j]] = <span class="hljs-literal">false</span>;<br>			<span class="hljs-keyword">if</span> (i % prime[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function">ll <span class="hljs-title">power</span><span class="hljs-params">(ll a, ll b)</span> </span>&#123;<br>	ll res = <span class="hljs-number">1</span> % mod;<br>	<span class="hljs-keyword">for</span> (; b; b &gt;&gt;= <span class="hljs-number">1</span>) &#123;<br>		<span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = <span class="hljs-built_in">ll</span>(res * a % mod);<br>		a = <span class="hljs-built_in">ll</span>(a * a % mod);<br>	&#125;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">Prime</span>();<br>	cin &gt;&gt; n;<br>	<span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">6</span>)  &#123;<br>		cout &lt;&lt; <span class="hljs-string">&quot;empty&quot;</span>;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	&#125;<br>	ll tmp = n / <span class="hljs-number">3</span>, c = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(tmp &gt;= <span class="hljs-number">2</span>) tmp /= <span class="hljs-number">2</span>, c++;<span class="hljs-comment">//细节是当tmp小于prime数之后就不要除了，不然次数都会大个1.</span><br>	ans = (ans * <span class="hljs-built_in">power</span>(<span class="hljs-number">2</span>, c) % mod) % mod;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=size;++i) &#123;<br>		<span class="hljs-keyword">if</span>(prime[i] &gt; n / <span class="hljs-number">2</span>)  <span class="hljs-keyword">break</span>;<span class="hljs-comment">//这也是一个小优化</span><br>		tmp = n / <span class="hljs-number">2</span>, c = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">while</span>(tmp &gt;= prime[i]) tmp /= prime[i], c++;<br>		ans = (ans * <span class="hljs-built_in">power</span>(prime[i], c) % mod) % mod;<br>	&#125;<br>	cout &lt;&lt; ans % mod;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int maxn &#x3D; 8e7;
+const int mod &#x3D; 1e9 + 7;
+ll n, ans &#x3D; 1; 
+ll prime[maxn &#x2F; 10], size &#x3D; 0;
+bool vis[maxn];
+void Prime() &#123;
+	memset(vis, true, sizeof(vis));
+	memset(prime, 0, sizeof(prime));
+	vis[1] &#x3D; true;
+	int t &#x3D; maxn;
+	for (int i&#x3D;2;i&lt;&#x3D;t;++i) &#123;
+		if (vis[i])	prime[++size] &#x3D; i;
+		for (int j&#x3D;1;j&lt;&#x3D;size&amp;&amp;i*prime[j]&lt;&#x3D;t;++j) &#123;
+			vis[i * prime[j]] &#x3D; false;
+			if (i % prime[j] &#x3D;&#x3D; 0) break;
+		&#125;
+	&#125;
+&#125;
+ll power(ll a, ll b) &#123;
+	ll res &#x3D; 1 % mod;
+	for (; b; b &gt;&gt;&#x3D; 1) &#123;
+		if (b &amp; 1) res &#x3D; ll(res * a % mod);
+		a &#x3D; ll(a * a % mod);
+	&#125;
+	return res;
+&#125;
+int main() &#123;
+	Prime();
+	cin &gt;&gt; n;
+	if (n &lt; 6)  &#123;
+		cout &lt;&lt; &quot;empty&quot;;
+		return 0;
+	&#125;
+	ll tmp &#x3D; n &#x2F; 3, c &#x3D; 0;
+	while(tmp &gt;&#x3D; 2) tmp &#x2F;&#x3D; 2, c++;&#x2F;&#x2F;细节是当tmp小于prime数之后就不要除了，不然次数都会大个1.
+	ans &#x3D; (ans * power(2, c) % mod) % mod;
+	for (int i&#x3D;2;i&lt;&#x3D;size;++i) &#123;
+		if(prime[i] &gt; n &#x2F; 2)  break;&#x2F;&#x2F;这也是一个小优化
+		tmp &#x3D; n &#x2F; 2, c &#x3D; 0;
+		while(tmp &gt;&#x3D; prime[i]) tmp &#x2F;&#x3D; prime[i], c++;
+		ans &#x3D; (ans * power(prime[i], c) % mod) % mod;
+	&#125;
+	cout &lt;&lt; ans % mod;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
   </div>
@@ -494,9 +606,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

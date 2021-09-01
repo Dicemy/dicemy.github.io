@@ -128,6 +128,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -218,7 +229,7 @@
     
     
     <span class="dot"></span>
-    <span>782 字</span>
+    <span>747 字</span>
     
   </div>
   
@@ -259,7 +270,14 @@
 <p>两堆各若干个物品，两个人轮流从任意一堆中取出至少一个或者同时从两堆中取出同样多的物品，规定每次至少取一个，至多不限，最后取光者胜利。</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41311604/article/details/79980882">参考博客</a></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> a = <span class="hljs-built_in">min</span>(x, y), b = <span class="hljs-built_in">max</span>(x, y);<br>	<span class="hljs-keyword">double</span> c = (<span class="hljs-keyword">double</span>)<span class="hljs-built_in">abs</span>(b - a);<br>	<span class="hljs-keyword">double</span> r = (<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">5.0</span>) + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>	<span class="hljs-keyword">int</span> tmp = <span class="hljs-built_in"><span class="hljs-keyword">int</span></span>(c * r);<br>	<span class="hljs-keyword">if</span> (a == tmp) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//后手必胜 </span><br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment"><code class="language-hljs cpp"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> a = <span class="hljs-built_in">min</span>(x, y), b = <span class="hljs-built_in">max</span>(x, y);<br>	<span class="hljs-keyword">double</span> c = (<span class="hljs-keyword">double</span>)<span class="hljs-built_in">abs</span>(b - a);<br>	<span class="hljs-keyword">double</span> r = (<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">5.0</span>) + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>	<span class="hljs-keyword">int</span> tmp = <span class="hljs-built_in"><span class="hljs-keyword">int</span></span>(c * r);<br>	<span class="hljs-keyword">if</span> (a == tmp) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <span class="hljs-comment">//后手必胜 </span><br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">//先手必胜 </span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">inline bool check(int x, int y) &#123;
+	int a &#x3D; min(x, y), b &#x3D; max(x, y);
+	double c &#x3D; (double)abs(b - a);
+	double r &#x3D; (sqrt(5.0) + 1) &#x2F; 2;
+	int tmp &#x3D; int(c * r);
+	if (a &#x3D;&#x3D; tmp) return 0; &#x2F;&#x2F;后手必胜 
+	else return 1; &#x2F;&#x2F;先手必胜 
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="尼姆博奕"><a href="#尼姆博奕" class="headerlink" title="尼姆博奕"></a>尼姆博奕</h1><blockquote>
 <p>有N堆石子。A B两个人轮流拿，A先拿。每次只能从一堆中取若干个，可将一堆全取走，但不可不取，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N及每堆石子的数量，问最后谁能赢得比赛。</p>
@@ -461,9 +479,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

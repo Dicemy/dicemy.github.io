@@ -132,6 +132,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -222,7 +233,7 @@
     
     
     <span class="dot"></span>
-    <span>2k 字</span>
+    <span>1.7k 字</span>
     
   </div>
   
@@ -266,16 +277,33 @@
 </blockquote>
 <h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><blockquote>
 <p>输入</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">2<br>0<br>1<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">2
+0
+1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>输出</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">1<br>0<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">1
+0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>啥都不说了，凉心出题人。题目十分的阴间。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210224190915.png" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210224190915.png" class="lozad post-image">看看这迷人的通过率，还浪费了我大把的卡常时间。</p>
 <p>说实话我现在还是没有看懂题，啥叫“一个字符串S是回文的，表示S的左右反转和S相同。”</p>
 <p>PS：在题解文档出来之后，并且翻阅了好多其他人的题解之后我懂了这个“（）”为什么不是回文：它指的回文是”abba”但是很显然（与）是两个符号。所以并不是aa形而是ab形，所以“（）”并不是一个回文序列。同理根据题中所给的构造条件可知，长度大于0的串都不可能是回文串。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> ncase;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;ncase);<br>    <span class="hljs-keyword">while</span> (ncase--)<br>    &#123;<br>        <span class="hljs-keyword">int</span> n;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;1&quot;</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> ncase;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;ncase);<br>    <span class="hljs-keyword">while</span> (ncase--)<br>    &#123;<br>        <span class="hljs-keyword">int</span> n;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;1&quot;</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
+using namespace std;
+int main()
+&#123;
+    int ncase;
+    scanf(&quot;%d&quot;, &amp;ncase);
+    while (ncase--)
+    &#123;
+        int n;
+        scanf(&quot;%d&quot;, &amp;n);
+        if (n &#x3D;&#x3D; 0) puts(&quot;1&quot;);
+        else puts(&quot;0&quot;);
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>这短小精湛的代码告诉我们，写题之前先读题。</p>
 <p>（出题人还让答案对一个数取模，看起来跟真的似的，给忽悠瘸了）</p>
@@ -296,17 +324,23 @@
 <h2 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h2><blockquote>
 <p>输入</p>
 </blockquote>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre class=" language-hljs apache"><span class="hljs-attribute">5</span> <span class="hljs-number">5</span><br><span class="hljs-attribute">Orz</span><br><span class="hljs-attribute">Ada</span> Aed <span class="hljs-number">5</span><br><span class="hljs-attribute">Orz</span> Ada <span class="hljs-number">6</span><br><span class="hljs-attribute">Apq</span> Aed <span class="hljs-number">8</span><br><span class="hljs-attribute">Akk</span> Apq <span class="hljs-number">12</span><br><span class="hljs-attribute">Aed</span> Orz <span class="hljs-number"><code class="language-hljs apache"><span class="hljs-attribute">5</span> <span class="hljs-number">5</span><br><span class="hljs-attribute">Orz</span><br><span class="hljs-attribute">Ada</span> Aed <span class="hljs-number">5</span><br><span class="hljs-attribute">Orz</span> Ada <span class="hljs-number">6</span><br><span class="hljs-attribute">Apq</span> Aed <span class="hljs-number">8</span><br><span class="hljs-attribute">Akk</span> Apq <span class="hljs-number">12</span><br><span class="hljs-attribute">Aed</span> Orz <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">5 5
+Orz
+Ada Aed 5
+Orz Ada 6
+Apq Aed 8
+Akk Apq 12
+Aed Orz 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>输出</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">28<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">28<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>说明</p>
 </blockquote>
-<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs xl">A<span class="hljs-function"><span class="hljs-title">da</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title">ed</span>-&gt;</span>O<span class="hljs-function"><span class="hljs-title">rz</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title">ed</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title"><code class="language-hljs xl">A<span class="hljs-function"><span class="hljs-title">da</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title">ed</span>-&gt;</span>O<span class="hljs-function"><span class="hljs-title">rz</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title">ed</span>-&gt;</span>A<span class="hljs-function"><span class="hljs-title">pq</span>-></span>Akk<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">Ada-&gt;Aed-&gt;Orz-&gt;Aed-&gt;Apq-&gt;Akk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h2><blockquote>
 <p>多组输入输出（以EOF结束），保证数据组数不超过 10 。</p>
@@ -316,7 +350,63 @@
 <p>图论题，由题可知我们要求一个图中的最小生成树。</p>
 <p>复习一下Kruskal算法。</p>
 <p>Kruskal算法的核心是贪心算法，我们根据边权进行从小到大排序，每次取出边权最小的那一个，然后将两点加入到生成树中，在添加的过程中需要注意的是，维护一个并查集，实时监测是否出现了环，如果出现了环那么这条边舍弃，结束的条件是当加入了n-1条边之后，最小生成树即建成。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre class=" language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">5005</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxm = <span class="hljs-number">200005</span>;<br>ll n, q, ans, tot;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">edge</span> &#123;</span><br>	<span class="hljs-keyword">int</span> from, to;<br>	ll v;<br>	<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> edge &amp;b)<span class="hljs-keyword">const</span>&#123;<br>		<span class="hljs-keyword">return</span> v &lt; b.v;<br>	&#125;<br>&#125;a[maxm];<br>ll f[maxn];<br>map&lt;string, ll&gt; mp;<br><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span></span>&#123;<span class="hljs-keyword">return</span> x == f[x] ? x : f[x] = <span class="hljs-built_in">find</span>(f[x]);&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Kruskal</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + q);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;++i) &#123;<br>		ll x = <span class="hljs-built_in">find</span>(a[i].from);<br>		ll y = <span class="hljs-built_in">find</span>(a[i].to);<br>		<span class="hljs-keyword">if</span> (x != y) &#123;<br>			f[x] = y;<br>			ans += a[i].v;<br>		&#125;<br>	&#125;<br>	ll x = <span class="hljs-built_in">find</span>(<span class="hljs-number">1</span>);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i) &#123;<br>		<span class="hljs-keyword">if</span> (<span class="hljs-built_in">find</span>(i) != x) &#123;<br>			cout &lt;&lt; <span class="hljs-string">&quot;No!&quot;</span> &lt;&lt; endl;<br>			<span class="hljs-keyword">return</span>;<span class="hljs-comment">//这个细节错了一次，忘记输出完no后直接返回</span><br>		&#125;<br>	&#125;<br>	cout &lt;&lt; ans &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">while</span> (cin &gt;&gt; n &gt;&gt; q) &#123;<br>		string aaa, bbb;<br>		mp.<span class="hljs-built_in">clear</span>();<br>		tot = <span class="hljs-number">0</span>;<br>		ans = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)	f[i] = i;<br>		cin &gt;&gt; aaa;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;++i)  &#123;<br>			cin &gt;&gt; aaa &gt;&gt; bbb;<br>			cin &gt;&gt; a[i].v;<br>			<span class="hljs-keyword">if</span> (mp.<span class="hljs-built_in">count</span>(aaa) == <span class="hljs-number">0</span>) mp[aaa] = ++tot;<br>			<span class="hljs-keyword">if</span> (mp.<span class="hljs-built_in">count</span>(bbb) == <span class="hljs-number">0</span>) mp[bbb] = ++tot;<br>			a[i].from = mp[aaa];<br>			a[i].to = mp[bbb];<br>		&#125;<br>		<span class="hljs-built_in">Kruskal</span>();<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number"><code class="language-hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span> </span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">5005</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxm = <span class="hljs-number">200005</span>;<br>ll n, q, ans, tot;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">edge</span> &#123;</span><br>	<span class="hljs-keyword">int</span> from, to;<br>	ll v;<br>	<span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> edge &amp;b)<span class="hljs-keyword">const</span>&#123;<br>		<span class="hljs-keyword">return</span> v &lt; b.v;<br>	&#125;<br>&#125;a[maxm];<br>ll f[maxn];<br>map&lt;string, ll&gt; mp;<br><span class="hljs-function">ll <span class="hljs-title">find</span><span class="hljs-params">(ll x)</span></span>&#123;<span class="hljs-keyword">return</span> x == f[x] ? x : f[x] = <span class="hljs-built_in">find</span>(f[x]);&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Kruskal</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + q);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;++i) &#123;<br>		ll x = <span class="hljs-built_in">find</span>(a[i].from);<br>		ll y = <span class="hljs-built_in">find</span>(a[i].to);<br>		<span class="hljs-keyword">if</span> (x != y) &#123;<br>			f[x] = y;<br>			ans += a[i].v;<br>		&#125;<br>	&#125;<br>	ll x = <span class="hljs-built_in">find</span>(<span class="hljs-number">1</span>);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;++i) &#123;<br>		<span class="hljs-keyword">if</span> (<span class="hljs-built_in">find</span>(i) != x) &#123;<br>			cout &lt;&lt; <span class="hljs-string">&quot;No!&quot;</span> &lt;&lt; endl;<br>			<span class="hljs-keyword">return</span>;<span class="hljs-comment">//这个细节错了一次，忘记输出完no后直接返回</span><br>		&#125;<br>	&#125;<br>	cout &lt;&lt; ans &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">while</span> (cin &gt;&gt; n &gt;&gt; q) &#123;<br>		string aaa, bbb;<br>		mp.<span class="hljs-built_in">clear</span>();<br>		tot = <span class="hljs-number">0</span>;<br>		ans = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;++i)	f[i] = i;<br>		cin &gt;&gt; aaa;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;++i)  &#123;<br>			cin &gt;&gt; aaa &gt;&gt; bbb;<br>			cin &gt;&gt; a[i].v;<br>			<span class="hljs-keyword">if</span> (mp.<span class="hljs-built_in">count</span>(aaa) == <span class="hljs-number">0</span>) mp[aaa] = ++tot;<br>			<span class="hljs-keyword">if</span> (mp.<span class="hljs-built_in">count</span>(bbb) == <span class="hljs-number">0</span>) mp[bbb] = ++tot;<br>			a[i].from = mp[aaa];<br>			a[i].to = mp[bbb];<br>		&#125;<br>		<span class="hljs-built_in">Kruskal</span>();<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt; 
+using namespace std;
+typedef long long ll;
+const int maxn &#x3D; 5005;
+const int maxm &#x3D; 200005;
+ll n, q, ans, tot;
+struct edge &#123;
+	int from, to;
+	ll v;
+	bool operator &lt; (const edge &amp;b)const&#123;
+		return v &lt; b.v;
+	&#125;
+&#125;a[maxm];
+ll f[maxn];
+map&lt;string, ll&gt; mp;
+ll find(ll x)&#123;return x &#x3D;&#x3D; f[x] ? x : f[x] &#x3D; find(f[x]);&#125;
+void Kruskal() &#123;
+	sort(a + 1, a + 1 + q);
+	for (int i&#x3D;1;i&lt;&#x3D;q;++i) &#123;
+		ll x &#x3D; find(a[i].from);
+		ll y &#x3D; find(a[i].to);
+		if (x !&#x3D; y) &#123;
+			f[x] &#x3D; y;
+			ans +&#x3D; a[i].v;
+		&#125;
+	&#125;
+	ll x &#x3D; find(1);
+	for (int i&#x3D;2;i&lt;&#x3D;n;++i) &#123;
+		if (find(i) !&#x3D; x) &#123;
+			cout &lt;&lt; &quot;No!&quot; &lt;&lt; endl;
+			return;&#x2F;&#x2F;这个细节错了一次，忘记输出完no后直接返回
+		&#125;
+	&#125;
+	cout &lt;&lt; ans &lt;&lt; endl;
+	return;
+&#125;
+
+int main() &#123;
+	while (cin &gt;&gt; n &gt;&gt; q) &#123;
+		string aaa, bbb;
+		mp.clear();
+		tot &#x3D; 0;
+		ans &#x3D; 0;
+		for (int i&#x3D;1;i&lt;&#x3D;n;++i)	f[i] &#x3D; i;
+		cin &gt;&gt; aaa;
+		for (int i&#x3D;1;i&lt;&#x3D;q;++i)  &#123;
+			cin &gt;&gt; aaa &gt;&gt; bbb;
+			cin &gt;&gt; a[i].v;
+			if (mp.count(aaa) &#x3D;&#x3D; 0) mp[aaa] &#x3D; ++tot;
+			if (mp.count(bbb) &#x3D;&#x3D; 0) mp[bbb] &#x3D; ++tot;
+			a[i].from &#x3D; mp[aaa];
+			a[i].to &#x3D; mp[bbb];
+		&#125;
+		Kruskal();
+	&#125;
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>来总结一下Kruskal的一些小细节，首先是并查集函数的背诵和f数组的初始化不要忘。</p>
@@ -328,20 +418,20 @@
 <p> 因此，小 Z 给了她一个难题：给定一个数 n （n 是4的倍数），计算 (n0)+(n4)+(n8)+…+(nn)\binom{n}{0}+\binom{n}{4}+\binom{n}{8}+…+\binom{n}{n}(0n​)+(4n​)+(8n​)+…+(nn​) ，答案对 998244353 取模。</p>
 <p> 小 M 不会做，请你来帮帮她吧！</p>
 <h2 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述:"></a>输入描述:</h2><blockquote>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs excel">输入一个数 <span class="hljs-built_in"><code class="language-hljs excel">输入一个数 <span class="hljs-built_in">n</span> 。<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输入一个数 n 。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <h2 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述:"></a>输出描述:</h2><blockquote>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs dns">输出答案对 <span class="hljs-number"><code class="language-hljs dns">输出答案对 <span class="hljs-number">998244353</span> 取模的值。<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">输出答案对 998244353 取模的值。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <h2 id="示例1-2"><a href="#示例1-2" class="headerlink" title="示例1"></a>示例1</h2><blockquote>
 <p>输入</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">12<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">12<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>输出</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs"><code class="language-hljs">992<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">992<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="备注-1"><a href="#备注-1" class="headerlink" title="备注:"></a>备注:</h2><blockquote>
 <p>对于所有的数据，1\le n\le 10^{18}1≤n≤10 18。</p>
@@ -539,9 +629,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     

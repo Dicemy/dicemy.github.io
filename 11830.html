@@ -128,6 +128,17 @@
   
   
   
+  
+  
+  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
+  
+  
+  
+<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
+
+  
+  
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -218,7 +229,7 @@
     
     
     <span class="dot"></span>
-    <span>1.3k 字</span>
+    <span>2.1k 字</span>
     
   </div>
   
@@ -247,7 +258,25 @@
 <p>正确的关机流程为：sync &gt; shutdown &gt; reboot &gt; halt</p>
 <p>关机指令为：shutdown ，你可以man shutdown 来看一下帮助文档。</p>
 <p>例如你可以运行如下命令关机：</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre class=" language-hljs mipsasm"><span class="hljs-keyword">sync </span>将数据由内存同步到硬盘中。<br><br><span class="hljs-keyword">shutdown </span>关机指令，你可以man <span class="hljs-keyword">shutdown </span>来看一下帮助文档。例如你可以运行如下命令关机：<br><br><span class="hljs-keyword">shutdown </span>–h <span class="hljs-number">10</span> ‘This server will <span class="hljs-keyword">shutdown </span>after <span class="hljs-number">10</span> mins’ 这个命令告诉大家，计算机将在<span class="hljs-number">10</span>分钟后关机，并且会显示在登陆用户的当前屏幕中。<br><br><span class="hljs-keyword">shutdown </span>–h now 立马关机<br><br><span class="hljs-keyword">shutdown </span>–h <span class="hljs-number">20</span>:<span class="hljs-number">25</span> 系统会在今天<span class="hljs-number">20</span>:<span class="hljs-number">25</span>关机<br><br><span class="hljs-keyword">shutdown </span>–h +<span class="hljs-number">10</span> 十分钟后关机<br><br><span class="hljs-keyword">shutdown </span>–r now 系统立马重启<br><br><span class="hljs-keyword">shutdown </span>–r +<span class="hljs-number">10</span> 系统十分钟后重启<br><br>reboot 就是重启，等同于 <span class="hljs-keyword">shutdown </span>–r now<br><br>halt 关闭系统，等同于<span class="hljs-keyword"><code class="language-hljs mipsasm"><span class="hljs-keyword">sync </span>将数据由内存同步到硬盘中。<br><br><span class="hljs-keyword">shutdown </span>关机指令，你可以man <span class="hljs-keyword">shutdown </span>来看一下帮助文档。例如你可以运行如下命令关机：<br><br><span class="hljs-keyword">shutdown </span>–h <span class="hljs-number">10</span> ‘This server will <span class="hljs-keyword">shutdown </span>after <span class="hljs-number">10</span> mins’ 这个命令告诉大家，计算机将在<span class="hljs-number">10</span>分钟后关机，并且会显示在登陆用户的当前屏幕中。<br><br><span class="hljs-keyword">shutdown </span>–h now 立马关机<br><br><span class="hljs-keyword">shutdown </span>–h <span class="hljs-number">20</span>:<span class="hljs-number">25</span> 系统会在今天<span class="hljs-number">20</span>:<span class="hljs-number">25</span>关机<br><br><span class="hljs-keyword">shutdown </span>–h +<span class="hljs-number">10</span> 十分钟后关机<br><br><span class="hljs-keyword">shutdown </span>–r now 系统立马重启<br><br><span class="hljs-keyword">shutdown </span>–r +<span class="hljs-number">10</span> 系统十分钟后重启<br><br>reboot 就是重启，等同于 <span class="hljs-keyword">shutdown </span>–r now<br><br>halt 关闭系统，等同于<span class="hljs-keyword">shutdown </span>–h now 和 poweroff<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">sync 将数据由内存同步到硬盘中。
+
+shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：
+
+shutdown –h 10 ‘This server will shutdown after 10 mins’ 这个命令告诉大家，计算机将在10分钟后关机，并且会显示在登陆用户的当前屏幕中。
+
+shutdown –h now 立马关机
+
+shutdown –h 20:25 系统会在今天20:25关机
+
+shutdown –h +10 十分钟后关机
+
+shutdown –r now 系统立马重启
+
+shutdown –r +10 系统十分钟后重启
+
+reboot 就是重启，等同于 shutdown –r now
+
+halt 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后总结一下，不管是重启系统还是关闭系统，首先要运行 <strong>sync</strong> 命令，把内存中的数据写到磁盘中。</p>
 <p>关机的命令有 <strong>shutdown –h now halt poweroff</strong> 和 <strong>init 0</strong> , 重启系统的命令有 <strong>shutdown –r now reboot init 6</strong>。</p>
@@ -265,7 +294,9 @@
 <p>你可以使用 <em>man [命令]</em> 来查看各个命令的使用文档，如 ：man cp。</p>
 <h3 id="ls-列出目录"><a href="#ls-列出目录" class="headerlink" title="ls (列出目录)"></a>ls (列出目录)</h3><p>在Linux系统当中， ls 命令可能是最常被运行的。</p>
 <p>语法：</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs mel">[root@www ~]# <span class="hljs-keyword">ls</span> [-aAdfFhilnrRSt] 目录名称<br>[root@www ~]# <span class="hljs-keyword">ls</span> [--<span class="hljs-keyword">color</span>=&#123;never,auto,always&#125;] 目录名称<br>[root@www ~]# <span class="hljs-keyword"><code class="language-hljs mel">[root@www ~]# <span class="hljs-keyword">ls</span> [-aAdfFhilnrRSt] 目录名称<br>[root@www ~]# <span class="hljs-keyword">ls</span> [--<span class="hljs-keyword">color</span>=&#123;never,auto,always&#125;] 目录名称<br>[root@www ~]# <span class="hljs-keyword">ls</span> [--full-time] 目录名称<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称
+[root@www ~]# ls [--color&#x3D;&#123;never,auto,always&#125;] 目录名称
+[root@www ~]# ls [--full-time] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -274,28 +305,51 @@
 <li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
 </ul>
 <p>将家目录下的所有文件列出来(含属性与隐藏档)</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># ls -al ~</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# ls -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
 <p>语法：</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre class=" language-hljs autoit"> cd [相对路径或绝对路径]<br><span class="hljs-meta">#使用 mkdir 命令创建 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># mkdir runoob</span><br><br><span class="hljs-meta">#使用绝对路径切换到 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># cd /root/runoob/</span><br><br><span class="hljs-meta">#使用相对路径切换到 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># cd ./runoob/</span><br><br><span class="hljs-meta"># 表示回到自己的家目录，亦即是 /root 这个目录</span><br>[root<span class="hljs-symbol">@www</span> runoob]<span class="hljs-meta"># cd ~</span><br><br><span class="hljs-meta"># 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"><code class="language-hljs autoit"> cd [相对路径或绝对路径]<br><span class="hljs-meta">#使用 mkdir 命令创建 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># mkdir runoob</span><br><br><span class="hljs-meta">#使用绝对路径切换到 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># cd /root/runoob/</span><br><br><span class="hljs-meta">#使用相对路径切换到 runoob 目录</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># cd ./runoob/</span><br><br><span class="hljs-meta"># 表示回到自己的家目录，亦即是 /root 这个目录</span><br>[root<span class="hljs-symbol">@www</span> runoob]<span class="hljs-meta"># cd ~</span><br><br><span class="hljs-meta"># 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；</span><br>[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># cd ..</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"> cd [相对路径或绝对路径]
+#使用 mkdir 命令创建 runoob 目录
+[root@www ~]# mkdir runoob
+
+#使用绝对路径切换到 runoob 目录
+[root@www ~]# cd &#x2F;root&#x2F;runoob&#x2F;
+
+#使用相对路径切换到 runoob 目录
+[root@www ~]# cd .&#x2F;runoob&#x2F;
+
+# 表示回到自己的家目录，亦即是 &#x2F;root 这个目录
+[root@www runoob]# cd ~
+
+# 表示去到目前的上一级目录，亦即是 &#x2F;root 的上一级目录的意思；
+[root@www ~]# cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd (显示目前所在的目录)"></a>pwd (显示目前所在的目录)</h3><p>pwd 是 <strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令。</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># pwd [-P]</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# pwd [-P]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
 <li><strong>-P</strong> ：显示出确实的路径，而非使用连结 (link) 路径。</li>
 </ul>
 <p>实例：单纯显示出目前的工作目录：</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@www</span> ~]<span class="hljs-meta"># pwd</span><br>/root   <== 显示出目录啦～<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# pwd
+&#x2F;root   &lt;&#x3D;&#x3D; 显示出目录啦～<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>实例显示出实际的工作目录，而非连结档本身的目录名而已。</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs gradle">[root@www ~]# cd <span class="hljs-regexp">/var/m</span>ail   &lt;==注意，<span class="hljs-regexp">/var/m</span>ail是一个连结档<br>[root@www mail]# pwd<br><span class="hljs-regexp">/var/m</span>ail         &lt;==列出目前的工作目录<br>[root@www mail]# pwd -P<br><span class="hljs-regexp">/var/</span>spool/mail   &lt;==怎么回事？有没有加 -P 差很多～<br>[root@www mail]# ls -ld <span class="hljs-regexp">/var/m</span>ail<br>lrwxrwxrwx <span class="hljs-number">1</span> root root <span class="hljs-number">10</span> Sep  <span class="hljs-number">4</span> <span class="hljs-number">17</span>:<span class="hljs-number">54</span> <span class="hljs-regexp">/var/m</span>ail -&gt; spool/mail<br># 看到这里应该知道为啥了吧？因为 <span class="hljs-regexp">/var/m</span>ail 是连结档，连结到 <span class="hljs-regexp"><code class="language-hljs gradle">[root@www ~]# cd <span class="hljs-regexp">/var/m</span>ail   &lt;==注意，<span class="hljs-regexp">/var/m</span>ail是一个连结档<br>[root@www mail]# pwd<br><span class="hljs-regexp">/var/m</span>ail         &lt;==列出目前的工作目录<br>[root@www mail]# pwd -P<br><span class="hljs-regexp">/var/</span>spool/mail   &lt;==怎么回事？有没有加 -P 差很多～<br>[root@www mail]# ls -ld <span class="hljs-regexp">/var/m</span>ail<br>lrwxrwxrwx <span class="hljs-number">1</span> root root <span class="hljs-number">10</span> Sep  <span class="hljs-number">4</span> <span class="hljs-number">17</span>:<span class="hljs-number">54</span> <span class="hljs-regexp">/var/m</span>ail -&gt; spool/mail<br># 看到这里应该知道为啥了吧？因为 <span class="hljs-regexp">/var/m</span>ail 是连结档，连结到 <span class="hljs-regexp">/var/</span>spool/mail <br># 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cd &#x2F;var&#x2F;mail   &lt;&#x3D;&#x3D;注意，&#x2F;var&#x2F;mail是一个连结档
+[root@www mail]# pwd
+&#x2F;var&#x2F;mail         &lt;&#x3D;&#x3D;列出目前的工作目录
+[root@www mail]# pwd -P
+&#x2F;var&#x2F;spool&#x2F;mail   &lt;&#x3D;&#x3D;怎么回事？有没有加 -P 差很多～
+[root@www mail]# ls -ld &#x2F;var&#x2F;mail
+lrwxrwxrwx 1 root root 10 Sep  4 17:54 &#x2F;var&#x2F;mail -&gt; spool&#x2F;mail
+# 看到这里应该知道为啥了吧？因为 &#x2F;var&#x2F;mail 是连结档，连结到 &#x2F;var&#x2F;spool&#x2F;mail 
+# 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。</p>
 <p>语法：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs arduino"><code class="language-hljs arduino">mkdir [-mp] 目录名称<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">mkdir [-mp] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -303,32 +357,51 @@
 <li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
 </ul>
 <p>实例：请到/tmp底下尝试创建数个新目录看看：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs stata">[root@www ~]# <span class="hljs-keyword">cd</span> /tmp<br>[root@www tmp]# <span class="hljs-keyword">mkdir</span> <span class="hljs-keyword">test</span>    &lt;==创建一名为 <span class="hljs-keyword">test</span> 的新目录<br>[root@www tmp]# <span class="hljs-keyword">mkdir</span> test1/test2/test3/test4<br><span class="hljs-keyword">mkdir</span>: cannot create directory `test1/test2/test3/test4&#x27;: <br><span class="hljs-keyword">No</span> such <span class="hljs-keyword">file</span> or directory       &lt;== 没办法直接创建此目录啊！<br>[root@www tmp]# <span class="hljs-keyword"><code class="language-hljs stata">[root@www ~]# <span class="hljs-keyword">cd</span> /tmp<br>[root@www tmp]# <span class="hljs-keyword">mkdir</span> <span class="hljs-keyword">test</span>    &lt;==创建一名为 <span class="hljs-keyword">test</span> 的新目录<br>[root@www tmp]# <span class="hljs-keyword">mkdir</span> test1/test2/test3/test4<br><span class="hljs-keyword">mkdir</span>: cannot create directory `test1/test2/test3/test4&#x27;: <br><span class="hljs-keyword">No</span> such <span class="hljs-keyword">file</span> or directory       &lt;== 没办法直接创建此目录啊！<br>[root@www tmp]# <span class="hljs-keyword">mkdir</span> -p test1/test2/test3/test4<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cd &#x2F;tmp
+[root@www tmp]# mkdir test    &lt;&#x3D;&#x3D;创建一名为 test 的新目录
+[root@www tmp]# mkdir test1&#x2F;test2&#x2F;test3&#x2F;test4
+mkdir: cannot create directory &#96;test1&#x2F;test2&#x2F;test3&#x2F;test4&#39;: 
+No such file or directory       &lt;&#x3D;&#x3D; 没办法直接创建此目录啊！
+[root@www tmp]# mkdir -p test1&#x2F;test2&#x2F;test3&#x2F;test4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>加了这个 -p 的选项，可以自行帮你创建多层目录！</p>
 <p>实例：创建权限为 <strong>rwx–x–x</strong> 的目录。</p>
-<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs tap">[root@www tmp]<span class="hljs-comment"># mkdir -m 711 test2</span><br>[root@www tmp]<span class="hljs-comment"># ls -l</span><br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:50 test<br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:53 test1<br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"><code class="language-hljs tap">[root@www tmp]<span class="hljs-comment"># mkdir -m 711 test2</span><br>[root@www tmp]<span class="hljs-comment"># ls -l</span><br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:50 test<br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:53 test1<br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:54 test2<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# mkdir -m 711 test2
+[root@www tmp]# ls -l
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>上面的权限部分，如果没有加上 -m 来强制配置属性，系统会使用默认属性。</p>
 <p>如果我们使用 -m ，如上例我们给予 -m 711 来给予新的目录 drwx–x–x 的权限。</p>
 <h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><p>语法：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs arduino"><code class="language-hljs arduino">rmdir [-p] 目录名称<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">rmdir [-p] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
 <li><strong>-p ：</strong>连同上一级『空的』目录也一起删除</li>
 </ul>
 <p>删除 runoob 目录</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@www</span> tmp]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@www</span> tmp]<span class="hljs-meta"># rmdir runoob/</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# rmdir runoob&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>将 mkdir 实例中创建的目录(/tmp 底下)删除掉！</p>
-<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs tap">[root@www tmp]<span class="hljs-comment"># ls -l   &lt;==看看有多少目录存在？</span><br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:50 test<br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:53 test1<br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:54 test2<br>[root@www tmp]<span class="hljs-comment"># rmdir test   &lt;==可直接删除掉，没问题</span><br>[root@www tmp]<span class="hljs-comment"># rmdir test1  &lt;==因为尚有内容，所以无法删除！</span><br>rmdir: `test1&#x27;: Directory not empty<br>[root@www tmp]<span class="hljs-comment"># rmdir -p test1/test2/test3/test4</span><br>[root@www tmp]<span class="hljs-comment"># ls -l        &lt;==您看看，底下的输出中test与test1不见了！</span><br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"><code class="language-hljs tap">[root@www tmp]<span class="hljs-comment"># ls -l   &lt;==看看有多少目录存在？</span><br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:50 test<br>drwxr-xr-x <span class="hljs-number"> 3 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:53 test1<br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:54 test2<br>[root@www tmp]<span class="hljs-comment"># rmdir test   &lt;==可直接删除掉，没问题</span><br>[root@www tmp]<span class="hljs-comment"># rmdir test1  &lt;==因为尚有内容，所以无法删除！</span><br>rmdir: `test1&#x27;: Directory not empty<br>[root@www tmp]<span class="hljs-comment"># rmdir -p test1/test2/test3/test4</span><br>[root@www tmp]<span class="hljs-comment"># ls -l        &lt;==您看看，底下的输出中test与test1不见了！</span><br>drwx--x--x <span class="hljs-number"> 2 </span>root  root<span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 18 </span>12:54 test2<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# ls -l   &lt;&#x3D;&#x3D;看看有多少目录存在？
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+[root@www tmp]# rmdir test   &lt;&#x3D;&#x3D;可直接删除掉，没问题
+[root@www tmp]# rmdir test1  &lt;&#x3D;&#x3D;因为尚有内容，所以无法删除！
+rmdir: &#96;test1&#39;: Directory not empty
+[root@www tmp]# rmdir -p test1&#x2F;test2&#x2F;test3&#x2F;test4
+[root@www tmp]# ls -l        &lt;&#x3D;&#x3D;您看看，底下的输出中test与test1不见了！
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。</p>
 <p>不过要注意的是，这个 rmdir 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。</p>
 <h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><p>cp 即拷贝文件和目录。</p>
 <p>语法:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs less"><span class="hljs-selector-attr">[root@www ~]</span># <span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[-adfilprsu]</span> 来源档(source) 目标档(destination)<br><span class="hljs-selector-attr">[root@www ~]</span># <span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[options]</span> <span class="hljs-selector-tag">source1</span> <span class="hljs-selector-tag">source2</span> <span class="hljs-selector-tag">source3</span> .... <span class="hljs-selector-tag"><code class="language-hljs less"><span class="hljs-selector-attr">[root@www ~]</span># <span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[-adfilprsu]</span> 来源档(source) 目标档(destination)<br><span class="hljs-selector-attr">[root@www ~]</span># <span class="hljs-selector-tag">cp</span> <span class="hljs-selector-attr">[options]</span> <span class="hljs-selector-tag">source1</span> <span class="hljs-selector-tag">source2</span> <span class="hljs-selector-tag">source3</span> .... <span class="hljs-selector-tag">directory</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)
+[root@www ~]# cp [options] source1 source2 source3 .... directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -343,7 +416,9 @@
 <li><strong>-u：</strong>若 destination 比 source 旧才升级 destination ！</li>
 </ul>
 <p>用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs gradle">[root@www ~]# cp ~<span class="hljs-regexp">/.bashrc /</span>tmp/bashrc<br>[root@www ~]# cp -i ~<span class="hljs-regexp">/.bashrc /</span>tmp/bashrc<br>cp: overwrite `<span class="hljs-regexp">/tmp/</span>bashrc<span class="hljs-string"><code class="language-hljs gradle">[root@www ~]# cp ~<span class="hljs-regexp">/.bashrc /</span>tmp/bashrc<br>[root@www ~]# cp -i ~<span class="hljs-regexp">/.bashrc /</span>tmp/bashrc<br>cp: overwrite `<span class="hljs-regexp">/tmp/</span>bashrc<span class="hljs-string">&#x27;? n  <==n不覆盖，y为覆盖</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cp ~&#x2F;.bashrc &#x2F;tmp&#x2F;bashrc
+[root@www ~]# cp -i ~&#x2F;.bashrc &#x2F;tmp&#x2F;bashrc
+cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y为覆盖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
   </div>
   <div>
   
@@ -532,9 +607,9 @@
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
-    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
+    
+    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
