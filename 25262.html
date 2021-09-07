@@ -220,7 +220,7 @@
     
     
     <span class="dot"></span>
-    <span>782 字</span>
+    <span>917 字</span>
     
   </div>
   
@@ -289,6 +289,15 @@ b &#x3D; b − α ∗ db<span aria-hidden="true" class="line-numbers-rows"><span
 <p>现在我们利用前五个公式完成了前向和后向传播，也实现了对所有训练样本进行预测和求导，再利用后两个公式，梯度下降更新参数。我们的目的是不使用for循环，所以我们就通过一次迭代实现一次梯度下降，但如果你希望多次迭代进行梯度下降，那么仍然需要for循环，放在最外层。不过我们还是觉得一次迭代就进行一次梯度下降，避免使用任何循环比较舒服一些。</p>
 </blockquote>
 <p>学习进度：吴恩达深度学习课程第一课前两周课（24节）</p>
+<h2 id="浅层神经网络"><a href="#浅层神经网络" class="headerlink" title="浅层神经网络"></a>浅层神经网络</h2><p>神经网络的大致组成：<strong>输入层，隐藏层，输出层。</strong></p>
+<p>logistic 回归只有输入层和输出层。</p>
+<p>双层神经网络的两层是指隐藏层和输出层，输入层不算。（也可以叫单隐层神经网络）</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210902224803.png" alt="img"  / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210902224803.png" class="lozad post-image">
+
+<p>上图是一个双层神经网络的示意图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210902224933.png" alt="在这里插入图片描述" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210902224933.png" class="lozad post-image"></p>
+<p>上图是隐藏层中一个神经元的具体构造。</p>
+<p>同时我们也希望可以将这个双层神经网络进行向量化从而来简化我们的运算。</p>
 
   </div>
   <div>
@@ -348,7 +357,7 @@ b &#x3D; b − α ∗ db<span aria-hidden="true" class="line-numbers-rows"><span
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">浅层神经网络</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -403,7 +412,7 @@ b &#x3D; b − α ∗ db<span aria-hidden="true" class="line-numbers-rows"><span
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">浅层神经网络</span></a></li></ol>
     </div>
   </article>
   
@@ -495,7 +504,7 @@ b &#x3D; b − α ∗ db<span aria-hidden="true" class="line-numbers-rows"><span
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E5%88%86%E7%B1%BB"><span class="toc-text">二分分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">浅层神经网络</span></a></li></ol>
   </article>
   
   
