@@ -8,10 +8,10 @@
   <meta name="theme-color" content="#fff" id="theme-color">
   <meta name="description" content="月光照着月光,月光普照">
   <link rel="icon" href="/img/biaoti.png">
-  <title>牛客刷题柱</title>
+  <title>刷题柱</title>
   
   
-  <meta property="og:title" content="牛客刷题柱">
+  <meta property="og:title" content="刷题柱">
   
   
   <meta property="og:url" content="https://dicemy.github.io/58203.html">
@@ -25,7 +25,7 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:published_time" content="2021-05-05">
-  <meta property="og:article:modified_time" content="2021-05-15">
+  <meta property="og:article:modified_time" content="2021-09-08">
   <meta property="og:article:author" content="Dicemy">
   
   
@@ -209,7 +209,7 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      牛客刷题柱
+      刷题柱
     </h1>
   </header>
   <div class="post-meta post-show-meta">
@@ -218,42 +218,59 @@
       <span>2021-05-05</span>
     </time>
     
+    <span class="dot"></span>
+    
+    <a href="/categories/竞赛/" class="post-meta-link">竞赛</a>
+    
+    
     
     <span class="dot"></span>
-    <span>1.7k 字</span>
+    <span>2.2k 字</span>
     
   </div>
   
   </header>
   <div id="section" class="post-content">
-    <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><h2 id="蚯蚓（5-4）"><a href="#蚯蚓（5-4）" class="headerlink" title="蚯蚓（5.4）"></a>蚯蚓（5.4）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16430">https://ac.nowcoder.com/acm/problem/16430</a></p>
+    <h1 id="kuangbin刷题柱"><a href="#kuangbin刷题柱" class="headerlink" title="kuangbin刷题柱"></a>kuangbin刷题柱</h1><h2 id="Dungeon-Master（5-23）"><a href="#Dungeon-Master（5-23）" class="headerlink" title="Dungeon Master（5.23）"></a>Dungeon Master（5.23）</h2><p>bfs，细节在于搜索到点之后入队时就进行标记已经搜索到了。不然会反复入队导致超时。</p>
+<h2 id="Find-The-Multiple（5-25）"><a href="#Find-The-Multiple（5-25）" class="headerlink" title="Find The Multiple（5.25）"></a>Find The Multiple（5.25）</h2><p>一个技巧，在dfs中如果不想让递归回到上一层之后继续执行的话，不要把dfs的返回类型设为void，而是设为bool，让多层的dfs返回到上一层就遇到一个if，就保证找到答案之后就会返回，不会寻找到多个值。常常用于有spj的搜索题。</p>
+<h2 id="Prime-Path（8-1）"><a href="#Prime-Path（8-1）" class="headerlink" title="Prime Path（8.1）"></a>Prime Path（8.1）</h2><p>水题，素数筛 + bfs。</p>
+<h2 id="Shuffle’m-Up（8-2）"><a href="#Shuffle’m-Up（8-2）" class="headerlink" title="Shuffle’m Up（8.2）"></a>Shuffle’m Up（8.2）</h2><p>水题，字符串模拟。注意：字符串为空的时候不要进行下标赋值，会出现问题，用<code>s.push_back</code>向空字符串中放置字符，否则会出现下标可以访问字符但是整体字符串为空的情况发生。</p>
+<h2 id="Pots（8-2）"><a href="#Pots（8-2）" class="headerlink" title="Pots（8.2）"></a>Pots（8.2）</h2><p>BFS，寻找最小变换次数即最小步数。比较特殊的是这个需要保存操作的步骤，可以用一个三维vector来保存每一次操作的动作编号，然后在到达状态之后依次输出即可。</p>
+<h2 id="Fire-Game（8-3）"><a href="#Fire-Game（8-3）" class="headerlink" title="Fire Game（8.3）"></a>Fire Game（8.3）</h2><p>离谱的是FZU挂掉了，没办法评测，样例都过了， 复习了一下如何求联通块的个数和双起点BFS。<br>经验：下次做题前看一下uoj在那个网站提交的标志是不是红色。。。</p>
+<h1 id="分类刷题柱"><a href="#分类刷题柱" class="headerlink" title="分类刷题柱"></a>分类刷题柱</h1><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h3 id="蚯蚓（5-4）"><a href="#蚯蚓（5-4）" class="headerlink" title="蚯蚓（5.4）"></a>蚯蚓（5.4）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16430">https://ac.nowcoder.com/acm/problem/16430</a></p>
 <p>这道题的解法是维护三个单调队列，由题可知蚯蚓切完的性质仍然满足蚯蚓的长度是依次递减的，由于是按照比例切的，那么切的是相同比例的蚯蚓放到一个队列中，由于靠前切的蚯蚓一定切出来的也是比之后切出来的蚯蚓长，所以当前的最长的蚯蚓只需从这三个队列中找到队头即可。</p>
-<h2 id="Cow-Line（5-5）"><a href="#Cow-Line（5-5）" class="headerlink" title="Cow Line（5.5）"></a>Cow Line（5.5）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/24876">https://ac.nowcoder.com/acm/problem/24876</a></p>
+<h3 id="Cow-Line（5-5）"><a href="#Cow-Line（5-5）" class="headerlink" title="Cow Line（5.5）"></a>Cow Line（5.5）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/24876">https://ac.nowcoder.com/acm/problem/24876</a></p>
 <p>这道题就是一个简单的双端队列的模拟，题中数据的范围是模拟可以接受的，看出来题考的数据结构是双端队列就行了，维护两边的进队和出队即可。</p>
-<h2 id="Team-Queue"><a href="#Team-Queue" class="headerlink" title="Team Queue"></a>Team Queue</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50966">https://ac.nowcoder.com/acm/problem/50966</a></p>
+<h3 id="Team-Queue"><a href="#Team-Queue" class="headerlink" title="Team Queue"></a>Team Queue</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50966">https://ac.nowcoder.com/acm/problem/50966</a></p>
 <p>又是一道模拟题，团队队列只需用团队编号作为大队伍的标志，然后再委会每一个团队队列的内部次序即可。用一个queue和一个queue数组和一个map即可，细节还行，难度适中。出现的问题是数组越界了。最后发现标志该团队是否入大队列的bool数组并不是必要的。可以用检查该团队队列是否为空来代替。</p>
-<h2 id="长跑（5-6）"><a href="#长跑（5-6）" class="headerlink" title="长跑（5.6）"></a>长跑（5.6）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14570">https://ac.nowcoder.com/acm/problem/14570</a></p>
+<h3 id="长跑（5-6）"><a href="#长跑（5-6）" class="headerlink" title="长跑（5.6）"></a>长跑（5.6）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14570">https://ac.nowcoder.com/acm/problem/14570</a></p>
 <p>是道队列bfs，从起点开始搜索，如果当前节点加上maxn可以到达并且钱够的商店就入队，然后如果碰到终点就退出。就是一道朴素的bfs，但是如果看不出来的还是有点迷惑的。</p>
-<h2 id="道路铺设（5-8）"><a href="#道路铺设（5-8）" class="headerlink" title="道路铺设（5.8）"></a>道路铺设（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21222">https://ac.nowcoder.com/acm/problem/21222</a></p>
+<h3 id="道路铺设（5-8）"><a href="#道路铺设（5-8）" class="headerlink" title="道路铺设（5.8）"></a>道路铺设（5.8）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21222">https://ac.nowcoder.com/acm/problem/21222</a></p>
 <p>再次做到NOIP2018提高组的题，感慨万千。隐约记得在考场上发现是前两天做过的原题的兴奋的心情了。当时的我先发现是差分，处理出差分数组之后经过观察是差分数组为正值的所有值的和即为答案，当时并没有经过严谨的证明，隐约感觉正值和负值之间一定会相互抵消。今天重新写到，当时的感觉重新涌上心头。</p>
 <p>其实就是一道水题，并不是优先队列，差分之后将正值加到一块即可。可以进行一个简单的证明，一个数列的差分数组的所有元素的和一定为0，那么想要将这个差分数组的正数变为0，那么每一个正数都要和负数相对应结合。其中一个问题是如果确定进行变化的一对差分中间没有0，其实这也好证明，因为每一个正数会找到最近的一个负数进行中和，那么可以保证在对更远的负数进行中和的时候，比较最近的负数已经进行了中和，级这个比较大的数通过和附近的数进行中和，已经和周围的数的大小基本相同，所以不会出现跨过一个比较小的数然后进行更行的情况发生。第二个问题是，会不会出现前面的正数不能将一个比较大的负数使用完就直接跳到后面的正数了，显然也是不会的，因为这个数列是一个正整数列。</p>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><h2 id="好串（5-7）"><a href="#好串（5-7）" class="headerlink" title="好串（5.7）"></a>好串（5.7）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21874">https://ac.nowcoder.com/acm/problem/21874</a></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><h3 id="好串（5-7）"><a href="#好串（5-7）" class="headerlink" title="好串（5.7）"></a>好串（5.7）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/21874">https://ac.nowcoder.com/acm/problem/21874</a></p>
 <p>一个栈的水题。</p>
-<h2 id="吐泡泡"><a href="#吐泡泡" class="headerlink" title="吐泡泡"></a>吐泡泡</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/15029">https://ac.nowcoder.com/acm/problem/15029</a></p>
+<h3 id="吐泡泡"><a href="#吐泡泡" class="headerlink" title="吐泡泡"></a>吐泡泡</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/15029">https://ac.nowcoder.com/acm/problem/15029</a></p>
 <p>一个栈的应用，水题。</p>
-<h2 id="表达式计算4（5-8）"><a href="#表达式计算4（5-8）" class="headerlink" title="表达式计算4（5.8）"></a>表达式计算4（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50999">https://ac.nowcoder.com/acm/problem/50999</a></p>
+<h3 id="表达式计算4（5-8）"><a href="#表达式计算4（5-8）" class="headerlink" title="表达式计算4（5.8）"></a>表达式计算4（5.8）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50999">https://ac.nowcoder.com/acm/problem/50999</a></p>
 <p>栈的经典应用，表达式求值。这是一个中缀表达式求值。维护两个栈，一个栈存数字，一个栈存符号，数字进栈没有什么要求，如果有一个符号要进栈的话，先把比该符号优先级高的在符号栈中的符号都先弹出栈，符号两边的数字进行运算。这样就保证了每一个运算都是优先级高的先运算。<br>模拟的过程会比较繁琐，而且注意栈如果为空的话调用栈的.top()会报错，所以把原来的表达式的最外层加一对括号来保护。</p>
-<h2 id="括号画家"><a href="#括号画家" class="headerlink" title="括号画家"></a>括号画家</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50998">https://ac.nowcoder.com/acm/problem/50998</a></p>
+<h3 id="括号画家"><a href="#括号画家" class="headerlink" title="括号画家"></a>括号画家</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/50998">https://ac.nowcoder.com/acm/problem/50998</a></p>
 <p>括号匹配，寻找最长合法括号匹配串。由于如果出现不合法的情况，那么之前的合法的长度就不能加到后面的括号序列上了。所以只需维护一个括号匹配栈即可，如果出现了不合法的情况就将最长串和目前的最长串进行一个更新即可，最后答案中的长度就是最长的合法括号字串的长度。</p>
-<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="奶酪（5-8）"><a href="#奶酪（5-8）" class="headerlink" title="奶酪（5.8）"></a>奶酪（5.8）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16417">https://ac.nowcoder.com/acm/problem/16417</a></p>
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h3 id="奶酪（5-8）"><a href="#奶酪（5-8）" class="headerlink" title="奶酪（5.8）"></a>奶酪（5.8）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16417">https://ac.nowcoder.com/acm/problem/16417</a></p>
 <p>经典并查集例题，怎么写都能过的无极数据友好的题，只用将两两洞进行测距然后看距离满足，如果满足就直接将两个洞用并查集连在一起。然后看离地下比较近的洞和离上面比较近的洞是否联通即可。这道题应该也可以用其他测联通的方法写出来。</p>
-<h2 id="关押罪犯"><a href="#关押罪犯" class="headerlink" title="关押罪犯"></a>关押罪犯</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16591">https://ac.nowcoder.com/acm/problem/16591</a></p>
+<h3 id="关押罪犯"><a href="#关押罪犯" class="headerlink" title="关押罪犯"></a>关押罪犯</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16591">https://ac.nowcoder.com/acm/problem/16591</a></p>
 <p>并查集的经典应用，一个非常好的思路是：我们将并查集的f数组进行拓展一下来表示更多的状态，来简化一些比较困难的逻辑表示。我们将f数组拓展一倍，i表示一个监狱i+n表示另一个监狱。我们对于每一对罪犯，都默认将他们装到不同的两个监狱中即a和b+n，a+n和b，然后检查他们在相同的监狱中是否出现冲突。这个做法其实是将一个状态拆成了比较好表示的两个状态。将逻辑上很复杂才能检测的问题变成一些很简单能判断的问题。<br>这种方法叫做建立虚点。</p>
 <p>虚点的建立可以拓展表示一个点的多个状态。</p>
-<h2 id="食物链（5-9）"><a href="#食物链（5-9）" class="headerlink" title="食物链（5.9）"></a>食物链（5.9）</h2><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16884">https://ac.nowcoder.com/acm/problem/16884</a></p>
+<h3 id="食物链（5-9）"><a href="#食物链（5-9）" class="headerlink" title="食物链（5.9）"></a>食物链（5.9）</h3><p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16884">https://ac.nowcoder.com/acm/problem/16884</a></p>
 <p>这题本质上应该是然用带权的并查集来写，但是有一种比较好写的方法是开虚点。用三倍的n的数组来表示每一个点的三个不同性质，对不同性质之间进行操作，这样就减小了处理复杂问题的难度。</p>
-<h2 id="棋盘问题（5-15）"><a href="#棋盘问题（5-15）" class="headerlink" title="棋盘问题（5.15）"></a>棋盘问题（5.15）</h2><p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=1321">http://poj.org/problem?id=1321</a></p>
+<h3 id="棋盘问题（5-15）"><a href="#棋盘问题（5-15）" class="headerlink" title="棋盘问题（5.15）"></a>棋盘问题（5.15）</h3><p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=1321">http://poj.org/problem?id=1321</a></p>
 <p>一道经典的搜索题，用dfs进行搜索，一个控制层数，一个控制放了几个棋子。注意dfs中需要将每一层的情况都列出来。</p>
+<h1 id="刷题打卡墙"><a href="#刷题打卡墙" class="headerlink" title="刷题打卡墙"></a>刷题打卡墙</h1><p><strong>5.8：</strong> 5道。挺麻的，又开始觉得自己是个fw了</p>
+<p><strong>5.15</strong>：1道题，被张宇说的网络流刺激到了，又滚来刷题了。</p>
+<p><strong>5.23</strong>：1道题，kuangbin的题单质量就是高，把之前的一道题改对了，还是浮躁，张文军教练的话，很有道理。</p>
+<p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210523221018.png" class="lozad post-image"src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210523221018.png"></p>
+<p><strong>5.24</strong>：1道题，今天晚上有cf的#722的div2的比赛。但是进晚了怕掉分没打，写了一下t1，水体一道。</p>
+<p><strong>5.25</strong>：1道题，kuangbin的搜索专题。</p>
 
   </div>
   <div>
@@ -263,12 +280,12 @@
 <div class="nav">
   
   <div class="nav-item-prev">
-    <a href="/18382.html" class="nav-link">
+    <a href="/51347.html" class="nav-link">
       <i class="iconfont icon-left nav-prev-icon"></i>
       <div>
         <div class="nav-label">上一篇</div>
         
-        <div class="nav-title">刷题打卡 </div>
+        <div class="nav-title">MySql数据库入门 </div>
         
       </div>
     </a>
@@ -276,11 +293,11 @@
   
   
   <div class="nav-item-next">
-    <a href="/50736.html" class="nav-link">
+    <a href="/56512.html" class="nav-link">
       <div>
         <div class="nav-label">下一篇</div>
         
-        <div class="nav-title">html学习笔记 </div>
+        <div class="nav-title">观影小记 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -325,7 +342,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kuangbin%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">kuangbin刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dungeon-Master%EF%BC%885-23%EF%BC%89"><span class="toc-text">Dungeon Master（5.23）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-The-Multiple%EF%BC%885-25%EF%BC%89"><span class="toc-text">Find The Multiple（5.25）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prime-Path%EF%BC%888-1%EF%BC%89"><span class="toc-text">Prime Path（8.1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shuffle%E2%80%99m-Up%EF%BC%888-2%EF%BC%89"><span class="toc-text">Shuffle’m Up（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pots%EF%BC%888-2%EF%BC%89"><span class="toc-text">Pots（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fire-Game%EF%BC%888-3%EF%BC%89"><span class="toc-text">Fire Game（8.3）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">分类刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7%E9%A2%98%E6%89%93%E5%8D%A1%E5%A2%99"><span class="toc-text">刷题打卡墙</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -337,7 +354,7 @@
 <p class="author-description">软件工程在读大学生</p>
 <div class="author-message">
   <a class="author-posts-count" href="/archives">
-    <span>36</span>
+    <span>28</span>
     <span>文章</span>
   </a>
   <a class="author-categories-count" href="/categories">
@@ -345,7 +362,7 @@
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>17</span>
+    <span>16</span>
     <span>标签</span>
   </a>
 </div>
@@ -380,7 +397,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kuangbin%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">kuangbin刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dungeon-Master%EF%BC%885-23%EF%BC%89"><span class="toc-text">Dungeon Master（5.23）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-The-Multiple%EF%BC%885-25%EF%BC%89"><span class="toc-text">Find The Multiple（5.25）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prime-Path%EF%BC%888-1%EF%BC%89"><span class="toc-text">Prime Path（8.1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shuffle%E2%80%99m-Up%EF%BC%888-2%EF%BC%89"><span class="toc-text">Shuffle’m Up（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pots%EF%BC%888-2%EF%BC%89"><span class="toc-text">Pots（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fire-Game%EF%BC%888-3%EF%BC%89"><span class="toc-text">Fire Game（8.3）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">分类刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7%E9%A2%98%E6%89%93%E5%8D%A1%E5%A2%99"><span class="toc-text">刷题打卡墙</span></a></li></ol>
     </div>
   </article>
   
@@ -390,24 +407,24 @@
   <div class="categories-header"><i class="iconfont icon-fenlei" style="padding-right: 2px;"></i>分类</div>
   <div class="categories-list">
     
-      <a href="/categories/编程">
+      <a href="/categories/竞赛">
         <div class="categories-list-item">
-          编程
-          <span class="categories-list-item-badge">12</span>
+          竞赛
+          <span class="categories-list-item-badge">16</span>
         </div>
       </a>
     
       <a href="/categories/技术">
         <div class="categories-list-item">
           技术
-          <span class="categories-list-item-badge">8</span>
+          <span class="categories-list-item-badge">7</span>
         </div>
       </a>
     
       <a href="/categories/文化课">
         <div class="categories-list-item">
           文化课
-          <span class="categories-list-item-badge">4</span>
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -429,23 +446,21 @@
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
-    
-    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
-    
     <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
+    
+    <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
     <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
-    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
+    <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\python" title="python"><div class="tags-list-item">python</div></a>
+    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
+    
+    <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
@@ -458,6 +473,8 @@
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
   </div>
 </div>
@@ -472,7 +489,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>目录</div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kuangbin%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">kuangbin刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dungeon-Master%EF%BC%885-23%EF%BC%89"><span class="toc-text">Dungeon Master（5.23）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-The-Multiple%EF%BC%885-25%EF%BC%89"><span class="toc-text">Find The Multiple（5.25）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prime-Path%EF%BC%888-1%EF%BC%89"><span class="toc-text">Prime Path（8.1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shuffle%E2%80%99m-Up%EF%BC%888-2%EF%BC%89"><span class="toc-text">Shuffle’m Up（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pots%EF%BC%888-2%EF%BC%89"><span class="toc-text">Pots（8.2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fire-Game%EF%BC%888-3%EF%BC%89"><span class="toc-text">Fire Game（8.3）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%88%B7%E9%A2%98%E6%9F%B1"><span class="toc-text">分类刷题柱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9A%AF%E8%9A%93%EF%BC%885-4%EF%BC%89"><span class="toc-text">蚯蚓（5.4）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cow-Line%EF%BC%885-5%EF%BC%89"><span class="toc-text">Cow Line（5.5）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Team-Queue"><span class="toc-text">Team Queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E8%B7%91%EF%BC%885-6%EF%BC%89"><span class="toc-text">长跑（5.6）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%93%E8%B7%AF%E9%93%BA%E8%AE%BE%EF%BC%885-8%EF%BC%89"><span class="toc-text">道路铺设（5.8）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E4%B8%B2%EF%BC%885-7%EF%BC%89"><span class="toc-text">好串（5.7）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%90%E6%B3%A1%E6%B3%A1"><span class="toc-text">吐泡泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%974%EF%BC%885-8%EF%BC%89"><span class="toc-text">表达式计算4（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7%E7%94%BB%E5%AE%B6"><span class="toc-text">括号画家</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%B6%E9%85%AA%EF%BC%885-8%EF%BC%89"><span class="toc-text">奶酪（5.8）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%8A%BC%E7%BD%AA%E7%8A%AF"><span class="toc-text">关押罪犯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9%E9%93%BE%EF%BC%885-9%EF%BC%89"><span class="toc-text">食物链（5.9）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98%EF%BC%885-15%EF%BC%89"><span class="toc-text">棋盘问题（5.15）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7%E9%A2%98%E6%89%93%E5%8D%A1%E5%A2%99"><span class="toc-text">刷题打卡墙</span></a></li></ol>
   </article>
   
   
