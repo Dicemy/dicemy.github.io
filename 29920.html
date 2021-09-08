@@ -248,6 +248,8 @@
 <p><strong>共识</strong>：交易必须按照发生的顺序写入账本，即使它们可能位于网络中不同的参与者集合之中。为此，必须建立交易的顺序，且必须采用一种方法来拒绝错误（或恶意）插入到账本中的非法交易。</p>
 <p>这是一个彻底的计算机科学研究领域，且有很多方法可以实现它，每个方法都有不同的权衡。例如，PBFT（实用拜占庭容错算法）可以为文件副本提供一种机制，使其能够保持各个副本的一致性，即使在发生损坏的情况下也是如此。或者，在比特币中，通过称为挖矿的过程进行排序，其中竞争计算机竞相解决加密难题，该难题定义所有过程随后构建的顺序。</p>
 <p>Hyperledger Fabric 被设计为允许网络启动者选择最能代表参与者间存在的关系的共识机制。与隐私一样，有一系列需求；从他们的关系高度结构化的网络，到更加点对点的网络。</p>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/whatis.html">项目文档[1]</a></p>
 <h1 id="Hyperledger-Fabric平台搭建笔记"><a href="#Hyperledger-Fabric平台搭建笔记" class="headerlink" title="Hyperledger Fabric平台搭建笔记"></a>Hyperledger Fabric平台搭建笔记</h1><h3 id="centos7-9系统的安装和基础配置"><a href="#centos7-9系统的安装和基础配置" class="headerlink" title="centos7.9系统的安装和基础配置"></a>centos7.9系统的安装和基础配置</h3><ol>
 <li>记得选择语言，汉语，这是在安装界面可以看到的。ps：选错语言的话酒删了重装吧。</li>
 <li>记得选择磁盘位置</li>
@@ -358,6 +360,10 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
 
 <p>关闭所有运行着的docker容器</p>
 <pre class="line-numbers language-none"><code class="language-none">docker rm -f $(docker ps -a -q)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=1d093d10-a21e-4640-852e-87fc4d68456c&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=003vny0w36jQEW2ofd0w3ju6IV2vny0O&channelId=wx75425a38a3ed6402">实验平台在服务器上的基于脚本的自动化部署[1]</a></p>
+<p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=91104fed-4f7d-481e-9ac2-8008b8d2fff3&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=043YQkll27EWj74Kggll2454aR2YQkl0&channelId=wx75425a38a3ed6402">区块链实验平台部署[2]</a></p>
 
   </div>
   <div>
@@ -715,6 +721,16 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
   </script>
   <script>loadScript("/js/lib/lozad.min.js", addLazyload)</script>
   
+  
+  <script>
+    var googleAnalytics = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3BC8TV17YR');
+    }
+  </script>
+  <script>loadScript("https://www.googletagmanager.com/gtag/js?id=" + "G-3BC8TV17YR", googleAnalytics)</script>
   
 </body>
 
