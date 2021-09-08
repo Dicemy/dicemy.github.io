@@ -102,6 +102,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -126,22 +129,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -227,7 +220,7 @@
     
     
     <span class="dot"></span>
-    <span>1.2k 字</span>
+    <span>1.1k 字</span>
     
   </div>
   
@@ -266,86 +259,85 @@
 <h2 id="页头页尾"><a href="#页头页尾" class="headerlink" title="页头页尾"></a>页头页尾</h2><p>pages 属性用来设置页面路径，它是一个数组，每一项都是字符串来指定小程序由哪些页面组成。数组的第一项代表小程序的初始页面。小程序中新增或减少页面，都需要对 pages 数组进行修改。</p>
 <p>window 属性用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
 <p>我们把页头的标题和颜色修改一下，页尾部分我们做一个 tab 栏来切换页面，这个属性叫做 tabBar，代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;
+<pre><code>&#123;
   &quot;pages&quot;:[
-    &quot;pages&#x2F;index&#x2F;index&quot;,
-    &quot;pages&#x2F;logs&#x2F;logs&quot;
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
   ],
   &quot;window&quot;:&#123;
     &quot;backgroundTextStyle&quot;:&quot;light&quot;,
-    &quot;navigationBarBackgroundColor&quot;: &quot;#2f2f8f&quot;,	
-    &quot;navigationBarTitleText&quot;: &quot;GoZeroWaste&quot;,	# 标题
+    &quot;navigationBarBackgroundColor&quot;: &quot;#2f2f8f&quot;,    
+    &quot;navigationBarTitleText&quot;: &quot;GoZeroWaste&quot;,    # 标题
     &quot;navigationBarTextStyle&quot;:&quot;white&quot;
   &#125;,
-  &quot;tabBar&quot;:&#123;					
+  &quot;tabBar&quot;:&#123;                    
     &quot;color&quot;: &quot;#bfc1ab&quot;,
     &quot;selectedColor&quot;: &quot;#13b11c&quot;,
     &quot;backgroundColor&quot;: &quot;#1f1f4f&quot;,
-    &quot;list&quot;: [	# 导航栏的两个按钮
+    &quot;list&quot;: [    # 导航栏的两个按钮
       &#123;
-        &quot;pagePath&quot;: &quot;pages&#x2F;index&#x2F;index&quot;,
-        &quot;iconPath&quot;: &quot;image&#x2F;icon_component.png&quot;,	# 第一个按钮的图标
-        &quot;selectedIconPath&quot;: &quot;image&#x2F;icon_component_HL.png&quot;,	# 选择第二个按钮后第一个的按钮的图标
-        &quot;text&quot;: &quot;个人中心&quot;	# 按钮的名字
+        &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+        &quot;iconPath&quot;: &quot;image/icon_component.png&quot;,    # 第一个按钮的图标
+        &quot;selectedIconPath&quot;: &quot;image/icon_component_HL.png&quot;,    # 选择第二个按钮后第一个的按钮的图标
+        &quot;text&quot;: &quot;个人中心&quot;    # 按钮的名字
       &#125;,
       &#123;
-        &quot;pagePath&quot;: &quot;pages&#x2F;details&#x2F;details&quot;,
-        &quot;iconPath&quot;: &quot;image&#x2F;icon_API.png&quot;,	# 第二个按钮的图标
-        &quot;selectedIconPath&quot;: &quot;image&#x2F;icon_API_HL.png&quot;,	# 选择第一个按钮后第二个的按钮的图标
-        &quot;text&quot;: &quot;生活指南&quot;	# 按钮的名字
+        &quot;pagePath&quot;: &quot;pages/details/details&quot;,
+        &quot;iconPath&quot;: &quot;image/icon_API.png&quot;,    # 第二个按钮的图标
+        &quot;selectedIconPath&quot;: &quot;image/icon_API_HL.png&quot;,    # 选择第一个按钮后第二个的按钮的图标
+        &quot;text&quot;: &quot;生活指南&quot;    # 按钮的名字
       &#125;
     ]
   &#125;
 &#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+</code></pre>
 <p>（所用到的图片放在项目的 image 目录，你也可以使用自己的图片）</p>
 <p>这里用到几个 tabBar 的属性是 color、selectedColor、backgroundColor 和 list，list 是一个数组，主要用于设定导航的路径。</p>
 <p>因为导航栏中一个按钮关联的是另一个页面，但是这个页面还没有存在，所以我们需要在app.json文件的list中直接添加，修改app.json文件：</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;
+<pre><code>&#123;
     &quot;pages&quot;:[
-    &quot;pages&#x2F;index&#x2F;index&quot;,
-    &quot;pages&#x2F;logs&#x2F;logs&quot;,
-    &quot;pages&#x2F;details&#x2F;details&quot;
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;,
+    &quot;pages/details/details&quot;
     ],
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    
+</code></pre>
 <p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。<br>保存刷新之后就会发现，目录结构里自动创建了这一页。</p>
 <p>简单起见，我们就在 pages/index 目录下实现 “个人中心” 页面好了。双击打开 index.wxml，初始内容如下：</p>
 <p>这里已经有一些代码了，虽然现在可能还看不懂，但我们知道，这就是现在页面的源代码。我们把 “Hello World” 部分注释掉，增加我们希望显示的内容：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--index.wxml--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userinfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;!hasUserInfo &amp;&amp; canIUse&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span> <span class="token attr-name">bindgetuserinfo</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 获取头像昵称 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--index.wxml--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{!hasUserInfo &amp;&amp; canIUse}}<span class="token punctuation">"</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span> <span class="token attr-name">bindgetuserinfo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 获取头像昵称 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>block</span> <span class="token attr-name"><span class="token namespace">wx:</span>else</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bindViewTap<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userinfo-avatar<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123;userInfo.avatarUrl&#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">background-size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cover<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>userinfo-nickname<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123;userInfo.nickName&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bindViewTap<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo-avatar<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{userInfo.avatarUrl}}<span class="token punctuation">"</span></span> <span class="token attr-name">background-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cover<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo-nickname<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{userInfo.nickName}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>block</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
-   <span class="token comment">&lt;!-- &lt;view class="usermotto">
-    &lt;text class="user-motto">&#123;&#123;motto&#125;&#125;&lt;/text>
-  &lt;/view>  --></span>	<span class="token comment">&lt;!--注释内容--></span>
-    <span class="token comment">&lt;!--页面的三行字--></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ID_Badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token comment" spellcheck="true">&lt;!-- &lt;view class="usermotto">
+    &lt;text class="user-motto">{{motto}}&lt;/text>
+  &lt;/view>  --></span>    <span class="token comment" spellcheck="true">&lt;!--注释内容--></span>
+    <span class="token comment" spellcheck="true">&lt;!--页面的三行字--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ID_Badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ID_info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123;company&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>	
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ID_info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{company}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>    
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>&#123;&#123;position&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>{{position}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>&#123;&#123;lesson&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>{{lesson}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">发现HTML的几种特性，自己总结的：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html">发现HTML的几种特性，自己总结的：
 1.一个标签出现之后会有一个相同的带反斜线的作为结尾，所以每一个标签都是成对出现的比如：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>  
-2.在一个标签可以修饰一个变量，然后这个变化的量有一个类，用class来说明，比如<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>ID_Badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>ID_info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+2.在一个标签可以修饰一个变量，然后这个变化的量有一个类，用class来说明，比如&lt;view class = "ID_Badge"> &lt;text class = "ID_info">
 3.一个变量可以与.js文件中的date中的值相互关联，所以html只作为一个最前面的一个框架的作用，后面的.js文件支撑整个页面逻辑。
 4.只有html文件和js文件并不行，每一个类都需要在本页面的css文件内进行声明，并且设置这个类的样式属性。
-5.每一个text或者image的标签必须被一对view标签包围。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+5.每一个text或者image的标签必须被一对view标签包围。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
   </div>
   <div>
@@ -443,7 +435,7 @@
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -491,7 +483,7 @@
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -527,33 +519,31 @@
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -661,6 +651,9 @@
 </a>
 
   
+  
+  
+
   
   
   <script>

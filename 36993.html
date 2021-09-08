@@ -104,6 +104,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -128,22 +131,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -255,12 +248,12 @@
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>11行，若干个整数（个数≤100000）</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>22行，每行一个整数，第一个数字表示这套系统最多能拦截多少导弹，第二个数字表示如果要拦截所有导弹最少要配备多少套这种导弹拦截系统。</p>
 <h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">389 207 155 300 299 170 158 65<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>389 207 155 300 299 170 158 65
+</code></pre>
 <p><strong>输出 #1</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">6
-2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<pre><code>6
+2
+</code></pre>
 <h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>为了让大家更好地测试n方算法，本题开启spj，n方100分，nlogn200分</p>
 <p>每点两问，按问给分</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2>
@@ -360,7 +353,7 @@
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -408,7 +401,7 @@
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -444,33 +437,31 @@
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -578,6 +569,9 @@
 </a>
 
   
+  
+  
+
   
   
   <script>

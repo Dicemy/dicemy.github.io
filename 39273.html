@@ -29,9 +29,9 @@
   <meta property="og:article:author" content="Dicemy">
   
   
-  <meta property="og:article:tag" content="博弈论">
+  <meta property="og:article:tag" content="学习笔记">
   
-  <meta property="og:article:tag" content="算法笔记">
+  <meta property="og:article:tag" content="博弈论">
   
   
   
@@ -104,6 +104,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -128,22 +131,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -229,7 +222,7 @@
     
     
     <span class="dot"></span>
-    <span>747 字</span>
+    <span>733 字</span>
     
   </div>
   
@@ -238,12 +231,12 @@
       <i class="iconfont icon-biaoqian" style="margin-right: 2px; font-size: 1.15rem;"></i>
       
       
-        <a href="/tags/博弈论/" class="post-meta-link">博弈论</a>
+        <a href="/tags/学习笔记/" class="post-meta-link">学习笔记</a>
       
       
       <span class="dot"></span>
       
-        <a href="/tags/算法笔记/" class="post-meta-link">算法笔记</a>
+        <a href="/tags/博弈论/" class="post-meta-link">博弈论</a>
       
     </div>
   </div>
@@ -270,15 +263,15 @@
 <p>两堆各若干个物品，两个人轮流从任意一堆中取出至少一个或者同时从两堆中取出同样多的物品，规定每次至少取一个，至多不限，最后取光者胜利。</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41311604/article/details/79980882">参考博客</a></p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">inline bool check(int x, int y) &#123;
-	int a &#x3D; min(x, y), b &#x3D; max(x, y);
-	double c &#x3D; (double)abs(b - a);
-	double r &#x3D; (sqrt(5.0) + 1) &#x2F; 2;
-	int tmp &#x3D; int(c * r);
-	if (a &#x3D;&#x3D; tmp) return 0; &#x2F;&#x2F;后手必胜 
-	else return 1; &#x2F;&#x2F;先手必胜 
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">inline</span> <span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token function">abs</span><span class="token punctuation">(</span>b <span class="token operator">-</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>c <span class="token operator">*</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> tmp<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//后手必胜 </span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//先手必胜 </span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="尼姆博奕"><a href="#尼姆博奕" class="headerlink" title="尼姆博奕"></a>尼姆博奕</h1><blockquote>
 <p>有N堆石子。A B两个人轮流拿，A先拿。每次只能从一堆中取若干个，可将一堆全取走，但不可不取，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N及每堆石子的数量，问最后谁能赢得比赛。</p>
 </blockquote>
@@ -387,7 +380,7 @@
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -435,7 +428,7 @@
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -471,33 +464,31 @@
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -605,6 +596,9 @@
 </a>
 
   
+  
+  
+
   
   
   <script>

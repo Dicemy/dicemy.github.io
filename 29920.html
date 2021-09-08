@@ -100,6 +100,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -124,22 +127,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -271,96 +264,100 @@
 <h3 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h3><ol start="2">
 <li><p>Go语言安装</p>
 <p>从官网下载最新的linux-amd64.tar.gz压缩包（这里是go1.15.6.linux-amd64.tar.gz）</p>
-<pre class="line-numbers language-none"><code class="language-none">wget https:&#x2F;&#x2F;golang.google.cn&#x2F;dl&#x2F;go1.15.6.linux-amd64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>wget https://golang.google.cn/dl/go1.15.6.linux-amd64.tar.gz
+</code></pre>
 <p>将其解压到/usr/local目录下：</p>
-<pre class="line-numbers language-none"><code class="language-none">sudo tar -C &#x2F;usr&#x2F;local -zxf [压缩包名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>sudo tar -C /usr/local -zxf [压缩包名]
+</code></pre>
 </li>
 <li><p>配置环境变量，在/etc/profile文件的末尾加入（在加入之前创建/home/gopath目录）</p>
-<pre class="line-numbers language-none"><code class="language-none">export GOPATH&#x3D;&#x2F;home&#x2F;gopath
-export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>export GOPATH=/home/gopath
+export PATH=$PATH:/usr/local/go/bin
+</code></pre>
 </li>
 <li><p>配置中国的代理</p>
-<pre class="line-numbers language-none"><code class="language-none">go env -w GO111MODULE&#x3D;on
-go env -w GOPROXY&#x3D;https:&#x2F;&#x2F;goproxy.cn,direct<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+</code></pre>
 </li>
 <li><p>查看是否配置成功</p>
-<pre class="line-numbers language-none"><code class="language-none">go env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
+<pre><code>go env
+</code></pre>
 </li>
 </ol>
 <h3 id="mwget安装"><a href="#mwget安装" class="headerlink" title="mwget安装"></a>mwget安装</h3><p>wget太慢使用mwget</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wget http:&#x2F;&#x2F;jaist.dl.sourceforge.net&#x2F;project&#x2F;kmphpfm&#x2F;mwget&#x2F;0.1&#x2F;mwget_0.1.0.orig.tar.bz2
-yum install bzip2 gcc-c++ openssl-devel intltool -y
-bzip2 -d mwget_0.1.0.orig.tar.bz2
-tar -xvf mwget_0.1.0.orig.tar 
-cd mwget_0.1.0.orig
-.&#x2F;configure 
-make
-make install　　echo &quot;至此，安装完成&quot;
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2
+yum <span class="token function">install</span> <span class="token function">bzip2</span> gcc-c++ openssl-devel intltool -y
+<span class="token function">bzip2</span> -d mwget_0.1.0.orig.tar.bz2
+<span class="token function">tar</span> -xvf mwget_0.1.0.orig.tar 
+<span class="token function">cd</span> mwget_0.1.0.orig
+./configure 
+<span class="token function">make</span>
+<span class="token function">make</span> <span class="token function">install</span>　　<span class="token keyword">echo</span> <span class="token string">"至此，安装完成"</span>
 % 断点续传
-wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token function">wget</span> -c 要下载的文件，实现断点续传。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="最后的配置工作"><a href="#最后的配置工作" class="headerlink" title="最后的配置工作"></a>最后的配置工作</h3><p>生成身份材料</p>
 <ol>
 <li><p>进入BasicNetwork-2.0/artifacts/channel目录，执行</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;create-artifacts.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>./create-artifacts.sh
+</code></pre>
 </li>
 <li><p>进入BasicNetwork-2.0/artifacts目录执行</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;docker-compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>./docker-compose up -d
+</code></pre>
 </li>
 <li><p>进入BasicNetwork-2.0</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;createChannel.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>./createChannel.sh
+</code></pre>
 </li>
 </ol>
 <p>智能合约部署</p>
 <ol>
 <li>进入BasicNetwork-2.0/artifacts/src/github.com/fabcar/go/目录下，执行（为智能合约安装依赖）</li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">GO111MODULE&#x3D;on go mod vendor<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>GO111MODULE=on go mod vendor
+</code></pre>
 <ol start="2">
 <li>进入BasicNetwork-2.0/，执行智能合约的部署和测试在执行<code>deployChaincode.sh</code>之前，按以下命令修改文件夹的权限</li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">sudo chmod 777 &#x2F;home&#x2F;gopath&#x2F;*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>sudo chmod 777 /home/gopath/*
+</code></pre>
 <ol start="3">
 <li>开始部署</li>
 </ol>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;deployChaincode.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>./deployChaincode.sh
+</code></pre>
 <p>部署explorer</p>
 <ol>
 <li><p>启动Explorer, 进入ContainerisingBlockchainExplorer目录下</p>
-<pre class="line-numbers language-none"><code class="language-none">docker-compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>docker-compose up -d
+</code></pre>
 </li>
 </ol>
 <p>服务全部启动成功，可以在windows上查看相关的服务。</p>
 <p><strong>注意：</strong>hyperledge Fabric搭建完成后将虚拟机挂起后再重新开启并不能恢复所有的服务，需要重新开启一遍。</p>
 <h3 id="平台使用"><a href="#平台使用" class="headerlink" title="平台使用"></a>平台使用</h3><p>查看可视化的区块链信息，访问：</p>
-<pre class="line-numbers language-none"><code class="language-none">[ip地址]:8080<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>[ip地址]:8080
+</code></pre>
 <p>查看产的最新状态，访问：</p>
-<pre class="line-numbers language-none"><code class="language-none">[ip地址]:5984&#x2F;_utils<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>[ip地址]:5984/_utils
+</code></pre>
 <h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>超级账本的下载地址：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wget -c https:&#x2F;&#x2F;github.com&#x2F;hyperledger&#x2F;fabric&#x2F;releases&#x2F;download&#x2F;v2.2.1&#x2F;hyperledger-fabric-linux-amd64-2.2.1.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>超级账本的解压缩：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo tar -C .&#x2F; -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre class="line-numbers language-shell"><code class="language-shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>超级账本的bin目录内的东西放到/usr/local/bin下</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo mv .&#x2F;bin&#x2F;* &#x2F;usr&#x2F;local&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre class="line-numbers language-shell"><code class="language-shell">sudo mv ./bin/* /usr/local/bin
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>启动docker服务</p>
-<pre class="line-numbers language-none"><code class="language-none">systemctl restart docker.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>systemctl restart docker.service
+</code></pre>
 <p>关闭所有运行着的docker容器</p>
-<pre class="line-numbers language-none"><code class="language-none">docker rm -f $(docker ps -a -q)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>docker rm -f $(docker ps -a -q)
+</code></pre>
 <p>参考资料：</p>
 <p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=1d093d10-a21e-4640-852e-87fc4d68456c&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=003vny0w36jQEW2ofd0w3ju6IV2vny0O&channelId=wx75425a38a3ed6402">实验平台在服务器上的基于脚本的自动化部署[1]</a></p>
 <p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=91104fed-4f7d-481e-9ac2-8008b8d2fff3&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=043YQkll27EWj74Kggll2454aR2YQkl0&channelId=wx75425a38a3ed6402">区块链实验平台部署[2]</a></p>
@@ -461,7 +458,7 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -509,7 +506,7 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -545,33 +542,31 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -679,6 +674,9 @@ wget -c 要下载的文件，实现断点续传。<span aria-hidden="true" class
 </a>
 
   
+  
+  
+
   
   
   <script>

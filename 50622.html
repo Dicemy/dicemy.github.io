@@ -102,6 +102,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -126,22 +129,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -227,7 +220,7 @@
     
     
     <span class="dot"></span>
-    <span>1.1k 字</span>
+    <span>951 字</span>
     
   </div>
   
@@ -245,140 +238,142 @@
   <div id="section" class="post-content">
     <h1 id="树与图"><a href="#树与图" class="headerlink" title="树与图"></a>树与图</h1><p>邻接表用head数组为表头，使用ver和edge数组分别存储边的终点和权值，用next数组模拟链表指针。</p>
 <p>在一个图中添加一个从x到y边的权值为z的有向边：</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int head[maxn &lt;&lt; 2], ver[maxn], edge[maxn], next[maxn &lt;&lt; 2];
-int tot;&#x2F;&#x2F;tot表示边的编号 
-inline void adde(int x, int y, int z) &#123;
-	ver[++tot] &#x3D; y;	next[tot] &#x3D; head[x]; &#x2F;&#x2F;这句话表示原来x指向的所有边都挂到tot这条新的边的后面。 
-	head[x] &#x3D; tot;	edge[tot] &#x3D; z;&#x2F;&#x2F;这句话表示在x原来指向的tot边的前面插入了新来的这个边。 
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> head<span class="token punctuation">[</span>maxn <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> ver<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> edge<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">,</span> next<span class="token punctuation">[</span>maxn <span class="token operator">&lt;&lt;</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> tot<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//tot表示边的编号 </span>
+<span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">adde</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">int</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ver<span class="token punctuation">[</span><span class="token operator">++</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>    next<span class="token punctuation">[</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这句话表示原来x指向的所有边都挂到tot这条新的边的后面。 </span>
+    head<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> tot<span class="token punctuation">;</span>    edge<span class="token punctuation">[</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> z<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这句话表示在x原来指向的tot边的前面插入了新来的这个边。 </span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图从x访问所有x相连的点。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void serch() &#123;
-	for (int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
-		&#x2F;&#x2F;从x的最后输入的那条边开始，便利所有x为出发点的边。next数组是为指出x出发的每一条边之间的关系。
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">serch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token punctuation">;</span> i <span class="token operator">=</span> next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//从x的最后输入的那条边开始，便利所有x为出发点的边。next数组是为指出x出发的每一条边之间的关系。</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图从x的一个深度优先遍历。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">bool v[maxn];
-void dfs(int x) &#123;
-	v[x] &#x3D; 1;
-	for (int i&#x3D;head[x]; i; i &#x3D; next[i]) &#123;
-		int y &#x3D; ver[i];
-		if (v[y])	continue;
-		dfs(y);
-	&#125;
-&#125;
-&#x2F;&#x2F;这个搜索的时间复杂度是O(n+m)。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> v<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    v<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token punctuation">;</span> i <span class="token operator">=</span> next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//这个搜索的时间复杂度是O(n+m)。</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>树的dfs序。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void int(x) &#123;
-	a[++m] &#x3D; x;
-	v[x] &#x3D; 1;
-	for (int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
-		int y &#x3D; ver[i];
-		if(v[y])	continue;
-		dfs(y);
-	&#125;
-	a[++m] &#x3D; x;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token keyword">int</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    a<span class="token punctuation">[</span><span class="token operator">++</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    v<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token punctuation">;</span> i <span class="token operator">=</span> next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    a<span class="token punctuation">[</span><span class="token operator">++</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>树的深度。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int d[maxn];
-void dfs(int x) &#123;
-	v[x] &#x3D; 1;
-	for(int i &#x3D; head[x]; i; i &#x3D; next[i]) &#123;
-		int y &#x3D; ver[i];
-		if(v[y])	continue;
-		d[y] &#x3D; d[x] + 1;
-		dfs(y);
-	&#125;
-&#125;
-&#x2F;&#x2F;d[i]中储存的是编号为i的节点从根节点往下的深度。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> d<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    v<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span> i<span class="token punctuation">;</span> i <span class="token operator">=</span> next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        d<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//d[i]中储存的是编号为i的节点从根节点往下的深度。</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>树的重心。</p>
 <p>定义：设max_part(x)表示再删除节点x后产生的子树中，最大的一颗的大小。是max_part函数取到最小值的节点p就成为整棵树的重心。下面的代码我们可以统计出size数组，并且找到这棵树的重心。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int size[maxn];
-void dfs(int x) &#123;
-	v[x] &#x3D; 1; size[x] &#x3D; 1;
-	int max_part &#x3D; 0;&#x2F;&#x2F;删掉子树x之后分成的若干个子树中最大的那个的大小 
-	for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
-		int y &#x3D; ver[i];
-		if (v[y])	continue;
-		dfs(y);
-		size[x] +&#x3D; size[y];&#x2F;&#x2F;从子节点向上更新 
-		max_part &#x3D; max(max_part, size[y]);&#x2F;&#x2F;x的子节点中最大的那个节点的size 
-	&#125;
-	max_part &#x3D; max(max_part, n - size[x]);&#x2F;&#x2F;现在max_part中储存的是删掉x之后形成的若干个子树中最大的那个大小 
-	if (max_part &lt; ans) &#123;
-		ans &#x3D; max_part;
-		pos &#x3D; x;&#x2F;&#x2F;pos中储存的就是这个树的重心的节点号。
-	&#125; 
-&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> size<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    v<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> size<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> max_part <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删掉子树x之后分成的若干个子树中最大的那个的大小 </span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token punctuation">;</span>i<span class="token operator">=</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        size<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> size<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//从子节点向上更新 </span>
+        max_part <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>max_part<span class="token punctuation">,</span> size<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//x的子节点中最大的那个节点的size </span>
+    <span class="token punctuation">}</span>
+    max_part <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>max_part<span class="token punctuation">,</span> n <span class="token operator">-</span> size<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//现在max_part中储存的是删掉x之后形成的若干个子树中最大的那个大小 </span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>max_part <span class="token operator">&lt;</span> ans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ans <span class="token operator">=</span> max_part<span class="token punctuation">;</span>
+        pos <span class="token operator">=</span> x<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//pos中储存的就是这个树的重心的节点号。</span>
+    <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图的连通块的划分</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int cnt;
-void dfs(int x) &#123;
-	v[x] &#x3D; cnt;
-	for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
-		int y &#x3D; ver[i];
-		if (v[y])	continue;
-		dfs(y);
-	&#125;
-&#125;
-for (int i&#x3D;1;i&lt;&#x3D;n;++i) &#123;
-	if(v[i]) continue;
-	cnt++;
-	dfs(i);
-&#125;&#x2F;&#x2F;cnt值相同的节点在同一个连通块中，cnt值表示连通块的个数。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> cnt<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    v<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> cnt<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token punctuation">;</span>i<span class="token operator">=</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token comment" spellcheck="true">//cnt值相同的节点在同一个连通块中，cnt值表示连通块的个数。</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>图的广度优先遍历<br>按照层级进行遍历。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">void bfs() &#123;
-	memset(d, 0, sizeof(d));&#x2F;&#x2F;d中存储的是每一个节点的深度。
-	queue&lt;int&gt; q;
-	q.push(1);d[1] &#x3D; 1;
-	while(q.size()) &#123;
-		int x &#x3D; q.front();	q.pop();
-		for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
-			int y &#x3D; ver[i];
-			if (d[y]) continue;
-			d[y] &#x3D; d[x] + 1;
-			q.push(y);
-		&#125; 
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">bfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//d中存储的是每一个节点的深度。</span>
+    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>d<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token punctuation">;</span>i<span class="token operator">=</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>d<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            d<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>拓扑排序<br>这个算法可以判断是否存在环：如果cnt和n不相等的话，那么存在环，因为环中的每一个点的入度都不可能为0。</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">int deg[maxn];
-void add(int x, int y, int z) &#123;
-	ver[++tot] &#x3D; y;	next[tot] &#x3D; head[x];
-	head[x] &#x3D; tot;	edge[tot] &#x3D; z;
-	deg[y]++;
-&#125;
-void topsort() &#123;
-	queue&lt;int&gt; q;
-	for (int i&#x3D;1;i&lt;&#x3D;n;++i)
-		if (deg[i] &#x3D;&#x3D; 0)	q.push(i);&#x2F;&#x2F;如果点的入度为0那么将这个点入队。
-	while(q.size()) &#123;
-		int x &#x3D; q.front(); 	q.pop();
-		a[++cnt] &#x3D; x;&#x2F;&#x2F;将入度为0的那个点输出。
-		for (int i&#x3D;head[x];i;i&#x3D;next[i]) &#123;
-			int y &#x3D; ver[i];
-			if (--deg[y] &#x3D;&#x3D; 0)	q.push(y);
-		&#125;
-	&#125;
-&#125;
-int main() &#123;
-	cin &gt;&gt; n &gt;&gt; m;
-	for (int i&#x3D;1;i&lt;&#x3D;m;++i) &#123;
-		int x, y;
-		cin &gt;&gt; x &gt;&gt; y;
-		adde(x, y, 0);
-	&#125;
-	topsort();
-	for (int i&#x3D;1;i&lt;&#x3D;cnt;++i) &#123;
-		cout &lt;&lt; a[i] &lt;&lt; &#39; &#39;;
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> deg<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">int</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ver<span class="token punctuation">[</span><span class="token operator">++</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> y<span class="token punctuation">;</span>    next<span class="token punctuation">[</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    head<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> tot<span class="token punctuation">;</span>    edge<span class="token punctuation">[</span>tot<span class="token punctuation">]</span> <span class="token operator">=</span> z<span class="token punctuation">;</span>
+    deg<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">topsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> q<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>deg<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果点的入度为0那么将这个点入队。</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span><span class="token operator">++</span>cnt<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将入度为0的那个点输出。</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>head<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token punctuation">;</span>i<span class="token operator">=</span>next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> y <span class="token operator">=</span> ver<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">--</span>deg<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> n <span class="token operator">>></span> m<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+        cin <span class="token operator">>></span> x <span class="token operator">>></span> y<span class="token punctuation">;</span>
+        <span class="token function">adde</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">topsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>cnt<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
   </div>
   <div>
@@ -476,7 +471,7 @@ int main() &#123;
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -524,7 +519,7 @@ int main() &#123;
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -560,33 +555,31 @@ int main() &#123;
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -694,6 +687,9 @@ int main() &#123;
 </a>
 
   
+  
+  
+
   
   
   <script>

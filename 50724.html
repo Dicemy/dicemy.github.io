@@ -102,6 +102,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -126,22 +129,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -227,7 +220,7 @@
     
     
     <span class="dot"></span>
-    <span>635 字</span>
+    <span>604 字</span>
     
   </div>
   
@@ -245,46 +238,48 @@
   <div id="section" class="post-content">
     <h1 id="J-加法和乘法"><a href="#J-加法和乘法" class="headerlink" title="J 加法和乘法"></a>J 加法和乘法</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9983/J">https://ac.nowcoder.com/acm/contest/9983/J</a><br>来源：牛客网</p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有一天牛牛和牛妹在做游戏，规则如下：<br> 桌面上摆着n张纸牌，每张纸牌上写着一个正整数，由牛牛先手轮流执行以下操作：<br> 1.如果桌面上只剩一张纸牌，游戏结束，这张纸牌上的数字如果是奇数则牛牛胜利，反之牛妹胜利。<br> 2.当前行动玩家选择两张纸牌，设上面的数字分别为X,Y，接下来玩家从加法和乘法中选择一个并应用到这两个数字上，得到结果为Z，接下来将选择的两张纸牌丢弃，并拿一张新的纸牌放到桌面上，在上面写上Z。<br> 假设双方均以最优策略行动，最后谁会赢？</p>
-<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre class="line-numbers language-none"><code class="language-none">第一行一个正整数n，代表开始的纸牌数。
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h2><pre><code>第一行一个正整数n，代表开始的纸牌数。
 第二行n个空格分隔的正整数ai代表开始纸牌上的数字。
 1≤n≤10^6
-1≤ai≤10^9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre class="line-numbers language-none"><code class="language-none">如果牛牛能赢，输出NiuNiu，否则输出NiuMei。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+1≤ai≤10^9
+</code></pre>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h2><pre><code>如果牛牛能赢，输出NiuNiu，否则输出NiuMei。
+</code></pre>
 <h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1:"></a>示例1:</h2><p>输入</p>
-<pre class="line-numbers language-none"><code class="language-none">3
-233 2333 23333<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<pre><code>3
+233 2333 23333
+</code></pre>
 <p>输出</p>
-<pre class="line-numbers language-none"><code class="language-none">NiuMei<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>NiuMei
+</code></pre>
 <h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2:"></a>示例2:</h2><p>输入</p>
-<pre class="line-numbers language-none"><code class="language-none">4
-1 1 1 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<pre><code>4
+1 1 1 1
+</code></pre>
 <p>输出</p>
-<pre class="line-numbers language-none"><code class="language-none">NiuNiu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>NiuNiu
+</code></pre>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题只要在纸上进行演算一下即可，我们将两张牌的情况都列出来，可以发现，如果两张牌都是偶数的话，无论是加法还是乘法得到的都是偶数。剩下的两种情况下，加法和乘法可以一个得到偶数一个得到奇数。由此我们可以推出如果最后一次是牛妹进行操作的话，那么牛妹必胜，如果是牛牛的话，只要在最后一次不遇上两个偶数的情况就行。那么牛牛每一次的操作就是为了消除偶数，牛妹的操作就是为了造偶数。这就是两人的最优策略。</p>
 <p>那么，游戏的过程就变成了牛牛消一个偶数，牛妹产生一个偶数，直到最后一次判断是否有两个偶数即可。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt; 
-using namespace std;
-long long n, a, cnt;
-int main() &#123;
-	cin &gt;&gt; n;
-	for (int i&#x3D;1;i&lt;&#x3D;n;++i) &#123;
-		cin &gt;&gt; a;
-		if (a % 2 &#x3D;&#x3D; 0) cnt ++;
-	&#125;
-	if (n &#x3D;&#x3D; 1)	cout &lt;&lt; (cnt &#x3D;&#x3D; 0 ? &quot;NiuNiu&quot; : &quot;NiuMei&quot;); 
-	else &#123;
-		if (cnt &gt; 1 || n % 2 &#x3D;&#x3D; 1)
-			cout &lt;&lt; &quot;NiuMei&quot;;
-		else cout &lt;&lt; &quot;NiuNiu&quot;;
-	&#125;
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span> </span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">long</span> <span class="token keyword">long</span> n<span class="token punctuation">,</span> a<span class="token punctuation">,</span> cnt<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cin <span class="token operator">>></span> a<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> cnt <span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>cnt <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token string">"NiuNiu"</span> <span class="token operator">:</span> <span class="token string">"NiuMei"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt <span class="token operator">></span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">"NiuMei"</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout <span class="token operator">&lt;&lt;</span> <span class="token string">"NiuNiu"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
   </div>
   <div>
   
@@ -381,7 +376,7 @@ int main() &#123;
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -429,7 +424,7 @@ int main() &#123;
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -465,33 +460,31 @@ int main() &#123;
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -599,6 +592,9 @@ int main() &#123;
 </a>
 
   
+  
+  
+
   
   
   <script>

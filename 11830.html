@@ -104,6 +104,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -128,22 +131,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -229,7 +222,7 @@
     
     
     <span class="dot"></span>
-    <span>2.1k 字</span>
+    <span>2k 字</span>
     
   </div>
   
@@ -258,7 +251,7 @@
 <p>正确的关机流程为：sync &gt; shutdown &gt; reboot &gt; halt</p>
 <p>关机指令为：shutdown ，你可以man shutdown 来看一下帮助文档。</p>
 <p>例如你可以运行如下命令关机：</p>
-<pre class="line-numbers language-none"><code class="language-none">sync 将数据由内存同步到硬盘中。
+<pre><code>sync 将数据由内存同步到硬盘中。
 
 shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：
 
@@ -276,8 +269,8 @@ shutdown –r +10 系统十分钟后重启
 
 reboot 就是重启，等同于 shutdown –r now
 
-halt 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+halt 关闭系统，等同于shutdown –h now 和 poweroff
+</code></pre>
 <p>最后总结一下，不管是重启系统还是关闭系统，首先要运行 <strong>sync</strong> 命令，把内存中的数据写到磁盘中。</p>
 <p>关机的命令有 <strong>shutdown –h now halt poweroff</strong> 和 <strong>init 0</strong> , 重启系统的命令有 <strong>shutdown –r now reboot init 6</strong>。</p>
 <h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><p>接下来我们就来看几个常见的处理目录的命令吧：</p>
@@ -294,10 +287,10 @@ halt 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="tr
 <p>你可以使用 <em>man [命令]</em> 来查看各个命令的使用文档，如 ：man cp。</p>
 <h3 id="ls-列出目录"><a href="#ls-列出目录" class="headerlink" title="ls (列出目录)"></a>ls (列出目录)</h3><p>在Linux系统当中， ls 命令可能是最常被运行的。</p>
 <p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称
-[root@www ~]# ls [--color&#x3D;&#123;never,auto,always&#125;] 目录名称
-[root@www ~]# ls [--full-time] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称
+[root@www ~]# ls [--color=&#123;never,auto,always&#125;] 目录名称
+[root@www ~]# ls [--full-time] 目录名称
+</code></pre>
 <p>选项与参数：</p>
 <ul>
 <li>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)</li>
@@ -305,104 +298,104 @@ halt 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="tr
 <li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
 </ul>
 <p>将家目录下的所有文件列出来(含属性与隐藏档)</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# ls -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# ls -al ~
+</code></pre>
 <h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
 <p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none"> cd [相对路径或绝对路径]
+<pre><code> cd [相对路径或绝对路径]
 #使用 mkdir 命令创建 runoob 目录
 [root@www ~]# mkdir runoob
 
 #使用绝对路径切换到 runoob 目录
-[root@www ~]# cd &#x2F;root&#x2F;runoob&#x2F;
+[root@www ~]# cd /root/runoob/
 
 #使用相对路径切换到 runoob 目录
-[root@www ~]# cd .&#x2F;runoob&#x2F;
+[root@www ~]# cd ./runoob/
 
-# 表示回到自己的家目录，亦即是 &#x2F;root 这个目录
+# 表示回到自己的家目录，亦即是 /root 这个目录
 [root@www runoob]# cd ~
 
-# 表示去到目前的上一级目录，亦即是 &#x2F;root 的上一级目录的意思；
-[root@www ~]# cd ..<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+# 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；
+[root@www ~]# cd ..
+</code></pre>
 <h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd (显示目前所在的目录)"></a>pwd (显示目前所在的目录)</h3><p>pwd 是 <strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令。</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# pwd [-P]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# pwd [-P]
+</code></pre>
 <p>选项与参数：</p>
 <ul>
 <li><strong>-P</strong> ：显示出确实的路径，而非使用连结 (link) 路径。</li>
 </ul>
 <p>实例：单纯显示出目前的工作目录：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# pwd
-&#x2F;root   &lt;&#x3D;&#x3D; 显示出目录啦～<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# pwd
+/root   &lt;== 显示出目录啦～
+</code></pre>
 <p>实例显示出实际的工作目录，而非连结档本身的目录名而已。</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cd &#x2F;var&#x2F;mail   &lt;&#x3D;&#x3D;注意，&#x2F;var&#x2F;mail是一个连结档
+<pre><code>[root@www ~]# cd /var/mail   &lt;==注意，/var/mail是一个连结档
 [root@www mail]# pwd
-&#x2F;var&#x2F;mail         &lt;&#x3D;&#x3D;列出目前的工作目录
+/var/mail         &lt;==列出目前的工作目录
 [root@www mail]# pwd -P
-&#x2F;var&#x2F;spool&#x2F;mail   &lt;&#x3D;&#x3D;怎么回事？有没有加 -P 差很多～
-[root@www mail]# ls -ld &#x2F;var&#x2F;mail
-lrwxrwxrwx 1 root root 10 Sep  4 17:54 &#x2F;var&#x2F;mail -&gt; spool&#x2F;mail
-# 看到这里应该知道为啥了吧？因为 &#x2F;var&#x2F;mail 是连结档，连结到 &#x2F;var&#x2F;spool&#x2F;mail 
-# 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+/var/spool/mail   &lt;==怎么回事？有没有加 -P 差很多～
+[root@www mail]# ls -ld /var/mail
+lrwxrwxrwx 1 root root 10 Sep  4 17:54 /var/mail -&gt; spool/mail
+# 看到这里应该知道为啥了吧？因为 /var/mail 是连结档，连结到 /var/spool/mail 
+# 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！
+</code></pre>
 <h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。</p>
 <p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">mkdir [-mp] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>mkdir [-mp] 目录名称
+</code></pre>
 <p>选项与参数：</p>
 <ul>
 <li>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</li>
 <li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
 </ul>
 <p>实例：请到/tmp底下尝试创建数个新目录看看：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cd &#x2F;tmp
-[root@www tmp]# mkdir test    &lt;&#x3D;&#x3D;创建一名为 test 的新目录
-[root@www tmp]# mkdir test1&#x2F;test2&#x2F;test3&#x2F;test4
-mkdir: cannot create directory &#96;test1&#x2F;test2&#x2F;test3&#x2F;test4&#39;: 
-No such file or directory       &lt;&#x3D;&#x3D; 没办法直接创建此目录啊！
-[root@www tmp]# mkdir -p test1&#x2F;test2&#x2F;test3&#x2F;test4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# cd /tmp
+[root@www tmp]# mkdir test    &lt;==创建一名为 test 的新目录
+[root@www tmp]# mkdir test1/test2/test3/test4
+mkdir: cannot create directory `test1/test2/test3/test4&#39;: 
+No such file or directory       &lt;== 没办法直接创建此目录啊！
+[root@www tmp]# mkdir -p test1/test2/test3/test4
+</code></pre>
 <p>加了这个 -p 的选项，可以自行帮你创建多层目录！</p>
 <p>实例：创建权限为 <strong>rwx–x–x</strong> 的目录。</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# mkdir -m 711 test2
+<pre><code>[root@www tmp]# mkdir -m 711 test2
 [root@www tmp]# ls -l
 drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
 drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
-drwx--x--x  2 root  root 4096 Jul 18 12:54 test2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
 <p>上面的权限部分，如果没有加上 -m 来强制配置属性，系统会使用默认属性。</p>
 <p>如果我们使用 -m ，如上例我们给予 -m 711 来给予新的目录 drwx–x–x 的权限。</p>
 <h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><p>语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">rmdir [-p] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code> rmdir [-p] 目录名称
+</code></pre>
 <p>选项与参数：</p>
 <ul>
 <li><strong>-p ：</strong>连同上一级『空的』目录也一起删除</li>
 </ul>
 <p>删除 runoob 目录</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# rmdir runoob&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>[root@www tmp]# rmdir runoob/
+</code></pre>
 <p>将 mkdir 实例中创建的目录(/tmp 底下)删除掉！</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www tmp]# ls -l   &lt;&#x3D;&#x3D;看看有多少目录存在？
+<pre><code>[root@www tmp]# ls -l   &lt;==看看有多少目录存在？
 drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
 drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
 drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
-[root@www tmp]# rmdir test   &lt;&#x3D;&#x3D;可直接删除掉，没问题
-[root@www tmp]# rmdir test1  &lt;&#x3D;&#x3D;因为尚有内容，所以无法删除！
-rmdir: &#96;test1&#39;: Directory not empty
-[root@www tmp]# rmdir -p test1&#x2F;test2&#x2F;test3&#x2F;test4
-[root@www tmp]# ls -l        &lt;&#x3D;&#x3D;您看看，底下的输出中test与test1不见了！
-drwx--x--x  2 root  root 4096 Jul 18 12:54 test2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+[root@www tmp]# rmdir test   &lt;==可直接删除掉，没问题
+[root@www tmp]# rmdir test1  &lt;==因为尚有内容，所以无法删除！
+rmdir: `test1&#39;: Directory not empty
+[root@www tmp]# rmdir -p test1/test2/test3/test4
+[root@www tmp]# ls -l        &lt;==您看看，底下的输出中test与test1不见了！
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
 <p>利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。</p>
 <p>不过要注意的是，这个 rmdir 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。</p>
 <h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><p>cp 即拷贝文件和目录。</p>
 <p>语法:</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)
-[root@www ~]# cp [options] source1 source2 source3 .... directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
+<pre><code>[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)
+[root@www ~]# cp [options] source1 source2 source3 .... directory
+</code></pre>
 <p>选项与参数：</p>
 <ul>
 <li><strong>-a：</strong>相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)</li>
@@ -416,9 +409,11 @@ drwx--x--x  2 root  root 4096 Jul 18 12:54 test2<span aria-hidden="true" class="
 <li><strong>-u：</strong>若 destination 比 source 旧才升级 destination ！</li>
 </ul>
 <p>用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@www ~]# cp ~&#x2F;.bashrc &#x2F;tmp&#x2F;bashrc
-[root@www ~]# cp -i ~&#x2F;.bashrc &#x2F;tmp&#x2F;bashrc
-cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y为覆盖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>[root@www ~]# cp ~/.bashrc /tmp/bashrc
+[root@www ~]# cp -i ~/.bashrc /tmp/bashrc
+cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
+</code></pre>
+
   </div>
   <div>
   
@@ -515,7 +510,7 @@ cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -563,7 +558,7 @@ cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -599,33 +594,31 @@ cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -733,6 +726,9 @@ cp: overwrite &#96;&#x2F;tmp&#x2F;bashrc&#39;? n  &lt;&#x3D;&#x3D;n不覆盖，y
 </a>
 
   
+  
+  
+
   
   
   <script>

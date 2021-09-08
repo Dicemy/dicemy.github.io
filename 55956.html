@@ -102,6 +102,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -126,22 +129,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -227,7 +220,7 @@
     
     
     <span class="dot"></span>
-    <span>1.5k 字</span>
+    <span>1.3k 字</span>
     
   </div>
   
@@ -261,162 +254,176 @@
 </ul>
 <p><strong>String operators :</strong><br> quotes : 单引号<br> double quotes : 双引号<br> backslashes : 反斜线<br> <strong>(\)</strong> use \‘ to escape the single quote<br> <strong>(\n)</strong> \n means newline</p>
 <p><strong>String operation :</strong><br>If you don’t want character prefaced by \ to be interpreted as special characters, you can use <strong><em>raw string</em></strong> by adding an <code>r</code>  before the first quote.</p>
-<pre class="line-numbers language-none"><code class="language-none">&gt;&gt;&gt; print(&#39;C:\some\name&#39;)
+<pre><code>&gt;&gt;&gt; print(&#39;C:\some\name&#39;)
 C:\some
 ame
 &gt;&gt;&gt; print(r&#39;C:\some\name&#39;)
-C:\some\name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+C:\some\name
+</code></pre>
 <p>using triple-quotes : <code>&#39;&#39;&#39;</code> or <code>&quot;&quot;&quot;</code> so that the strings literals can span multiple lines. and use \at the end of the line to avoid that  end of lines are automatically included in the string.<br>The following example:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">print(&quot;&quot;&quot;\
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token triple-quoted-string string">"""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
      -H hostname               Hostname to connect to
-&quot;&quot;&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">Usage: thingy [OPTIONS]
+"""</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>Usage: thingy [OPTIONS]
      -h                        Display this usage message
-     -H hostname               Hostname to connect to<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+     -H hostname               Hostname to connect to
+</code></pre>
 <p>Strings can be concatenated (glued together) with the <code>+</code> operator and repeated with <code>*</code>.<br>Two or more string literals next to each other are automatically concatenated.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; text &#x3D; (&#39;Put several strings within parentheses &#39;
-...         &#39;to have them joined together.&#39;)
-&gt;&gt;&gt; text
-&#39;Put several strings within parentheses to have them joined together.&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> text <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'Put several strings within parentheses '</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token string">'to have them joined together.'</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> text
+<span class="token string">'Put several strings within parentheses to have them joined together.'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>This feature is only work with two literals, not with variables or expressions.</p>
 <p>The string indices alse can be negative number,to counting from the right.<br>negetive indices start from -1</p>
 <p><strong>slicing</strong>  slicing is used to obtain the substring<br>There follwing examples :</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; word &#x3D; &#39;Python&#39;
-&gt;&gt;&gt; word[0:2]  # characters from position 0 (included) to 2 (excluded)
-&#39;Py&#39;
-&gt;&gt;&gt; word[2:5]  # characters from position 2 (included) to 5 (excluded)
-&#39;tho&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> word <span class="token operator">=</span> <span class="token string">'Python'</span>
+<span class="token operator">>></span><span class="token operator">></span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># characters from position 0 (included) to 2 (excluded)</span>
+<span class="token string">'Py'</span>
+<span class="token operator">>></span><span class="token operator">></span> word<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># characters from position 2 (included) to 5 (excluded)</span>
+<span class="token string">'tho'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>The start is always included, and end always excluded.This make sure that s[:i] + s[i:] always equal to s.</p>
 <p>Note : an omitted first index defaults to zero.</p>
 <p>Python strings are immutable, so <strong>assigning</strong> to an indexed position in the string result in an <strong>error</strong>.</p>
 <p><strong>List :</strong><br>Lists can contain different types, but usually the items all have the same type.<br>List also can be indexed and sliced.(same as string)</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; squares[0]  # indexing returns the item
-1
-&gt;&gt;&gt; squares[-1]
-25
-&gt;&gt;&gt; squares[-3:]  # slicing returns a new list
-[9, 16, 25]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> squares<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># indexing returns the item</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> squares<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token number">25</span>
+<span class="token operator">>></span><span class="token operator">></span> squares<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># slicing returns a new list</span>
+<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>List also support operations like concatenation.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; squares + [36, 49, 64, 81, 100]
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> squares <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">81</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Unlike string, list is a mutable type, it is possible to change their content.<br>You can also add new items at the end of the list, by using the append() method (we will see more about methods later):</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; cubes.append(216)  # add the cube of 6
-&gt;&gt;&gt; cubes.append(7 ** 3)  # and the cube of 7
-&gt;&gt;&gt; cubes
-[1, 8, 27, 64, 125, 216, 343]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> cubes<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">216</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># add the cube of 6</span>
+<span class="token operator">>></span><span class="token operator">></span> cubes<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">7</span> <span class="token operator">**</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># and the cube of 7</span>
+<span class="token operator">>></span><span class="token operator">></span> cubes
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">125</span><span class="token punctuation">,</span> <span class="token number">216</span><span class="token punctuation">,</span> <span class="token number">343</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Assignment to slices is also possible, and this can even change the size of the list or clear it entirely:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; letters &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
-&gt;&gt;&gt; letters
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]
-&gt;&gt;&gt; # replace some values
-&gt;&gt;&gt; letters[2:5] &#x3D; [&#39;C&#39;, &#39;D&#39;, &#39;E&#39;]
-&gt;&gt;&gt; letters
-[&#39;a&#39;, &#39;b&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;f&#39;, &#39;g&#39;]
-&gt;&gt;&gt; # now remove them
-&gt;&gt;&gt; letters[2:5] &#x3D; []
-&gt;&gt;&gt; letters
-[&#39;a&#39;, &#39;b&#39;, &#39;f&#39;, &#39;g&#39;]
-&gt;&gt;&gt; # clear the list by replacing all the elements with an empty list
-&gt;&gt;&gt; letters[:] &#x3D; []
-&gt;&gt;&gt; letters
-[]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> letters
+<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token comment" spellcheck="true"># replace some values</span>
+<span class="token operator">>></span><span class="token operator">></span> letters<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> letters
+<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token comment" spellcheck="true"># now remove them</span>
+<span class="token operator">>></span><span class="token operator">></span> letters<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> letters
+<span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token string">'g'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token comment" spellcheck="true"># clear the list by replacing all the elements with an empty list</span>
+<span class="token operator">>></span><span class="token operator">></span> letters<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> letters
+<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>build-in function <code>len()</code> also applies to lists.<br>nest list is also allowed.</p>
 <p><strong>Contains in while</strong><br>The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. </p>
 <p>Indentation is Python’s way of grouping statements.</p>
 <p>The keyword argument end can be used to avoid the newline after the output, or end the output with a different string:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; a, b &#x3D; 0, 1
-&gt;&gt;&gt; while a &lt; 1000:
-...     print(a, end&#x3D;&#39;,&#39;)
-...     a, b &#x3D; b, a+b
-...
-0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">while</span> a <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">','</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a<span class="token operator">+</span>b
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">34</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">,</span><span class="token number">89</span><span class="token punctuation">,</span><span class="token number">144</span><span class="token punctuation">,</span><span class="token number">233</span><span class="token punctuation">,</span><span class="token number">377</span><span class="token punctuation">,</span><span class="token number">610</span><span class="token punctuation">,</span><span class="token number">987</span><span class="token punctuation">,</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="More-Control-Flow-Tools"><a href="#More-Control-Flow-Tools" class="headerlink" title="More Control Flow Tools"></a>More Control Flow Tools</h2><p><strong>if <em>Statements</em></strong><br>The else part is optional.<br>The keyword ‘elif’ is short for ‘else if’,and is useful to avoid excessive indentation.An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.</p>
 <p><strong>for <em>Statements</em></strong><br>Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; # Measure some strings:
-... words &#x3D; [&#39;cat&#39;, &#39;window&#39;, &#39;defenestrate&#39;]
-&gt;&gt;&gt; for w in words:
-...     print(w, len(w))
-...
-cat 3
-window 6
-defenestrate 12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token comment" spellcheck="true"># Measure some strings:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'window'</span><span class="token punctuation">,</span> <span class="token string">'defenestrate'</span><span class="token punctuation">]</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> w <span class="token keyword">in</span> words<span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> len<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+cat <span class="token number">3</span>
+window <span class="token number">6</span>
+defenestrate <span class="token number">12</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>The range() Function</strong><br>the built-in function range() can make the sequence of numbers.<br>These following example:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; for i in range(5):
-...     print(i)
-...
-0
-1
-2
-3
-4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token number">0</span>
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>It is possible to let the range start at another number, or to specify a different increment:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">range(5, 10)
-   5, 6, 7, 8, 9
+<pre class="line-numbers language-python"><code class="language-python">range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+   <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span>
 
-range(0, 10, 3)
-   0, 3, 6, 9
+range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+   <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span>
 
-range(-10, -100, -30)
-  -10, -40, -70<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+range<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">70</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>A strange thing happens if you just print a range:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; print(range(10))
-range(0, 10)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Here is the solution:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; list(range(4))
-[0, 1, 2, 3]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>break and continue statements and else Clauses on Loops:</strong><br>break and continue are like in C++.</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; for n in range(2, 10):
-...     for x in range(2, n):
-...         if n % x &#x3D;&#x3D; 0:
-...             print(n, &#39;equals&#39;, x, &#39;*&#39;, n&#x2F;&#x2F;x)
-...             break
-...     else:
-...         # loop fell through without finding a factor
-...         print(n, &#39;is a prime number&#39;)
-...
-2 is a prime number
-3 is a prime number
-4 equals 2 * 2
-5 is a prime number
-6 equals 2 * 3
-7 is a prime number
-8 equals 2 * 4
-9 equals 3 * 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">for</span> n <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token keyword">if</span> n <span class="token operator">%</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>             <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token string">'equals'</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">,</span> n<span class="token operator">//</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>             <span class="token keyword">break</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token comment" spellcheck="true"># loop fell through without finding a factor</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token string">'is a prime number'</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token number">2</span> <span class="token keyword">is</span> a prime number
+<span class="token number">3</span> <span class="token keyword">is</span> a prime number
+<span class="token number">4</span> equals <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token number">5</span> <span class="token keyword">is</span> a prime number
+<span class="token number">6</span> equals <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">3</span>
+<span class="token number">7</span> <span class="token keyword">is</span> a prime number
+<span class="token number">8</span> equals <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">4</span>
+<span class="token number">9</span> equals <span class="token number">3</span> <span class="token operator">*</span> <span class="token number">3</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>In this code, the else is belongs to the for loop, <strong>not</strong> the if statement.<br>The loop’s <strong><em>else</em></strong> clause runs when no break occurs. </p>
 <p><strong><em>pass</em> Statement :</strong><br>It can be used when a statement is required syntactically but the program requires no action.<br><strong><em>pass</em></strong> can be used is as a place-holder for a function or conditional body when you are working on new code</p>
 <p><strong>Defining Functions :</strong><br>Other names can also point to that same function object and can also be used to access the function:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">&gt;&gt;&gt; fib
-&lt;function fib at 10042ed0&gt;
-&gt;&gt;&gt; f &#x3D; fib
-&gt;&gt;&gt; f(100)
-0 1 1 2 3 5 8 13 21 34 55 89<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> fib
+<span class="token operator">&lt;</span>function fib at <span class="token number">10042ed0</span><span class="token operator">></span>
+<span class="token operator">>></span><span class="token operator">></span> f <span class="token operator">=</span> fib
+<span class="token operator">>></span><span class="token operator">></span> f<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token number">0</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">5</span> <span class="token number">8</span> <span class="token number">13</span> <span class="token number">21</span> <span class="token number">34</span> <span class="token number">55</span> <span class="token number">89</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>The example for the defining function:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">def ask_ok(prompt, retries&#x3D;4, reminder&#x3D;&#39;Please try again!&#39;):
-    while True:
-        ok &#x3D; input(prompt)
-        if ok in (&#39;y&#39;, &#39;ye&#39;, &#39;yes&#39;):
-            return True
-        if ok in (&#39;n&#39;, &#39;no&#39;, &#39;nop&#39;, &#39;nope&#39;):
-            return False
-        retries &#x3D; retries - 1
-        if retries &lt; 0:
-            raise ValueError(&#39;invalid user response&#39;)
-        print(reminder)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ask_ok</span><span class="token punctuation">(</span>prompt<span class="token punctuation">,</span> retries<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> reminder<span class="token operator">=</span><span class="token string">'Please try again!'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        ok <span class="token operator">=</span> input<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ok <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">,</span> <span class="token string">'ye'</span><span class="token punctuation">,</span> <span class="token string">'yes'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">if</span> ok <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">'n'</span><span class="token punctuation">,</span> <span class="token string">'no'</span><span class="token punctuation">,</span> <span class="token string">'nop'</span><span class="token punctuation">,</span> <span class="token string">'nope'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        retries <span class="token operator">=</span> retries <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> retries <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">'invalid user response'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>reminder<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>This function can be called in several ways:<br>giving only the mandatory argument: ask_ok(‘Do you really want to quit?’)<br>giving one of the optional arguments: ask_ok(‘OK to overwrite the file?’, 2)<br>or even giving all arguments: ask_ok(‘OK to overwrite the file?’, 2, ‘Come on, only yes or no!’)</p>
-<h1 id="Python语法点拾遗"><a href="#Python语法点拾遗" class="headerlink" title="Python语法点拾遗"></a>Python语法点拾遗</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python">import表示引入某一个模块。
+<h1 id="Python语法点拾遗"><a href="#Python语法点拾遗" class="headerlink" title="Python语法点拾遗"></a>Python语法点拾遗</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span>表示引入某一个模块。
 
-import [... ] as  (...) 表示引入一个 [...] 模块并且重命名为 (...)。
+<span class="token keyword">import</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">]</span> <span class="token keyword">as</span>  <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 表示引入一个 <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> 模块并且重命名为 <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>。
 
-from [...] import (...) 表示从[...]模块中引入(...)函数。
+<span class="token keyword">from</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> 表示从<span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>模块中引入<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>函数。
 
-from [...] import (...) as &#123;...&#125;表示从[...]模块中引入(...)函数并且重命名为 &#123;...&#125;。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token keyword">from</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token keyword">import</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>表示从<span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>模块中引入<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>函数并且重命名为 <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
   </div>
   <div>
@@ -514,7 +521,7 @@ from [...] import (...) as &#123;...&#125;表示从[...]模块中引入(...)函�
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -562,7 +569,7 @@ from [...] import (...) as &#123;...&#125;表示从[...]模块中引入(...)函�
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -598,33 +605,31 @@ from [...] import (...) as &#123;...&#125;表示从[...]模块中引入(...)函�
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -732,6 +737,9 @@ from [...] import (...) as &#123;...&#125;表示从[...]模块中引入(...)函�
 </a>
 
   
+  
+  
+
   
   
   <script>

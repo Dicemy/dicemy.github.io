@@ -100,6 +100,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -124,22 +127,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -225,7 +218,7 @@
     
     
     <span class="dot"></span>
-    <span>2.6k 字</span>
+    <span>2.5k 字</span>
     
   </div>
   
@@ -239,55 +232,53 @@
 <li>~=是不等号</li>
 <li>Matlab函数的声明要单独放在一个.m文件中，不能直接放在主函数里面。函数声明格式：function [输出变量] = 函数名称(输入变量）  最后用end结束声明</li>
 </ul>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 常用指令操作
-clc % 清屏
-clear all % 清除工作区的所有变量
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 常用指令操作</span>
+clc <span class="token comment" spellcheck="true">% 清屏</span>
+clear all <span class="token comment" spellcheck="true">% 清除工作区的所有变量</span>
 hold on 
-hold off % 控制图像是否被刷新
-% 常用字符串函数
-char(65) % ascii码对应的字符，A
-length(s) % 字符串长度
-strcmp() % 字符串比较函数
-strcat() % 将多个字符串合并成一个
-num2str() % 将数字转换为字符串
-% 常用数学函数
-size() % 数组大小，第二个参数也是dim表示矩阵的维度。
-magic() % 生成一个幻方
-abs(s) % 求s的ascii码
-floor()	% 取整函数
-sum() % 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim&#x3D;1
-repmat() % 复制扩展矩阵
-sort() % 将数组或矩阵排序
-prod() % 计算矩阵每一列的乘积
-eig() % 计算矩阵的特征值
-inv() % 求矩阵的逆矩阵
-rand() % 产生（0,1）之间均匀分布的伪随机数组成的数组
-randn() % 生成标准正态分布的伪随机数（均值为0，方差为1）
-randperm() % 将一序号随机打乱，序号必须是整数
-normrnd(MU,SIGMA) % 生成服从正态分布的随机数
-% 常用数据输入输出函数
-disp() % 向命令行输出字符或数字
-input() % 从命令行读取数据
-xlsread(&#39;xls_name_string&#39;) % Excel表格读取
-save % 用来将数据保存为.mat文件
-load % 用来加载之间生成的.mat文件
-% 常用绘图函数
-plot(x, y) % 创建2维直线图
-stem(Y) % 绘制数据序列Y的茎状图
-meshgrid(a, b) % 生成二维网格
-contour3(x, y, z) % 三维等值线绘图
-legend(&#39;string1&#39;,&#39;string2&#39;) % 标注绘制的图形的名称
-xlabel() ylabel() zlabel() % 标注x,y,z轴
-title()	% matlab绘图标题设置
-set() % 设置图像属性
-axis() % 对坐标轴进行缩放操作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% matlab里的一些基本规范
-% 数值
-% 字符串<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+hold off <span class="token comment" spellcheck="true">% 控制图像是否被刷新</span>
+<span class="token comment" spellcheck="true">% 常用字符串函数</span>
+<span class="token function">char</span><span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% ascii码对应的字符，A</span>
+<span class="token function">length</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 字符串长度</span>
+<span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 字符串比较函数</span>
+<span class="token function">strcat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 将多个字符串合并成一个</span>
+<span class="token function">num2str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 将数字转换为字符串</span>
+<span class="token comment" spellcheck="true">% 常用数学函数</span>
+<span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 数组大小，第二个参数也是dim表示矩阵的维度。</span>
+<span class="token function">magic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 生成一个幻方</span>
+<span class="token function">abs</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 求s的ascii码</span>
+<span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% 取整函数</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 求和函数，辅助参数dim表示求和的维度，1表示按列，2表示按行，默认dim=1</span>
+<span class="token function">repmat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 复制扩展矩阵</span>
+<span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 将数组或矩阵排序</span>
+<span class="token function">prod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 计算矩阵每一列的乘积</span>
+<span class="token function">eig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 计算矩阵的特征值</span>
+<span class="token function">inv</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 求矩阵的逆矩阵</span>
+<span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 产生（0,1）之间均匀分布的伪随机数组成的数组</span>
+<span class="token function">randn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 生成标准正态分布的伪随机数（均值为0，方差为1）</span>
+<span class="token function">randperm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 将一序号随机打乱，序号必须是整数</span>
+<span class="token function">normrnd</span><span class="token punctuation">(</span>MU<span class="token punctuation">,</span>SIGMA<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 生成服从正态分布的随机数</span>
+<span class="token comment" spellcheck="true">% 常用数据输入输出函数</span>
+<span class="token function">disp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 向命令行输出字符或数字</span>
+<span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 从命令行读取数据</span>
+<span class="token function">xlsread</span><span class="token punctuation">(</span><span class="token string">'xls_name_string'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% Excel表格读取</span>
+save <span class="token comment" spellcheck="true">% 用来将数据保存为.mat文件</span>
+load <span class="token comment" spellcheck="true">% 用来加载之间生成的.mat文件</span>
+<span class="token comment" spellcheck="true">% 常用绘图函数</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 创建2维直线图</span>
+<span class="token function">stem</span><span class="token punctuation">(</span>Y<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 绘制数据序列Y的茎状图</span>
+<span class="token function">meshgrid</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 生成二维网格</span>
+<span class="token function">contour3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 三维等值线绘图</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'string1'</span><span class="token punctuation">,</span><span class="token string">'string2'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 标注绘制的图形的名称</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">ylabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">zlabel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 标注x,y,z轴</span>
+<span class="token function">title</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">% matlab绘图标题设置</span>
+<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 设置图像属性</span>
+<span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">% 对坐标轴进行缩放操作</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% matlab里的一些基本规范</span>
+<span class="token comment" spellcheck="true">% 数值</span>
+<span class="token comment" spellcheck="true">% 字符串</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ph101LOVE/article/details/78454907">floor函数详解</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuxinrk/article/details/80961657">randperm函数详解</a></li>
@@ -315,70 +306,70 @@ axis() % 对坐标轴进行缩放操作<span aria-hidden="true" class="line-numb
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunzhao1000/article/details/80590333">save 和 load详解</a></li>
 </ul>
 <p>一、矩阵及数组操作例题：</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 生成一个3x3和15x8的单位矩阵
-eye(3, 3)
-eye(15, 8)
-% 生成全1矩阵
-ones(3)
-ones(15, 8)
-% 全0矩阵
-zeros(3)
-zeros(15, 8)
-% 均匀分布随机矩阵（[-1, 1]之间）
-2 * rand(3, 3) - 1
-2 * rand(15, 8) - 1
-% 正态分布矩阵（均值为1，方差为4）
-1+sqrt(4)*randn(3,3)
-% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。
-a &#x3D; fix(10*rand(10,10));
-b &#x3D; [a&gt;&#x3D;5];
-c &#x3D; [sum(b)];
-sum(c&#39;)
-% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。
-a &#x3D; [1 2 0 4;0 0 0 0;5 6 0 8; 9 1 0 2];
-a(:,find(sum(abs(a&#39;))&#x3D;&#x3D;0)) &#x3D; [];
-a(find(sum(abs(a&#39;))&#x3D;&#x3D;0),:) &#x3D; [] % 没看懂，该写法待确认<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 生成一个3x3和15x8的单位矩阵</span>
+<span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 生成全1矩阵</span>
+<span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">ones</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 全0矩阵</span>
+<span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">zeros</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 均匀分布随机矩阵（[-1, 1]之间）</span>
+<span class="token number">2</span> <span class="token operator">*</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+<span class="token number">2</span> <span class="token operator">*</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+<span class="token comment" spellcheck="true">% 正态分布矩阵（均值为1，方差为4）</span>
+<span class="token number">1</span><span class="token operator">+</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">randn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 利用fix及rand函数生成[0,10]上的均匀分布的10x10的整数随机矩阵a，然后统计a中大于等于5的元素的个数。</span>
+a <span class="token operator">=</span> <span class="token function">fix</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">*</span><span class="token function">rand</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+b <span class="token operator">=</span> <span class="token punctuation">[</span>a<span class="token operator">>=</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">sum</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>c<span class="token operator">'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 在给定的矩阵中删除含有整行内容全为0的行，删除整列内容全为0的列。</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">0</span> <span class="token number">4</span><span class="token punctuation">;</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token number">5</span> <span class="token number">6</span> <span class="token number">0</span> <span class="token number">8</span><span class="token punctuation">;</span> <span class="token number">9</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>a<span class="token operator">'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>a<span class="token operator">'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">% 没看懂，该写法待确认</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>二、绘图：</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：
-x&#x3D;0 : 1 : 10;
-y1&#x3D;2*x+5;
-y2&#x3D;x.^2-3*x+1;
-plot(x, y1, x, y2);
-legend(&#39;y1&#39;,&#39;y2&#39;)
-% 画出下列函数的曲面及等高线
-% z &#x3D; x^2 + y^2 + sin(xy).
-[x, y] &#x3D; meshgrid(0:0.25:4*pi);
-z&#x3D;x.^2+y.^2+sin(x*y);
-contour3(x, y, z);
-meshc(x, y, z)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 在同一图形窗口画出下列两条曲线图像，并用legend标注：</span>
+x<span class="token operator">=</span><span class="token number">0</span> <span class="token operator">:</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
+y1<span class="token operator">=</span><span class="token number">2</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">;</span>
+y2<span class="token operator">=</span>x<span class="token operator">.^</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">3</span><span class="token operator">*</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">legend</span><span class="token punctuation">(</span><span class="token string">'y1'</span><span class="token punctuation">,</span><span class="token string">'y2'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">% 画出下列函数的曲面及等高线</span>
+<span class="token comment" spellcheck="true">% z = x^2 + y^2 + sin(xy).</span>
+<span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">meshgrid</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">:</span><span class="token number">0.25</span><span class="token operator">:</span><span class="token number">4</span><span class="token operator">*</span><span class="token keyword">pi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+z<span class="token operator">=</span>x<span class="token operator">.^</span><span class="token number">2</span><span class="token operator">+</span>y<span class="token operator">.^</span><span class="token number">2</span><span class="token operator">+</span><span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">contour3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">meshc</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>三、简单程序设计</p>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">% 求分段函数
-x&#x3D;input(&#39;请输入x的值：&#39;);
-if x&gt;&#x3D;-3 &amp;&amp; x &lt; -1
-    y&#x3D;(-x^2-4*x-3)&#x2F;2;
-elseif x&gt;&#x3D;-1 &amp;&amp; x&lt;1
-    y&#x3D;-x^2+1;
-elseif x&gt;&#x3D;1 &amp;&amp; x&lt;&#x3D;3
-    y&#x3D;(-x^2+4*x-3)&#x2F;2;
-else
-    y&#x3D;&#39;error&#39;
-end
+<pre class="line-numbers language-matlab"><code class="language-matlab"><span class="token comment" spellcheck="true">% 求分段函数</span>
+x<span class="token operator">=</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token string">'请输入x的值：'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> x<span class="token operator">>=</span><span class="token operator">-</span><span class="token number">3</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token operator">-</span><span class="token number">1</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token operator">^</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token number">-3</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">elseif</span> x<span class="token operator">>=</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> x<span class="token operator">&lt;</span><span class="token number">1</span>
+    y<span class="token operator">=</span><span class="token operator">-</span>x<span class="token operator">^</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">elseif</span> x<span class="token operator">>=</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> x<span class="token operator">&lt;=</span><span class="token number">3</span>
+    y<span class="token operator">=</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token operator">^</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>x<span class="token number">-3</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+    y<span class="token operator">=</span><span class="token string">'error'</span>
+<span class="token keyword">end</span>
 y
-% 分数序列求和
-m &#x3D; 1;
-n &#x3D; 2;
-sum &#x3D; 0;
-for k&#x3D;1:15
-    f&#x3D;n&#x2F;m;
-    sum&#x3D;sum+f;
-    t&#x3D;n;
-    n&#x3D;m+n;
-    m&#x3D;t;
-end
-sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token comment" spellcheck="true">% 分数序列求和</span>
+m <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+n <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> k<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">15</span>
+    f<span class="token operator">=</span>n<span class="token operator">/</span>m<span class="token punctuation">;</span>
+    sum<span class="token operator">=</span>sum<span class="token operator">+</span>f<span class="token punctuation">;</span>
+    t<span class="token operator">=</span>n<span class="token punctuation">;</span>
+    n<span class="token operator">=</span>m<span class="token operator">+</span>n<span class="token punctuation">;</span>
+    m<span class="token operator">=</span>t<span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+sum
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>一些注意事项:</p>
 <ul>
 <li>在变量定义的时候多写注释，注明每个变量的作用。</li>
@@ -567,7 +558,7 @@ sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -615,7 +606,7 @@ sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -651,33 +642,31 @@ sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -785,6 +774,9 @@ sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 </a>
 
   
+  
+  
+
   
   
   <script>

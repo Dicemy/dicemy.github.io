@@ -106,6 +106,9 @@
   
   
   
+  <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
+  
+  
   
   <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
   
@@ -130,22 +133,12 @@
   
   
   
-  
-  
-  <link href="/js/lib/prism/prism.min.css" rel="stylesheet" data-prism="prism">
-  
-  
-  
-<link rel="stylesheet" href="/js/lib/prism/prism-line-numbers.min.css">
-
-  
-  
-  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -301,51 +294,51 @@
 <blockquote>
 <p>这中间用到了组合数学的一些知识，那一个盒子放数的模型也要等到后面再研究了。</p>
 </blockquote>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;bits&#x2F;stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const int maxn &#x3D; 1e6 + 8;
-const int p &#x3D; 998244353;
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">1e6</span> <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token number">998244353</span><span class="token punctuation">;</span>
 
-ll n, m, ans &#x3D; 0;
-ll f[maxn];
+ll n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ll f<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-ll power(ll a, ll b, ll p) &#123;
-    ll res &#x3D; 1 % p;
-    while(b) &#123;
-        if (b&amp;1) res &#x3D; (ll) res * a % p ;
-        a &#x3D; (ll) a * a % p;
-        b &gt;&gt;&#x3D; 1;
-    &#125;
-    return res;
-&#125;
+ll <span class="token function">power</span><span class="token punctuation">(</span>ll a<span class="token punctuation">,</span> ll b<span class="token punctuation">,</span> ll p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ll res <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span> res <span class="token operator">=</span> <span class="token punctuation">(</span>ll<span class="token punctuation">)</span> res <span class="token operator">*</span> a <span class="token operator">%</span> p <span class="token punctuation">;</span>
+        a <span class="token operator">=</span> <span class="token punctuation">(</span>ll<span class="token punctuation">)</span> a <span class="token operator">*</span> a <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        b <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-inline ll inv(ll x) &#123;
-	return power(x, p-2, p);
-&#125;
+<span class="token keyword">inline</span> ll <span class="token function">inv</span><span class="token punctuation">(</span>ll x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">power</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> p<span class="token number">-2</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void init() &#123;
-	cin &gt;&gt; n &gt;&gt; m;
-	f[0] &#x3D; f[1] &#x3D; 1;
-	for (int i&#x3D;2;i&lt;&#x3D;maxn;++i) 
-		f[i] &#x3D; f[i - 1] * i % p; 
-&#125;
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> n <span class="token operator">>></span> m<span class="token punctuation">;</span>
+    f<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>maxn<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> 
+        f<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">*</span> i <span class="token operator">%</span> p<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
 
-inline ll C(ll n, ll m) &#123;
-	if (n &#x3D;&#x3D; m|| m &#x3D;&#x3D; 0)	return 1;
-	return (f[n] * inv(f[m]) % p * inv(f[n - m]) % p);
-&#125;
+<span class="token keyword">inline</span> ll <span class="token function">C</span><span class="token punctuation">(</span>ll n<span class="token punctuation">,</span> ll m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> m<span class="token operator">||</span> m <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>f<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token function">inv</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> p <span class="token operator">*</span> <span class="token function">inv</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>n <span class="token operator">-</span> m<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main() &#123;
-	init();
-	for (int d&#x3D;1;d&lt;&#x3D;n-1;++d) &#123;
-		ll tmp &#x3D; d * (n - d) % p;
-		ans &#x3D; (ans + tmp * C(d + m - 2, m - 2) % p) %p;
-	&#125;
-	cout &lt;&lt; ans;
-	return 0;
-&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> d<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>d<span class="token operator">&lt;=</span>n<span class="token number">-1</span><span class="token punctuation">;</span><span class="token operator">++</span>d<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ll tmp <span class="token operator">=</span> d <span class="token operator">*</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> d<span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">;</span>
+        ans <span class="token operator">=</span> <span class="token punctuation">(</span>ans <span class="token operator">+</span> tmp <span class="token operator">*</span> <span class="token function">C</span><span class="token punctuation">(</span>d <span class="token operator">+</span> m <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">,</span> m <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">)</span> <span class="token operator">%</span>p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这篇题解是从csdn上我的账号搬运过来的，新的博客搭好啦，开始搬运计划√</p>
 
   </div>
@@ -444,7 +437,7 @@ int main() &#123;
     <span>分类</span>
   </a>
   <a class="author-tags-count" href="/tags">
-    <span>16</span>
+    <span>15</span>
     <span>标签</span>
   </a>
 </div>
@@ -492,7 +485,7 @@ int main() &#123;
       <a href="/categories/竞赛">
         <div class="categories-list-item">
           竞赛
-          <span class="categories-list-item-badge">16</span>
+          <span class="categories-list-item-badge">17</span>
         </div>
       </a>
     
@@ -528,33 +521,31 @@ int main() &#123;
     
     <a href="\tags\赛后总结" title="赛后总结"><div class="tags-list-item">赛后总结</div></a>
     
-    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
-    
     <a href="\tags\学习笔记" title="学习笔记"><div class="tags-list-item">学习笔记</div></a>
     
-    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
+    <a href="\tags\搜索" title="搜索"><div class="tags-list-item">搜索</div></a>
     
     <a href="\tags\DP" title="DP"><div class="tags-list-item">DP</div></a>
+    
+    <a href="\tags\组合数学" title="组合数学"><div class="tags-list-item">组合数学</div></a>
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
-    <a href="\tags\算法笔记" title="算法笔记"><div class="tags-list-item">算法笔记</div></a>
-    
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
-    
-    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
-    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
-    
-    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
+    <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
     
     <a href="\tags\乘法逆元" title="乘法逆元"><div class="tags-list-item">乘法逆元</div></a>
     
     <a href="\tags\双端队列" title="双端队列"><div class="tags-list-item">双端队列</div></a>
+    
+    <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
+    
+    <a href="\tags\思考题" title="思考题"><div class="tags-list-item">思考题</div></a>
     
     <a href="\tags\数论" title="数论"><div class="tags-list-item">数论</div></a>
     
@@ -662,6 +653,9 @@ int main() &#123;
 </a>
 
   
+  
+  
+
   
   
   <script>
