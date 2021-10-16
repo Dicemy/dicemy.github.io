@@ -25,7 +25,7 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:published_time" content="2021-03-05">
-  <meta property="og:article:modified_time" content="2021-10-16">
+  <meta property="og:article:modified_time" content="2021-10-17">
   <meta property="og:article:author" content="Dicemy">
   
   
@@ -222,7 +222,7 @@
     
     
     <span class="dot"></span>
-    <span>3k 字</span>
+    <span>3.6k 字</span>
     
   </div>
   
@@ -461,8 +461,29 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
 <p><code>. ./</code>都表示当前目录 <code>.. ../</code>都表示上一级目录</p>
 <p>使用 <code>uname -r</code> 查看核心版本</p>
 <p>使用 <code>uname -a</code>  查看操作系统的版本</p>
-<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" alt="image-20211016204944202" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" class="lozad post-image"></p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0220filemanager.php#umask">第六章</a></h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" alt="image-20211016204944202" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" class="lozad post-image"></p>
 <p>Linux中根目录中也有./和../目录，并且 ./ 目录和 ../目录是同一个目录。</p>
+<p><code>cd</code> 表示切换目录。几个比较特殊的目录在上面的图片上都可以看出。</p>
+<p><code>pwd</code>表示显示当前的目录。<code>pwd -P</code>表示显示文档的实际地址，对于一些快捷方式的地址会发生区别。</p>
+<p><code>mkdir</code>表示建立一个新目录。<code>e.g. mkdir -p test1/test2/test3/test4</code>会依次建立目录 <code>e.g. mkdir -m711 test2</code>会建立一个test2目录并且权限为711。</p>
+<p>​    一般情况下建立目录需要一层一层建立，加上-p选项可以将所有的目录都按照顺序依次建立起来，而且如果本来目录存在的情况下，系统不会提示错误信息。（不建议，如果出错很麻烦）。</p>
+<p><code>rmdir</code>删除空目录。<code>e.g. rmdir -p test1/test2/test3/test4</code>该命令只能一层一层删除目录，加上-p可以一次性全部删除，该命令删除的目录中必须不能有别的文档或者目录，如果想要带里面的文件一起删除的话可以使用<code>rm -r test</code>命令来删除，（不过比较危险）。</p>
+<p>输入<code>exit</code>或者按<code>Ctrl + D</code>可以退出已经登录的root账户</p>
+<p><code>echo $PATH</code>可以显示当前用户的PATH路径都有哪些。在使用指令的时候会优先在PATH的路径下寻找可执行文件，如果有多个重名文件的话会优先使用先搜索到的文件。</p>
+<p><code>PATH=&quot;$&#123;PATH&#125;:/root&quot;</code>可以将/root加入到PATH路径中。</p>
+<p>​    为了安全起见不要将 <code>.</code> 加入PATH中。</p>
+<p>​    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" alt="image-20211016235319366" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" class="lozad post-image"></p>
+<p>在Bash Shell中<code>ls -l</code> 可以简写为<code>ll</code></p>
+<p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211017002404054.png" alt="image-20211017002404054" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211017002404054.png" class="lozad post-image"></p>
+<p><code>cp</code>表示copy，即对文件进行复制和粘贴。</p>
+<p>​    其中<code>-i</code>选项表示如果出现覆盖先进行询问。<code>-a</code>表示复制的文件的群组和时间都和原文件一样。<code>-l</code>表示创建一个实体链接。<code>-s</code>表示创建一个符号链接，即产生了源文件的一个捷径。<code>-d</code>表示如果复制的文件为一个捷径文件的话复制该捷径，因为cp直接复制一个捷径的话会复制源文件。cp指令可以将多个资料一次复制到一个目录中去，但是最前面一定是目录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" alt="image-20211017004951502" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" class="lozad post-image"></p>
+<p><code>rm</code>表示remove，即移除目录或者文档。</p>
+<p>​    其中大部分的发行版Linux都默认rm带上了<code>-i</code>参数，<code>-r</code>很危险，同时不要将文件起名为<code>-aaa-</code>这种类型，因为如果这时想要删除这个文件的时候，就会报错，因为会优先检测出-a这个选项，所以文件起名一般不要用-开头。</p>
+<p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211017005614342.png" alt="image-20211017005614342" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211017005614342.png" class="lozad post-image"></p>
+<p><code>mv</code>表示move，即移动文件或者目录。</p>
+<p>​    可以使用mv来对一个文件进行更名的操作。</p>
 
   </div>
   <div>
