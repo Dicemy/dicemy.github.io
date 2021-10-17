@@ -25,7 +25,7 @@
   
   <meta property="og:type" content="article">
   <meta property="og:article:published_time" content="2021-03-05">
-  <meta property="og:article:modified_time" content="2021-10-17">
+  <meta property="og:article:modified_time" content="2021-10-18">
   <meta property="og:article:author" content="Dicemy">
   
   
@@ -222,7 +222,7 @@
     
     
     <span class="dot"></span>
-    <span>3.7k 字</span>
+    <span>4.9k 字</span>
     
   </div>
   
@@ -475,18 +475,113 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
 <p><code>echo $PATH</code>可以显示当前用户的PATH路径都有哪些。在使用指令的时候会优先在PATH的路径下寻找可执行文件，如果有多个重名文件的话会优先使用先搜索到的文件。</p>
 <p><code>PATH=&quot;$&#123;PATH&#125;:/root&quot;</code>可以将/root加入到PATH路径中。</p>
 <p>​    为了安全起见不要将 <code>.</code> 加入PATH中。</p>
-<p>​    </p>
+<hr>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" alt="image-20211016235319366" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" class="lozad post-image"></p>
 <p>在Bash Shell中<code>ls -l</code> 可以简写为<code>ll</code></p>
+<hr>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" alt="image-20211017002404054" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" class="lozad post-image"></p>
 <p><code>cp</code>表示copy，即对文件进行复制和粘贴。</p>
 <p>​    其中<code>-i</code>选项表示如果出现覆盖先进行询问。<code>-a</code>表示复制的文件的群组和时间都和原文件一样。<code>-l</code>表示创建一个实体链接。<code>-s</code>表示创建一个符号链接，即产生了源文件的一个捷径。<code>-d</code>表示如果复制的文件为一个捷径文件的话复制该捷径，因为cp直接复制一个捷径的话会复制源文件。cp指令可以将多个资料一次复制到一个目录中去，但是最前面一定是目录。</p>
+<hr>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" alt="image-20211017004951502" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" class="lozad post-image"></p>
 <p><code>rm</code>表示remove，即移除目录或者文档。</p>
 <p>​    其中大部分的发行版Linux都默认rm带上了<code>-i</code>参数，<code>-r</code>很危险，同时不要将文件起名为<code>-aaa-</code>这种类型，因为如果这时想要删除这个文件的时候，就会报错，因为会优先检测出-a这个选项，所以文件起名一般不要用-开头。</p>
+<hr>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" alt="image-20211017005614342" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" class="lozad post-image"></p>
 <p><code>mv</code>表示move，即移动文件或者目录。</p>
 <p>​    可以使用mv来对一个文件进行更名的操作。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" alt="image-20211017103829397" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" class="lozad post-image"></p>
+<p><code>cat</code>用来显示文档内的内容。<code>-n</code>选项用来带行号输出，<code>-A</code>用来显示所有的特殊字符和正常字符。</p>
+<p><code>tac</code>是<code>cat</code>命令的反着输出的版本，从最后一行到第一行输出。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" alt="image-20211017105321632" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" class="lozad post-image"></p>
+<p><code>nl</code>命令用来带行号输出文件的内容。<code>-b a</code>选项用来将空白行也带上行号。<code>-b a -n rz</code>用来将空白行带上行号之后再前面补零。<code>-b a -n rz -w 3</code>用来将空白行带上行号之后再前面补零,并且规定零加上数字一共宽度为三。</p>
+<hr>
+<p><code>more</code>命令用来可以翻页的查看一个文档。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" alt="image-20211017105909332" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" class="lozad post-image"></p>
+<p>进入more一个文档之后的一些操作如上图。对文档内的字符串进行/查找之后按n查看下一个查找到的字符串。</p>
+<hr>
+<p><code>less</code>命令也是可以翻页查看一个文档，功能比<code>more</code>更加的强大。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" alt="image-20211017110548332" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" class="lozad post-image"></p>
+<hr>
+<p><code>head</code>命令用来取出前面的几行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" alt="image-20211017110912050" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" class="lozad post-image"></p>
+<p>在不加上<code>-n</code>选项的时候默认输出一个文件的前10行，加上<code>-n</code>选项可以自定义输出文件的前几行，值得注意的是，如果<code>-n</code>后面跟的是一个负数，表示的是这些行不输出，比如<code>-n -100</code>表示前100行不输出，从100行之后的所有行全部输出。</p>
+<hr>
+<p><code>tail</code>命令用来取出文件的后面几行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" alt="image-20211017111631255" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" class="lozad post-image"></p>
+<p><code>-n</code>的使用和head大致相同，一个比较好玩的是 <code>-n +100</code>表示100行之后的所有行都输出。<code>-f</code>选项用来持续检测这个文件，如果一个文件一直在进行写入操作，那么会持续的输出这个文件新加入的行，直到按下<code>Ctrl + C</code>后结束检测。</p>
+<p><code>head</code>和<code>tail</code>的组合使用可以输出11 ~ 20 行：<code>head -n 20 /etc/man_db.conf | tail -n 10</code> |表示将前面执行的结果交给后面接着执行。</p>
+<p>在上面的基础上再加上<code>cat</code>可以输出正确的11~20行的行号：<code>cat -n /etc/man_db.conf | head -n 20 | tail -n 10</code></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" alt="image-20211017112447936" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" class="lozad post-image"></p>
+<p><code>od</code>命令是针对那些非文字文档的一个命令。</p>
+<p>对于一些 data file 或者 binary file 可以使用od命令使这些文件以ASCII码的形式输出出来。</p>
+<p>我们可以利用这个命令来对已有的字符串输出对应的八进制ASCII码：<code>echo password | od -t oCc</code></p>
+<hr>
+<p>使用<code>ls</code>的<code>--time</code>选项来查看每个文件的不同类型的时间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" alt="image-20211017113820032" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" class="lozad post-image"></p>
+<hr>
+<p>使用<code>touch</code>命令可以：1.建立一个空白的文档。2.将一个文档的时间修改为某一个特定的时间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" alt="image-20211017230559922" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" class="lozad post-image"></p>
+<hr>
+<p><code>umask</code>命令可以查看当前用户创建的文档或者目录的预设权限。</p>
+<p>输入<code>umask</code>输出的一串数字从第二个到第四个分别表示user，group，other三种用户被拿掉的权限的权值的和。比如4表示读，2表示写，5表示读和执行。</p>
+<p>命令<code>umask 002</code>表示将该用户创建文件的预设权限设置为仅为other的用户不能写。</p>
+<p>一般root用户将umask设置为022，因为是出于安全的考虑。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" alt="image-20211017231924941" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" class="lozad post-image"></p>
+<p><code>chattr</code>命令表示设置文件或者目录的隐藏属性</p>
+<p><code>chattr +i attrtest</code>表示给attrtest文件加上锁定的隐藏属性，用<code>chattr -i attrtest</code>来取消该隐藏属性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" alt="image-20211017232430627" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" class="lozad post-image"></p>
+<p><code>lsattr</code>命令用来查看一个文件或者目录的隐藏属性。</p>
+<hr>
+<p><code>SUID</code>（Set UID）是一个特殊的权限，可以让非root用户暂时使用root命令。</p>
+<p>SUID是在原本user的x权限的位置上标为s，此时权限表示为SUID。</p>
+<p>下图为SUID的限制于功能：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" alt="image-20211017234508661" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" class="lozad post-image"></p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" alt="SUID程式執行的過程示意圖" style="zoom:150%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" class="lozad post-image">
+
+<p>而且需要注意的是SUID只可以用在binary program上，并不能用于shell script。</p>
+<hr>
+<p><code>SGID</code>（Set GID）是指在群组的x权限的位置上标为s的一个权限。</p>
+<p>SGID对于可执行文件的限制于功能为下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" alt="image-20211017234547632" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" class="lozad post-image"></p>
+<p>SGID对于目录的限制于功能为下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" alt="image-20211017234859979" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" class="lozad post-image"></p>
+<hr>
+<p><code>SBIT</code> 只能对目录有作用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" alt="image-20211017235236377" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" class="lozad post-image"></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" alt="image-20211017235339098" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" class="lozad post-image"></p>
+<p>4，2, 1分别表示这三个隐藏权限的权值。在chmod的第一个值中表示该文件的隐藏权限属性值。使用：<code>chmod 4755 test</code>可以设置test的隐藏权限。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" alt="image-20211018000050678" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" class="lozad post-image"></p>
+<p>上图是使用文字的方式添加文件的隐藏属性。</p>
+<hr>
+<p><code>fail</code>命令来查看改文件的基本资料，是ASCII文件还是date文件或者可执行文件的一些细节。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" alt="image-20211018000446377" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" class="lozad post-image"></p>
+<hr>
+<p><code>which</code>命令用来寻找命令的完整路径。</p>
+<p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211018000810656.png" alt="image-20211018000810656" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20211018000810656.png" class="lozad post-image"></p>
+<p>which会根据PATH的路径来依次寻找命令所在的地址。</p>
+<hr>
+<p><code>whereis</code>命令是用于在一些特定目录中寻找档案名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" alt="image-20211018001136304" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" class="lozad post-image"></p>
+<hr>
+<p><code>locate</code>命令用来通过关键字在自建的数据库中搜索带有该关键字的文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" alt="image-20211018001928696" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" class="lozad post-image"></p>
+<p>locate使用的是由<code>已建立的資料庫 /var/lib/mlocate/</code>里面的资料所搜到的，该数据库默认每天更新一次，所以如果没有更新的话就可能搜索不到，这时就可以进行手动更新。</p>
+<p><code>updatedb</code>命令会搜索硬盘中的文档的名称并且更新资料库中的档案。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" alt="image-20211018002257338" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" class="lozad post-image"></p>
+<hr>
+<p><code>find</code>命令用来查找文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" alt="image-20211018002626749" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" alt="image-20211018002647603" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" alt="image-20211018002835439" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" alt="image-20211018003328825" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" alt="image-20211018003429378" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" alt="image-20211018003714199" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -678,13 +773,13 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
     
     <a href="\tags\数据库" title="数据库"><div class="tags-list-item">数据库</div></a>
     
+    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
+    
     <a href="\tags\方法总结" title="方法总结"><div class="tags-list-item">方法总结</div></a>
     
     <a href="\tags\博弈论" title="博弈论"><div class="tags-list-item">博弈论</div></a>
     
     <a href="\tags\文档阅读" title="文档阅读"><div class="tags-list-item">文档阅读</div></a>
-    
-    <a href="\tags\Linux" title="Linux"><div class="tags-list-item">Linux</div></a>
     
     <a href="\tags\最小生成树" title="最小生成树"><div class="tags-list-item">最小生成树</div></a>
     
