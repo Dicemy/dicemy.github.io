@@ -49,7 +49,7 @@
         content="2022-01-08">
       <meta 
         property="og:article:modified_time" 
-        content="2022-01-08">
+        content="2022-01-09">
       <meta 
         property="og:article:author" 
         content="Dicemy">
@@ -330,23 +330,24 @@
 <p>docker pull hyperledger/fabric-peer:x86_64-1.0.0</p>
 <p>docker pull hyperledger/fabric-baseos:x86_64-0.3.1</p>
 </blockquote>
+<p>注意：记得在所有的安装之后进行tag 编辑成latest状态否则会出现问题</p>
+<p><code>docker tag xxxx xxxx:latest</code></p>
 <h3 id="下载fabric源码库"><a href="#下载fabric源码库" class="headerlink" title="下载fabric源码库"></a>下载fabric源码库</h3><p>在hyperledger目录下进行<code>git clone https://github.com/hyperledger/fabric.git</code></p>
 <p><code>git checkout release-1.0</code></p>
-<p><code>cd common/</code></p>
-<p><code>cd configtx/</code></p>
-<p><code>cd tool/</code></p>
-<p><code>cd configtxgen/</code></p>
+<p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/configtx/tool/configtxgen</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108181212.png" alt="image-20220108181210078" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108181212.png" class="lozad post-image"></p>
 <h4 id="对工具进行编译。"><a href="#对工具进行编译。" class="headerlink" title="对工具进行编译。"></a>对工具进行编译。</h4><p><code>go install --tags=nopkcs11</code></p>
 <blockquote>
 <p>注意！！！</p>
+<p>奇怪的错误请输入：go env -w GO111MODULE=auto</p>
 <p>一定要把这个项目文件的src放在go环境设置下的gopath的文件夹中，输入go env可以查看go安装环境中的gopath文件夹。否则会出现找不到包的报错。</p>
 </blockquote>
 <h4 id="对另一个工具进行编译。"><a href="#对另一个工具进行编译。" class="headerlink" title="对另一个工具进行编译。"></a>对另一个工具进行编译。</h4><p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/tools/cryptogen</code></p>
 <p><code>go install --tags=nopkcs11</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183050.png" alt="image-20220108183049804" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183050.png" class="lozad post-image"></p>
 <h4 id="编译好的工具如下"><a href="#编译好的工具如下" class="headerlink" title="编译好的工具如下:"></a>编译好的工具如下:</h4><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" alt="image-20220108183258043" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" class="lozad post-image"></p>
-<h3 id="下载fabric-samples"><a href="#下载fabric-samples" class="headerlink" title="下载fabric-samples"></a>下载fabric-samples</h3><p><code>git clone https://github.com/hyperledger/fabric.git</code></p>
+<h3 id="下载fabric-samples"><a href="#下载fabric-samples" class="headerlink" title="下载fabric-samples"></a>下载fabric-samples</h3><p><code>cd /home/gopath/src/github.com/hyperledger</code></p>
+<p><code>git clone https://github.com/hyperledger/fabric-samples.git</code></p>
 <p><code>git checkout release-1.0</code></p>
 <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><h3 id="1-查看目录"><a href="#1-查看目录" class="headerlink" title="1.查看目录"></a>1.查看目录</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" alt="image-20220108185207083" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" class="lozad post-image"></p>
 <p>.env：存储一些环境变量</p>
