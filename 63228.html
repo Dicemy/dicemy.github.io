@@ -298,7 +298,7 @@
     
     
       <span class="dot"></span>
-      <span>721 字</span>
+      <span>736 字</span>
     
   </div>
   
@@ -306,8 +306,13 @@
   <div 
     id="section" 
     class="post-content">
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇博客基于树莓派4b，系统为Raspberry</p>
-<h1 id="硬件改装"><a href="#硬件改装" class="headerlink" title="硬件改装"></a>硬件改装</h1><h2 id="添加风扇"><a href="#添加风扇" class="headerlink" title="添加风扇"></a>添加风扇</h2><h2 id="添加外壳"><a href="#添加外壳" class="headerlink" title="添加外壳"></a>添加外壳</h2><h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><p>因为树莓派使用的是arm架构的cpu，所以一些x86的系统并不兼容。</p>
+    <img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109135913.jpg" alt="fa5b2b34be5039a8742a390d8f08656_proc" style="zoom: 50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109135913.jpg" class="lozad post-image">
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇博客基于树莓派4b，系统为Raspberry</p>
+<h1 id="硬件改装"><a href="#硬件改装" class="headerlink" title="硬件改装"></a>硬件改装</h1><h2 id="添加风扇"><a href="#添加风扇" class="headerlink" title="添加风扇"></a>添加风扇</h2><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20220109135925946.png" alt="image-20220109135925946" style="zoom: 50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20220109135925946.png" class="lozad post-image">
+
+<p>图片为添加了外壳和风扇的树莓派。</p>
+<h2 id="添加外壳"><a href="#添加外壳" class="headerlink" title="添加外壳"></a>添加外壳</h2><h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><p>因为树莓派使用的是arm架构的cpu，所以一些x86的系统并不兼容。</p>
 <h2 id="Raspbian"><a href="#Raspbian" class="headerlink" title="Raspbian"></a>Raspbian</h2><p>树莓派官方推荐的系统，还算是比较好用，自家的系统据说对于GPIO的支持比较强大。（但是想要把树莓派当做小服务器玩的话就会不太方便。。）</p>
 <p>已知的问题有：</p>
 <blockquote>
@@ -323,7 +328,7 @@
 <h3 id="2-进行连接即可"><a href="#2-进行连接即可" class="headerlink" title="2.进行连接即可"></a>2.进行连接即可</h3><p>通过1将树莓派的ssh打开之后，将sd卡装回树莓派，插一根网线到路由器上，然后重新开机后。找到树莓派对应的内网ip。之后直接通过ssh工具（比如mobaxterm）进行连接即可。或者通过win10的命令窗口也可以进行连接。</p>
 <p>win10的ssh命令如下：</p>
 <blockquote>
-<p>ssh -oPort=22 <a href="mailto:&#x70;&#105;&#x40;&#x78;&#120;&#120;&#46;&#120;&#120;&#x78;&#46;&#120;&#x78;&#x78;&#x2e;&#120;&#120;&#120;">&#x70;&#105;&#x40;&#x78;&#120;&#120;&#46;&#120;&#120;&#x78;&#46;&#120;&#x78;&#x78;&#x2e;&#120;&#120;&#120;</a></p>
+<p>ssh -oPort=22 <a href="mailto:&#112;&#x69;&#64;&#120;&#120;&#x78;&#x2e;&#x78;&#120;&#120;&#x2e;&#120;&#120;&#120;&#46;&#120;&#120;&#120;">&#112;&#x69;&#64;&#120;&#120;&#x78;&#x2e;&#x78;&#120;&#120;&#x2e;&#120;&#120;&#120;&#46;&#120;&#120;&#120;</a></p>
 </blockquote>
 <blockquote>
 <p>默认的ssh端口是22。</p>
