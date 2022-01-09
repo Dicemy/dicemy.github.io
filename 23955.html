@@ -306,7 +306,7 @@
     
     
       <span class="dot"></span>
-      <span>1.3k 字</span>
+      <span>2.7k 字</span>
     
   </div>
   
@@ -343,7 +343,7 @@
     id="section" 
     class="post-content">
     <p>注意：不要在有生产环境的服务器上进行该学习的部署，血的教训（服务器上的docker都被杀掉了，青龙平台直接没了。。。）</p>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>在gopath中创建</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>在gopath中创建</p>
 <blockquote>
 <p>mkdir src</p>
 <p>mkdir bin</p>
@@ -351,26 +351,26 @@
 </blockquote>
 <p>在src中创建<code>mkdir github.com</code></p>
 <p>在github.com中创建<code>mkdir hyperledger</code></p>
-<h3 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h3><p>一行命令，完成安装：（安装之后记得要把docker服务启动起来）</p>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><p>一行命令，完成安装：（安装之后记得要把docker服务启动起来）</p>
 <blockquote>
 <p>curl -sSL <a target="_blank" rel="noopener" href="https://get.daocloud.io/docker">https://get.daocloud.io/docker</a> | sh</p>
 <p>service docker start </p>
 </blockquote>
 <p>而且源在国内</p>
-<h3 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h3><p>通过curl进行安装：</p>
+<h2 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h2><p>通过curl进行安装：</p>
 <blockquote>
 <p><code>curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-``uname -s ``-``uname -m`` &gt; /usr/local/bin/docker-compose</code></p>
 <p><code>chmod +x /usr/local/bin/docker-compose</code></p>
 <p><code>docker-compose -v</code></p>
 </blockquote>
-<h3 id="go安装与配置"><a href="#go安装与配置" class="headerlink" title="go安装与配置"></a>go安装与配置</h3><p>参考：<a href="http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85">http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85</a></p>
+<h2 id="go安装与配置"><a href="#go安装与配置" class="headerlink" title="go安装与配置"></a>go安装与配置</h2><p>参考：<a href="http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85">http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85</a></p>
 <p>一定要注意环境变量的配置</p>
-<h3 id="jdk安装"><a href="#jdk安装" class="headerlink" title="jdk安装"></a>jdk安装</h3><blockquote>
+<h2 id="jdk安装"><a href="#jdk安装" class="headerlink" title="jdk安装"></a>jdk安装</h2><blockquote>
 <p>yum list java*</p>
 <p>yum install -y java-1.8.0-openjdk-devel.x86_64    </p>
 <p>java -version</p>
 </blockquote>
-<h3 id="下载fabric的docker镜像"><a href="#下载fabric的docker镜像" class="headerlink" title="下载fabric的docker镜像"></a>下载fabric的docker镜像</h3><p>除了baseos下载0.3.1，其余都下1.0.0，然后标记为latest</p>
+<h2 id="下载fabric的docker镜像"><a href="#下载fabric的docker镜像" class="headerlink" title="下载fabric的docker镜像"></a>下载fabric的docker镜像</h2><p>除了baseos下载0.3.1，其余都下1.0.0，然后标记为latest</p>
 <blockquote>
 <p>tools：docker pull hyperledger/fabric-tools:x86_64-1.0.0</p>
 <p>ccenv：docker pull hyperledger/fabric-ccenv:x86_64-1.0.0</p>
@@ -398,46 +398,46 @@
 <p>docker tag hyperledger/fabric-peer:x86_64-1.0.0 hyperledger/fabric-peer:latest</p>
 <p>docker tag hyperledger/fabric-baseos:x86_64-0.3.1 hyperledger/fabric-baseos:latest</p>
 </blockquote>
-<h3 id="下载fabric源码库"><a href="#下载fabric源码库" class="headerlink" title="下载fabric源码库"></a>下载fabric源码库</h3><p>在hyperledger目录下进行<code>git clone https://github.com/hyperledger/fabric.git</code></p>
+<h2 id="下载fabric源码库"><a href="#下载fabric源码库" class="headerlink" title="下载fabric源码库"></a>下载fabric源码库</h2><p>在hyperledger目录下进行<code>git clone https://github.com/hyperledger/fabric.git</code></p>
 <p><code>git checkout release-1.0</code></p>
 <p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/configtx/tool/configtxgen</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108181212.png" alt="image-20220108181210078" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108181212.png" class="lozad post-image"></p>
-<h4 id="对工具进行编译。"><a href="#对工具进行编译。" class="headerlink" title="对工具进行编译。"></a>对工具进行编译。</h4><p><code>go install --tags=nopkcs11</code></p>
+<h3 id="对工具进行编译。"><a href="#对工具进行编译。" class="headerlink" title="对工具进行编译。"></a>对工具进行编译。</h3><p><code>go install --tags=nopkcs11</code></p>
 <blockquote>
 <p>注意！！！</p>
 <p>奇怪的错误请输入：go env -w GO111MODULE=auto</p>
 <p>一定要把这个项目文件的src放在go环境设置下的gopath的文件夹中，输入go env可以查看go安装环境中的gopath文件夹。否则会出现找不到包的报错。</p>
 </blockquote>
-<h4 id="对另一个工具进行编译。"><a href="#对另一个工具进行编译。" class="headerlink" title="对另一个工具进行编译。"></a>对另一个工具进行编译。</h4><p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/tools/cryptogen</code></p>
+<h3 id="对另一个工具进行编译。"><a href="#对另一个工具进行编译。" class="headerlink" title="对另一个工具进行编译。"></a>对另一个工具进行编译。</h3><p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/tools/cryptogen</code></p>
 <p><code>go install --tags=nopkcs11</code></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183050.png" alt="image-20220108183049804" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183050.png" class="lozad post-image"></p>
-<h4 id="编译好的工具如下"><a href="#编译好的工具如下" class="headerlink" title="编译好的工具如下:"></a>编译好的工具如下:</h4><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" alt="image-20220108183258043" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" class="lozad post-image"></p>
-<h3 id="下载fabric-samples"><a href="#下载fabric-samples" class="headerlink" title="下载fabric-samples"></a>下载fabric-samples</h3><p><code>cd /home/gopath/src/github.com/hyperledger</code></p>
+<h3 id="编译好的工具如下"><a href="#编译好的工具如下" class="headerlink" title="编译好的工具如下:"></a>编译好的工具如下:</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" alt="image-20220108183258043" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" class="lozad post-image"></p>
+<h2 id="下载fabric-samples"><a href="#下载fabric-samples" class="headerlink" title="下载fabric-samples"></a>下载fabric-samples</h2><p><code>cd /home/gopath/src/github.com/hyperledger</code></p>
 <p><code>git clone https://github.com/hyperledger/fabric-samples.git</code></p>
 <p><code>git checkout release-1.0</code></p>
-<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><h3 id="1-查看目录"><a href="#1-查看目录" class="headerlink" title="1.查看目录"></a>1.查看目录</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" alt="image-20220108185207083" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" class="lozad post-image"></p>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><h2 id="1-查看目录"><a href="#1-查看目录" class="headerlink" title="1.查看目录"></a>1.查看目录</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" alt="image-20220108185207083" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" class="lozad post-image"></p>
 <p>.env：存储一些环境变量</p>
 <p>base：储存docker-compose的一些公共服务</p>
 <p>byfn.sh：执行脚本</p>
 <p>configtx.yaml和crypto-config.yaml：根据之前生成的2个工具，生成相应的配置文件，用来启动网络，放到当前目录的channel-artifacts和crypto-config里面</p>
 <p>docker-compose：用于启动网络</p>
 <p>scripts：存放测试脚本，做的事：创建通道，加入通道，安装链码，实例化链码，链码交互</p>
-<h3 id="2-生成配置"><a href="#2-生成配置" class="headerlink" title="2.生成配置"></a>2.生成配置</h3><p><code>./byfn.sh -m generate -i 1.0.0</code></p>
+<h2 id="2-生成配置"><a href="#2-生成配置" class="headerlink" title="2.生成配置"></a>2.生成配置</h2><p><code>./byfn.sh -m generate -i 1.0.0</code></p>
 <blockquote>
 <p>注意！！！！</p>
 <p>一定要记得吧gopath中的bin目录添加到环境变量中，否则可能无法调用刚才编译好的configtxgen和cryptogen工具</p>
 <p>可以通过 export PATH=$PATH:/home/gopath/bin 来临时添加或者使用vim ~/.bash_profile修改PATH 一行，之后使用source ~/.bash_profile生效。</p>
 </blockquote>
-<h3 id="3-启动网络，自动运行测试脚本"><a href="#3-启动网络，自动运行测试脚本" class="headerlink" title="3.启动网络，自动运行测试脚本"></a>3.启动网络，自动运行测试脚本</h3><p><code>./byfn.sh -m up -i 1.0.0</code></p>
-<h3 id="4-关闭网络，自动清楚配置和docker进程"><a href="#4-关闭网络，自动清楚配置和docker进程" class="headerlink" title="4.关闭网络，自动清楚配置和docker进程"></a>4.关闭网络，自动清楚配置和docker进程</h3><p><code>./byfn.sh -m down -i 1.0.0</code></p>
-<h2 id="Hello-World-分析"><a href="#Hello-World-分析" class="headerlink" title="Hello World 分析"></a>Hello World 分析</h2><h3 id="1-查看日志，order和peer分离"><a href="#1-查看日志，order和peer分离" class="headerlink" title="1.查看日志，order和peer分离"></a>1.查看日志，order和peer分离</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200634.png" alt="image-20220108200633311" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200634.png" class="lozad post-image"></p>
+<h2 id="3-启动网络，自动运行测试脚本"><a href="#3-启动网络，自动运行测试脚本" class="headerlink" title="3.启动网络，自动运行测试脚本"></a>3.启动网络，自动运行测试脚本</h2><p><code>./byfn.sh -m up -i 1.0.0</code></p>
+<h2 id="4-关闭网络，自动清楚配置和docker进程"><a href="#4-关闭网络，自动清楚配置和docker进程" class="headerlink" title="4.关闭网络，自动清楚配置和docker进程"></a>4.关闭网络，自动清楚配置和docker进程</h2><p><code>./byfn.sh -m down -i 1.0.0</code></p>
+<h1 id="Hello-World-分析"><a href="#Hello-World-分析" class="headerlink" title="Hello World 分析"></a>Hello World 分析</h1><h2 id="1-查看日志，order和peer分离"><a href="#1-查看日志，order和peer分离" class="headerlink" title="1.查看日志，order和peer分离"></a>1.查看日志，order和peer分离</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200634.png" alt="image-20220108200633311" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200634.png" class="lozad post-image"></p>
 <p>peer是按照组织或主体分离的，每一个组织生成ca（存储证书和私钥），msp（存储管理员证书和中间证书），peers（存储每一个peer相关的证书），users（存储每一个用户的证书）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200948.png" alt="image-20220108200946765" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200948.png" class="lozad post-image"></p>
-<h3 id="2-查看如下配置"><a href="#2-查看如下配置" class="headerlink" title="2.查看如下配置"></a>2.查看如下配置</h3><p>genesis.block：整个网络的创世区块</p>
+<h2 id="2-查看如下配置"><a href="#2-查看如下配置" class="headerlink" title="2.查看如下配置"></a>2.查看如下配置</h2><p>genesis.block：整个网络的创世区块</p>
 <p>channel.tx：创建的通道的配置</p>
 <p>Org1MSPanchors.tx和Org2MSPanchors.tx：两个主体的锚节点配置</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108201328.png" alt="image-20220108201327506" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108201328.png" class="lozad post-image"></p>
-<h3 id="3-启动网络，接着分析日志"><a href="#3-启动网络，接着分析日志" class="headerlink" title="3.启动网络，接着分析日志"></a>3.启动网络，接着分析日志</h3><p>fabric网络启动完毕</p>
+<h2 id="3-启动网络，接着分析日志"><a href="#3-启动网络，接着分析日志" class="headerlink" title="3.启动网络，接着分析日志"></a>3.启动网络，接着分析日志</h2><p>fabric网络启动完毕</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203247.png" alt="image-20220108203245854" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203247.png" class="lozad post-image"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203353.png" alt="image-20220108203352910" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203353.png" class="lozad post-image"></p>
 <p>指定通道名称，和一些变量，通道创建完成</p>
@@ -497,6 +497,92 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211920.png" alt="image-20220108211919875" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211920.png" class="lozad post-image"></p>
 <p>A给B转账10元</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108212005.png" alt="image-20220108212004943" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108212005.png" class="lozad post-image"></p>
+<h1 id="fabric系统架构"><a href="#fabric系统架构" class="headerlink" title="fabric系统架构"></a>fabric系统架构</h1><h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109153233.png" alt="image-20220109153232452" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109153233.png" class="lozad post-image"></p>
+<ul>
+<li><p><strong>应用层</strong></p>
+</li>
+<li><p>API：提供了GRPC，（谷歌）RPC框架</p>
+</li>
+<li><p>SDK：在API基础上封装的SDK，go，java，python，nodejs</p>
+</li>
+<li><p>事件：分布式系统中，达成共识需要一定的时间，fabric使用异步通信模式开发，触发回调函数执行。</p>
+</li>
+<li><p>身份：依托于底层的成员服务，是联盟链的认证功能，例如CA</p>
+</li>
+<li><p>账本：区块链的查询数据，是账本中查出来的，区块高度+交易ID，不重复</p>
+</li>
+<li><p>交易：对区块链数据进行修改，先提交交易到背书节点，签名认证之后再执行。</p>
+</li>
+<li><p>智能合约：做合约的安装，实例化和升级</p>
+</li>
+<li><p><strong>区块链底层</strong></p>
+</li>
+<li><p>成员服务：提供证书，用于加密和签名</p>
+</li>
+<li><p>共识服务：CAP（不能全满足，只能满足2个，一致性，可用性和分区容忍性），实际上区块链是弱化了可用性和分区容忍性，所以需要共识算法保证一致性。fabric的共识大概分为三个阶段：</p>
+<ul>
+<li>首先客户端向背书节点发送一个背书提案，背书节点进行交易模拟，将背书节点和签名返回客户端。</li>
+<li>然后将背书后的交易，交给排序节点进行排序。有排序节点生成区块，向全网广播。网络节点接受到广播后，先验证区块交易的正确性。</li>
+<li>验证通过后，存入本地账本。</li>
+<li>PS：排序节点与组织的锚节点使用的是GRPC通信，组织内使用的是gossip协议通信</li>
+</ul>
+</li>
+<li><p>链码服务：提供安全的，可隔离的交易环境。所以fabric使用docker，链码直接与docker通信。目前阶段对k8s支持的不好，会出问题。</p>
+</li>
+<li><p>安全及密码服务：fabric定义了一个BCCSP接口，定义签名，加密解密功能，是默认实现了一套国际通用的密码服务，如sha256等</p>
+</li>
+</ul>
+<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109160034.png" alt="image-20220109160033781" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109160034.png" class="lozad post-image"></p>
+<ul>
+<li><strong>概念：</strong></li>
+<li>客户端节点：应用程序和底层的交互媒介，与上层和peer和orderer连接发挥作用，连接peer做交易模拟</li>
+<li>peer节点：包含了<strong>锚节点（主节点）</strong>，在一个组织内可以有多个peer，一个组织中锚节点只有一个，锚节点的作用（与orderer进行通信），锚节点需要HA支持，若锚节点挂了，组织内会选举新的节点与orderer节点进行通信，<strong>背书节点（Endorse）</strong>理解为担保，与智能合约绑定的，每一个智能合约安装到区块链中，会有一个专属的背书策略，<strong>记账节点（committer）</strong>所有的peer节点都是记账节点。用于验证从orderer接受的区块，验证交易的有效性，验证通过后，同步到本地账本。</li>
+<li>orderer节点：排序节点，接受全网客户端节点的交易信息，按照一定规则进行排序，将排序好的交易，按照固定的时间间隔打包成区块。与其他组织的主节点进行通信，排序可以用solo（整个网络中只有一个排序节点，使用于开发和测试）和kafka（生产环境下使用，分布式消息队列）模式</li>
+<li>CA节点：可选的，作用：颁发证书，只用被CA认证的节点才能进行交易，fabric不存在51%攻击问题。</li>
+<li><strong>动作和行为：</strong></li>
+<li>注册登记：与客户端发起，向CA机构表明自己的身份，获取证书，上图中是第三方的CA，也可以使用官方提供的CA。</li>
+<li>交易提案：向组织的<strong>背书节点</strong>提交请求，对应peer节点，组织可以理解为现实中的商业主体，组织是独立的，有两个个数据来源。</li>
+<li>提交交易：客户端节点向排序节点发请求，orderer内部进行排序打包成区块，广播给其他组织的锚节点，上图是基于kafka实现的，每个组织会选择一个orderer节点进行通信。</li>
+</ul>
+<h2 id="交易流程"><a href="#交易流程" class="headerlink" title="交易流程"></a>交易流程</h2><ul>
+<li>客户端提交交易，最终到记账节点同步数据。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109163002.png" alt="image-20220109163001787" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109163002.png" class="lozad post-image"></p>
+<ul>
+<li>智能合约按照要指定背书节点，正常情况下，背书节点返回相同的结果，但签名是不一样的。</li>
+<li>背书是模拟的过程，不会持久化</li>
+<li>1,2,3是交易模拟，4,5,6是交易排序，7,8,9是交易同步和记账。交易模拟对应智能合约，交易排序对应共识机制，同步和记账对应账本存储</li>
+</ul>
+<h1 id="fabric共识排序"><a href="#fabric共识排序" class="headerlink" title="fabric共识排序"></a>fabric共识排序</h1><h2 id="共识机制"><a href="#共识机制" class="headerlink" title="共识机制"></a>共识机制</h2><ul>
+<li>达成公式需要3个阶段，交易背书，交易排序，交易验证。</li>
+<li>交易背书：模拟的</li>
+<li>交易排序：确定交易顺序，最终将排序好的交易打包区块分发。</li>
+<li>交易验证：区块储存前要进行一下交易验证（不是所有的orderer的东西都能存进去）</li>
+</ul>
+<h2 id="Orderer节点的作用"><a href="#Orderer节点的作用" class="headerlink" title="Orderer节点的作用"></a>Orderer节点的作用</h2><ul>
+<li><p>交易排序</p>
+<ul>
+<li>目的：保证系统的最终一致性（有限状态机）</li>
+<li>solo：单节点排序</li>
+<li>kafka：外置的分布式消息队列</li>
+</ul>
+</li>
+<li><p>区块分发：</p>
+<ul>
+<li>orderer中的区块并不是最终持久化的区块，</li>
+<li>是一个中间状态的区块</li>
+<li>包含了所有交易，不管是有有效还是无效，都会打包传给组织的锚节点。</li>
+</ul>
+</li>
+<li><p>多通道的数据隔离</p>
+<ul>
+<li>客户端可以使用某个通道，发送交易</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109164753.png" alt="image-20220109164752553" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109164753.png" class="lozad post-image"></li>
+</ul>
+</li>
+<li><p>源码</p>
+</li>
+</ul>
 
   </div>
   <div>
@@ -589,7 +675,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="toc-text">fabric系统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E5%9B%BE"><span class="toc-text">架构图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE"><span class="toc-text">网络拓扑图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B"><span class="toc-text">交易流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E5%85%B1%E8%AF%86%E6%8E%92%E5%BA%8F"><span class="toc-text">fabric共识排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6"><span class="toc-text">共识机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Orderer%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">Orderer节点的作用</span></a></li></ol></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -659,7 +745,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="toc-text">fabric系统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E5%9B%BE"><span class="toc-text">架构图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE"><span class="toc-text">网络拓扑图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B"><span class="toc-text">交易流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E5%85%B1%E8%AF%86%E6%8E%92%E5%BA%8F"><span class="toc-text">fabric共识排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6"><span class="toc-text">共识机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Orderer%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">Orderer节点的作用</span></a></li></ol></li></ol>
       </div>
     </article>
   
@@ -795,6 +881,12 @@
       </a>
     
       <a 
+        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
+        title="乘法逆元">
+        <div class="tags-list-item">乘法逆元</div>
+      </a>
+    
+      <a 
         href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" 
         title="最小生成树">
         <div class="tags-list-item">最小生成树</div>
@@ -804,12 +896,6 @@
         href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/" 
         title="思考题">
         <div class="tags-list-item">思考题</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
-        title="乘法逆元">
-        <div class="tags-list-item">乘法逆元</div>
       </a>
     
   </div>
@@ -830,7 +916,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose%E5%AE%89%E8%A3%85"><span class="toc-text">docker-compose安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">go安装与配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdk%E5%AE%89%E8%A3%85"><span class="toc-text">jdk安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E7%9A%84docker%E9%95%9C%E5%83%8F"><span class="toc-text">下载fabric的docker镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric%E6%BA%90%E7%A0%81%E5%BA%93"><span class="toc-text">下载fabric源码库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E3%80%82"><span class="toc-text">对另一个工具进行编译。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E5%A6%82%E4%B8%8B"><span class="toc-text">编译好的工具如下:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfabric-samples"><span class="toc-text">下载fabric-samples</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95"><span class="toc-text">1.查看目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE"><span class="toc-text">2.生成配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC"><span class="toc-text">3.启动网络，自动运行测试脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%B8%85%E6%A5%9A%E9%85%8D%E7%BD%AE%E5%92%8Cdocker%E8%BF%9B%E7%A8%8B"><span class="toc-text">4.关闭网络，自动清楚配置和docker进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World-%E5%88%86%E6%9E%90"><span class="toc-text">Hello World 分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%EF%BC%8Corder%E5%92%8Cpeer%E5%88%86%E7%A6%BB"><span class="toc-text">1.查看日志，order和peer分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="toc-text">2.查看如下配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%EF%BC%8C%E6%8E%A5%E7%9D%80%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97"><span class="toc-text">3.启动网络，接着分析日志</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="toc-text">fabric系统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E5%9B%BE"><span class="toc-text">架构图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE"><span class="toc-text">网络拓扑图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B"><span class="toc-text">交易流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric%E5%85%B1%E8%AF%86%E6%8E%92%E5%BA%8F"><span class="toc-text">fabric共识排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6"><span class="toc-text">共识机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Orderer%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">Orderer节点的作用</span></a></li></ol></li></ol>
     </article>
   
   
