@@ -1,1101 +1,532 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="月光照着月光,月光普照">
-  <link 
-    rel="icon" 
-    href="/img/biaoti.png">
-  <title>标签</title>
-  
-    
-      <meta 
-        property="og:title" 
-        content="标签">
-    
-    
-      <meta 
-        property="og:url" 
-        content="https://dicemy.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="/img/touxiang.jpg">
-    
-    
-      <meta 
-        property="og:img" 
-        content="月光照着月光,月光普照">
-    
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-    
-    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
-  
-  
-    
-    <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-<!-- hexo injector head_end start -->
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: 学习笔记 - TobinMEng 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="月光照着月光,月光普照"><meta property="og:type" content="blog"><meta property="og:title" content="TobinMEng 的博客"><meta property="og:url" content="https://dicemy.com/"><meta property="og:site_name" content="TobinMEng 的博客"><meta property="og:description" content="月光照着月光,月光普照"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://dicemy.com/img/og_image.png"><meta property="article:author" content="TobinMEng"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com"},"headline":"TobinMEng 的博客","image":["https://dicemy.com/img/og_image.png"],"author":{"@type":"Person","name":"TobinMEng"},"publisher":{"@type":"Organization","name":"TobinMEng 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"月光照着月光,月光普照"}</script><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-6426911790858772" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">文章归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">个人简介</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/music">音乐</a><a class="navbar-item" href="/media">媒体</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">学习笔记</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-05T03:07:04.000Z" title="2021/3/5 上午11:07:04">2021-03-05</time>发表</span><span class="level-item"><time dateTime="2021-10-17T16:41:22.825Z" title="2021/10/18 上午12:41:22">2021-10-18</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">38 分钟读完 (大约5660个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/11830">Linux系统操作入门</a></h1><div class="content"><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="图形模式与文字模式的切换方式"><a href="#图形模式与文字模式的切换方式" class="headerlink" title="图形模式与文字模式的切换方式"></a>图形模式与文字模式的切换方式</h3><p>Linux预设提供了六个命令窗口终端机让我们来登录。</p>
+<p>默认我们登录的就是第一个窗口，也就是tty1，这个六个窗口分别为tty1,tty2 … tty6，你可以按下Ctrl + Alt + F1 ~ F6 来切换它们。</p>
+<p>如果你安装了图形界面，默认情况下是进入图形界面的，此时你就可以按Ctrl + Alt + F1 ~ F6来进入其中一个命令窗口界面。</p>
+<p>当你进入命令窗口界面后再返回图形界面只要按下Ctrl + Alt + F7 就回来了。</p>
+<h3 id="Linux-关机"><a href="#Linux-关机" class="headerlink" title="Linux 关机"></a>Linux 关机</h3><p>在linux领域内大多用在服务器上，很少遇到关机的操作。毕竟服务器上跑一个服务是永无止境的，除非特殊情况下，不得已才会关机。</p>
+<p>正确的关机流程为：sync &gt; shutdown &gt; reboot &gt; halt</p>
+<p>关机指令为：shutdown ，你可以man shutdown 来看一下帮助文档。</p>
+<p>例如你可以运行如下命令关机：</p>
+<pre><code>sync 将数据由内存同步到硬盘中。
 
-  <body>
-    <div class="wrapper">
-       
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="/img/biaoti.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">Dicemy 的博客</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archives" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/links" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-      <a 
-        href="/guestbook" 
-        class="navbar-menu-item">
-        
-          留言板
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-<div class="card card-content tag-page-card">
-  <div class="tags-page-title">标签&nbsp-&nbsp学习笔记</div>
-</div>
-<div class="archive-timeline">
-  
-  
-    
-      <div class="archive-timeline-tag"><span>2021</span></div>
-      
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-03-05</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/11830" 
-              class="archive-timeline-post-item">
-              Linux系统操作入门
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-03-03</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/13114" 
-              class="archive-timeline-post-item">
-              微信小程序开发入门
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-01-31</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/39273" 
-              class="archive-timeline-post-item">
-              博弈论入门
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-</div></main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="/img/touxiang.jpg" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
+shutdown 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：
 
-<p class="author-name">Dicemy</p>
-<p class="author-description">软件工程在读大学生</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>37</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>4</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>18</span>
-    <span>标签</span>
-  </a>
-</div>
+shutdown –h 10 ‘This server will shutdown after 10 mins’ 这个命令告诉大家，计算机将在10分钟后关机，并且会显示在登陆用户的当前屏幕中。
 
-  <div class="author-card-society">
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
-          <i class="iconfont icon-bilibili society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a href="tencent://message/?uin=1583925267">
-          <i class="iconfont icon-wechat society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
-          <i class="iconfont icon-github society-icon"></i>
-        </a>
-      </div>
-    
-  </div>
+shutdown –h now 立马关机
 
-              </div>
-               <div class="sticky-tablet">
-  
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categories/%E7%AB%9E%E8%B5%9B/">
-        <div class="categories-list-item">
-          竞赛
-          <span class="categories-list-item-badge">17</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF/">
-        <div class="categories-list-item">
-          技术
-          <span class="categories-list-item-badge">12</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">
-        <div class="categories-list-item">
-          文化课
-          <span class="categories-list-item-badge">5</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E7%94%9F%E6%B4%BB/">
-        <div class="categories-list-item">
-          生活
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" 
-        title="赛后总结">
-        <div class="tags-list-item">赛后总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
-        title="学习笔记">
-        <div class="tags-list-item">学习笔记</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%90%9C%E7%B4%A2/" 
-        title="搜索">
-        <div class="tags-list-item">搜索</div>
-      </a>
-    
-      <a 
-        href="/tags/fabric/" 
-        title="fabric">
-        <div class="tags-list-item">fabric</div>
-      </a>
-    
-      <a 
-        href="/tags/Hyperledger/" 
-        title="Hyperledger">
-        <div class="tags-list-item">Hyperledger</div>
-      </a>
-    
-      <a 
-        href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" 
-        title="组合数学">
-        <div class="tags-list-item">组合数学</div>
-      </a>
-    
-      <a 
-        href="/tags/DP/" 
-        title="DP">
-        <div class="tags-list-item">DP</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
-        title="数据库">
-        <div class="tags-list-item">数据库</div>
-      </a>
-    
-      <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" 
-        title="方法总结">
-        <div class="tags-list-item">方法总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" 
-        title="博弈论">
-        <div class="tags-list-item">博弈论</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/" 
-        title="文档阅读">
-        <div class="tags-list-item">文档阅读</div>
-      </a>
-    
-      <a 
-        href="/tags/JAVA/" 
-        title="JAVA">
-        <div class="tags-list-item">JAVA</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" 
-        title="最小生成树">
-        <div class="tags-list-item">最小生成树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/" 
-        title="思考题">
-        <div class="tags-list-item">思考题</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
-        title="乘法逆元">
-        <div class="tags-list-item">乘法逆元</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">6</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2021" 
-            class="archive-card-list-item">
-            2021
-            <span class="archive-card-list-item-badge">29</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-08</div>
-        <a href="/23955"><div class="recent-posts-item-content">fabric开发入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/63228"><div class="recent-posts-item-content">树莓派入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/21062"><div class="recent-posts-item-content">Python入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/10811"><div class="recent-posts-item-content">git入门</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">6</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2021" 
-            class="archive-card-list-item">
-            2021
-            <span class="archive-card-list-item-badge">29</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-            2020 -
-          
-          2022
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          Dicemy 的博客
-        </a>
-      </div>
-    </div>
+shutdown –h 20:25 系统会在今天20:25关机
 
-    
-    
-    
-    
-      <div class="footer-dsc">
-        
-          本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          本站总访客数<span id="busuanzi_value_site_uv"></span>次
-        
-      </div>
-      
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
+shutdown –h +10 十分钟后关机
 
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-      
- 
-     
-     
-     
-    <script src="/js/main.js"></script> 
+shutdown –r now 系统立马重启
+
+shutdown –r +10 系统十分钟后重启
+
+reboot 就是重启，等同于 shutdown –r now
+
+halt 关闭系统，等同于shutdown –h now 和 poweroff
+</code></pre>
+<p>最后总结一下，不管是重启系统还是关闭系统，首先要运行 <strong>sync</strong> 命令，把内存中的数据写到磁盘中。</p>
+<p>关机的命令有 <strong>shutdown –h now halt poweroff</strong> 和 <strong>init 0</strong> , 重启系统的命令有 <strong>shutdown –r now reboot init 6</strong>。</p>
+<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><p>接下来我们就来看几个常见的处理目录的命令吧：</p>
+<ul>
+<li>ls（英文全拼：list files）: 列出目录及文件名</li>
+<li>cd（英文全拼：change directory）：切换目录</li>
+<li>pwd（英文全拼：print work directory）：显示目前的目录</li>
+<li>mkdir（英文全拼：make directory）：创建一个新的目录</li>
+<li>rmdir（英文全拼：remove directory）：删除一个空的目录</li>
+<li>cp（英文全拼：copy file）: 复制文件或目录</li>
+<li>rm（英文全拼：remove）: 删除文件或目录</li>
+<li>mv（英文全拼：move file）: 移动文件与目录，或修改文件与目录的名称</li>
+</ul>
+<p>你可以使用 <em>man [命令]</em> 来查看各个命令的使用文档，如 ：man cp。</p>
+<h3 id="ls-列出目录"><a href="#ls-列出目录" class="headerlink" title="ls (列出目录)"></a>ls (列出目录)</h3><p>在Linux系统当中， ls 命令可能是最常被运行的。</p>
+<p>语法：</p>
+<pre><code>[root@www ~]# ls [-aAdfFhilnrRSt] 目录名称
+[root@www ~]# ls [--color=&#123;never,auto,always&#125;] 目录名称
+[root@www ~]# ls [--full-time] 目录名称
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+<li>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)</li>
+<li>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</li>
+<li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
+</ul>
+<p>将家目录下的所有文件列出来(含属性与隐藏档)</p>
+<pre><code>[root@www ~]# ls -al ~
+</code></pre>
+<h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
+<p>语法：</p>
+<pre><code> cd [相对路径或绝对路径]
+#使用 mkdir 命令创建 runoob 目录
+[root@www ~]# mkdir runoob
+
+#使用绝对路径切换到 runoob 目录
+[root@www ~]# cd /root/runoob/
+
+#使用相对路径切换到 runoob 目录
+[root@www ~]# cd ./runoob/
+
+# 表示回到自己的家目录，亦即是 /root 这个目录
+[root@www runoob]# cd ~
+
+# 表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；
+[root@www ~]# cd ..
+</code></pre>
+<h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd (显示目前所在的目录)"></a>pwd (显示目前所在的目录)</h3><p>pwd 是 <strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令。</p>
+<pre><code>[root@www ~]# pwd [-P]
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+<li><strong>-P</strong> ：显示出确实的路径，而非使用连结 (link) 路径。</li>
+</ul>
+<p>实例：单纯显示出目前的工作目录：</p>
+<pre><code>[root@www ~]# pwd
+/root   &lt;== 显示出目录啦～
+</code></pre>
+<p>实例显示出实际的工作目录，而非连结档本身的目录名而已。</p>
+<pre><code>[root@www ~]# cd /var/mail   &lt;==注意，/var/mail是一个连结档
+[root@www mail]# pwd
+/var/mail         &lt;==列出目前的工作目录
+[root@www mail]# pwd -P
+/var/spool/mail   &lt;==怎么回事？有没有加 -P 差很多～
+[root@www mail]# ls -ld /var/mail
+lrwxrwxrwx 1 root root 10 Sep  4 17:54 /var/mail -&gt; spool/mail
+# 看到这里应该知道为啥了吧？因为 /var/mail 是连结档，连结到 /var/spool/mail 
+# 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！
+</code></pre>
+<h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。</p>
+<p>语法：</p>
+<pre><code>mkdir [-mp] 目录名称
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+<li>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</li>
+<li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
+</ul>
+<p>实例：请到/tmp底下尝试创建数个新目录看看：</p>
+<pre><code>[root@www ~]# cd /tmp
+[root@www tmp]# mkdir test    &lt;==创建一名为 test 的新目录
+[root@www tmp]# mkdir test1/test2/test3/test4
+mkdir: cannot create directory `test1/test2/test3/test4&#39;: 
+No such file or directory       &lt;== 没办法直接创建此目录啊！
+[root@www tmp]# mkdir -p test1/test2/test3/test4
+</code></pre>
+<p>加了这个 -p 的选项，可以自行帮你创建多层目录！</p>
+<p>实例：创建权限为 <strong>rwx–x–x</strong> 的目录。</p>
+<pre><code>[root@www tmp]# mkdir -m 711 test2
+[root@www tmp]# ls -l
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
+<p>上面的权限部分，如果没有加上 -m 来强制配置属性，系统会使用默认属性。</p>
+<p>如果我们使用 -m ，如上例我们给予 -m 711 来给予新的目录 drwx–x–x 的权限。</p>
+<h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><p>语法：</p>
+<pre><code> rmdir [-p] 目录名称
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+<li><strong>-p ：</strong>连同上一级『空的』目录也一起删除</li>
+</ul>
+<p>删除 runoob 目录</p>
+<pre><code>[root@www tmp]# rmdir runoob/
+</code></pre>
+<p>将 mkdir 实例中创建的目录(/tmp 底下)删除掉！</p>
+<pre><code>[root@www tmp]# ls -l   &lt;==看看有多少目录存在？
+drwxr-xr-x  3 root  root 4096 Jul 18 12:50 test
+drwxr-xr-x  3 root  root 4096 Jul 18 12:53 test1
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+[root@www tmp]# rmdir test   &lt;==可直接删除掉，没问题
+[root@www tmp]# rmdir test1  &lt;==因为尚有内容，所以无法删除！
+rmdir: `test1&#39;: Directory not empty
+[root@www tmp]# rmdir -p test1/test2/test3/test4
+[root@www tmp]# ls -l        &lt;==您看看，底下的输出中test与test1不见了！
+drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
+</code></pre>
+<p>利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。</p>
+<p>不过要注意的是，这个 rmdir 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。</p>
+<h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><p>cp 即拷贝文件和目录。</p>
+<p>语法:</p>
+<pre><code>[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)
+[root@www ~]# cp [options] source1 source2 source3 .... directory
+</code></pre>
+<p>选项与参数：</p>
+<ul>
+<li><strong>-a：</strong>相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)</li>
+<li><strong>-d：</strong>若来源档为连结档的属性(link file)，则复制连结档属性而非文件本身；</li>
+<li><strong>-f：</strong>为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；</li>
+<li><strong>-i：</strong>若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</li>
+<li><strong>-l：</strong>进行硬式连结(hard link)的连结档创建，而非复制文件本身；</li>
+<li><strong>-p：</strong>连同文件的属性一起复制过去，而非使用默认属性(备份常用)；</li>
+<li><strong>-r：</strong>递归持续复制，用於目录的复制行为；(常用)</li>
+<li><strong>-s：</strong>复制成为符号连结档 (symbolic link)，亦即『捷径』文件；</li>
+<li><strong>-u：</strong>若 destination 比 source 旧才升级 destination ！</li>
+</ul>
+<p>用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc</p>
+<pre><code>[root@www ~]# cp ~/.bashrc /tmp/bashrc
+[root@www ~]# cp -i ~/.bashrc /tmp/bashrc
+cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
+</code></pre>
+<h2 id="鸟哥的Linux私房菜"><a href="#鸟哥的Linux私房菜" class="headerlink" title="鸟哥的Linux私房菜"></a>鸟哥的Linux私房菜</h2><h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0160startlinux.php">文章链接</a></p>
+<p><code>Ctrl + Shift + F1 ~ F6</code> 切换6个终端</p>
+<p><code>date</code> 显示当前时间</p>
+<p><code>locale</code> 显示当前支持的语系</p>
+<p><code>cal</code> 显示日历</p>
+<p>​    cal + 年份 显示该年份的日历</p>
+<p><code>bc</code> 简单的计算器小程序</p>
+<p>​    bc仅支持<code>+ - * / ^ %</code>运算</p>
+<p><code>nano</code> 一个很简单的文本编辑程序，后面加上文件名即可进行编辑。</p>
+<p><code>Ctrl + C</code> 强制退出</p>
+<p><code>Ctrl + D</code> 表示EOF或者exit</p>
+<p><code>Tab</code> 按两下自动补全</p>
+<p><code>sync</code> 将内存中的内容转存在硬盘中</p>
+<p>​    在关机之前记得多使用几次这个命令，防止内容的丢失</p>
+<p><code>shutdown</code> 为关机指令</p>
+<p><code>reboot</code> 为重启指令</p>
+<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h3><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0210filepermission.php">文章链接</a></p>
+<p>用户分为自己，自己所在群组，其他人三种。</p>
+<p><code>su -</code> 切换为root账户，密码为安装系统时创建的账户的密码</p>
+<p><code>ls -al</code> 显示当前文件夹下的所有文件</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif" alt="文件的类型和权限" style="zoom: 150%;" />
+
+<p>第一个字符可能为d，-，l，b，c。分别表示文件夹，文件，连接档（类似windows里面的快捷方式），周边设备（随机存储设备），键盘鼠标（一次性存储设备）</p>
+<p>后面三个字母一组表示每类用户的权限，r表示可读，w表示可写，x表示可执行。三组分别为：拥有者，群组内成员，非本人且没有加入本群组之外的账户。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png" alt="image-20211015213137627"></p>
+<p>一串字母之后的一个数字是连接数，后面的两个分别是拥有者和拥有者所加入的群组。最后名字前面的是最后修改的时间，在前面一个数字是该文件的大小bytes。</p>
+<p>如果一个目录d的权限没有x的话就不能进入该目录。</p>
+<p>root无视所有的规则。</p>
+<p><code>ls - l</code> 查看最近修改的记录</p>
+<p><code>chgrp</code> 更改指定文件的群组。<code>e.g.  chgrp users test.txt</code></p>
+<p><code>chown</code> 更改指定文件的拥有者，<code>e.g.  chown bin test.txt</code> <code>e.g.  chown root:root test.txt</code></p>
+<p><code>cp</code> 对指定文件进行拷贝。<code>e.g.  cp test.txt test2.txt</code></p>
+<p><code>chmod</code> 更改文件的权限，r的权限对应的值是4，w是2，x是1，对于每个类型的用户的权限就是这些权值相加。<code>e.g.  chmod 777 test.txt</code></p>
+<p>​    很巧妙的是，这个值唯一对应一种权限的组合。</p>
+<p><code>chmod</code> 的另一种方法<code>e.g.  chmod u=rwx,go=rx test.txt</code> u表示拥有者，g表示群组，o表示其他人，a表示所有类型。</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png" alt="image-20211015215928404" style="zoom:80%;" />
+
+<p>文件是否能执行和后缀名无关，和是否有x的权限有关。文件的w权限是指可以修改文件的内容，但是<strong>不包括删除该文件</strong>。</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png" alt="image-20211016110356855" style="zoom:80%;" />
+
+<p>在有w权限的文件夹下是可以删除没有w权限的文件。</p>
+<p>常见的后缀名有：<code>*.sh</code>表示为脚本或者批处理文件，<code>*Z *.tar *.tar.gz *.zip *.tgz</code>表示压缩包文件 <code>*.html *.php</code>表示网络相关的文件。文件是否可以执行和后缀名没有关系，只和这个文件的x权限有关。</p>
+<p>Linux的文件系统依据：FHS</p>
+<p>网页中有一些关于Linux根目录下目录的主要含义的解释。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016115124.jpeg" alt="目錄樹架構示意圖"></p>
+<p>目录树的简单示意图。</p>
+<p>绝对路径和相对路径：以根目录/开头的路径都是绝对路径，反之则为相对路径，相对路径是指当前所在路径的相对位置来定义的。</p>
+<p><code>. ./</code>都表示当前目录 <code>.. ../</code>都表示上一级目录</p>
+<p>使用 <code>uname -r</code> 查看核心版本</p>
+<p>使用 <code>uname -a</code>  查看操作系统的版本</p>
+<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0220filemanager.php#umask">文章链接</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" alt="image-20211016204944202"></p>
+<p>Linux中根目录中也有./和../目录，并且 ./ 目录和 ../目录是同一个目录。</p>
+<p><code>cd</code> 表示切换目录。几个比较特殊的目录在上面的图片上都可以看出。</p>
+<p><code>pwd</code>表示显示当前的目录。<code>pwd -P</code>表示显示文档的实际地址，对于一些快捷方式的地址会发生区别。</p>
+<p><code>mkdir</code>表示建立一个新目录。<code>e.g. mkdir -p test1/test2/test3/test4</code>会依次建立目录 <code>e.g. mkdir -m711 test2</code>会建立一个test2目录并且权限为711。</p>
+<p>​    一般情况下建立目录需要一层一层建立，加上-p选项可以将所有的目录都按照顺序依次建立起来，而且如果本来目录存在的情况下，系统不会提示错误信息。（不建议，如果出错很麻烦）。</p>
+<p><code>rmdir</code>删除空目录。<code>e.g. rmdir -p test1/test2/test3/test4</code>该命令只能一层一层删除目录，加上-p可以一次性全部删除，该命令删除的目录中必须不能有别的文档或者目录，如果想要带里面的文件一起删除的话可以使用<code>rm -r test</code>命令来删除，（不过比较危险）。</p>
+<p>输入<code>exit</code>或者按<code>Ctrl + D</code>可以退出已经登录的root账户</p>
+<p><code>echo $PATH</code>可以显示当前用户的PATH路径都有哪些。在使用指令的时候会优先在PATH的路径下寻找可执行文件，如果有多个重名文件的话会优先使用先搜索到的文件。</p>
+<p><code>PATH=&quot;$&#123;PATH&#125;:/root&quot;</code>可以将/root加入到PATH路径中。</p>
+<p>​    为了安全起见不要将 <code>.</code> 加入PATH中。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" alt="image-20211016235319366"></p>
+<p>在Bash Shell中<code>ls -l</code> 可以简写为<code>ll</code></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" alt="image-20211017002404054"></p>
+<p><code>cp</code>表示copy，即对文件进行复制和粘贴。</p>
+<p>​    其中<code>-i</code>选项表示如果出现覆盖先进行询问。<code>-a</code>表示复制的文件的群组和时间都和原文件一样。<code>-l</code>表示创建一个实体链接。<code>-s</code>表示创建一个符号链接，即产生了源文件的一个捷径。<code>-d</code>表示如果复制的文件为一个捷径文件的话复制该捷径，因为cp直接复制一个捷径的话会复制源文件。cp指令可以将多个资料一次复制到一个目录中去，但是最前面一定是目录。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" alt="image-20211017004951502"></p>
+<p><code>rm</code>表示remove，即移除目录或者文档。</p>
+<p>​    其中大部分的发行版Linux都默认rm带上了<code>-i</code>参数，<code>-r</code>很危险，同时不要将文件起名为<code>-aaa-</code>这种类型，因为如果这时想要删除这个文件的时候，就会报错，因为会优先检测出-a这个选项，所以文件起名一般不要用-开头。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" alt="image-20211017005614342"></p>
+<p><code>mv</code>表示move，即移动文件或者目录。</p>
+<p>​    可以使用mv来对一个文件进行更名的操作。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" alt="image-20211017103829397"></p>
+<p><code>cat</code>用来显示文档内的内容。<code>-n</code>选项用来带行号输出，<code>-A</code>用来显示所有的特殊字符和正常字符。</p>
+<p><code>tac</code>是<code>cat</code>命令的反着输出的版本，从最后一行到第一行输出。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" alt="image-20211017105321632"></p>
+<p><code>nl</code>命令用来带行号输出文件的内容。<code>-b a</code>选项用来将空白行也带上行号。<code>-b a -n rz</code>用来将空白行带上行号之后再前面补零。<code>-b a -n rz -w 3</code>用来将空白行带上行号之后再前面补零,并且规定零加上数字一共宽度为三。</p>
+<hr>
+<p><code>more</code>命令用来可以翻页的查看一个文档。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" alt="image-20211017105909332"></p>
+<p>进入more一个文档之后的一些操作如上图。对文档内的字符串进行/查找之后按n查看下一个查找到的字符串。</p>
+<hr>
+<p><code>less</code>命令也是可以翻页查看一个文档，功能比<code>more</code>更加的强大。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" alt="image-20211017110548332"></p>
+<hr>
+<p><code>head</code>命令用来取出前面的几行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" alt="image-20211017110912050"></p>
+<p>在不加上<code>-n</code>选项的时候默认输出一个文件的前10行，加上<code>-n</code>选项可以自定义输出文件的前几行，值得注意的是，如果<code>-n</code>后面跟的是一个负数，表示的是这些行不输出，比如<code>-n -100</code>表示前100行不输出，从100行之后的所有行全部输出。</p>
+<hr>
+<p><code>tail</code>命令用来取出文件的后面几行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" alt="image-20211017111631255"></p>
+<p><code>-n</code>的使用和head大致相同，一个比较好玩的是 <code>-n +100</code>表示100行之后的所有行都输出。<code>-f</code>选项用来持续检测这个文件，如果一个文件一直在进行写入操作，那么会持续的输出这个文件新加入的行，直到按下<code>Ctrl + C</code>后结束检测。</p>
+<p><code>head</code>和<code>tail</code>的组合使用可以输出11 ~ 20 行：<code>head -n 20 /etc/man_db.conf | tail -n 10</code> |表示将前面执行的结果交给后面接着执行。</p>
+<p>在上面的基础上再加上<code>cat</code>可以输出正确的11~20行的行号：<code>cat -n /etc/man_db.conf | head -n 20 | tail -n 10</code></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" alt="image-20211017112447936"></p>
+<p><code>od</code>命令是针对那些非文字文档的一个命令。</p>
+<p>对于一些 data file 或者 binary file 可以使用od命令使这些文件以ASCII码的形式输出出来。</p>
+<p>我们可以利用这个命令来对已有的字符串输出对应的八进制ASCII码：<code>echo password | od -t oCc</code></p>
+<hr>
+<p>使用<code>ls</code>的<code>--time</code>选项来查看每个文件的不同类型的时间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" alt="image-20211017113820032"></p>
+<hr>
+<p>使用<code>touch</code>命令可以：1.建立一个空白的文档。2.将一个文档的时间修改为某一个特定的时间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" alt="image-20211017230559922"></p>
+<hr>
+<p><code>umask</code>命令可以查看当前用户创建的文档或者目录的预设权限。</p>
+<p>输入<code>umask</code>输出的一串数字从第二个到第四个分别表示user，group，other三种用户被拿掉的权限的权值的和。比如4表示读，2表示写，5表示读和执行。</p>
+<p>命令<code>umask 002</code>表示将该用户创建文件的预设权限设置为仅为other的用户不能写。</p>
+<p>一般root用户将umask设置为022，因为是出于安全的考虑。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" alt="image-20211017231924941"></p>
+<p><code>chattr</code>命令表示设置文件或者目录的隐藏属性</p>
+<p><code>chattr +i attrtest</code>表示给attrtest文件加上锁定的隐藏属性，用<code>chattr -i attrtest</code>来取消该隐藏属性。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" alt="image-20211017232430627"></p>
+<p><code>lsattr</code>命令用来查看一个文件或者目录的隐藏属性。</p>
+<hr>
+<p><code>SUID</code>（Set UID）是一个特殊的权限，可以让非root用户暂时使用root命令。</p>
+<p>SUID是在原本user的x权限的位置上标为s，此时权限表示为SUID。</p>
+<p>下图为SUID的限制于功能：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" alt="image-20211017234508661"></p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" alt="SUID程式執行的過程示意圖" style="zoom:150%;" />
+
+<p>而且需要注意的是SUID只可以用在binary program上，并不能用于shell script。</p>
+<hr>
+<p><code>SGID</code>（Set GID）是指在群组的x权限的位置上标为s的一个权限。</p>
+<p>SGID对于可执行文件的限制于功能为下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" alt="image-20211017234547632"></p>
+<p>SGID对于目录的限制于功能为下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" alt="image-20211017234859979"></p>
+<hr>
+<p><code>SBIT</code> 只能对目录有作用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" alt="image-20211017235236377"></p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" alt="image-20211017235339098"></p>
+<p>4，2, 1分别表示这三个隐藏权限的权值。在chmod的第一个值中表示该文件的隐藏权限属性值。使用：<code>chmod 4755 test</code>可以设置test的隐藏权限。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" alt="image-20211018000050678"></p>
+<p>上图是使用文字的方式添加文件的隐藏属性。</p>
+<hr>
+<p><code>fail</code>命令来查看改文件的基本资料，是ASCII文件还是date文件或者可执行文件的一些细节。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" alt="image-20211018000446377"></p>
+<hr>
+<p><code>which</code>命令用来寻找命令的完整路径。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png" alt="image-20211018000810656"></p>
+<p>which会根据PATH的路径来依次寻找命令所在的地址。</p>
+<hr>
+<p><code>whereis</code>命令是用于在一些特定目录中寻找档案名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" alt="image-20211018001136304"></p>
+<hr>
+<p><code>locate</code>命令用来通过关键字在自建的数据库中搜索带有该关键字的文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" alt="image-20211018001928696"></p>
+<p>locate使用的是由<code>已建立的資料庫 /var/lib/mlocate/</code>里面的资料所搜到的，该数据库默认每天更新一次，所以如果没有更新的话就可能搜索不到，这时就可以进行手动更新。</p>
+<p><code>updatedb</code>命令会搜索硬盘中的文档的名称并且更新资料库中的档案。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" alt="image-20211018002257338"></p>
+<hr>
+<p><code>find</code>命令用来查找文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" alt="image-20211018002626749"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" alt="image-20211018002647603"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" alt="image-20211018002835439"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" alt="image-20211018003328825"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" alt="image-20211018003429378"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" alt="image-20211018003714199"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-03T06:51:20.000Z" title="2021/3/3 下午2:51:20">2021-03-03</time>发表</span><span class="level-item"><time dateTime="2021-09-08T04:18:20.580Z" title="2021/9/8 下午12:18:20">2021-09-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">7 分钟读完 (大约1049个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/13114">微信小程序开发入门</a></h1><div class="content"><p>刚开始，先进行一个demo的学习。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lu_embedded/article/details/86181251">https://blog.csdn.net/lu_embedded/article/details/86181251</a></p>
+<h2 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h2><p>微信小程序的基本文件构造和项目目录结构说明如下：</p>
+<pre><code>.
+├── app.js     # 小程序的逻辑文件
+├── app.json   # 小程序的配置文件
+├── app.wxss   # 全局公共样式文件
+├── pages      # 存放小程序的各个页面
+│   ├── index  # index页面
+│   │   ├── index.js     # 页面逻辑
+│   │   ├── index.wxml   # 页面结构
+│   │   └── index.wxss   # 页面样式表
+│   └── logs   # logs页面
+│       ├── logs.js      # 页面逻辑
+│       ├── logs.json    # 页面配置
+│       ├── logs.wxml    # 页面结构
+│       └── logs.wxss    # 页面样式表
+├── project.config.json
+└── utils
+    └── util.js
+</code></pre>
+<h2 id="页头页尾"><a href="#页头页尾" class="headerlink" title="页头页尾"></a>页头页尾</h2><p>pages 属性用来设置页面路径，它是一个数组，每一项都是字符串来指定小程序由哪些页面组成。数组的第一项代表小程序的初始页面。小程序中新增或减少页面，都需要对 pages 数组进行修改。</p>
+<p>window 属性用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
+<p>我们把页头的标题和颜色修改一下，页尾部分我们做一个 tab 栏来切换页面，这个属性叫做 tabBar，代码如下：</p>
+<pre><code>&#123;
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:&#123;
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#2f2f8f&quot;,    
+    &quot;navigationBarTitleText&quot;: &quot;GoZeroWaste&quot;,    # 标题
+    &quot;navigationBarTextStyle&quot;:&quot;white&quot;
+  &#125;,
+  &quot;tabBar&quot;:&#123;                    
+    &quot;color&quot;: &quot;#bfc1ab&quot;,
+    &quot;selectedColor&quot;: &quot;#13b11c&quot;,
+    &quot;backgroundColor&quot;: &quot;#1f1f4f&quot;,
+    &quot;list&quot;: [    # 导航栏的两个按钮
+      &#123;
+        &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+        &quot;iconPath&quot;: &quot;image/icon_component.png&quot;,    # 第一个按钮的图标
+        &quot;selectedIconPath&quot;: &quot;image/icon_component_HL.png&quot;,    # 选择第二个按钮后第一个的按钮的图标
+        &quot;text&quot;: &quot;个人中心&quot;    # 按钮的名字
+      &#125;,
+      &#123;
+        &quot;pagePath&quot;: &quot;pages/details/details&quot;,
+        &quot;iconPath&quot;: &quot;image/icon_API.png&quot;,    # 第二个按钮的图标
+        &quot;selectedIconPath&quot;: &quot;image/icon_API_HL.png&quot;,    # 选择第一个按钮后第二个的按钮的图标
+        &quot;text&quot;: &quot;生活指南&quot;    # 按钮的名字
+      &#125;
+    ]
+  &#125;
+&#125;
+</code></pre>
+<p>（所用到的图片放在项目的 image 目录，你也可以使用自己的图片）</p>
+<p>这里用到几个 tabBar 的属性是 color、selectedColor、backgroundColor 和 list，list 是一个数组，主要用于设定导航的路径。</p>
+<p>因为导航栏中一个按钮关联的是另一个页面，但是这个页面还没有存在，所以我们需要在app.json文件的list中直接添加，修改app.json文件：</p>
+<pre><code>&#123;
+    &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;,
+    &quot;pages/details/details&quot;
+    ],
     
-      <script> 
-        loadScript('/js/lib/busuanzi.min.js') 
-      </script>
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
-        }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
-     
-    
-      <script>
-        var googleAnalytics = function () {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag('js', new Date())
-          gtag('config', 'G-3BC8TV17YR')
-        }
-    </script>
-      <script>
-        loadScript(
-          'https://www.googletagmanager.com/gtag/js?id=' +
-            'G-3BC8TV17YR',
-          googleAnalytics
-        )
-      </script>
-    
-    
-      <script>
-        setTimeout(() => {localSearch("search.json")}, 0)
-      </script>
-    
-  </body>
-</html>
+</code></pre>
+<p>CTRL + S 保存之后，模拟器就会自动刷新，马上可以看到效果。<br>保存刷新之后就会发现，目录结构里自动创建了这一页。</p>
+<p>简单起见，我们就在 pages/index 目录下实现 “个人中心” 页面好了。双击打开 index.wxml，初始内容如下：</p>
+<p>这里已经有一些代码了，虽然现在可能还看不懂，但我们知道，这就是现在页面的源代码。我们把 “Hello World” 部分注释掉，增加我们希望显示的内容：</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--index.wxml--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{!hasUserInfo &amp;&amp; canIUse}}<span class="token punctuation">"</span></span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span> <span class="token attr-name">bindgetuserinfo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getUserInfo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 获取头像昵称 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>block</span> <span class="token attr-name"><span class="token namespace">wx:</span>else</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bindViewTap<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo-avatar<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{userInfo.avatarUrl}}<span class="token punctuation">"</span></span> <span class="token attr-name">background-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cover<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userinfo-nickname<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{userInfo.nickName}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>block</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+   <span class="token comment" spellcheck="true">&lt;!-- &lt;view class="usermotto">
+    &lt;text class="user-motto">{{motto}}&lt;/text>
+  &lt;/view>  --></span>    <span class="token comment" spellcheck="true">&lt;!--注释内容--></span>
+    <span class="token comment" spellcheck="true">&lt;!--页面的三行字--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ID_Badge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ID_info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{company}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>    
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>{{position}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>ID_info<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>{{lesson}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-html"><code class="language-html">发现HTML的几种特性，自己总结的：
+1.一个标签出现之后会有一个相同的带反斜线的作为结尾，所以每一个标签都是成对出现的比如：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>  
+2.在一个标签可以修饰一个变量，然后这个变化的量有一个类，用class来说明，比如&lt;view class = "ID_Badge"> &lt;text class = "ID_info">
+3.一个变量可以与.js文件中的date中的值相互关联，所以html只作为一个最前面的一个框架的作用，后面的.js文件支撑整个页面逻辑。
+4.只有html文件和js文件并不行，每一个类都需要在本页面的css文件内进行声明，并且设置这个类的样式属性。
+5.每一个text或者image的标签必须被一对view标签包围。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-30T16:01:28.000Z" title="2021/1/31 上午12:01:28">2021-01-31</time>发表</span><span class="level-item"><time dateTime="2021-09-08T05:02:14.788Z" title="2021/9/8 下午1:02:14">2021-09-08</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">6 分钟读完 (大约845个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/39273">博弈论入门</a></h1><div class="content"><h1 id="巴什博弈："><a href="#巴什博弈：" class="headerlink" title="巴什博弈："></a>巴什博弈：</h1><h2 id="经典的巴什博奕模型："><a href="#经典的巴什博奕模型：" class="headerlink" title="经典的巴什博奕模型："></a>经典的巴什博奕模型：</h2><blockquote>
+<p>只有一堆n个物品，两个人轮流从这堆物品中取物，规定每次至少取一个，最多取m个，最后取光者得胜。</p>
+</blockquote>
+<p>解决思路：<br>当n=m+1时，由于一次最多只能取m个，所以无论先取者拿走多少个，后取者都能够一次拿走剩余的物品，后者取胜，所以当一方面对的局势是n%(m+1)=0时，其面临的是必败的局势。所以当n=（m+1)<em>r+s，（r为任意自然数，s≤m)时,如果先取者要拿走s个物品，如果后取者拿走x（≤m)个，那么先取者再拿走m+1-x个，结果剩下（m+1）</em>（r-1）个，以后保持这样的取法，那么先取者肯定获胜。总之，要保持给对手留下（m+1）的倍数，就能最后获胜。<br>结论：当n%(m+1)=0时，在最优策略下，后手必胜。</p>
+<p>变形<br>最后取光的人输…<br>结论：当n%(m+1)=1 时，在最优策略下，后手必胜。</p>
+<p>为什么？因为赢得人肯定会先取完(n - 1)个石子。</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210826112954.png"/>
+
+
+
+<h2 id="巴什博奕的简单变形："><a href="#巴什博奕的简单变形：" class="headerlink" title="巴什博奕的简单变形："></a>巴什博奕的简单变形：</h2><blockquote>
+<p> 只有一堆n个物品，两个人轮流从这堆物品中取物，规定每次至少取a，最多取b个，最后取光者得胜。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210826145710.png" alt="image-20210826145710231"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210826145718.png" alt="image-20210826145718136"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210826145854.png" alt="image-20210826145724145"></p>
+<h1 id="威佐夫博弈："><a href="#威佐夫博弈：" class="headerlink" title="威佐夫博弈："></a>威佐夫博弈：</h1><blockquote>
+<p>两堆各若干个物品，两个人轮流从任意一堆中取出至少一个或者同时从两堆中取出同样多的物品，规定每次至少取一个，至多不限，最后取光者胜利。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41311604/article/details/79980882">参考博客</a></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">inline</span> <span class="token keyword">bool</span> <span class="token function">check</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token function">abs</span><span class="token punctuation">(</span>b <span class="token operator">-</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>c <span class="token operator">*</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">==</span> tmp<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//后手必胜 </span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//先手必胜 </span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="尼姆博奕"><a href="#尼姆博奕" class="headerlink" title="尼姆博奕"></a>尼姆博奕</h1><blockquote>
+<p>有N堆石子。A B两个人轮流拿，A先拿。每次只能从一堆中取若干个，可将一堆全取走，但不可不取，拿到最后1颗石子的人获胜。假设A B都非常聪明，拿石子的过程中不会出现失误。给出N及每堆石子的数量，问最后谁能赢得比赛。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/BBHHTT/article/details/80199541">参考博客</a></p>
+<h1 id="斐波那契博弈"><a href="#斐波那契博弈" class="headerlink" title="斐波那契博弈"></a>斐波那契博弈</h1><blockquote>
+<p>有一堆个数为n的石子，游戏双方轮流取石子，满足：</p>
+<p>（1）先手不能在第一次把所有的石子取完；</p>
+<p>（2）之后每次可以取的石子数介于1到对手刚取的石子数的2倍之间（包含1和对手刚取的石子数的2倍）。 约定取走最后一个石子的人为赢家。</p>
+</blockquote>
+<p>结论：当n为Fibonacci数时，先手必败。即存在先手的必败态当且仅当石头个数为Fibonacci数。 </p>
+<h1 id="公平组合博弈（ICG）"><a href="#公平组合博弈（ICG）" class="headerlink" title="公平组合博弈（ICG）"></a>公平组合博弈（ICG）</h1><p>每次只能走到必胜点的是必败点，可以走到必败点的是必胜点。</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只想要躺平的菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Dicemy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hyperledger/"><span class="tag">Hyperledger</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JAVA/"><span class="tag">JAVA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/fabric/"><span class="tag">fabric</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"><span class="tag">乘法逆元</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"><span class="tag">博弈论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/"><span class="tag">双端队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tag">学习笔记</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/"><span class="tag">思考题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/"><span class="tag">文档阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"><span class="tag">方法总结</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">最小生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"><span class="tag">赛后总结</span><span class="tag">9</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/"><span class="level-start"><span class="level-item">文化课</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%9E%E8%B5%9B/"><span class="level-start"><span class="level-item">竞赛</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-08T10:08:35.000Z">2022-01-08</time></p><p class="title"><a href="/23955">fabric开发入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:21.000Z">2022-01-07</time></p><p class="title"><a href="/63228">树莓派入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:07.000Z">2022-01-07</time></p><p class="title"><a href="/21062">Python入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:38:50.000Z">2022-01-07</time></p><p class="title"><a href="/10811">git入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-04T08:01:41.000Z">2022-01-04</time></p><p class="title"><a href="/12732">离散数学复习</a></p><p class="categories"><a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></p></div></article></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6426911790858772" data-ad-slot="1877755546" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 TobinMEng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

@@ -1,1088 +1,1064 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="月光照着月光,月光普照">
-  <link 
-    rel="icon" 
-    href="/img/biaoti.png">
-  <title>标签</title>
-  
-    
-      <meta 
-        property="og:title" 
-        content="标签">
-    
-    
-      <meta 
-        property="og:url" 
-        content="https://dicemy.com/tags/fabric/index.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="/img/touxiang.jpg">
-    
-    
-      <meta 
-        property="og:img" 
-        content="月光照着月光,月光普照">
-    
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-    
-    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
-  
-  
-    
-    <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-<!-- hexo injector head_end start -->
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: fabric - TobinMEng 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="月光照着月光,月光普照"><meta property="og:type" content="blog"><meta property="og:title" content="TobinMEng 的博客"><meta property="og:url" content="https://dicemy.com/"><meta property="og:site_name" content="TobinMEng 的博客"><meta property="og:description" content="月光照着月光,月光普照"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://dicemy.com/img/og_image.png"><meta property="article:author" content="TobinMEng"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com"},"headline":"TobinMEng 的博客","image":["https://dicemy.com/img/og_image.png"],"author":{"@type":"Person","name":"TobinMEng"},"publisher":{"@type":"Organization","name":"TobinMEng 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"月光照着月光,月光普照"}</script><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-6426911790858772" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">文章归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">个人简介</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/music">音乐</a><a class="navbar-item" href="/media">媒体</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">fabric</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-08T10:08:35.000Z" title="2022/1/8 下午6:08:35">2022-01-08</time>发表</span><span class="level-item"><time dateTime="2022-01-28T12:57:57.039Z" title="2022/1/28 下午8:57:57">2022-01-28</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">1 小时读完 (大约7673个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/23955">fabric开发入门</a></h1><div class="content"><p>注意：不要在有生产环境的服务器上进行该学习的部署，血的教训（关闭服务的时候服务器上的docker都被杀掉了，青龙平台直接没了。。。）</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>在gopath中创建</p>
+<blockquote>
+<p>mkdir src</p>
+<p>mkdir bin</p>
+<p>mkdir pkg</p>
+</blockquote>
+<p>在src中创建<code>mkdir github.com</code></p>
+<p>在github.com中创建<code>mkdir hyperledger</code></p>
+<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><p>一行命令，完成安装：（安装之后记得要把docker服务启动起来）</p>
+<blockquote>
+<p>curl -sSL <a target="_blank" rel="noopener" href="https://get.daocloud.io/docker">https://get.daocloud.io/docker</a> | sh</p>
+<p>service docker start </p>
+</blockquote>
+<p>而且源在国内</p>
+<h2 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h2><p>通过curl进行安装：</p>
+<blockquote>
+<p><code>curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-``uname -s ``-``uname -m`` &gt; /usr/local/bin/docker-compose</code></p>
+<p><code>chmod +x /usr/local/bin/docker-compose</code></p>
+<p><code>docker-compose -v</code></p>
+</blockquote>
+<h2 id="go安装与配置"><a href="#go安装与配置" class="headerlink" title="go安装与配置"></a>go安装与配置</h2><p>参考：<a href="http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85">http://dicemy.com/29920#Go%E8%AF%AD%E8%A8%80%E5%AE%89%E8%A3%85</a></p>
+<p>一定要注意环境变量的配置</p>
+<h2 id="jdk安装"><a href="#jdk安装" class="headerlink" title="jdk安装"></a>jdk安装</h2><blockquote>
+<p>yum list java*</p>
+<p>yum install -y java-1.8.0-openjdk-devel.x86_64    </p>
+<p>java -version</p>
+</blockquote>
+<h2 id="下载fabric的docker镜像"><a href="#下载fabric的docker镜像" class="headerlink" title="下载fabric的docker镜像"></a>下载fabric的docker镜像</h2><p>除了baseos下载0.3.1，其余都下1.0.0，然后标记为latest</p>
+<blockquote>
+<p>tools：docker pull hyperledger/fabric-tools:x86_64-1.0.0</p>
+<p>ccenv：docker pull hyperledger/fabric-ccenv:x86_64-1.0.0</p>
+<p>ca：docker pull hyperledger/fabric-ca:x86_64-1.0.0</p>
+<p>orderer：docker pull hyperledger/fabric-orderer:x86_64-1.0.0</p>
+<p>peer：docker pull hyperledger/fabric-peer:x86_64-1.0.0</p>
+<p>baseos：docker pull hyperledger/fabric-baseos:x86_64-0.3.1</p>
+</blockquote>
+<p>纯命令版：</p>
+<blockquote>
+<p>docker pull hyperledger/fabric-tools:x86_64-1.0.0</p>
+<p>docker pull hyperledger/fabric-ccenv:x86_64-1.0.0</p>
+<p>docker pull hyperledger/fabric-ca:x86_64-1.0.0</p>
+<p>docker pull hyperledger/fabric-orderer:x86_64-1.0.0</p>
+<p>docker pull hyperledger/fabric-peer:x86_64-1.0.0</p>
+<p>docker pull hyperledger/fabric-baseos:x86_64-0.3.1</p>
+</blockquote>
+<p>注意：记得在所有的安装之后进行tag 编辑成latest状态否则会出现问题</p>
+<p><code>docker tag xxxx xxxx:latest</code></p>
+<blockquote>
+<p>docker tag hyperledger/fabric-tools:x86_64-1.0.0 hyperledger/fabric-tools:latest</p>
+<p>docker tag hyperledger/fabric-ccenv:x86_64-1.0.0 hyperledger/fabric-ccenv:latest</p>
+<p>docker tag hyperledger/fabric-ca:x86_64-1.0.0 hyperledger/fabric-ca:latest</p>
+<p>docker tag hyperledger/fabric-orderer:x86_64-1.0.0 hyperledger/fabric-orderer:latest</p>
+<p>docker tag hyperledger/fabric-peer:x86_64-1.0.0 hyperledger/fabric-peer:latest</p>
+<p>docker tag hyperledger/fabric-baseos:x86_64-0.3.1 hyperledger/fabric-baseos:latest</p>
+</blockquote>
+<h2 id="下载fabric源码库"><a href="#下载fabric源码库" class="headerlink" title="下载fabric源码库"></a>下载fabric源码库</h2><p>在hyperledger目录下进行<code>git clone https://github.com/hyperledger/fabric.git</code></p>
+<p><code>git checkout release-1.0</code></p>
+<p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/configtx/tool/configtxgen</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108181212.png" alt="image-20220108181210078"></p>
+<h3 id="对工具进行编译。"><a href="#对工具进行编译。" class="headerlink" title="对工具进行编译。"></a>对工具进行编译。</h3><p><code>go install --tags=nopkcs11</code></p>
+<blockquote>
+<p>注意！！！</p>
+<p>奇怪的错误请输入：go env -w GO111MODULE=auto</p>
+<p>一定要把这个项目文件的src放在go环境设置下的gopath的文件夹中，输入go env可以查看go安装环境中的gopath文件夹。否则会出现找不到包的报错。</p>
+</blockquote>
+<h3 id="对另一个工具进行编译。"><a href="#对另一个工具进行编译。" class="headerlink" title="对另一个工具进行编译。"></a>对另一个工具进行编译。</h3><p><code>cd /home/gopath/src/github.com/hyperledger/fabric/common/tools/cryptogen</code></p>
+<p><code>go install --tags=nopkcs11</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183050.png" alt="image-20220108183049804"></p>
+<h3 id="编译好的工具如下"><a href="#编译好的工具如下" class="headerlink" title="编译好的工具如下:"></a>编译好的工具如下:</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108183258.png" alt="image-20220108183258043"></p>
+<h2 id="下载fabric-samples"><a href="#下载fabric-samples" class="headerlink" title="下载fabric-samples"></a>下载fabric-samples</h2><p><code>cd /home/gopath/src/github.com/hyperledger</code></p>
+<p><code>git clone https://github.com/hyperledger/fabric-samples.git</code></p>
+<p><code>git checkout release-1.0</code></p>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><h2 id="1-查看目录"><a href="#1-查看目录" class="headerlink" title="1.查看目录"></a>1.查看目录</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108185207.png" alt="image-20220108185207083"></p>
+<p>.env：存储一些环境变量</p>
+<p>base：储存docker-compose的一些公共服务</p>
+<p>byfn.sh：执行脚本</p>
+<p>configtx.yaml和crypto-config.yaml：根据之前生成的2个工具，生成相应的配置文件，用来启动网络，放到当前目录的channel-artifacts和crypto-config里面</p>
+<p>docker-compose：用于启动网络</p>
+<p>scripts：存放测试脚本，做的事：创建通道，加入通道，安装链码，实例化链码，链码交互</p>
+<h2 id="2-生成配置"><a href="#2-生成配置" class="headerlink" title="2.生成配置"></a>2.生成配置</h2><p><code>./byfn.sh -m generate -i 1.0.0</code></p>
+<blockquote>
+<p>注意！！！！</p>
+<p>一定要记得吧gopath中的bin目录添加到环境变量中，否则可能无法调用刚才编译好的configtxgen和cryptogen工具</p>
+<p>可以通过 export PATH=$PATH:/home/gopath/bin 来临时添加或者使用vim ~/.bash_profile修改PATH 一行，之后使用source ~/.bash_profile生效。</p>
+</blockquote>
+<h2 id="3-启动网络，自动运行测试脚本"><a href="#3-启动网络，自动运行测试脚本" class="headerlink" title="3.启动网络，自动运行测试脚本"></a>3.启动网络，自动运行测试脚本</h2><p><code>./byfn.sh -m up -i 1.0.0</code></p>
+<h2 id="4-关闭网络，自动清楚配置和docker进程"><a href="#4-关闭网络，自动清楚配置和docker进程" class="headerlink" title="4.关闭网络，自动清楚配置和docker进程"></a>4.关闭网络，自动清楚配置和docker进程</h2><p><code>./byfn.sh -m down -i 1.0.0</code></p>
+<h1 id="Hello-World-分析"><a href="#Hello-World-分析" class="headerlink" title="Hello World 分析"></a>Hello World 分析</h1><h2 id="1-查看日志，order和peer分离"><a href="#1-查看日志，order和peer分离" class="headerlink" title="1.查看日志，order和peer分离"></a>1.查看日志，order和peer分离</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200634.png" alt="image-20220108200633311"></p>
+<p>peer是按照组织或主体分离的，每一个组织生成ca（存储证书和私钥），msp（存储管理员证书和中间证书），peers（存储每一个peer相关的证书），users（存储每一个用户的证书）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108200948.png" alt="image-20220108200946765"></p>
+<h2 id="2-查看如下配置"><a href="#2-查看如下配置" class="headerlink" title="2.查看如下配置"></a>2.查看如下配置</h2><p>genesis.block：整个网络的创世区块</p>
+<p>channel.tx：创建的通道的配置</p>
+<p>Org1MSPanchors.tx和Org2MSPanchors.tx：两个主体的锚节点配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108201328.png" alt="image-20220108201327506"></p>
+<h2 id="3-启动网络，接着分析日志"><a href="#3-启动网络，接着分析日志" class="headerlink" title="3.启动网络，接着分析日志"></a>3.启动网络，接着分析日志</h2><p>fabric网络启动完毕</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203247.png" alt="image-20220108203245854"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203353.png" alt="image-20220108203352910"></p>
+<p>指定通道名称，和一些变量，通道创建完成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203443.png" alt="image-20220108203442675"></p>
+<p>4个peer加入通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203605.png" alt="image-20220108203604430"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203646.png" alt="image-20220108203646097"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203654.png" alt="image-20220108203653472"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203700.png" alt="image-20220108203659999"></p>
+<p>组织中的锚节点在通道中update成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203742.png" alt="image-20220108203742026"></p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203742.png"/>
 
-  <body>
-    <div class="wrapper">
-       
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="/img/biaoti.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">Dicemy 的博客</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archives" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/links" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-      <a 
-        href="/guestbook" 
-        class="navbar-menu-item">
-        
-          留言板
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-<div class="card card-content tag-page-card">
-  <div class="tags-page-title">标签&nbsp-&nbspfabric</div>
-</div>
-<div class="archive-timeline">
-  
-  
-    
-      <div class="archive-timeline-tag"><span>2022</span></div>
-      
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2022-01-08</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/23955" 
-              class="archive-timeline-post-item">
-              fabric开发入门
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    
-      <div class="archive-timeline-tag"><span>2021</span></div>
-      
-    
-    <div class="archive-timeline-item">
-      <div class="archive-timeline-post">
-        <div class="card card-content">
-          <div class="archive-timeline-post-date">2021-07-16</div>
-          <div class="archive-timeline-post-content">
-            <a 
-              href="/29920" 
-              class="archive-timeline-post-item">
-              Hyperledger-Fabric试验快速搭建
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-</div></main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="/img/touxiang.jpg" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
-
-<p class="author-name">Dicemy</p>
-<p class="author-description">软件工程在读大学生</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>37</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>4</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>18</span>
-    <span>标签</span>
-  </a>
-</div>
-
-  <div class="author-card-society">
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
-          <i class="iconfont icon-bilibili society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a href="tencent://message/?uin=1583925267">
-          <i class="iconfont icon-wechat society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
-          <i class="iconfont icon-github society-icon"></i>
-        </a>
-      </div>
-    
-  </div>
-
-              </div>
-               <div class="sticky-tablet">
-  
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categories/%E7%AB%9E%E8%B5%9B/">
-        <div class="categories-list-item">
-          竞赛
-          <span class="categories-list-item-badge">17</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF/">
-        <div class="categories-list-item">
-          技术
-          <span class="categories-list-item-badge">12</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">
-        <div class="categories-list-item">
-          文化课
-          <span class="categories-list-item-badge">5</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E7%94%9F%E6%B4%BB/">
-        <div class="categories-list-item">
-          生活
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" 
-        title="赛后总结">
-        <div class="tags-list-item">赛后总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
-        title="学习笔记">
-        <div class="tags-list-item">学习笔记</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%90%9C%E7%B4%A2/" 
-        title="搜索">
-        <div class="tags-list-item">搜索</div>
-      </a>
-    
-      <a 
-        href="/tags/fabric/" 
-        title="fabric">
-        <div class="tags-list-item">fabric</div>
-      </a>
-    
-      <a 
-        href="/tags/Hyperledger/" 
-        title="Hyperledger">
-        <div class="tags-list-item">Hyperledger</div>
-      </a>
-    
-      <a 
-        href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" 
-        title="组合数学">
-        <div class="tags-list-item">组合数学</div>
-      </a>
-    
-      <a 
-        href="/tags/DP/" 
-        title="DP">
-        <div class="tags-list-item">DP</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
-        title="数据库">
-        <div class="tags-list-item">数据库</div>
-      </a>
-    
-      <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" 
-        title="方法总结">
-        <div class="tags-list-item">方法总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" 
-        title="博弈论">
-        <div class="tags-list-item">博弈论</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/" 
-        title="文档阅读">
-        <div class="tags-list-item">文档阅读</div>
-      </a>
-    
-      <a 
-        href="/tags/JAVA/" 
-        title="JAVA">
-        <div class="tags-list-item">JAVA</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" 
-        title="最小生成树">
-        <div class="tags-list-item">最小生成树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/" 
-        title="思考题">
-        <div class="tags-list-item">思考题</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
-        title="乘法逆元">
-        <div class="tags-list-item">乘法逆元</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content widescreen-archive archive-widget">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">6</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2021" 
-            class="archive-card-list-item">
-            2021
-            <span class="archive-card-list-item-badge">29</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-08</div>
-        <a href="/23955"><div class="recent-posts-item-content">fabric开发入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/63228"><div class="recent-posts-item-content">树莓派入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/21062"><div class="recent-posts-item-content">Python入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/10811"><div class="recent-posts-item-content">git入门</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-    <article class="card card-content">
-      <div class="archive-card">
-  <div class="archive-card-header">
-    <i 
-      class="iconfont icon-wodebaobiao" 
-      style="padding-right: 2px;">
-    </i>归档
-  </div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2022" 
-            class="archive-card-list-item">
-            2022
-            <span class="archive-card-list-item-badge">6</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a 
-            href="/archives/2021" 
-            class="archive-card-list-item">
-            2021
-            <span class="archive-card-list-item-badge">29</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-    
-      <a 
-        href="/archives/2020" 
-        class="archive-card-list-item">
-        2020
-        <span class="archive-card-list-item-badge">2</span>
-      </a>
-    
-  </div>
-</div>
-    </article>
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-            2020 -
-          
-          2022
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          Dicemy 的博客
-        </a>
-      </div>
-    </div>
-
-    
-    
-    
-    
-      <div class="footer-dsc">
-        
-          本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          本站总访客数<span id="busuanzi_value_site_uv"></span>次
-        
-      </div>
-      
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
-
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-      
- 
-     
-     
-     
-    <script src="/js/main.js"></script> 
-    
-      <script> 
-        loadScript('/js/lib/busuanzi.min.js') 
-      </script>
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
-        }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
-     
-    
-      <script>
-        var googleAnalytics = function () {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag('js', new Date())
-          gtag('config', 'G-3BC8TV17YR')
-        }
-    </script>
-      <script>
-        loadScript(
-          'https://www.googletagmanager.com/gtag/js?id=' +
-            'G-3BC8TV17YR',
-          googleAnalytics
-        )
-      </script>
-    
-    
-      <script>
-        setTimeout(() => {localSearch("search.json")}, 0)
-      </script>
-    
-  </body>
-</html>
+<p>链码安装到了peer节点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203904.png" alt="image-20220108203903845"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203931.png" alt="image-20220108203930729"></p>
+<p>链码实例化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108203952.png" alt="image-20220108203951359"></p>
+<p>在peer0上进行查询操作，成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204015.png" alt="image-20220108204015033"></p>
+<p>圈圈的是查询结果，查询成功，查询结果为100</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204137.png" alt="image-20220108204136547"></p>
+<p>进行修改操作，成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204241.png" alt="image-20220108204241010"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204349.png" alt="image-20220108204348218"></p>
+<p>再次查询，结果为90</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204508.png" alt="image-20220108204508197"></p>
+<p>查看docker进程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109165719.png" alt="image-20220108204613817"></p>
+<p>3个链码会生成3个image</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108204746.png" alt="image-20220108204745898"></p>
+<p>查看脚本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108205435.png" alt="image-20220108205434573"></p>
+<p>可以按脚本中的位置找到链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108205512.png" alt="image-20220108205511945"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108205325.png" alt="image-20220108205320115"></p>
+<p>实现了Init和Invoke接口，就代表是一个fabric智能合约</p>
+<p>Init：首先获取参数，不为4个则报错，最终将A和B存到数据库中</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108210007.png" alt="image-20220108210006159"></p>
+<p>Invoke：设置了3个方法，（invoke，delete，query）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108210201.png" alt="image-20220108210200287"></p>
+<p>invoke：接受3个参数，（谁给谁转账，赚多少）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108210300.png" alt="image-20220108210259542"></p>
+<p>A给B转账。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108210352.png" alt="image-20220108210352036"></p>
+<p>持久化数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108210442.png" alt="image-20220108210441191"></p>
+<p>接受1个值，从数据库中删除</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211352.png" alt="image-20220108211350759"></p>
+<p>查询操作，结果以json形式返回</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211533.png" alt="image-20220108211532979"></p>
+<p>main里只start或者进行一些验证，不写其他代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211617.png" alt="image-20220108211616503"></p>
+<p>srcipts中：初始化操作，A有100元，B有200元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211813.png" alt="image-20220108211812427"></p>
+<p>查询A有多少钱，所以打印了100</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108211920.png" alt="image-20220108211919875"></p>
+<p>A给B转账10元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220108212005.png" alt="image-20220108212004943"></p>
+<h1 id="fabric系统架构"><a href="#fabric系统架构" class="headerlink" title="fabric系统架构"></a>fabric系统架构</h1><h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109153233.png" alt="image-20220109153232452"></p>
+<ul>
+<li><p><strong>应用层</strong></p>
+</li>
+<li><p>API：提供了GRPC，（谷歌）RPC框架</p>
+</li>
+<li><p>SDK：在API基础上封装的SDK，go，java，python，nodejs</p>
+</li>
+<li><p>事件：分布式系统中，达成共识需要一定的时间，fabric使用异步通信模式开发，触发回调函数执行。</p>
+</li>
+<li><p>身份：依托于底层的成员服务，是联盟链的认证功能，例如CA</p>
+</li>
+<li><p>账本：区块链的查询数据，是账本中查出来的，区块高度+交易ID，不重复</p>
+</li>
+<li><p>交易：对区块链数据进行修改，先提交交易到背书节点，签名认证之后再执行。</p>
+</li>
+<li><p>智能合约：做合约的安装，实例化和升级</p>
+</li>
+<li><p><strong>区块链底层</strong></p>
+</li>
+<li><p>成员服务：提供证书，用于加密和签名</p>
+</li>
+<li><p>共识服务：CAP（不能全满足，只能满足2个，一致性，可用性和分区容忍性），实际上区块链是弱化了可用性和分区容忍性，所以需要共识算法保证一致性。fabric的共识大概分为三个阶段：</p>
+<ul>
+<li>首先客户端向背书节点发送一个背书提案，背书节点进行交易模拟，将背书节点和签名返回客户端。</li>
+<li>然后将背书后的交易，交给排序节点进行排序。有排序节点生成区块，向全网广播。网络节点接受到广播后，先验证区块交易的正确性。</li>
+<li>验证通过后，存入本地账本。</li>
+<li>PS：排序节点与组织的锚节点使用的是GRPC通信，组织内使用的是gossip协议通信</li>
+</ul>
+</li>
+<li><p>链码服务：提供安全的，可隔离的交易环境。所以fabric使用docker，链码直接与docker通信。目前阶段对k8s支持的不好，会出问题。</p>
+</li>
+<li><p>安全及密码服务：fabric定义了一个BCCSP接口，定义签名，加密解密功能，是默认实现了一套国际通用的密码服务，如sha256等</p>
+</li>
+</ul>
+<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109160034.png" alt="image-20220109160033781"></p>
+<ul>
+<li><strong>概念：</strong></li>
+<li>客户端节点：应用程序和底层的交互媒介，与上层和peer和orderer连接发挥作用，连接peer做交易模拟</li>
+<li>peer节点：包含了<strong>锚节点（主节点）</strong>，在一个组织内可以有多个peer，一个组织中锚节点只有一个，锚节点的作用（与orderer进行通信），锚节点需要HA支持，若锚节点挂了，组织内会选举新的节点与orderer节点进行通信，<strong>背书节点（Endorse）</strong>理解为担保，与智能合约绑定的，每一个智能合约安装到区块链中，会有一个专属的背书策略，<strong>记账节点（committer）</strong>所有的peer节点都是记账节点。用于验证从orderer接受的区块，验证交易的有效性，验证通过后，同步到本地账本。</li>
+<li>orderer节点：排序节点，接受全网客户端节点的交易信息，按照一定规则进行排序，将排序好的交易，按照固定的时间间隔打包成区块。与其他组织的主节点进行通信，排序可以用solo（整个网络中只有一个排序节点，使用于开发和测试）和kafka（生产环境下使用，分布式消息队列）模式</li>
+<li>CA节点：可选的，作用：颁发证书，只用被CA认证的节点才能进行交易，fabric不存在51%攻击问题。</li>
+<li><strong>动作和行为：</strong></li>
+<li>注册登记：与客户端发起，向CA机构表明自己的身份，获取证书，上图中是第三方的CA，也可以使用官方提供的CA。</li>
+<li>交易提案：向组织的<strong>背书节点</strong>提交请求，对应peer节点，组织可以理解为现实中的商业主体，组织是独立的，有两个个数据来源。</li>
+<li>提交交易：客户端节点向排序节点发请求，orderer内部进行排序打包成区块，广播给其他组织的锚节点，上图是基于kafka实现的，每个组织会选择一个orderer节点进行通信。</li>
+</ul>
+<h2 id="交易流程"><a href="#交易流程" class="headerlink" title="交易流程"></a>交易流程</h2><ul>
+<li>客户端提交交易，最终到记账节点同步数据。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109163002.png" alt="image-20220109163001787"></p>
+<ul>
+<li>智能合约按照要指定背书节点，正常情况下，背书节点返回相同的结果，但签名是不一样的。</li>
+<li>背书是模拟的过程，不会持久化</li>
+<li>1,2,3是交易模拟，4,5,6是交易排序，7,8,9是交易同步和记账。交易模拟对应智能合约，交易排序对应共识机制，同步和记账对应账本存储</li>
+</ul>
+<h1 id="fabric共识排序"><a href="#fabric共识排序" class="headerlink" title="fabric共识排序"></a>fabric共识排序</h1><h2 id="共识机制"><a href="#共识机制" class="headerlink" title="共识机制"></a>共识机制</h2><ul>
+<li>达成公式需要3个阶段，交易背书，交易排序，交易验证。</li>
+<li>交易背书：模拟的</li>
+<li>交易排序：确定交易顺序，最终将排序好的交易打包区块分发。</li>
+<li>交易验证：区块储存前要进行一下交易验证（不是所有的orderer的东西都能存进去）</li>
+</ul>
+<h2 id="Orderer节点的作用"><a href="#Orderer节点的作用" class="headerlink" title="Orderer节点的作用"></a>Orderer节点的作用</h2><ul>
+<li><p>交易排序</p>
+<ul>
+<li>目的：保证系统的最终一致性（有限状态机）</li>
+<li>solo：单节点排序</li>
+<li>kafka：外置的分布式消息队列</li>
+</ul>
+</li>
+<li><p>区块分发：</p>
+<ul>
+<li>orderer中的区块并不是最终持久化的区块，</li>
+<li>是一个中间状态的区块</li>
+<li>包含了所有交易，不管是有有效还是无效，都会打包传给组织的锚节点。</li>
+</ul>
+</li>
+<li><p>多通道的数据隔离</p>
+<ul>
+<li>客户端可以使用某个通道，发送交易</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220109164753.png" alt="image-20220109164752553"></li>
+</ul>
+</li>
+</ul>
+<h2 id="源码目录"><a href="#源码目录" class="headerlink" title="源码目录"></a>源码目录</h2><ul>
+<li><p>从goland中阅读</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110134631.png" alt="image-20220110134628351"></p>
+</li>
+<li><p>源码目录</p>
+<ul>
+<li>bccsp：与密码学相关的，加密，数字签名，证书，将密码学中的函数抽象成了接口，方便调用和扩展</li>
+<li>bddtests：行为驱动开发，从需求直接到开发</li>
+<li>common：公共库，错误处理，日志处理，账本存贮，相关工具</li>
+<li>core：是fabric核心库，子目录是各个模块的目录<ul>
+<li>comm：网络通信相关</li>
+</ul>
+</li>
+<li>devenv：官方提供的开发环境，使用的是Vagrant</li>
+<li>docs：文档</li>
+<li>events：事件监听机制</li>
+<li>gossip：通信协议，组织内部的通信，区块同步</li>
+<li>gotools：用于编译</li>
+<li>images：docker镜像相关的</li>
+<li>msp：成员服务管理，member serivce provider 读取证书做签名</li>
+<li>orderer：排序节点</li>
+<li>peer：peer节点</li>
+<li>proposals：用于扩展，新功能的提案</li>
+<li>protos：数据结构的定义</li>
+</ul>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110135049.png" alt="image-20220110135013312"></p>
+</li>
+</ul>
+<h2 id="共识机制源码"><a href="#共识机制源码" class="headerlink" title="共识机制源码"></a>共识机制源码</h2><blockquote>
+<p>如果使用goland查看源码时import全部标红的话，进入这个设置，将第一个Enable Go … 这个框勾掉即可。<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110140311.png" alt="image-20220110140310255"></p>
+</blockquote>
+<ul>
+<li><p>orderer节点的源码</p>
+</li>
+<li><p>首先看orderer目录下的main.go</p>
+</li>
+<li><p>main.go里有一个NewServer</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110145806.png" alt="image-20220110145805341"></p>
+</li>
+<li><p>从sever.go可以具体查看交易收集和广播区块</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110145855.png" alt="image-20220110145853957"></p>
+</li>
+<li><p>点击Manager，进入Manager.go查看源码（还在sever.go里）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110150014.png" alt="image-20220110150005861"></p>
+</li>
+<li><p>点击chainsupport，查看（在manager.go中）<br><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110153610.png" alt="image-20220110153609457"></p>
+</li>
+<li><p>点receiver进去，看区块切割（在chainsupport.go中）<br><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110155258.png" alt="image-20220110155256319"></p>
+</li>
+</ul>
+<h2 id="回顾共识机制源码"><a href="#回顾共识机制源码" class="headerlink" title="回顾共识机制源码"></a>回顾共识机制源码</h2><ul>
+<li>main.go是入口，orderer节点的初始化</li>
+<li>manager.go是控制中枢，是对链的操作，拿到chainsupport对象</li>
+<li>chainsupport.go链对象额代理，与链式对应的关系</li>
+<li>Cut（）方法是区块切割</li>
+<li>solo和kafka相关的设置</li>
+<li>sever.go有两个Handle，是交易收集和区块扩散的方法</li>
+<li>将共识简化为了排序，最终一致性</li>
+</ul>
+<h1 id="fabric账本存储"><a href="#fabric账本存储" class="headerlink" title="fabric账本存储"></a>fabric账本存储</h1><h2 id="账本存储概念"><a href="#账本存储概念" class="headerlink" title="账本存储概念"></a>账本存储概念</h2><ul>
+<li><p>peer节点做账本存储</p>
+</li>
+<li><p>orderer是临时存储区块，peer节点时账本存储的持久化，会改变世界状态。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220110163404.png" alt="image-20220110163210283"></p>
+</li>
+<li><p>文件系统，区块是存储为文件</p>
+</li>
+<li><p>区块索引，用于查询区块，是用levelDB实现的</p>
+</li>
+<li><p>状态数据库，一般村存放区块链最新状态，数据不需要HA，可以从文件系统再次获取，couchDB支持模糊查询</p>
+</li>
+</ul>
+<h2 id="交易读写集"><a href="#交易读写集" class="headerlink" title="交易读写集"></a>交易读写集</h2><ul>
+<li><p>回忆交易流程</p>
+<ul>
+<li>交易模拟<ul>
+<li>在背书节点执行模拟时，最终返回交易读写集（RWset），告诉区块链在交易中读写了哪些数据</li>
+</ul>
+</li>
+<li>交易排序</li>
+<li>交易验证，交易验证后，更新世界状态，更新的就是读写集中的写集</li>
+</ul>
+</li>
+<li><p>交易读写集的3个概念</p>
+<ul>
+<li>读集：包含键的列表，键的提交版本，读取赌赢的值，返回的是已提交的状态的值（读已提交），不能读取交易过程中写入的数据。</li>
+<li>写集：包含键的列表，写入的数据的值，如果多次写入，以最后一次为准。</li>
+<li>版本号：用区块高度和交易编号组成的。</li>
+</ul>
+</li>
+<li><p>交易验证阶段是对读写集进行验证（验证读集）</p>
+<ul>
+<li>验证读集的版本号是和否等于世界状态的版本号</li>
+</ul>
+</li>
+</ul>
+<h2 id="账本存储相关概念"><a href="#账本存储相关概念" class="headerlink" title="账本存储相关概念"></a>账本存储相关概念</h2><ul>
+<li><p>世界状态</p>
+<ul>
+<li>交易执行后，所有键的最新值</li>
+</ul>
+</li>
+<li><p>历史数据索引（可选）</p>
+</li>
+<li><p>区块储存</p>
+<ul>
+<li>按照文件去存 blockfile_xxxx</li>
+<li>文件大小是64M，若修改，需要重新编译peer源码</li>
+<li>账本最大容量64M*</li>
+</ul>
+</li>
+<li><p>区块读取</p>
+<ul>
+<li>区块文件流</li>
+<li>区块流</li>
+<li>迭代器</li>
+</ul>
+</li>
+<li><p>区块索引</p>
+<ul>
+<li>键：区块高度，区块哈希，交易哈希</li>
+<li>值：区块文件编号，文件内的偏移量，区块数据的长度</li>
+</ul>
+</li>
+<li><p>区块提交</p>
+</li>
+<li><p>保存到文件</p>
+</li>
+</ul>
+<h2 id="账本存储相关源码"><a href="#账本存储相关源码" class="headerlink" title="账本存储相关源码"></a>账本存储相关源码</h2><ul>
+<li>从4方面看，读写集，状态数据， 历史数据，区块文件</li>
+<li>可以先从core/ledger 下的 ledger_interface.go 中看大体结构</li>
+<li><strong>读写集</strong>，分为交易读写集的生成和交易读写集的验证两个部分去看。<ul>
+<li>交易读写集生成<ul>
+<li>fabric/core/ledger/kvledger/txmgmt/txmgr/lockbasedtxmgr/lockbased_tx_simulator.go</li>
+</ul>
+</li>
+<li>交易读写集验证<ul>
+<li>fabric/core/ledger/kvledger/txmgmt/validator/statebasedval/state_based_validator.go</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>状态数据库</strong>：看levelDB的实现<ul>
+<li>fabric/core/ledger/kvledger/txmgmt/statedb/stateleveldb/stateleveldb.go</li>
+</ul>
+</li>
+<li><strong>历史数据库</strong>：看levelDB的实现<ul>
+<li>fabric/core/ledger/kvledger/history/historydb/historyleveldb/historyleveldb.go</li>
+</ul>
+</li>
+<li><strong>区块文件读取</strong><ul>
+<li>fabric/common/ledger/blkstorage/fsblkstorage/fs_blockstore.go</li>
+<li>区块流：fabric/common/ledger/blkstorage/fsblkstorage/block_stream.go</li>
+</ul>
+</li>
+</ul>
+<h2 id="账本存储相关源码总结"><a href="#账本存储相关源码总结" class="headerlink" title="账本存储相关源码总结"></a>账本存储相关源码总结</h2><ul>
+<li>首先看了账本根存储的根目录的接口，从宏观上把握</li>
+<li>交易读写集的生成和验证</li>
+<li>数据库增删改查</li>
+<li>要有一个没有实现的方法，数据剪裁的接口，可能去解决数据无限增长的处理</li>
+</ul>
+<h1 id="fabric智能合约"><a href="#fabric智能合约" class="headerlink" title="fabric智能合约"></a>fabric智能合约</h1><h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><p>fabric_asset配置好的文件下载：<a target="_blank" href="/doc/fabric_asset.zip">点击下载fabric_asset.zip</a></p>
+<ul>
+<li><p>执行环境：以太坊虚拟智能合约执行环境EVM，fabric执行环境是docker</p>
+</li>
+<li><p>链码</p>
+<ul>
+<li>是应用层和区块链底层的中间点</li>
+<li>每一个链码执行环境是一个独立的docker</li>
+<li>使用GRPC协议与背书节点通讯，只有背书节点才能运行智能合约</li>
+</ul>
+</li>
+<li><p>链码的生命周期</p>
+<ul>
+<li>打包，智能合约的编写和编译</li>
+<li>安装，将打包好的文件，上传到背书节点</li>
+<li>实例化，实际的安装了，执行Init方法，只执行一次，构造函数</li>
+<li>升级，升级和修复链码</li>
+<li>交互，自己定义的方法的调用</li>
+</ul>
+</li>
+<li><p>链码的交互流程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220111130908.png" alt="image-20220111130907628"></p>
+</li>
+<li><p>系统链码（了解）</p>
+<ul>
+<li>LSCC：管理链码的生命周期</li>
+<li>CSCC：配置管理链码，管理链的配置</li>
+<li>QSCC：查询账本存储，是一个区块索引的外部服务</li>
+<li>ESCC：交易背书的链码，交易执行后的链码进行封装签名，给客户端返回背书交易结果。</li>
+<li>VSCC：交易验证的链码</li>
+</ul>
+</li>
+<li><p>链码编程的接口</p>
+<ul>
+<li>Init()：链码初始化，只执行一次</li>
+<li>Invoke()：链码的业务逻辑的编写</li>
+<li>上面2个方法参数一样，参数是SDK的接口</li>
+</ul>
+</li>
+<li><p>链码SDK的接口</p>
+<ul>
+<li>写代码再看</li>
+</ul>
+</li>
+<li><p>一些注意点</p>
+<ul>
+<li>分布式多机多节点执行，链码会执行很多次</li>
+<li>不写随机函数，交易会无效，多次执行不一样</li>
+<li>系统时间不写，多机时间不一定一样</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络搭建配置的实现"><a href="#网络搭建配置的实现" class="headerlink" title="网络搭建配置的实现"></a>网络搭建配置的实现</h2><ul>
+<li><p><strong>crypto-config.yaml</strong>：用于配置组织节点的个数，参考firstnetwork去编写</p>
+</li>
+<li><p>编写好后，传到linux对应目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20220111220422.png" alt="image-20220111220421700"></p>
+</li>
+<li><p>进入deploy目录，设置工作目录为当前目录</p>
+<p><code>export FABRIC_CFG_PATH=$GOPATH/src/fabric_asset/deploy</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201112316260.png" alt="image-20220111231610245"></p>
+</li>
+<li><p>指定按照yaml文件生成配置</p>
+<p><code>cryptogen generate --config=./crypto-config.yaml</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201112318839.png" alt="image-20220111231835718"></p>
+</li>
+<li><p><strong>configtx.yaml</strong>：用于区块联盟中的组织信息，配合名字和证书等的位置，参考firstnetwork去编写</p>
+</li>
+<li><p>编写好后，传到linux对应目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201112323346.png" alt="image-20220111220421700"></p>
+</li>
+<li><p>创建用于存放配置的目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201121625352.png" alt="image-20220112162508038"></p>
+</li>
+<li><p><strong>生成系统链的创世区块</strong></p>
+</li>
+<li><p>-profile 指定联盟配置，-outputBlock 指定存放的位置</p>
+<p><code>configtxgen -profile OneOrgsOrdererGenesis -outputBlock ./config/genesis.block</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201121628296.png" alt="image-20220112162808968"></p>
+</li>
+<li><p><strong>生成通道的创世交易</strong></p>
+</li>
+<li><p>profile 指定业务联盟，outputCreateChannelTx存放的路径，插件的名字叫做mychannel</p>
+<p><code>configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config/mychannel.tx -channelID mychannel</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201131517067.png" alt="image-20220113151701675"></p>
+<blockquote>
+<p>注意：如果使用虚拟机为平台的话，会出现用ssh连接执行命令执行出错的情况发生，具体原因不详，但是在虚拟机上可以正常执行并生成成功。</p>
+</blockquote>
+</li>
+<li><p><strong>生成两个组织锚节点的交易信息</strong></p>
+<p><code>configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org0MSPanchors.tx -channelID mychannel -asOrg Org0MSP</code></p>
+<p><code>configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201131532043.png" alt="image-20220113153247804"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201131534780.png" alt="image-20220113153436463"></p>
+</li>
+<li><p>将docker-compose.yaml拖进deploy目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211329882.png" alt="image-20220114165038705"></p>
+</li>
+</ul>
+<h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><ul>
+<li><p><strong>启动docker，后台运行</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201141811282.png" alt="image-20220114181144436"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211036361.png" alt="image-20220121103619727"></p>
+</li>
+<li><p>查看orderer节点的运行日志</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211036157.png" alt="image-20220121103654831"></p>
+</li>
+<li><p>与客户端交互操作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211043457.png" alt="image-20220121104301852"></p>
+</li>
+<li><p><strong>创建通道</strong></p>
+</li>
+<li><p>-o 指定与哪个orderer节点进行通信，-c指定创建的通道名称，-f指定使用的文件</p>
+<blockquote>
+<p>出现的错误一般情况下是docker-compose中书写有误，e.g.映射路径中etc目录写成了ect</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211206681.png" alt="image-20220121120625533"></p>
+</li>
+<li><p><strong>加入通道</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211210517.png" alt="image-20220121121002769"></p>
+</li>
+<li><p>查看peer加入的通道列表：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211211163.png" alt="image-20220121121110870"></p>
+</li>
+<li><p><strong>指定主节点</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211213553.png" alt="image-20220121121336157"></p>
+</li>
+<li><p><strong>基础网络完成了</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>安装链码</strong></p>
+</li>
+<li><p>-n是安装的名字，-v是version，-l是使用的语言</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211220565.png" alt="image-20220121122000349"></p>
+</li>
+<li><p><strong>克隆一个会话</strong>，交互执行peer0，查看安装的链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211223314.png" alt="image-20220121122348993"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211225618.png" alt="image-20220121122517281"></p>
+</li>
+<li><p><strong>链码实例化</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211231478.png" alt="image-20220121123124872"></p>
+</li>
+<li><p>链码交互执行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211242449.png" alt="image-20220121124213503"></p>
+</li>
+<li><p>多次执行查询，得到的结果不同，因为invoke（）中使用了随机数，不要这么做。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211245508.png" alt="image-20220121124536471"></p>
+</li>
+</ul>
+<h1 id="fabric链码案例"><a href="#fabric链码案例" class="headerlink" title="fabric链码案例"></a>fabric链码案例</h1><h2 id="链码入门"><a href="#链码入门" class="headerlink" title="链码入门"></a>链码入门</h2><ul>
+<li><p>编写hello.go，完成后，拖到linux对应目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211306765.png" alt="image-20220121130639382"></p>
+</li>
+<li><p><strong>安装链码</strong></p>
+</li>
+<li><p>-n是安装的名字，-v是version，-l是使用的语言</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211309023.png" alt="image-20220121130951831"></p>
+</li>
+<li><p>实例化链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211314692.png" alt="image-20220121131431500"></p>
+</li>
+<li><p>链码调用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211316775.png" alt="image-20220121131610535"></p>
+</li>
+</ul>
+<h2 id="账户相关链码"><a href="#账户相关链码" class="headerlink" title="账户相关链码"></a>账户相关链码</h2><ul>
+<li><p>Init（）方法与例子程序类似</p>
+</li>
+<li><p>Invoke（）方法包含query，invoke，set，get，</p>
+</li>
+<li><p>编写完成后拖到linux对应目录</p>
+</li>
+<li><p>启动容器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211742920.png" alt="image-20220121174057468"></p>
+</li>
+<li><p>交互执行</p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211742920.png"/>
+</li>
+<li><p>创建通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211744978.png" alt="image-20220121174426685"></p>
+</li>
+<li><p>加入通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211745648.png" alt="image-20220121174527349"></p>
+</li>
+<li><p>设置主节点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211747968.png" alt="image-20220121174721400"></p>
+</li>
+<li><p>安装链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211749638.png" alt="image-20220121174953989"></p>
+</li>
+<li><p>实例化链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211753092.png" alt="image-20220121175309884"></p>
+</li>
+<li><p>查询user1的余额</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211756382.png" alt="image-20220121175634359"></p>
+</li>
+<li><p>user1给user2转200元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211758539.png" alt="image-20220121175842114"></p>
+</li>
+<li><p>向user1存100元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211800126.png" alt="image-20220121180038895"></p>
+</li>
+<li><p>向user1取200元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201211801284.png" alt="image-20220121180152224"></p>
+</li>
+</ul>
+<h2 id="贷款还款相关链码"><a href="#贷款还款相关链码" class="headerlink" title="贷款还款相关链码"></a>贷款还款相关链码</h2><ul>
+<li><p>编写Trace下的代码，编写好后，拖到对应linux目录</p>
+</li>
+<li><p>保证网络基础OK的情况下，安装链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221455452.png" alt="image-20220122145534672"></p>
+</li>
+<li><p>实例化链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221458929.png" alt="image-20220122145831365"></p>
+</li>
+<li><p>运行测试</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221500977.png" alt="image-20220122150047323"></p>
+</li>
+<li><p>贷款500W</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221503934.png" alt="image-20220122150341567"></p>
+</li>
+<li><p>还款500</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221505292.png" alt="image-20220122150527823"></p>
+</li>
+</ul>
+<h2 id="公民身份信息相关链码"><a href="#公民身份信息相关链码" class="headerlink" title="公民身份信息相关链码"></a>公民身份信息相关链码</h2><ul>
+<li><p>编写citizens下的代码，编写好后，拖到对应linux目录</p>
+</li>
+<li><p>安装链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221913015.png" alt="image-20220122191304566"></p>
+</li>
+<li><p>链码实例化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221931645.png" alt="image-20220122193129390"></p>
+</li>
+<li><p>身份查询</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221932544.png" alt="image-20220122193243135"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201221933442.png" alt="image-20220122193311699"></p>
+</li>
+</ul>
+<h2 id="合约相关链码"><a href="#合约相关链码" class="headerlink" title="合约相关链码"></a>合约相关链码</h2><ul>
+<li><p>编写contract下的代码，编写好后，拖到对应linux目录</p>
+</li>
+<li><p>安装链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231513268.png" alt="image-20220123151326386"></p>
+</li>
+<li><p>链码实例化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231515006.png" alt="image-20220123151524636"></p>
+</li>
+<li><p>发布合约</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231522057.png" alt="image-20220123152252818"></p>
+</li>
+<li><p>响应合约</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231535519.png" alt="image-20220123153527155"></p>
+</li>
+<li><p>合约成交</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231540970.png" alt="image-20220123154053895"></p>
+</li>
+<li><p>合约关闭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231541581.png" alt="image-20220123154120913"></p>
+</li>
+<li><p>查询合约的最新数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231545995.png" alt="image-20220123154555108"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231547838.png" alt="image-20220123154700388"></p>
+</li>
+<li><p>查询合约所有数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231548214.png" alt="image-20220123154854036"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201231549077.png" alt="image-20220123154951755"></p>
+</li>
+</ul>
+<h1 id="fabric链码案例-1"><a href="#fabric链码案例-1" class="headerlink" title="fabric链码案例"></a>fabric链码案例</h1><h2 id="流程整理"><a href="#流程整理" class="headerlink" title="流程整理"></a>流程整理</h2><ul>
+<li>让什么数据上链<ul>
+<li>所有节点备份数据耗费空间，视频等不要上链</li>
+</ul>
+</li>
+<li>如何交互<ul>
+<li>-c “Args”:[方法名，参数]</li>
+</ul>
+</li>
+<li>编写合约<ul>
+<li>Init</li>
+<li>Invoke</li>
+</ul>
+</li>
+<li>拖到linux运行，基于配置好的网络去部署运行（安装和实例化）</li>
+<li>合约交互</li>
+<li>SDK调用（页面点击或输入信息）</li>
+</ul>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><ul>
+<li>开发转让资产</li>
+<li>功能<ul>
+<li>用户开户和销户</li>
+<li>资产登记，资产上链，与具体的用户绑定</li>
+<li>资产转让，资产的所有权变更</li>
+<li>查询功能，用户查询，资产查询，资产变更的历史查询</li>
+</ul>
+</li>
+<li>业务实体<ul>
+<li>用户<ul>
+<li>名字</li>
+<li>身份证（表示）</li>
+<li>资产列表</li>
+</ul>
+</li>
+<li>资产<ul>
+<li>名字</li>
+<li>标识</li>
+<li>特殊属性列表（车：排量，品牌，座位）</li>
+</ul>
+</li>
+<li>资产的变更记录<ul>
+<li>资产标识</li>
+<li>资产的原始拥有者</li>
+<li>资产变更后的拥有者</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>交互方法<ul>
+<li>用户开户<ul>
+<li>参数：名字，标识</li>
+</ul>
+</li>
+<li>用户销户<ul>
+<li>标识</li>
+</ul>
+</li>
+<li>资产登记<ul>
+<li>名字，标识，特殊属性列表，拥有者</li>
+</ul>
+</li>
+<li>资产转让<ul>
+<li>拥有者，资产标识，受让者</li>
+</ul>
+</li>
+<li>用户查询<ul>
+<li>参数：标识，返回值：用户实体</li>
+</ul>
+</li>
+<li>资产查询<ul>
+<li>参数：标识，返回值：资产实体</li>
+</ul>
+</li>
+<li>资产的变更查询<ul>
+<li>参数：资产标识，返回值：资产的变更列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="合约编写"><a href="#合约编写" class="headerlink" title="合约编写"></a>合约编写</h2><ul>
+<li><p>合约编写完成，传到linux对应目录</p>
+</li>
+<li><p>创建通道的创世交易（channel名字不能有大写）</p>
+</li>
+<li><p>configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config/assetschannel.tx -channelID assetschannel</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272240598.png" alt="image-20220127224057055"></p>
+<blockquote>
+<p>如果出现这个提醒</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272252094.png" alt="image-20220127225209757"></p>
+<p>很有可能是<strong>FABRIC_CFG_PATH</strong>环境变量没有配置成功，可以直接在deploy目录下设置<code>export FABRIC_CFG_PATH=$PWD</code>再次执行该命令即可</p>
+</blockquote>
+</li>
+<li><p>交互执行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272257319.png" alt="image-20220127225717142"></p>
+</li>
+<li><p>创建通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272256365.png" alt="image-20220127225642703"></p>
+</li>
+<li><p>加入通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272258425.png" alt="image-20220127225818220"></p>
+</li>
+<li><p>查看通道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272259992.png" alt="image-20220127225939825"></p>
+</li>
+<li><p>安装链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272304218.png" alt="image-20220127230407170"></p>
+</li>
+<li><p>链码实例化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272306073.png" alt="image-20220127230612835"></p>
+</li>
+<li><p>注册</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272312816.png" alt="image-20220127231250260"></p>
+</li>
+<li><p>用户查询</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272317960.png" alt="image-20220127231727671"></p>
+</li>
+<li><p>资产登记</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272316518.png" alt="image-20220127231633131"></p>
+</li>
+<li><p>资产查询，查询用户资产绑定</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272318986.png" alt="image-20220127231840930"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272321822.png" alt="image-20220127232101943"></p>
+</li>
+<li><p>注册了第二个用户</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272322838.png" alt="image-20220127232251735"></p>
+</li>
+<li><p>资产转让</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272328868.png" alt="image-20220127232819530"></p>
+</li>
+<li><p>查询用户二的用户状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272330021.png" alt="image-20220127233036799"></p>
+</li>
+<li><p>查询资产一的状态</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272330798.png" alt="image-20220127233020447"></p>
+</li>
+<li><p>查询所有资产的变更历史</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201272332821.png" alt="image-20220127233211273"></p>
+</li>
+<li><p>注销用户2，下面的资产也会随之注销</p>
+</li>
+</ul>
+<h2 id="链码开发者模式"><a href="#链码开发者模式" class="headerlink" title="链码开发者模式"></a>链码开发者模式</h2><ul>
+<li><p>将docker-compose关闭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201281136004.png" alt="image-20220128113616795"></p>
+</li>
+<li><p>修改docker-compose配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201281138835.png" alt="image-20220128113801622"></p>
+</li>
+<li><p>运行docker</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201281138128.png" alt="image-20220128113841738"></p>
+</li>
+<li><p>在另一个会话找到编写好的智能合约</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201281142293.png" alt="image-20220128114238923"></p>
+</li>
+<li><p>运行链码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/202201281154569.png" alt="image-20220128115426486"></p>
+</li>
+<li><p>在另一个会话进入交互执行</p>
+</li>
+<li><p>链码安装，实例化，调用之后，修改链码</p>
+</li>
+<li><p>将第二个，链码运行的对话ctrl+C结束，重新运行链码执行命令</p>
+</li>
+<li><p>注意：链码开发用这个模式没问题，SDK调用时，可能会出现问题，开发完智能合约关掉开发者模式</p>
+</li>
+</ul>
+<h2 id="外部服务分析"><a href="#外部服务分析" class="headerlink" title="外部服务分析"></a>外部服务分析</h2><ul>
+<li>如何提供外部服务<ul>
+<li>企业内部各种数据接口，rpc，grpc</li>
+<li>网站（web），手机（app），通过http</li>
+<li>智能硬件，socket服务</li>
+</ul>
+</li>
+<li>SDK提供外部服务，SDK的语言选择<ul>
+<li>node.js（官方推荐，效率 9颗星）</li>
+<li>java（实际使用量最大的 9颗星）</li>
+<li>python（使用不太多 3颗星）</li>
+<li>golang（不稳定，常用方法也没有，1颗星）</li>
+</ul>
+</li>
+<li>SDK的模块<ul>
+<li>区块链的管理：例如通道的创建和加入，链码的安装，实例化等</li>
+<li>数据查询：区块和交易的查询</li>
+<li>区块链交互（链码交互）：发起交易，invoke，query</li>
+<li>事件监听：业务事件，系统事件</li>
+</ul>
+</li>
+</ul>
+<h2 id="SDK的下载和配置"><a href="#SDK的下载和配置" class="headerlink" title="SDK的下载和配置"></a>SDK的下载和配置</h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T02:25:12.000Z" title="2021/7/16 上午10:25:12">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-01-11T14:23:14.898Z" title="2022/1/11 下午10:23:14">2022-01-11</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">18 分钟读完 (大约2763个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/29920">Hyperledger-Fabric试验快速搭建</a></h1><div class="content"><h1 id="Hyperledger-Fabric文档阅读"><a href="#Hyperledger-Fabric文档阅读" class="headerlink" title="Hyperledger Fabric文档阅读"></a>Hyperledger Fabric文档阅读</h1><h2 id="介绍（自己总结的）"><a href="#介绍（自己总结的）" class="headerlink" title="介绍（自己总结的）"></a>介绍（自己总结的）</h2><p><strong>区块链：</strong> <em>分布式</em>网络，<em>节点</em>维护，不可篡改的<em>账本</em>，<em>共识协议</em>来验证<em>交易</em>，节点执行交易来维护账本的副本，账本以<em>区块</em>的方式存在，区块通过<em>哈希</em>和之前的区块相连。</p>
+<p><strong>区块链的应用</strong>：加密货币：比特币、以太坊：智能合约：为分布式应用创建平台。：公共非许可区块链技术，公共网络，匿名互动。</p>
+<p><strong>公共非许可区块链技术的缺点：</strong>性能较差，身份匿名。</p>
+<p><strong>企业级应用的需求</strong>：身份识别，性能强，低延迟，隐私性和机密性。</p>
+<p><strong>Hyperledger  Fabric的自身定位：</strong>开源企业级许可分布式账本技术平台。高度*<strong>模块化**<em>，</em></strong>可配置*<strong>的架构，支持**<em>通用编程语言编写智能合约</em></strong>，平台是*<strong>许可的**<em>，参与者</em></strong>确实*<strong>存在信任，**<em>可插拔的共识协议</em></strong>，可以利用*<strong>不需要原生加密货币<em>的共识协议**，</em></strong>性能较好*<strong>，**<em>隐私和保密</em></strong>。</p>
+<p><strong>特性的一些解释：</strong><br><strong>非许可区块链：</strong>匿名，信任通过工作量证明进行，采用挖矿来抵消工作量证明的成本。<br><strong>许可区块链:**使用共识协议来进行信任，不需要昂贵的挖掘。<br>**智能合约：</strong>“链码”，受信任的分布式应用程序。从区块链中获得信任，在节点中达成共识。共识协议：验证，排序交易，传播到所有节点，各节点按顺序执行交易。<strong>一种新方法</strong>消除了非确定性，标准编程语言。<br><strong>隐私和保密性：</strong>公共非许可区块链网络中，基于Pow的拜占庭容错共识牺牲了合约和数据的保密性。<strong>加密数据</strong>：可能被破解，<strong>零知识证明</strong>：使用其他共识，将机密信息限制于授权节点中。<br><strong>可插拔共识：</strong>模块化的共识<br><strong>性能和可扩展性：</strong></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>什么是区块链？：<strong>一个分布式账本</strong>，记录网络上所有的交易。<strong>去中心化</strong>，<strong>协作</strong>维护。信息仅能以附加的方式记录到区块链上，并使用加密技术保证一旦将交易添加到账本就无法修改。简化了信息的溯源。区块链有时被描述为 <strong>证明系统</strong> 。</p>
+<p><strong>智能合约</strong>：为了支持以同样的方式更新信息，并实现一整套账本功能（交易，查询等），区块链使用 <strong>智能合约</strong> 来提供对账本的受控访问。智能合约不仅是在网络中<strong>封装和简化信息</strong>的关键机制，它还可以被编写成<strong>自动执行参与者的特定交易</strong>的合约。</p>
+<p><strong>共识</strong>：保持账本在整个网络中同步的过程称为 <strong>共识</strong> 。该过程确保账本仅在交易被相应参与者批准时更新，并且当账本更新时，它们以相同的顺序更新相同的交易。</p>
+<p><strong>区块链的不同</strong>：一套在网络上建立身份，执行交易和存储数据的标准方法。资产来源可以通过查看交易列表来确定，此列表一旦写入，无法更改，因此可信任。</p>
+<p>Hyperledger Fabric 与其他区块链系统不同的地方是 <strong>私有</strong> 和 <strong>许可</strong> 。与允许未知身份参与网络的开放式非许可系统（需要诸如“工作量证明”之类的协议来验证交易并保护网络）不同，Hyperledger Fabric 网络的成员需要从可信赖的 <strong>成员服务提供者（MSP）</strong> 注册。</p>
+<p>Hyperledger Fabric 还提供创建 <strong>通道</strong> 的功能，允许一组参与者创建各自的交易账本。对于某些网络而言，这是一个特别重要的选择。这些网络中，一些参与者可能是竞争对手，并且不希望他们做出的每笔交易都被每个参与者知晓，例如，他们只向某些参与者提供的特殊价格，而其他人不是。如果两个参与者组成一个通道，那么只有这两个参与者拥有该通道的账本副本，而其他参与者没有。</p>
+<p><strong>智能合约</strong>：Hyperledger Fabric 智能合约用 <strong>链码</strong> 编写，当该应用程序需要与账本交互时，由区块链外部的应用程序调用。在大多数情况下，链码只与账本的数据库、世界状态（例如，查询）交互，而不与交易日志交互。</p>
+<p>Hyperledger Fabric 支持私有网络（使用通道）是很重要的，因为<strong>网络是相对开放的。</strong></p>
+<p><strong>共识</strong>：交易必须按照发生的顺序写入账本，即使它们可能位于网络中不同的参与者集合之中。为此，必须建立交易的顺序，且必须采用一种方法来拒绝错误（或恶意）插入到账本中的非法交易。</p>
+<p>这是一个彻底的计算机科学研究领域，且有很多方法可以实现它，每个方法都有不同的权衡。例如，PBFT（实用拜占庭容错算法）可以为文件副本提供一种机制，使其能够保持各个副本的一致性，即使在发生损坏的情况下也是如此。或者，在比特币中，通过称为挖矿的过程进行排序，其中竞争计算机竞相解决加密难题，该难题定义所有过程随后构建的顺序。</p>
+<p>Hyperledger Fabric 被设计为允许网络启动者选择最能代表参与者间存在的关系的共识机制。与隐私一样，有一系列需求；从他们的关系高度结构化的网络，到更加点对点的网络。</p>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/whatis.html">项目文档[1]</a></p>
+<h1 id="Hyperledger-Fabric平台搭建笔记"><a href="#Hyperledger-Fabric平台搭建笔记" class="headerlink" title="Hyperledger Fabric平台搭建笔记"></a>Hyperledger Fabric平台搭建笔记</h1><h2 id="centos7-9系统的安装和基础配置"><a href="#centos7-9系统的安装和基础配置" class="headerlink" title="centos7.9系统的安装和基础配置"></a>centos7.9系统的安装和基础配置</h2><ol>
+<li>记得选择语言，汉语，这是在安装界面可以看到的。ps：选错语言的话酒删了重装吧。</li>
+<li>记得选择磁盘位置</li>
+<li><strong>记得连接网络</strong>，很重要！！！ps：如果在有图形的安装界面不进行勾选的话 ，之后再更改配置会十分的困难。</li>
+<li>记得勾选基本的安装包。ps：如果不勾选的话一些基本的yum或者tar指令都无法使用。但是也不要选择太多的包，不然有可能会和自己安装的服务产生冲突。</li>
+<li>然后进行安装即可。ps：这样进行的安装是没有图形界面的。</li>
+</ol>
+<p>如何更换字体和字号：</p>
+<ol>
+<li>进入/lib/kbd/consolefonts，选择合适的字体。</li>
+<li>输入setfont指令，后面跟上字体的名称。</li>
+<li>输入<code>echo &#39;setfont latarcyrheb-sun32&#39; &gt;&gt; /etc/profile</code>指令将字体设置设为开机启动。</li>
+</ol>
+<p>wget的安装：</p>
+<ol>
+<li>刚开始安装好的centos系统是没有wget的，需要用yum安装。</li>
+<li><strong>yum -y install wget</strong></li>
+</ol>
+<h2 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h2><ol start="2">
+<li><p>Go语言安装</p>
+<p>从官网下载最新的linux-amd64.tar.gz压缩包（这里是go1.15.6.linux-amd64.tar.gz）</p>
+<pre><code>wget https://golang.google.cn/dl/go1.15.6.linux-amd64.tar.gz
+</code></pre>
+<p>将其解压到/usr/local目录下：</p>
+<pre><code>sudo tar -C /usr/local -zxf [压缩包名]
+</code></pre>
+</li>
+<li><p>配置环境变量，在/etc/profile文件的末尾加入（在加入之前创建/home/gopath目录）</p>
+<pre><code>export GOPATH=/home/gopath
+export PATH=$PATH:/usr/local/go/bin
+</code></pre>
+</li>
+<li><p>配置中国的代理</p>
+<pre><code>go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+</code></pre>
+</li>
+<li><p>查看是否配置成功</p>
+<pre><code>go env
+</code></pre>
+</li>
+</ol>
+<h3 id="mwget安装"><a href="#mwget安装" class="headerlink" title="mwget安装"></a>mwget安装</h3><p>wget太慢使用mwget</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2
+yum <span class="token function">install</span> <span class="token function">bzip2</span> gcc-c++ openssl-devel intltool -y
+<span class="token function">bzip2</span> -d mwget_0.1.0.orig.tar.bz2
+<span class="token function">tar</span> -xvf mwget_0.1.0.orig.tar 
+<span class="token function">cd</span> mwget_0.1.0.orig
+./configure 
+<span class="token function">make</span>
+<span class="token function">make</span> <span class="token function">install</span>　　<span class="token keyword">echo</span> <span class="token string">"至此，安装完成"</span>
+% 断点续传
+<span class="token function">wget</span> -c 要下载的文件，实现断点续传。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最后的配置工作"><a href="#最后的配置工作" class="headerlink" title="最后的配置工作"></a>最后的配置工作</h3><p>生成身份材料</p>
+<ol>
+<li><p>进入BasicNetwork-2.0/artifacts/channel目录，执行</p>
+<pre><code>./create-artifacts.sh
+</code></pre>
+</li>
+<li><p>进入BasicNetwork-2.0/artifacts目录执行</p>
+<pre><code>./docker-compose up -d
+</code></pre>
+</li>
+<li><p>进入BasicNetwork-2.0</p>
+<pre><code>./createChannel.sh
+</code></pre>
+</li>
+</ol>
+<p>智能合约部署</p>
+<ol>
+<li>进入BasicNetwork-2.0/artifacts/src/github.com/fabcar/go/目录下，执行（为智能合约安装依赖）</li>
+</ol>
+<pre><code>GO111MODULE=on go mod vendor
+</code></pre>
+<ol start="2">
+<li>进入BasicNetwork-2.0/，执行智能合约的部署和测试在执行<code>deployChaincode.sh</code>之前，按以下命令修改文件夹的权限</li>
+</ol>
+<pre><code>sudo chmod 777 /home/gopath/*
+</code></pre>
+<ol start="3">
+<li>开始部署</li>
+</ol>
+<pre><code>./deployChaincode.sh
+</code></pre>
+<p>部署explorer</p>
+<ol>
+<li><p>启动Explorer, 进入ContainerisingBlockchainExplorer目录下</p>
+<pre><code>docker-compose up -d
+</code></pre>
+</li>
+</ol>
+<p>服务全部启动成功，可以在windows上查看相关的服务。</p>
+<p><strong>注意：</strong>hyperledge Fabric搭建完成后将虚拟机挂起后再重新开启并不能恢复所有的服务，需要重新开启一遍。</p>
+<h3 id="平台使用"><a href="#平台使用" class="headerlink" title="平台使用"></a>平台使用</h3><p>查看可视化的区块链信息，访问：</p>
+<pre><code>[ip地址]:8080
+</code></pre>
+<p>查看产的最新状态，访问：</p>
+<pre><code>[ip地址]:5984/_utils
+</code></pre>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>超级账本的下载地址：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>超级账本的解压缩：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>超级账本的bin目录内的东西放到/usr/local/bin下</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo mv ./bin/* /usr/local/bin
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>把BasicNetwork-2.0/artifacts/channel下的crypto-config拷贝到ContainerisingBlockExplorer下</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo mv BasicNetwork-2.0/artifacts/channel/crypto-config ContainerisingBlockchainExplorer
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在ContainerisingBlockchainExplorer下创建data和walletstore文件夹</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo mkdir data
+sudo mkdir walletstore
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>查看Centos的ip（看en33那个ip）</p>
+<pre class="line-numbers language-shell"><code class="language-shell">ip add
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>启动docker服务</p>
+<pre><code>systemctl restart docker.service
+</code></pre>
+<p>关闭所有运行着的docker容器</p>
+<pre><code>docker rm -f $(docker ps -a -q)
+</code></pre>
+<p>tips:</p>
+<pre><code>注意go的版本
+</code></pre>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=1d093d10-a21e-4640-852e-87fc4d68456c&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=003vny0w36jQEW2ofd0w3ju6IV2vny0O&channelId=wx75425a38a3ed6402">实验平台在服务器上的基于脚本的自动化部署[1]</a></p>
+<p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=91104fed-4f7d-481e-9ac2-8008b8d2fff3&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=043YQkll27EWj74Kggll2454aR2YQkl0&channelId=wx75425a38a3ed6402">区块链实验平台部署[2]</a></p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只想要躺平的菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Dicemy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hyperledger/"><span class="tag">Hyperledger</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JAVA/"><span class="tag">JAVA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/fabric/"><span class="tag">fabric</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"><span class="tag">乘法逆元</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"><span class="tag">博弈论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/"><span class="tag">双端队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tag">学习笔记</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/"><span class="tag">思考题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/"><span class="tag">文档阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"><span class="tag">方法总结</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">最小生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"><span class="tag">赛后总结</span><span class="tag">9</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/"><span class="level-start"><span class="level-item">文化课</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%9E%E8%B5%9B/"><span class="level-start"><span class="level-item">竞赛</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-08T10:08:35.000Z">2022-01-08</time></p><p class="title"><a href="/23955">fabric开发入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:21.000Z">2022-01-07</time></p><p class="title"><a href="/63228">树莓派入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:07.000Z">2022-01-07</time></p><p class="title"><a href="/21062">Python入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:38:50.000Z">2022-01-07</time></p><p class="title"><a href="/10811">git入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-04T08:01:41.000Z">2022-01-04</time></p><p class="title"><a href="/12732">离散数学复习</a></p><p class="categories"><a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></p></div></article></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6426911790858772" data-ad-slot="1877755546" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 TobinMEng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

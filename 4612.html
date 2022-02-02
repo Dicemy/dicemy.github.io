@@ -1,381 +1,71 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="月光照着月光,月光普照">
-  <link 
-    rel="icon" 
-    href="/img/biaoti.png">
-  <title>大学物理复习笔记</title>
-  
-    
-      <meta 
-        property="og:title" 
-        content="大学物理复习笔记">
-    
-    
-      <meta 
-        property="og:url" 
-        content="https://dicemy.com/4612.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="/img/touxiang.jpg">
-    
-    
-      <meta 
-        property="og:img" 
-        content="月光照着月光,月光普照">
-    
-    
-      <meta 
-        property="og:type" 
-        content="article">
-      <meta 
-        property="og:article:published_time" 
-        content="2021-06-28">
-      <meta 
-        property="og:article:modified_time" 
-        content="2021-07-06">
-      <meta 
-        property="og:article:author" 
-        content="Dicemy">
-      
-        
-      
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-    
-    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
-  
-  
-    
-    <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
-  
-<!-- hexo injector head_end start -->
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>大学物理复习笔记 - TobinMEng 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="第16章第1-3节：q &amp;#x3D; ne    电荷是量子化的    e &amp;#x3D; 1.62×10 ^ -19 C密立根油滴实验：电荷的量子性。mC        uC        nC        pC10^-3    10^-6    10^-9    10^-12质子的质量：1.6×10^-27电子的质量：9×10^-31 极化：电中性的物体中，正负电荷的中心不重合的现象。 库伦定律： K的值：9×1"><meta property="og:type" content="blog"><meta property="og:title" content="大学物理复习笔记"><meta property="og:url" content="https://dicemy.com/4612"><meta property="og:site_name" content="TobinMEng 的博客"><meta property="og:description" content="第16章第1-3节：q &amp;#x3D; ne    电荷是量子化的    e &amp;#x3D; 1.62×10 ^ -19 C密立根油滴实验：电荷的量子性。mC        uC        nC        pC10^-3    10^-6    10^-9    10^-12质子的质量：1.6×10^-27电子的质量：9×10^-31 极化：电中性的物体中，正负电荷的中心不重合的现象。 库伦定律： K的值：9×1"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203202.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203333.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203559.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203610.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706152735.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203757.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203812.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204040.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204113.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204033.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204336.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204655.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204804.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205137.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205154.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205442.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205513.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205854.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205823.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210730.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210934.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211217.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211426.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211525.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211602.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211820.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211807.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211920.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212038.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212116.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212139.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212251.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212342.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212358.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705213056.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706205759.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210020.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210506.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210534.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210706.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706211444.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212014.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212032.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706213721.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220255.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220701.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221118.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221216.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221531.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221842.png"><meta property="article:published_time" content="2021-06-28T14:01:23.000Z"><meta property="article:modified_time" content="2021-07-06T15:13:01.661Z"><meta property="article:author" content="TobinMEng"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/4612"},"headline":"大学物理复习笔记","image":["https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203202.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203333.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203559.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203610.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706152735.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203757.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203812.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204040.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204113.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204033.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204336.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204655.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204804.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205137.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205154.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205442.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205513.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205854.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205823.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210730.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210934.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211217.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211426.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211525.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211602.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211820.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211807.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211920.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212038.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212116.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212139.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212251.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212342.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212358.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705213056.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706205759.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210020.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210506.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210534.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210706.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706211444.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212014.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212032.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706213721.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220255.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220701.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221118.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221216.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221531.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221842.png"],"datePublished":"2021-06-28T14:01:23.000Z","dateModified":"2021-07-06T15:13:01.661Z","author":{"@type":"Person","name":"TobinMEng"},"publisher":{"@type":"Organization","name":"TobinMEng 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"第16章第1-3节：q &#x3D; ne    电荷是量子化的    e &#x3D; 1.62×10 ^ -19 C密立根油滴实验：电荷的量子性。mC        uC        nC        pC10^-3    10^-6    10^-9    10^-12质子的质量：1.6×10^-27电子的质量：9×10^-31 极化：电中性的物体中，正负电荷的中心不重合的现象。 库伦定律： K的值：9×1"}</script><link rel="canonical" href="https://dicemy.com/4612"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-6426911790858772" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-  <body>
-    <div class="wrapper">
-       
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="/img/biaoti.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">Dicemy 的博客</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archives" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/links" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-      <a 
-        href="/guestbook" 
-        class="navbar-menu-item">
-        
-          留言板
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-<article class="card card-content">
-  <header>
-    <h1 class="post-title">
-      大学物理复习笔记
-    </h1>
-  </header>
-  <div class="post-meta post-show-meta">
-    <time datetime="2021-06-28T14:01:23.000Z">
-      <i 
-        class="iconfont icon-calendar" 
-        style="margin-right: 2px;">
-      </i>
-      <span>2021-06-28</span>
-    </time>
-    
-      <span class="dot"></span>
-      
-        <a 
-          href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/" 
-          class="post-meta-link">
-          文化课
-        </a>
-      
-    
-    
-      <span class="dot"></span>
-      <span>2.1k 字</span>
-    
-  </div>
-  
-  </header>
-  <div 
-    id="section" 
-    class="post-content">
-    <h2 id="第16章"><a href="#第16章" class="headerlink" title="第16章"></a>第16章</h2><h3 id="第1-3节："><a href="#第1-3节：" class="headerlink" title="第1-3节："></a>第1-3节：</h3><p>q = ne    电荷是量子化的    e = 1.62×10 ^ -19 C<br>密立根油滴实验：电荷的量子性。<br>mC        uC        nC        pC<br>10^-3    10^-6    10^-9    10^-12<br>质子的质量：1.6×10^-27<br>电子的质量：9×10^-31</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">文章归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">个人简介</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/music">音乐</a><a class="navbar-item" href="/media">媒体</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-28T14:01:23.000Z" title="2021/6/28 下午10:01:23">2021-06-28</time>发表</span><span class="level-item"><time dateTime="2021-07-06T15:13:01.661Z" title="2021/7/6 下午11:13:01">2021-07-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></span><span class="level-item">16 分钟读完 (大约2332个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">大学物理复习笔记</h1><div class="content"><h2 id="第16章"><a href="#第16章" class="headerlink" title="第16章"></a>第16章</h2><h3 id="第1-3节："><a href="#第1-3节：" class="headerlink" title="第1-3节："></a>第1-3节：</h3><p>q = ne    电荷是量子化的    e = 1.62×10 ^ -19 C<br>密立根油滴实验：电荷的量子性。<br>mC        uC        nC        pC<br>10^-3    10^-6    10^-9    10^-12<br>质子的质量：1.6×10^-27<br>电子的质量：9×10^-31</p>
 <p>极化：电中性的物体中，正负电荷的中心不重合的现象。</p>
-<p>库伦定律：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png" class="lozad post-image"><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png" class="lozad post-image"></p>
+<p>库伦定律：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192549.png" width = 20%/><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630192638.png" width = 20%/></p>
 <p>K的值：9×10^9 N·㎡/C^2</p>
 <p>同号相斥，异号相吸</p>
 <p>场是一种物质，无静止质量</p>
-<h3 id="第4节："><a href="#第4节：" class="headerlink" title="第4节："></a>第4节：</h3><p>电场强度：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png" width = 20%/ srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png" class="lozad post-image">单位： N/C  or   V/m   是电场中某一点的一个性质</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png" alt="image-20210630193622185" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png" class="lozad post-image"><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png" alt="image-20210630193734725" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png" class="lozad post-image">    q是场源电荷    </p>
+<h3 id="第4节："><a href="#第4节：" class="headerlink" title="第4节："></a>第4节：</h3><p>电场强度：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193314.png" width = 20%/>单位： N/C  or   V/m   是电场中某一点的一个性质</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193624.png" alt="image-20210630193622185" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630193734.png" alt="image-20210630193734725" style="zoom:33%;" />    q是场源电荷    </p>
 <p>两条电场线不会相交，电场线不闭合</p>
-<p>电偶极子：<br>电偶极矩：p ⃑ = ql ⃑   方向从负电荷指向正电荷<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png" alt="image-20210630194628305" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png" alt="image-20210630194802126" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png" class="lozad post-image">薄金属球壳中电场线的分布</p>
-<h3 id="第5节："><a href="#第5节：" class="headerlink" title="第5节："></a>第5节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png" alt="image-20210630194856019" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png" class="lozad post-image">“无限大”带电平面所激发的电场</p>
+<p>电偶极子：<br>电偶极矩：p ⃑ = ql ⃑   方向从负电荷指向正电荷<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194628.png" alt="image-20210630194628305" style="zoom:33%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194802.png" alt="image-20210630194802126" style="zoom:33%;" />薄金属球壳中电场线的分布</p>
+<h3 id="第5节："><a href="#第5节：" class="headerlink" title="第5节："></a>第5节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630194856.png" alt="image-20210630194856019" style="zoom:33%;" />“无限大”带电平面所激发的电场</p>
 <p>σ:平面上的电荷面密度。<br>“无限大”带电平面所激发的电场强度与离平面的距离无关，即在平面两侧形成一均匀场.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png" alt="image-20210630195050166" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png" class="lozad post-image">带有等量异号的平行金属板所产生的电场</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210630195050.png" alt="image-20210630195050166" style="zoom:33%;" />带有等量异号的平行金属板所产生的电场</p>
 <p>σ:平面上的电荷面密度</p>
 <h3 id="第6节："><a href="#第6节：" class="headerlink" title="第6节："></a>第6节：</h3><p>导体处于静电平衡时，内部电场为0。静电荷分布在导体表面，尖端电荷密度最高。<br>导体内部没有电场线，电场线垂直与导体表面<br>尖端放电现象。</p>
 <p>当腔内无导体时：空腔导体不接地的时候外面的电场不会影响腔内<br>当腔内有导体时：空腔导体接地时外面的电场不会影响腔内</p>
 <p>在空腔中的导体位置进行移动的话，对腔内和腔外的电场分布没有影响。</p>
 <h3 id="第7节："><a href="#第7节：" class="headerlink" title="第7节："></a>第7节：</h3><p>电通量：通过电场中某一给定平面的电场线的总条数叫做通过该面的电通量（垂直穿过或者斜着穿过对电通量的大小相同）<br>电通量计算公式：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png" alt="image-20210703194656590" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194703.png" alt="image-20210703194656590" style="zoom:33%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png" alt="image-20210703194721726" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703194721.png" alt="image-20210703194721726" style="zoom:33%;" />
 
 <p>简单来说，就是某块平面的电场强度乘以这块平面的面积。几何意义：通过闭合曲面的电场线的净条数。</p>
 <p>高斯定理：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png" alt="image-20210703195124311" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703195124.png" alt="image-20210703195124311" style="zoom:33%;" />
 
 <p>静电场的高斯定理(Gauss’s law) 的表述:<br>在静电场内,任一闭合面的电通量等于这<strong>闭合面所包围的电量的代数和</strong>(净电荷)除以ε0 .<br>该定理将一任意闭合曲面上的电场和闭合曲面内所包围的净电荷联系起来。静电场是有源场。<br>高斯定理求出来的是电通量，电通量乘以面积得到的是电场强度。</p>
 <p>高斯定理在求解场强方面的应用：</p>
 <ol>
-<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png" alt="image-20210703200140064" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png" class="lozad post-image">均匀带电球面的电场分布，设球面半径为R，球面上所带总电量为q。</p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200140.png" alt="image-20210703200140064" style="zoom:33%;" />均匀带电球面的电场分布，设球面半径为R，球面上所带总电量为q。</p>
 </li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png" alt="image-20210703200424482" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png" class="lozad post-image">电荷均匀分布在一条长直细线上。线上单位长度所带电荷恒定为λ。求距离细线r处电场的大小，假设此处与线的两端相距很远。</p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703200424.png" alt="image-20210703200424482" style="zoom:33%;" />电荷均匀分布在一条长直细线上。线上单位长度所带电荷恒定为λ。求距离细线r处电场的大小，假设此处与线的两端相距很远。</p>
 </li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png" alt="image-20210703201251340" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png" class="lozad post-image">求无限大均匀带电平面的电场分布。已知带电平面电荷面密度为σ。</p>
+<li><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703201251.png" alt="image-20210703201251340" style="zoom:33%;" />求无限大均匀带电平面的电场分布。已知带电平面电荷面密度为σ。</p>
 </li>
 </ol>
-<h2 id="第17章"><a href="#第17章" class="headerlink" title="第17章"></a>第17章</h2><h3 id="第1节："><a href="#第1节：" class="headerlink" title="第1节："></a>第1节：</h3><p>保守力：力所做的功和始末位置有关，和路径无关。<br>静电场环路定理：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png" alt="image-20210703202315913" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png" class="lozad post-image">静电场强沿任意闭合路径的线积分为零。反映了静电场是保守力场（无旋场）。</p>
+<h2 id="第17章"><a href="#第17章" class="headerlink" title="第17章"></a>第17章</h2><h3 id="第1节："><a href="#第1节：" class="headerlink" title="第1节："></a>第1节：</h3><p>保守力：力所做的功和始末位置有关，和路径无关。<br>静电场环路定理：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202315.png" alt="image-20210703202315913" style="zoom:33%;" />静电场强沿任意闭合路径的线积分为零。反映了静电场是保守力场（无旋场）。</p>
 <p>凡保守力都有与其相关的势能，静电场是有势场。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png" alt="image-20210703202449682" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png" class="lozad post-image">势能与做功的关系</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203202.png" alt="image-20210703203202882" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203202.png" class="lozad post-image">电势能只与物体的位置有关，与路径无关。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203333.png" alt="image-20210703203333299" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203333.png" class="lozad post-image">电场力推出的电势能的公式。</p>
-<h3 id="第2节："><a href="#第2节：" class="headerlink" title="第2节："></a>第2节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203559.png" alt="image-20210703203559179" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203559.png" class="lozad post-image"><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203610.png" alt="image-20210703203610047" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203610.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703202449.png" alt="image-20210703202449682" style="zoom:33%;" />势能与做功的关系</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203202.png" alt="image-20210703203202882" style="zoom:33%;" />电势能只与物体的位置有关，与路径无关。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203333.png" alt="image-20210703203333299" style="zoom:33%;" />电场力推出的电势能的公式。</p>
+<h3 id="第2节："><a href="#第2节：" class="headerlink" title="第2节："></a>第2节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203559.png" alt="image-20210703203559179" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203610.png" alt="image-20210703203610047" style="zoom:33%;" /></p>
 <p>当取试验电荷为单位正电荷时，V_a和U_a等值，这表示静电场中某点的电势在数值上等于单位正电荷放在该点处时的电势能，也等于单位正电荷从该点经过任意路径到电势零点时电场力所做的功。</p>
 <p>求均匀带电球面的电势分布。设球面半径为R，带电量为Q：</p>
 <p>电势分布：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706152735.png" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706152735.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706152735.png" style="zoom:33%;" />
 
 <p>  一个带电的导体球外的电场和其上所带电荷都集中在球心时形成的点电荷产生的电场相同。</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203757.png" alt="image-20210703203757678" style="zoom:40%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203757.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203757.png" alt="image-20210703203757678" style="zoom:40%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203812.png" alt="image-20210703203812056" style="zoom: 39%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203812.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703203812.png" alt="image-20210703203812056" style="zoom: 39%;" />
 
-<p>点电荷的电势：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204040.png" alt="image-20210703204040460" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204040.png" class="lozad post-image"></p>
-<p>点电荷的电势能：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204113.png" alt="image-20210703204113872" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204113.png" class="lozad post-image"></p>
+<p>点电荷的电势：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204040.png" alt="image-20210703204040460" style="zoom:33%;" /></p>
+<p>点电荷的电势能：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210703204113.png" alt="image-20210703204113872" style="zoom:33%;" /></p>
 <p><strong>注意：电场是矢量，电势是标量</strong><br>电场为零的地方电势可以不为零；电势为零的地方电场也可以不是零。</p>
 <h3 id="第3-4节："><a href="#第3-4节：" class="headerlink" title="第3-4节："></a>第3-4节：</h3><p>等势面：将电势相等的场点连成连续的曲面——等势面<br>相邻等势面的电势差为常量，可以得到一系列的等势面</p>
 <p>电荷沿等势面移动，电场力不做功。</p>
 <p>电势能只与物体的位置有关，与路径无关。</p>
 <p>静电平衡下的导体内部和导体表面处处电势相等，整个导体是个等势体，导体表面成为等势面。</p>
 <h3 id="第5节：-1"><a href="#第5节：-1" class="headerlink" title="第5节："></a>第5节：</h3><p>电容器：一种储存电能的原件，由电介质隔开的两块任意形状导体组合而成。两导体称为电容器的极板。</p>
-<p>定义式：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204033.png" alt="image-20210705204026064" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204033.png" class="lozad post-image">单位：F(法拉)</p>
+<p>定义式：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204033.png" alt="image-20210705204026064" style="zoom:33%;" />单位：F(法拉)</p>
 <ol>
 <li>C 是描述电容器储电本领的物理量</li>
 <li> C 取决于电容器两板的形状、大小、相对位置及中间电介质的种类和分布情况；</li>
@@ -383,632 +73,140 @@
 <p>物理意义：导体每升高单位电势所需的电量。</p>
 <p>组成：用真空或绝缘体分开的两个导体。</p>
 <ol>
-<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204336.png" alt="image-20210705204336124" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204336.png" class="lozad post-image">平行板电容器的推导式。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204655.png" alt="image-20210705204655630" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204655.png" class="lozad post-image">球形电容器的推导式。</li>
-<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204804.png" alt="image-20210705204804859" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204804.png" class="lozad post-image">圆柱形电容器的推导式。当极板间距d&lt;&lt; RA时，圆柱形电容器类似于平行板电容器。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204336.png" alt="image-20210705204336124" style="zoom:33%;" />平行板电容器的推导式。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204655.png" alt="image-20210705204655630" style="zoom:33%;" />球形电容器的推导式。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705204804.png" alt="image-20210705204804859" style="zoom:33%;" />圆柱形电容器的推导式。当极板间距d&lt;&lt; RA时，圆柱形电容器类似于平行板电容器。</li>
 </ol>
 <p>电容的串并联：</p>
-<p>并联：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205137.png" alt="image-20210705205137724" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205137.png" class="lozad post-image"></p>
-<p>串联：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205154.png" alt="image-20210705205154113" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205154.png" class="lozad post-image"></p>
-<h3 id="第6节：-1"><a href="#第6节：-1" class="headerlink" title="第6节："></a>第6节：</h3><p>相对介电常数：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205442.png" alt="image-20210705205442243" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205442.png" class="lozad post-image"><br>相对介电常数是一个量纲为一的数，即有介质时的电容和没有介质时的电容比值。</p>
-<p>电介质的介电常数与真空介电常数的比值。<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205513.png" alt="image-20210705205513605" style="zoom: 33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205513.png" class="lozad post-image"><br><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205854.png" alt="image-20210705205854620" style="zoom: 25%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205854.png" class="lozad post-image">电容器存储的电势能</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205823.png" alt="image-20210705205823414" style="zoom: 25%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205823.png" class="lozad post-image">能量密度：单位体积的电势能<br>该能量密度的表达式对任意电场都普遍成立。只要有电场的地方就有能量。</p>
-<h2 id="第18章："><a href="#第18章：" class="headerlink" title="第18章："></a>第18章：</h2><h3 id="第1-3节：-1"><a href="#第1-3节：-1" class="headerlink" title="第1-3节："></a>第1-3节：</h3><p>电流：单位时间通过垂直于电流方向的某一面积的净电量。<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210730.png" alt="image-20210705210730416" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210730.png" class="lozad post-image"><br>载流子：自由电子、离子、空穴（正的载流子叫作空穴）</p>
-<p>电池的电动势：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210934.png" alt="image-20210705210934028" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210934.png" class="lozad post-image"></p>
+<p>并联：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205137.png" alt="image-20210705205137724" style="zoom:33%;" /></p>
+<p>串联：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205154.png" alt="image-20210705205154113" style="zoom:33%;" /></p>
+<h3 id="第6节：-1"><a href="#第6节：-1" class="headerlink" title="第6节："></a>第6节：</h3><p>相对介电常数：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205442.png" alt="image-20210705205442243" style="zoom:33%;" /><br>相对介电常数是一个量纲为一的数，即有介质时的电容和没有介质时的电容比值。</p>
+<p>电介质的介电常数与真空介电常数的比值。<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205513.png" alt="image-20210705205513605" style="zoom: 33%;" /><br><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205854.png" alt="image-20210705205854620" style="zoom: 25%;" />电容器存储的电势能</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705205823.png" alt="image-20210705205823414" style="zoom: 25%;" />能量密度：单位体积的电势能<br>该能量密度的表达式对任意电场都普遍成立。只要有电场的地方就有能量。</p>
+<h2 id="第18章："><a href="#第18章：" class="headerlink" title="第18章："></a>第18章：</h2><h3 id="第1-3节：-1"><a href="#第1-3节：-1" class="headerlink" title="第1-3节："></a>第1-3节：</h3><p>电流：单位时间通过垂直于电流方向的某一面积的净电量。<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210730.png" alt="image-20210705210730416" style="zoom:33%;" /><br>载流子：自由电子、离子、空穴（正的载流子叫作空穴）</p>
+<p>电池的电动势：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705210934.png" alt="image-20210705210934028" style="zoom:33%;" /></p>
 <p>普通电池尺寸不同，电池越大，它储存的化学物质的量就越多，相应储存的化学能就越多，<strong>但它们都提供相同的电动势（1.5V）</strong><br>大小电池的另外一个区别就是大电池通常能更快的抽运电荷，也就是说<strong>大电池能提供更大的电流。</strong></p>
-<p>电流可表示为：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211217.png" alt="image-20210705211217210" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211217.png" class="lozad post-image"><br>单位体积内传导电子的数量：n，在体积A vD Δt内的电子数为N = nA vD Δt，<br>电量为： ΔQ=Ne= neA vD Δt，</p>
-<h3 id="第4节：-1"><a href="#第4节：-1" class="headerlink" title="第4节："></a>第4节：</h3><p>欧姆定律：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" alt="image-20210705211347775" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" class="lozad post-image"></p>
-<p>电阻定义：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" alt="image-20210705211347775" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" class="lozad post-image"> 单位：欧姆（Ω）1 Ω=1V/A<br>电阻率：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211426.png" alt="image-20210705211426163" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211426.png" class="lozad post-image"></p>
-<p>电阻率和温度的关系：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211525.png" alt="image-20210705211525562" style="zoom: 33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211525.png" class="lozad post-image"></p>
-<p>路端电压（V）：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211602.png" alt="image-20210705211602895" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211602.png" class="lozad post-image"></p>
+<p>电流可表示为：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211217.png" alt="image-20210705211217210" style="zoom:33%;" /><br>单位体积内传导电子的数量：n，在体积A vD Δt内的电子数为N = nA vD Δt，<br>电量为： ΔQ=Ne= neA vD Δt，</p>
+<h3 id="第4节：-1"><a href="#第4节：-1" class="headerlink" title="第4节："></a>第4节：</h3><p>欧姆定律：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" alt="image-20210705211347775" style="zoom:33%;" /></p>
+<p>电阻定义：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211347.png" alt="image-20210705211347775" style="zoom:33%;" /> 单位：欧姆（Ω）1 Ω=1V/A<br>电阻率：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211426.png" alt="image-20210705211426163" style="zoom:33%;" /></p>
+<p>电阻率和温度的关系：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211525.png" alt="image-20210705211525562" style="zoom: 33%;" /></p>
+<p>路端电压（V）：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211602.png" alt="image-20210705211602895" style="zoom:33%;" /></p>
 <h3 id="第5节"><a href="#第5节" class="headerlink" title="第5节:"></a>第5节:</h3><p>基尔霍夫节点电流定律：流入一个节点的所有支路的电流之和等于流出这个节点的所有支路的电流之和。任何一个电的连接点即为节点。</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211820.png" alt="image-20210705211820885" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211820.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211820.png" alt="image-20210705211820885" style="zoom:50%;" />
 
 <p>基尔霍夫回路电压定律:适用于电路中起始和终止于同一点的任何回路。电势改变的代数和为零。</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211807.png" alt="image-20210705211807386" style="zoom: 50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211807.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211807.png" alt="image-20210705211807386" style="zoom: 50%;" />
 
 <h3 id="第6节：-2"><a href="#第6节：-2" class="headerlink" title="第6节："></a>第6节：</h3><p>串联与并联电路：<br>串联电阻器:</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211920.png" alt="image-20210705211920141" style="zoom:33%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211920.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705211920.png" alt="image-20210705211920141" style="zoom:33%;" />
 
 <p>串联电容器:</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212038.png" alt="image-20210705212038173" style="zoom: 50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212038.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212038.png" alt="image-20210705212038173" style="zoom: 50%;" />
 
 <p>并联电阻器:</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212116.png" alt="image-20210705212116656" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212116.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212116.png" alt="image-20210705212116656" style="zoom:50%;" />
 
 <p>并联电容器：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212139.png" alt="image-20210705212139638" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212139.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212139.png" alt="image-20210705212139638" style="zoom:50%;" />
 
-<h3 id="第8-11节："><a href="#第8-11节：" class="headerlink" title="第8-11节："></a>第8-11节：</h3><p>电路中的功率与能量：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212251.png" alt="image-20210705212251551" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212251.png" class="lozad post-image"><br>功率的单位：J/s=A·V=W</p>
+<h3 id="第8-11节："><a href="#第8-11节：" class="headerlink" title="第8-11节："></a>第8-11节：</h3><p>电路中的功率与能量：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212251.png" alt="image-20210705212251551" style="zoom:50%;" /><br>功率的单位：J/s=A·V=W</p>
 <p>在电阻上的能量可表示为:    </p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212342.png" alt="image-20210705212342281" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212342.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212342.png" alt="image-20210705212342281" style="zoom:50%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212358.png" alt="image-20210705212357984" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212358.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705212358.png" alt="image-20210705212357984" style="zoom:50%;" />
 
 <p>电流表和电压表</p>
 <p>RC电路：同时包含电阻器和电容器的电路。</p>
 <h2 id="第19章："><a href="#第19章：" class="headerlink" title="第19章："></a>第19章：</h2><h3 id="第1-2节："><a href="#第1-2节：" class="headerlink" title="第1-2节："></a>第1-2节：</h3><p>磁感应强度B：单位 (SI)： T(特斯拉) </p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705213056.png" alt="image-20210705213056599" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705213056.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210705213056.png" alt="image-20210705213056599" style="zoom:50%;" />
 
 <h3 id="第3节："><a href="#第3节：" class="headerlink" title="第3节："></a>第3节：</h3><p>垂直于匀强磁场运动的带电粒子：<br>粒子做匀速圆周运动</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706205759.png" alt="image-20210706205759793" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706205759.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706205759.png" alt="image-20210706205759793" style="zoom:50%;" />
 
 <p>速度选择器:</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210020.png" alt="image-20210706210020753" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210020.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210020.png" alt="image-20210706210020753" style="zoom:50%;" />
 
 <p>质谱仪：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210506.png" alt="image-20210706210506404" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210506.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210506.png" alt="image-20210706210506404" style="zoom:50%;" />
 
 <p>回旋加速器：</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210534.png" alt="image-20210706210534547" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210534.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210534.png" alt="image-20210706210534547" style="zoom:50%;" />
 
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210706.png" alt="image-20210706210706521" style="zoom:50%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210706.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706210706.png" alt="image-20210706210706521" style="zoom:50%;" />
 
-<h3 id="第4-5节："><a href="#第4-5节：" class="headerlink" title="第4-5节："></a>第4-5节：</h3><p>粒子作螺旋线向前运动，轨迹是螺旋线：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706211444.png" alt="image-20210706211444626" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706211444.png" class="lozad post-image"></p>
+<h3 id="第4-5节："><a href="#第4-5节：" class="headerlink" title="第4-5节："></a>第4-5节：</h3><p>粒子作螺旋线向前运动，轨迹是螺旋线：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706211444.png" alt="image-20210706211444626"></p>
 <p>霍耳效应：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212014.png" alt="image-20210706212014096" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212014.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212032.png" alt="image-20210706212032877" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212032.png" class="lozad post-image"></p>
-<h3 id="第6节：-3"><a href="#第6节：-3" class="headerlink" title="第6节："></a>第6节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706213721.png" alt="image-20210706213721934" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706213721.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212014.png" alt="image-20210706212014096"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706212032.png" alt="image-20210706212032877"></p>
+<h3 id="第6节：-3"><a href="#第6节：-3" class="headerlink" title="第6节："></a>第6节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706213721.png" alt="image-20210706213721934"></p>
 <p>注意对无线长载流直导线的B的求法。其中μ0 = 4π</p>
-<h3 id="第7节：-1"><a href="#第7节：-1" class="headerlink" title="第7节："></a>第7节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220255.png" alt="image-20210706220255057" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220255.png" class="lozad post-image"></p>
-<h3 id="第8节："><a href="#第8节：" class="headerlink" title="第8节："></a>第8节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220701.png" alt="image-20210706220701338" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220701.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221118.png" alt="image-20210706221118037" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221118.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221216.png" alt="image-20210706221216023" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221216.png" class="lozad post-image"></p>
+<h3 id="第7节：-1"><a href="#第7节：-1" class="headerlink" title="第7节："></a>第7节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220255.png" alt="image-20210706220255057"></p>
+<h3 id="第8节："><a href="#第8节：" class="headerlink" title="第8节："></a>第8节：</h3><p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706220701.png" alt="image-20210706220701338"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221118.png" alt="image-20210706221118037"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221216.png" alt="image-20210706221216023"></p>
 <h3 id="第9节："><a href="#第9节：" class="headerlink" title="第9节："></a>第9节：</h3><p>一、恒定磁场的高斯定理：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221531.png" alt="image-20210706221531852" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221531.png" class="lozad post-image"></p>
-<p>二、安培环路定理：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221842.png" alt="image-20210706221842879" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221842.png" class="lozad post-image"></p>
-
-  </div>
-  <div>
-    
-      <div 
-        class="post-note note-warning copyright" 
-        style="margin-top: 42px">
-        <p>
-          <span style="font-weight: bold;">作者：</span><a 
-            target="_blank" 
-            rel="nofollow noopener noreferrer" 
-            href="/about">
-            TobinMeng
-          </a>
-        </p>
-        <p>
-          <span style="font-weight: bold;">文章链接：</span><a 
-            target="_blank" 
-            rel="nofollow noopener noreferrer" 
-            href="https://dicemy.com/4612">
-            https://dicemy.com/4612
-          </a>
-        </p>
-        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
-      </div>
-    
-  </div>
-</article>
-<div class="nav">
-  
-    <div class="nav-item-prev">
-      <a 
-        href="/29920" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">Hyperledger-Fabric试验快速搭建 </div>
-          
-        </div>
-      </a>
-    </div>
-  
-  
-    <div class="nav-item-next">
-      <a 
-        href="/48416" 
-        class="nav-link">
-        <div>
-          <div class="nav-label">下一篇</div>
-          
-            <div class="nav-title">Web复习笔记 </div>
-          
-        </div>
-        <i class="iconfont icon-right nav-next-icon"></i>
-      </a>
-    </div>
-  
-</div>
-
-  <div 
-    class="card card-content comment-card" 
-    style="margin-top: 16px;">
-    <div class="comment-card-title">评论</div>
-    
-  <div id="vcomments"></div>
-  
-  <script>
-    loadScript("//unpkg.com/valine/dist/Valine.min.js");
-    var oldLoadVa = window.onload;
-    window.onload = function () {
-      oldLoadVa && oldLoadVa();
-      new Valine({
-        el: '#vcomments',
-        appId: 'FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va',
-        appKey: 'CLLAhwQhbW5KCgp3CCPkAItO',
-        placeholder: '输入你的评论\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！',
-        path: window.location.pathname,
-        avatar: 'mp',
-        meta: ["nick","mail"],
-        pageSize: '10',
-        lang: '',
-        visitor: 'true',
-        highlight: true,
-        recordIP: false,
-        
-        
-        
-        enableQQ: 'true',
-        requiredFields: [],
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221531.png" alt="image-20210706221531852"></p>
+<p>二、安培环路定理：<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210706221842.png" alt="image-20210706221842879"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>大学物理复习笔记</p><p><a href="https://dicemy.com/4612">https://dicemy.com/4612</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>TobinMEng</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-06-28</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-07-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="bdsharebuttonbox"><a class="bds_more" href="#" data-cmd="more"></a><a class="bds_qzone" href="#" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" href="#" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_tqq" href="#" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_renren" href="#" data-cmd="renren" title="分享到人人网"></a><a class="bds_weixin" href="#" data-cmd="weixin" title="分享到微信"></a></div><script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/29920"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Hyperledger-Fabric试验快速搭建</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/48416"><span class="level-item">Web复习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
+            appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
+            placeholder: "输入你的评论\\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！",
+            avatar: "mp",
+            avatarForce: false,
+            meta: ["nick","mail"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: true,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只想要躺平的菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Dicemy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hyperledger/"><span class="tag">Hyperledger</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JAVA/"><span class="tag">JAVA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/fabric/"><span class="tag">fabric</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"><span class="tag">乘法逆元</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"><span class="tag">博弈论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/"><span class="tag">双端队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tag">学习笔记</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/"><span class="tag">思考题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/"><span class="tag">文档阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"><span class="tag">方法总结</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">最小生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"><span class="tag">赛后总结</span><span class="tag">9</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/"><span class="level-start"><span class="level-item">文化课</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%9E%E8%B5%9B/"><span class="level-start"><span class="level-item">竞赛</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-08T10:08:35.000Z">2022-01-08</time></p><p class="title"><a href="/23955">fabric开发入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:21.000Z">2022-01-07</time></p><p class="title"><a href="/63228">树莓派入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:07.000Z">2022-01-07</time></p><p class="title"><a href="/21062">Python入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:38:50.000Z">2022-01-07</time></p><p class="title"><a href="/10811">git入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-04T08:01:41.000Z">2022-01-04</time></p><p class="title"><a href="/12732">离散数学复习</a></p><p class="categories"><a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></p></div></article></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6426911790858772" data-ad-slot="1877755546" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 TobinMEng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
       });
-    };
-  </script>
-
-  </div>
-
-<div 
-  class="card card-content toc-card" 
-  id="mobiletoc">
-  <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC2%E8%8A%82%EF%BC%9A"><span class="toc-text">第2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3-4%E8%8A%82%EF%BC%9A"><span class="toc-text">第3-4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第6节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0%EF%BC%9A"><span class="toc-text">第18章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82"><span class="toc-text">第5节:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-2"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8-11%E8%8A%82%EF%BC%9A"><span class="toc-text">第8-11节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0%EF%BC%9A"><span class="toc-text">第19章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-2%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E8%8A%82%EF%BC%9A"><span class="toc-text">第3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4-5%E8%8A%82%EF%BC%9A"><span class="toc-text">第4-5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-3"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第7节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8%E8%8A%82%EF%BC%9A"><span class="toc-text">第8节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC9%E8%8A%82%EF%BC%9A"><span class="toc-text">第9节：</span></a></li></ol></li></ol>
-</div></main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="/img/touxiang.jpg" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
-
-<p class="author-name">Dicemy</p>
-<p class="author-description">软件工程在读大学生</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>37</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>4</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>18</span>
-    <span>标签</span>
-  </a>
-</div>
-
-  <div class="author-card-society">
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
-          <i class="iconfont icon-bilibili society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a href="tencent://message/?uin=1583925267">
-          <i class="iconfont icon-wechat society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
-          <i class="iconfont icon-github society-icon"></i>
-        </a>
-      </div>
-    
-  </div>
-
-              </div>
-               <div class="sticky-tablet">
-  
-  
-    <article class="display-when-two-columns spacer">
-      <div class="card card-content toc-card">
-        <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC2%E8%8A%82%EF%BC%9A"><span class="toc-text">第2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3-4%E8%8A%82%EF%BC%9A"><span class="toc-text">第3-4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第6节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0%EF%BC%9A"><span class="toc-text">第18章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82"><span class="toc-text">第5节:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-2"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8-11%E8%8A%82%EF%BC%9A"><span class="toc-text">第8-11节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0%EF%BC%9A"><span class="toc-text">第19章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-2%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E8%8A%82%EF%BC%9A"><span class="toc-text">第3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4-5%E8%8A%82%EF%BC%9A"><span class="toc-text">第4-5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-3"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第7节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8%E8%8A%82%EF%BC%9A"><span class="toc-text">第8节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC9%E8%8A%82%EF%BC%9A"><span class="toc-text">第9节：</span></a></li></ol></li></ol>
-      </div>
-    </article>
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categories/%E7%AB%9E%E8%B5%9B/">
-        <div class="categories-list-item">
-          竞赛
-          <span class="categories-list-item-badge">17</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF/">
-        <div class="categories-list-item">
-          技术
-          <span class="categories-list-item-badge">12</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">
-        <div class="categories-list-item">
-          文化课
-          <span class="categories-list-item-badge">5</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E7%94%9F%E6%B4%BB/">
-        <div class="categories-list-item">
-          生活
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" 
-        title="赛后总结">
-        <div class="tags-list-item">赛后总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
-        title="学习笔记">
-        <div class="tags-list-item">学习笔记</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%90%9C%E7%B4%A2/" 
-        title="搜索">
-        <div class="tags-list-item">搜索</div>
-      </a>
-    
-      <a 
-        href="/tags/fabric/" 
-        title="fabric">
-        <div class="tags-list-item">fabric</div>
-      </a>
-    
-      <a 
-        href="/tags/Hyperledger/" 
-        title="Hyperledger">
-        <div class="tags-list-item">Hyperledger</div>
-      </a>
-    
-      <a 
-        href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" 
-        title="组合数学">
-        <div class="tags-list-item">组合数学</div>
-      </a>
-    
-      <a 
-        href="/tags/DP/" 
-        title="DP">
-        <div class="tags-list-item">DP</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
-        title="数据库">
-        <div class="tags-list-item">数据库</div>
-      </a>
-    
-      <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" 
-        title="方法总结">
-        <div class="tags-list-item">方法总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" 
-        title="博弈论">
-        <div class="tags-list-item">博弈论</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/" 
-        title="文档阅读">
-        <div class="tags-list-item">文档阅读</div>
-      </a>
-    
-      <a 
-        href="/tags/JAVA/" 
-        title="JAVA">
-        <div class="tags-list-item">JAVA</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" 
-        title="最小生成树">
-        <div class="tags-list-item">最小生成树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/" 
-        title="思考题">
-        <div class="tags-list-item">思考题</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
-        title="乘法逆元">
-        <div class="tags-list-item">乘法逆元</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-    <article class="card card-content toc-card">
-      <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0"><span class="toc-text">第16章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A"><span class="toc-text">第7节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0"><span class="toc-text">第17章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A"><span class="toc-text">第1节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC2%E8%8A%82%EF%BC%9A"><span class="toc-text">第2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3-4%E8%8A%82%EF%BC%9A"><span class="toc-text">第3-4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第6节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0%EF%BC%9A"><span class="toc-text">第18章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-3%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第1-3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第4节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E8%8A%82"><span class="toc-text">第5节:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-2"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8-11%E8%8A%82%EF%BC%9A"><span class="toc-text">第8-11节：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0%EF%BC%9A"><span class="toc-text">第19章：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1-2%E8%8A%82%EF%BC%9A"><span class="toc-text">第1-2节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E8%8A%82%EF%BC%9A"><span class="toc-text">第3节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4-5%E8%8A%82%EF%BC%9A"><span class="toc-text">第4-5节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E8%8A%82%EF%BC%9A-3"><span class="toc-text">第6节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E8%8A%82%EF%BC%9A-1"><span class="toc-text">第7节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8%E8%8A%82%EF%BC%9A"><span class="toc-text">第8节：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC9%E8%8A%82%EF%BC%9A"><span class="toc-text">第9节：</span></a></li></ol></li></ol>
-    </article>
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-08</div>
-        <a href="/23955"><div class="recent-posts-item-content">fabric开发入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/63228"><div class="recent-posts-item-content">树莓派入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/21062"><div class="recent-posts-item-content">Python入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/10811"><div class="recent-posts-item-content">git入门</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-            2020 -
-          
-          2022
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          Dicemy 的博客
-        </a>
-      </div>
-    </div>
-
-    
-    
-    
-    
-      <div class="footer-dsc">
-        
-          本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          本站总访客数<span id="busuanzi_value_site_uv"></span>次
-        
-      </div>
-      
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
-
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-      
- 
-     
-     
-      <script>
-  var addImgLayout = function () {
-    var img = document.querySelectorAll('.post-content img')
-    var i
-    for (i = 0; i < img.length; i++) {
-      var wrapper = document.createElement('a')
-      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
-      wrapper.setAttribute('aria-label', 'illustration')
-      wrapper.style.cssText =
-        'width: 100%; display: flex; justify-content: center;'
-      if (img[i].alt) wrapper.dataset.caption = img[i].alt
-      wrapper.dataset.nolink = true
-      img[i].before(wrapper)
-      wrapper.append(img[i])
-      var divWrap = document.createElement('div')
-      divWrap.classList.add('gallery')
-      wrapper.before(divWrap)
-      divWrap.append(wrapper)
-    }
-    baguetteBox.run('.gallery')
-  }
-</script>
-<script>
-  loadScript(
-    "/js/lib/lightbox/baguetteBox.min.js",
-    addImgLayout
-  )
-</script>
- 
-     
-     
-    <script src="/js/main.js"></script> 
-    
-      <script> 
-        loadScript('/js/lib/busuanzi.min.js') 
-      </script>
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
-        }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
-     
-    
-      <script>
-        var googleAnalytics = function () {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag('js', new Date())
-          gtag('config', 'G-3BC8TV17YR')
-        }
-    </script>
-      <script>
-        loadScript(
-          'https://www.googletagmanager.com/gtag/js?id=' +
-            'G-3BC8TV17YR',
-          googleAnalytics
-        )
-      </script>
-    
-    
-      <script>
-        setTimeout(() => {localSearch("search.json")}, 0)
-      </script>
-    
-  </body>
-</html>
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

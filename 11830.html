@@ -1,356 +1,10 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta 
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <meta 
-    http-equiv="X-UA-Compatible" 
-    content="ie=edge">
-  <meta 
-    name="theme-color" 
-    content="#fff" 
-    id="theme-color">
-  <meta 
-    name="description" 
-    content="月光照着月光,月光普照">
-  <link 
-    rel="icon" 
-    href="/img/biaoti.png">
-  <title>Linux系统操作入门</title>
-  
-    
-      <meta 
-        property="og:title" 
-        content="Linux系统操作入门">
-    
-    
-      <meta 
-        property="og:url" 
-        content="https://dicemy.com/11830.html">
-    
-    
-      <meta 
-        property="og:img" 
-        content="/img/touxiang.jpg">
-    
-    
-      <meta 
-        property="og:img" 
-        content="月光照着月光,月光普照">
-    
-    
-      <meta 
-        property="og:type" 
-        content="article">
-      <meta 
-        property="og:article:published_time" 
-        content="2021-03-05">
-      <meta 
-        property="og:article:modified_time" 
-        content="2021-10-18">
-      <meta 
-        property="og:article:author" 
-        content="Dicemy">
-      
-        
-          <meta 
-            property="og:article:tag" 
-            content="学习笔记">
-        
-          <meta 
-            property="og:article:tag" 
-            content="Linux">
-        
-      
-    
-  
-  <script>
-    function loadScript(url, cb) {
-      var script = document.createElement('script');
-      script.src = url;
-      if (cb) script.onload = cb;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-    function loadCSS(href, data, attr) {
-      var sheet = document.createElement('link');
-      sheet.ref = 'stylesheet';
-      sheet.href = href;
-      sheet.dataset[data] = attr;
-      document.head.appendChild(sheet);
-    }
-    function changeCSS(cssFile, data, attr) {
-      var oldlink = document.querySelector(data);
-      var newlink = document.createElement("link");
-      newlink.setAttribute("rel", "stylesheet");
-      newlink.setAttribute("href", cssFile);
-      newlink.dataset.prism = attr;
-      document.head.replaceChild(newlink, oldlink);
-    }
-  </script>
-  
-    
-  
-  <script>
-    // control reverse button
-    var reverseDarkList = {
-      dark: 'light',
-      light: 'dark'
-    };
-    var themeColor = {
-      dark: '#1c1c1e',
-      light: '#fff'
-    }
-    // get the data of css prefers-color-scheme
-    var getCssMediaQuery = function() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-    // reverse current darkmode setting function
-    var reverseDarkModeSetting = function() {
-      var setting = localStorage.getItem('user-color-scheme');
-      if(reverseDarkList[setting]) {
-        setting = reverseDarkList[setting];
-      } else if(setting === null) {
-        setting = reverseDarkList[getCssMediaQuery()];
-      } else {
-        return;
-      }
-      localStorage.setItem('user-color-scheme', setting);
-      return setting;
-    };
-    // apply current darkmode setting
-  </script>
-  
-    <script>
-      var setDarkmode = function(mode) {
-      var setting = mode || localStorage.getItem('user-color-scheme');
-      if(setting === getCssMediaQuery()) {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else if(reverseDarkList[setting]) {
-        document.documentElement.setAttribute('data-user-color-scheme', setting);
-        document.getElementById('theme-color').content = themeColor[setting];
-        document.getElementById('theme-color').dataset.mode = setting;
-      } else {
-        document.documentElement.removeAttribute('data-user-color-scheme');
-        localStorage.removeItem('user-color-scheme');
-        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
-        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-      }
-    };
-    setDarkmode();
-    </script>
-  
-  
-  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
-  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
-    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
-  
-  
-    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
-  
-  
-  
-  
-    
-    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js" as="script">
-  
-  
-    
-    <link rel="prefetch" href="//unpkg.com/valine/dist/Valine.min.js" as="script">
-  
-  
-  
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
-  
-    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
-  
-<!-- hexo injector head_end start -->
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Linux系统操作入门 - TobinMEng 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="其他图形模式与文字模式的切换方式Linux预设提供了六个命令窗口终端机让我们来登录。 默认我们登录的就是第一个窗口，也就是tty1，这个六个窗口分别为tty1,tty2 … tty6，你可以按下Ctrl + Alt + F1 ~ F6 来切换它们。 如果你安装了图形界面，默认情况下是进入图形界面的，此时你就可以按Ctrl + Alt + F1 ~ F6来进入其中一个命令窗口界面。 当你进入命令窗口"><meta property="og:type" content="blog"><meta property="og:title" content="Linux系统操作入门"><meta property="og:url" content="https://dicemy.com/11830"><meta property="og:site_name" content="TobinMEng 的博客"><meta property="og:description" content="其他图形模式与文字模式的切换方式Linux预设提供了六个命令窗口终端机让我们来登录。 默认我们登录的就是第一个窗口，也就是tty1，这个六个窗口分别为tty1,tty2 … tty6，你可以按下Ctrl + Alt + F1 ~ F6 来切换它们。 如果你安装了图形界面，默认情况下是进入图形界面的，此时你就可以按Ctrl + Alt + F1 ~ F6来进入其中一个命令窗口界面。 当你进入命令窗口"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016115124.jpeg"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png"><meta property="article:published_time" content="2021-03-05T03:07:04.000Z"><meta property="article:modified_time" content="2021-10-17T16:41:22.825Z"><meta property="article:author" content="TobinMEng"><meta property="article:tag" content="学习笔记"><meta property="article:tag" content="Linux"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/11830"},"headline":"Linux系统操作入门","image":["https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png","https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png"],"datePublished":"2021-03-05T03:07:04.000Z","dateModified":"2021-10-17T16:41:22.825Z","author":{"@type":"Person","name":"TobinMEng"},"publisher":{"@type":"Organization","name":"TobinMEng 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"其他图形模式与文字模式的切换方式Linux预设提供了六个命令窗口终端机让我们来登录。 默认我们登录的就是第一个窗口，也就是tty1，这个六个窗口分别为tty1,tty2 … tty6，你可以按下Ctrl + Alt + F1 ~ F6 来切换它们。 如果你安装了图形界面，默认情况下是进入图形界面的，此时你就可以按Ctrl + Alt + F1 ~ F6来进入其中一个命令窗口界面。 当你进入命令窗口"}</script><link rel="canonical" href="https://dicemy.com/11830"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="ca-pub-6426911790858772" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-  <body>
-    <div class="wrapper">
-       
-      <nav class="navbar">
-  <div class="navbar-logo">
-    <span class="navbar-logo-main">
-      
-        <img 
-          class="navbar-logo-img"
-          width="32"
-          height="32"
-          src="/img/biaoti.png" 
-          alt="blog logo">
-      
-      <span class="navbar-logo-dsc">Dicemy 的博客</span>
-    </span>
-  </div>
-  <div class="navbar-menu">
-    
-      <a 
-        href="/" 
-        class="navbar-menu-item">
-        
-          首页
-        
-      </a>
-    
-      <a 
-        href="/archives" 
-        class="navbar-menu-item">
-        
-          归档
-        
-      </a>
-    
-      <a 
-        href="/tags" 
-        class="navbar-menu-item">
-        
-          标签
-        
-      </a>
-    
-      <a 
-        href="/categories" 
-        class="navbar-menu-item">
-        
-          分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
-        href="/links" 
-        class="navbar-menu-item">
-        
-          友链
-        
-      </a>
-    
-      <a 
-        href="/guestbook" 
-        class="navbar-menu-item">
-        
-          留言板
-        
-      </a>
-    
-    <a 
-      class="navbar-menu-item darknavbar" 
-      id="dark">
-      <i class="iconfont icon-weather"></i>
-    </a>
-    <a 
-      class="navbar-menu-item searchnavbar" 
-      id="search">
-      <i 
-        class="iconfont icon-search" 
-        style="font-size: 1.2rem; font-weight: 400;">
-      </i>
-    </a>
-  </div>
-</nav> 
-      
-      <div 
-        id="local-search" 
-        style="display: none">
-        <input
-          class="navbar-menu-item"
-          id="search-input"
-          placeholder="请输入搜索内容..." />
-        <div id="search-content"></div>
-      </div>
-      
-      <div class="section-wrap">
-        <div class="container">
-          <div class="columns">
-            <main class="main-column">
-<article class="card card-content">
-  <header>
-    <h1 class="post-title">
-      Linux系统操作入门
-    </h1>
-  </header>
-  <div class="post-meta post-show-meta">
-    <time datetime="2021-03-05T03:07:04.000Z">
-      <i 
-        class="iconfont icon-calendar" 
-        style="margin-right: 2px;">
-      </i>
-      <span>2021-03-05</span>
-    </time>
-    
-      <span class="dot"></span>
-      
-        <a 
-          href="/categories/%E6%8A%80%E6%9C%AF/" 
-          class="post-meta-link">
-          技术
-        </a>
-      
-    
-    
-      <span class="dot"></span>
-      <span>4.9k 字</span>
-    
-  </div>
-  
-    <div 
-      class="post-meta post-show-meta" 
-      style="margin-top: -10px;">
-      <div style="display: flex; align-items: center;">
-        <i 
-          class="iconfont icon-biaoqian" 
-          style="margin-right: 2px; font-size: 1.15rem;">
-        </i>
-        
-          
-          <a 
-            href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
-            class="post-meta-link">
-            学习笔记
-          </a>
-        
-          
-            <span class="dot"></span>
-          
-          <a 
-            href="/tags/Linux/" 
-            class="post-meta-link">
-            Linux
-          </a>
-        
-      </div>
-    </div>
-  
-  </header>
-  <div 
-    id="section" 
-    class="post-content">
-    <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="图形模式与文字模式的切换方式"><a href="#图形模式与文字模式的切换方式" class="headerlink" title="图形模式与文字模式的切换方式"></a>图形模式与文字模式的切换方式</h3><p>Linux预设提供了六个命令窗口终端机让我们来登录。</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">文章归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">个人简介</a><a class="navbar-item" href="/message">留言</a><a class="navbar-item" href="/music">音乐</a><a class="navbar-item" href="/media">媒体</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-05T03:07:04.000Z" title="2021/3/5 上午11:07:04">2021-03-05</time>发表</span><span class="level-item"><time dateTime="2021-10-17T16:41:22.825Z" title="2021/10/18 上午12:41:22">2021-10-18</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">38 分钟读完 (大约5660个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Linux系统操作入门</h1><div class="content"><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="图形模式与文字模式的切换方式"><a href="#图形模式与文字模式的切换方式" class="headerlink" title="图形模式与文字模式的切换方式"></a>图形模式与文字模式的切换方式</h3><p>Linux预设提供了六个命令窗口终端机让我们来登录。</p>
 <p>默认我们登录的就是第一个窗口，也就是tty1，这个六个窗口分别为tty1,tty2 … tty6，你可以按下Ctrl + Alt + F1 ~ F6 来切换它们。</p>
 <p>如果你安装了图形界面，默认情况下是进入图形界面的，此时你就可以按Ctrl + Alt + F1 ~ F6来进入其中一个命令窗口界面。</p>
 <p>当你进入命令窗口界面后再返回图形界面只要按下Ctrl + Alt + F7 就回来了。</p>
@@ -540,11 +194,11 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
 <p>用户分为自己，自己所在群组，其他人三种。</p>
 <p><code>su -</code> 切换为root账户，密码为安装系统时创建的账户的密码</p>
 <p><code>ls -al</code> 显示当前文件夹下的所有文件</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif" alt="文件的类型和权限" style="zoom: 150%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015212423.gif" alt="文件的类型和权限" style="zoom: 150%;" />
 
 <p>第一个字符可能为d，-，l，b，c。分别表示文件夹，文件，连接档（类似windows里面的快捷方式），周边设备（随机存储设备），键盘鼠标（一次性存储设备）</p>
 <p>后面三个字母一组表示每类用户的权限，r表示可读，w表示可写，x表示可执行。三组分别为：拥有者，群组内成员，非本人且没有加入本群组之外的账户。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png" alt="image-20211015213137627" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015213139.png" alt="image-20211015213137627"></p>
 <p>一串字母之后的一个数字是连接数，后面的两个分别是拥有者和拥有者所加入的群组。最后名字前面的是最后修改的时间，在前面一个数字是该文件的大小bytes。</p>
 <p>如果一个目录d的权限没有x的话就不能进入该目录。</p>
 <p>root无视所有的规则。</p>
@@ -555,23 +209,23 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
 <p><code>chmod</code> 更改文件的权限，r的权限对应的值是4，w是2，x是1，对于每个类型的用户的权限就是这些权值相加。<code>e.g.  chmod 777 test.txt</code></p>
 <p>​    很巧妙的是，这个值唯一对应一种权限的组合。</p>
 <p><code>chmod</code> 的另一种方法<code>e.g.  chmod u=rwx,go=rx test.txt</code> u表示拥有者，g表示群组，o表示其他人，a表示所有类型。</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png" alt="image-20211015215928404" style="zoom:80%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211015215930.png" alt="image-20211015215928404" style="zoom:80%;" />
 
 <p>文件是否能执行和后缀名无关，和是否有x的权限有关。文件的w权限是指可以修改文件的内容，但是<strong>不包括删除该文件</strong>。</p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png" alt="image-20211016110356855" style="zoom:80%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png" class="lozad post-image">
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016110358.png" alt="image-20211016110356855" style="zoom:80%;" />
 
 <p>在有w权限的文件夹下是可以删除没有w权限的文件。</p>
 <p>常见的后缀名有：<code>*.sh</code>表示为脚本或者批处理文件，<code>*Z *.tar *.tar.gz *.zip *.tgz</code>表示压缩包文件 <code>*.html *.php</code>表示网络相关的文件。文件是否可以执行和后缀名没有关系，只和这个文件的x权限有关。</p>
 <p>Linux的文件系统依据：FHS</p>
 <p>网页中有一些关于Linux根目录下目录的主要含义的解释。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016115124.jpeg" alt="目錄樹架構示意圖" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016115124.jpeg" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016115124.jpeg" alt="目錄樹架構示意圖"></p>
 <p>目录树的简单示意图。</p>
 <p>绝对路径和相对路径：以根目录/开头的路径都是绝对路径，反之则为相对路径，相对路径是指当前所在路径的相对位置来定义的。</p>
 <p><code>. ./</code>都表示当前目录 <code>.. ../</code>都表示上一级目录</p>
 <p>使用 <code>uname -r</code> 查看核心版本</p>
 <p>使用 <code>uname -a</code>  查看操作系统的版本</p>
 <h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3><p><a target="_blank" rel="noopener" href="http://linux.vbird.org/linux_basic/0220filemanager.php#umask">文章链接</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" alt="image-20211016204944202" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016204945.png" alt="image-20211016204944202"></p>
 <p>Linux中根目录中也有./和../目录，并且 ./ 目录和 ../目录是同一个目录。</p>
 <p><code>cd</code> 表示切换目录。几个比较特殊的目录在上面的图片上都可以看出。</p>
 <p><code>pwd</code>表示显示当前的目录。<code>pwd -P</code>表示显示文档的实际地址，对于一些快捷方式的地址会发生区别。</p>
@@ -583,664 +237,172 @@ cp: overwrite `/tmp/bashrc&#39;? n  &lt;==n不覆盖，y为覆盖
 <p><code>PATH=&quot;$&#123;PATH&#125;:/root&quot;</code>可以将/root加入到PATH路径中。</p>
 <p>​    为了安全起见不要将 <code>.</code> 加入PATH中。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" alt="image-20211016235319366" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211016235321.png" alt="image-20211016235319366"></p>
 <p>在Bash Shell中<code>ls -l</code> 可以简写为<code>ll</code></p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" alt="image-20211017002404054" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010303.png" alt="image-20211017002404054"></p>
 <p><code>cp</code>表示copy，即对文件进行复制和粘贴。</p>
 <p>​    其中<code>-i</code>选项表示如果出现覆盖先进行询问。<code>-a</code>表示复制的文件的群组和时间都和原文件一样。<code>-l</code>表示创建一个实体链接。<code>-s</code>表示创建一个符号链接，即产生了源文件的一个捷径。<code>-d</code>表示如果复制的文件为一个捷径文件的话复制该捷径，因为cp直接复制一个捷径的话会复制源文件。cp指令可以将多个资料一次复制到一个目录中去，但是最前面一定是目录。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" alt="image-20211017004951502" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017004952.png" alt="image-20211017004951502"></p>
 <p><code>rm</code>表示remove，即移除目录或者文档。</p>
 <p>​    其中大部分的发行版Linux都默认rm带上了<code>-i</code>参数，<code>-r</code>很危险，同时不要将文件起名为<code>-aaa-</code>这种类型，因为如果这时想要删除这个文件的时候，就会报错，因为会优先检测出-a这个选项，所以文件起名一般不要用-开头。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" alt="image-20211017005614342" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017010309.png" alt="image-20211017005614342"></p>
 <p><code>mv</code>表示move，即移动文件或者目录。</p>
 <p>​    可以使用mv来对一个文件进行更名的操作。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" alt="image-20211017103829397" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017103831.png" alt="image-20211017103829397"></p>
 <p><code>cat</code>用来显示文档内的内容。<code>-n</code>选项用来带行号输出，<code>-A</code>用来显示所有的特殊字符和正常字符。</p>
 <p><code>tac</code>是<code>cat</code>命令的反着输出的版本，从最后一行到第一行输出。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" alt="image-20211017105321632" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105325.png" alt="image-20211017105321632"></p>
 <p><code>nl</code>命令用来带行号输出文件的内容。<code>-b a</code>选项用来将空白行也带上行号。<code>-b a -n rz</code>用来将空白行带上行号之后再前面补零。<code>-b a -n rz -w 3</code>用来将空白行带上行号之后再前面补零,并且规定零加上数字一共宽度为三。</p>
 <hr>
 <p><code>more</code>命令用来可以翻页的查看一个文档。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" alt="image-20211017105909332" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017105910.png" alt="image-20211017105909332"></p>
 <p>进入more一个文档之后的一些操作如上图。对文档内的字符串进行/查找之后按n查看下一个查找到的字符串。</p>
 <hr>
 <p><code>less</code>命令也是可以翻页查看一个文档，功能比<code>more</code>更加的强大。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" alt="image-20211017110548332" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110549.png" alt="image-20211017110548332"></p>
 <hr>
 <p><code>head</code>命令用来取出前面的几行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" alt="image-20211017110912050" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017110913.png" alt="image-20211017110912050"></p>
 <p>在不加上<code>-n</code>选项的时候默认输出一个文件的前10行，加上<code>-n</code>选项可以自定义输出文件的前几行，值得注意的是，如果<code>-n</code>后面跟的是一个负数，表示的是这些行不输出，比如<code>-n -100</code>表示前100行不输出，从100行之后的所有行全部输出。</p>
 <hr>
 <p><code>tail</code>命令用来取出文件的后面几行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" alt="image-20211017111631255" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017111633.png" alt="image-20211017111631255"></p>
 <p><code>-n</code>的使用和head大致相同，一个比较好玩的是 <code>-n +100</code>表示100行之后的所有行都输出。<code>-f</code>选项用来持续检测这个文件，如果一个文件一直在进行写入操作，那么会持续的输出这个文件新加入的行，直到按下<code>Ctrl + C</code>后结束检测。</p>
 <p><code>head</code>和<code>tail</code>的组合使用可以输出11 ~ 20 行：<code>head -n 20 /etc/man_db.conf | tail -n 10</code> |表示将前面执行的结果交给后面接着执行。</p>
 <p>在上面的基础上再加上<code>cat</code>可以输出正确的11~20行的行号：<code>cat -n /etc/man_db.conf | head -n 20 | tail -n 10</code></p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" alt="image-20211017112447936" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017112449.png" alt="image-20211017112447936"></p>
 <p><code>od</code>命令是针对那些非文字文档的一个命令。</p>
 <p>对于一些 data file 或者 binary file 可以使用od命令使这些文件以ASCII码的形式输出出来。</p>
 <p>我们可以利用这个命令来对已有的字符串输出对应的八进制ASCII码：<code>echo password | od -t oCc</code></p>
 <hr>
 <p>使用<code>ls</code>的<code>--time</code>选项来查看每个文件的不同类型的时间。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" alt="image-20211017113820032" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017113821.png" alt="image-20211017113820032"></p>
 <hr>
 <p>使用<code>touch</code>命令可以：1.建立一个空白的文档。2.将一个文档的时间修改为某一个特定的时间。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" alt="image-20211017230559922" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017230601.png" alt="image-20211017230559922"></p>
 <hr>
 <p><code>umask</code>命令可以查看当前用户创建的文档或者目录的预设权限。</p>
 <p>输入<code>umask</code>输出的一串数字从第二个到第四个分别表示user，group，other三种用户被拿掉的权限的权值的和。比如4表示读，2表示写，5表示读和执行。</p>
 <p>命令<code>umask 002</code>表示将该用户创建文件的预设权限设置为仅为other的用户不能写。</p>
 <p>一般root用户将umask设置为022，因为是出于安全的考虑。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" alt="image-20211017231924941" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017231927.png" alt="image-20211017231924941"></p>
 <p><code>chattr</code>命令表示设置文件或者目录的隐藏属性</p>
 <p><code>chattr +i attrtest</code>表示给attrtest文件加上锁定的隐藏属性，用<code>chattr -i attrtest</code>来取消该隐藏属性。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" alt="image-20211017232430627" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017232436.png" alt="image-20211017232430627"></p>
 <p><code>lsattr</code>命令用来查看一个文件或者目录的隐藏属性。</p>
 <hr>
 <p><code>SUID</code>（Set UID）是一个特殊的权限，可以让非root用户暂时使用root命令。</p>
 <p>SUID是在原本user的x权限的位置上标为s，此时权限表示为SUID。</p>
 <p>下图为SUID的限制于功能：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" alt="image-20211017234508661" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" class="lozad post-image"></p>
-<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" alt="SUID程式執行的過程示意圖" style="zoom:150%;" / srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" class="lozad post-image">
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234510.png" alt="image-20211017234508661"></p>
+<img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234118.gif" alt="SUID程式執行的過程示意圖" style="zoom:150%;" />
 
 <p>而且需要注意的是SUID只可以用在binary program上，并不能用于shell script。</p>
 <hr>
 <p><code>SGID</code>（Set GID）是指在群组的x权限的位置上标为s的一个权限。</p>
 <p>SGID对于可执行文件的限制于功能为下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" alt="image-20211017234547632" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234550.png" alt="image-20211017234547632"></p>
 <p>SGID对于目录的限制于功能为下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" alt="image-20211017234859979" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017234901.png" alt="image-20211017234859979"></p>
 <hr>
 <p><code>SBIT</code> 只能对目录有作用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" alt="image-20211017235236377" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235237.png" alt="image-20211017235236377"></p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" alt="image-20211017235339098" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211017235342.png" alt="image-20211017235339098"></p>
 <p>4，2, 1分别表示这三个隐藏权限的权值。在chmod的第一个值中表示该文件的隐藏权限属性值。使用：<code>chmod 4755 test</code>可以设置test的隐藏权限。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" alt="image-20211018000050678" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000052.png" alt="image-20211018000050678"></p>
 <p>上图是使用文字的方式添加文件的隐藏属性。</p>
 <hr>
 <p><code>fail</code>命令来查看改文件的基本资料，是ASCII文件还是date文件或者可执行文件的一些细节。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" alt="image-20211018000446377" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018000449.png" alt="image-20211018000446377"></p>
 <hr>
 <p><code>which</code>命令用来寻找命令的完整路径。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png" alt="image-20211018000810656" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018004118.png" alt="image-20211018000810656"></p>
 <p>which会根据PATH的路径来依次寻找命令所在的地址。</p>
 <hr>
 <p><code>whereis</code>命令是用于在一些特定目录中寻找档案名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" alt="image-20211018001136304" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001139.png" alt="image-20211018001136304"></p>
 <hr>
 <p><code>locate</code>命令用来通过关键字在自建的数据库中搜索带有该关键字的文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" alt="image-20211018001928696" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018001931.png" alt="image-20211018001928696"></p>
 <p>locate使用的是由<code>已建立的資料庫 /var/lib/mlocate/</code>里面的资料所搜到的，该数据库默认每天更新一次，所以如果没有更新的话就可能搜索不到，这时就可以进行手动更新。</p>
 <p><code>updatedb</code>命令会搜索硬盘中的文档的名称并且更新资料库中的档案。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" alt="image-20211018002257338" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" class="lozad post-image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002300.png" alt="image-20211018002257338"></p>
 <hr>
 <p><code>find</code>命令用来查找文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" alt="image-20211018002626749" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" alt="image-20211018002647603" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" alt="image-20211018002835439" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" alt="image-20211018003328825" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" alt="image-20211018003429378" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" class="lozad post-image"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" alt="image-20211018003714199" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" class="lozad post-image"></p>
-
-  </div>
-  <div>
-    
-      <div 
-        class="post-note note-warning copyright" 
-        style="margin-top: 42px">
-        <p>
-          <span style="font-weight: bold;">作者：</span><a 
-            target="_blank" 
-            rel="nofollow noopener noreferrer" 
-            href="/about">
-            TobinMeng
-          </a>
-        </p>
-        <p>
-          <span style="font-weight: bold;">文章链接：</span><a 
-            target="_blank" 
-            rel="nofollow noopener noreferrer" 
-            href="https://dicemy.com/11830">
-            https://dicemy.com/11830
-          </a>
-        </p>
-        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
-      </div>
-    
-  </div>
-</article>
-<div class="nav">
-  
-    <div class="nav-item-prev">
-      <a 
-        href="/50724" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">2021牛客寒假算法基础集训营3 </div>
-          
-        </div>
-      </a>
-    </div>
-  
-  
-    <div class="nav-item-next">
-      <a 
-        href="/13114" 
-        class="nav-link">
-        <div>
-          <div class="nav-label">下一篇</div>
-          
-            <div class="nav-title">微信小程序开发入门 </div>
-          
-        </div>
-        <i class="iconfont icon-right nav-next-icon"></i>
-      </a>
-    </div>
-  
-</div>
-
-  <div 
-    class="card card-content comment-card" 
-    style="margin-top: 16px;">
-    <div class="comment-card-title">评论</div>
-    
-  <div id="vcomments"></div>
-  
-  <script>
-    loadScript("//unpkg.com/valine/dist/Valine.min.js");
-    var oldLoadVa = window.onload;
-    window.onload = function () {
-      oldLoadVa && oldLoadVa();
-      new Valine({
-        el: '#vcomments',
-        appId: 'FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va',
-        appKey: 'CLLAhwQhbW5KCgp3CCPkAItO',
-        placeholder: '输入你的评论\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！',
-        path: window.location.pathname,
-        avatar: 'mp',
-        meta: ["nick","mail"],
-        pageSize: '10',
-        lang: '',
-        visitor: 'true',
-        highlight: true,
-        recordIP: false,
-        
-        
-        
-        enableQQ: 'true',
-        requiredFields: [],
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002629.png" alt="image-20211018002626749"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002649.png" alt="image-20211018002647603"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018002837.png" alt="image-20211018002835439"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003329.png" alt="image-20211018003328825"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003431.png" alt="image-20211018003429378"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20211018003715.png" alt="image-20211018003714199"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Linux系统操作入门</p><p><a href="https://dicemy.com/11830">https://dicemy.com/11830</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>TobinMEng</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-03-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-10-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="link-muted mr-2" rel="tag" href="/tags/Linux/">Linux</a></div><div class="bdsharebuttonbox"><a class="bds_more" href="#" data-cmd="more"></a><a class="bds_qzone" href="#" data-cmd="qzone" title="分享到QQ空间"></a><a class="bds_tsina" href="#" data-cmd="tsina" title="分享到新浪微博"></a><a class="bds_tqq" href="#" data-cmd="tqq" title="分享到腾讯微博"></a><a class="bds_renren" href="#" data-cmd="renren" title="分享到人人网"></a><a class="bds_weixin" href="#" data-cmd="weixin" title="分享到微信"></a></div><script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/50724"><i class="level-item fas fa-chevron-left"></i><span class="level-item">2021牛客寒假算法基础集训营3</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/13114"><span class="level-item">微信小程序开发入门</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
+            appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
+            placeholder: "输入你的评论\\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！",
+            avatar: "mp",
+            avatarForce: false,
+            meta: ["nick","mail"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: true,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只想要躺平的菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Dicemy" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DP/"><span class="tag">DP</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hyperledger/"><span class="tag">Hyperledger</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JAVA/"><span class="tag">JAVA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/fabric/"><span class="tag">fabric</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"><span class="tag">乘法逆元</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/"><span class="tag">博弈论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/"><span class="tag">双端队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="tag">学习笔记</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/"><span class="tag">思考题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E8%AE%BA/"><span class="tag">数论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/"><span class="tag">文档阅读</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"><span class="tag">方法总结</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"><span class="tag">最小生成树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/"><span class="tag">赛后总结</span><span class="tag">9</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="level-start"><span class="level-item">技术</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/"><span class="level-start"><span class="level-item">文化课</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%9E%E8%B5%9B/"><span class="level-start"><span class="level-item">竞赛</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-08T10:08:35.000Z">2022-01-08</time></p><p class="title"><a href="/23955">fabric开发入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:21.000Z">2022-01-07</time></p><p class="title"><a href="/63228">树莓派入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:39:07.000Z">2022-01-07</time></p><p class="title"><a href="/21062">Python入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-07T09:38:50.000Z">2022-01-07</time></p><p class="title"><a href="/10811">git入门</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-04T08:01:41.000Z">2022-01-04</time></p><p class="title"><a href="/12732">离散数学复习</a></p><p class="categories"><a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></p></div></article></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6426911790858772" data-ad-slot="1877755546" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="TobinMEng 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 TobinMEng</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
       });
-    };
-  </script>
-
-  </div>
-
-<div 
-  class="card card-content toc-card" 
-  id="mobiletoc">
-  <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%96%87%E5%AD%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">图形模式与文字模式的切换方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E5%85%B3%E6%9C%BA"><span class="toc-text">Linux 关机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">处理目录的常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">ls (列出目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-text">cd (切换目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">pwd (显示目前所在的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="toc-text">mkdir (创建新目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">rmdir (删除空的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-text">cp (复制文件或目录)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C"><span class="toc-text">鸟哥的Linux私房菜</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li></ol></li></ol>
-</div></main>
-            <aside class="left-column">
-              
-              <div class="card card-author">
-                
-  <img 
-    src="/img/touxiang.jpg" 
-    class="author-img"
-    width="88"
-    height="88"
-    alt="author avatar">
-
-<p class="author-name">Dicemy</p>
-<p class="author-description">软件工程在读大学生</p>
-<div class="author-message">
-  <a 
-    class="author-posts-count" 
-    href="/archives">
-    <span>37</span>
-    <span>文章</span>
-  </a>
-  <a 
-    class="author-categories-count" 
-    href="/categories">
-    <span>4</span>
-    <span>分类</span>
-  </a>
-  <a 
-    class="author-tags-count" 
-    href="/tags">
-    <span>18</span>
-    <span>标签</span>
-  </a>
-</div>
-
-  <div class="author-card-society">
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://space.bilibili.com/16023197">
-          <i class="iconfont icon-bilibili society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a href="tencent://message/?uin=1583925267">
-          <i class="iconfont icon-wechat society-icon"></i>
-        </a>
-      </div>
-    
-      <div class="author-card-society-icon">
-        <a target="_blank" rel="noopener" href="https://github.com/Dicemy">
-          <i class="iconfont icon-github society-icon"></i>
-        </a>
-      </div>
-    
-  </div>
-
-              </div>
-               <div class="sticky-tablet">
-  
-  
-    <article class="display-when-two-columns spacer">
-      <div class="card card-content toc-card">
-        <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%96%87%E5%AD%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">图形模式与文字模式的切换方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E5%85%B3%E6%9C%BA"><span class="toc-text">Linux 关机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">处理目录的常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">ls (列出目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-text">cd (切换目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">pwd (显示目前所在的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="toc-text">mkdir (创建新目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">rmdir (删除空的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-text">cp (复制文件或目录)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C"><span class="toc-text">鸟哥的Linux私房菜</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li></ol></li></ol>
-      </div>
-    </article>
-  
-  
-  <article class="card card-content categories-widget">
-    <div class="categories-card">
-  <div class="categories-header">
-    <i 
-      class="iconfont icon-fenlei" 
-      style="padding-right: 2px;">
-    </i>分类
-  </div>
-  <div class="categories-list">
-    
-      <a href="/categories/%E7%AB%9E%E8%B5%9B/">
-        <div class="categories-list-item">
-          竞赛
-          <span class="categories-list-item-badge">17</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%8A%80%E6%9C%AF/">
-        <div class="categories-list-item">
-          技术
-          <span class="categories-list-item-badge">12</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">
-        <div class="categories-list-item">
-          文化课
-          <span class="categories-list-item-badge">5</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E7%94%9F%E6%B4%BB/">
-        <div class="categories-list-item">
-          生活
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  <article class="card card-content tags-widget">
-    <div class="tags-card">
-  <div class="tags-header">
-    <i 
-      class="iconfont icon-biaoqian" 
-      style="padding-right: 2px;">
-    </i>热门标签
-  </div>
-  <div class="tags-list">
-    
-      <a 
-        href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/" 
-        title="赛后总结">
-        <div class="tags-list-item">赛后总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" 
-        title="学习笔记">
-        <div class="tags-list-item">学习笔记</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%90%9C%E7%B4%A2/" 
-        title="搜索">
-        <div class="tags-list-item">搜索</div>
-      </a>
-    
-      <a 
-        href="/tags/fabric/" 
-        title="fabric">
-        <div class="tags-list-item">fabric</div>
-      </a>
-    
-      <a 
-        href="/tags/Hyperledger/" 
-        title="Hyperledger">
-        <div class="tags-list-item">Hyperledger</div>
-      </a>
-    
-      <a 
-        href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" 
-        title="组合数学">
-        <div class="tags-list-item">组合数学</div>
-      </a>
-    
-      <a 
-        href="/tags/DP/" 
-        title="DP">
-        <div class="tags-list-item">DP</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" 
-        title="数据库">
-        <div class="tags-list-item">数据库</div>
-      </a>
-    
-      <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" 
-        title="方法总结">
-        <div class="tags-list-item">方法总结</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" 
-        title="博弈论">
-        <div class="tags-list-item">博弈论</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB/" 
-        title="文档阅读">
-        <div class="tags-list-item">文档阅读</div>
-      </a>
-    
-      <a 
-        href="/tags/JAVA/" 
-        title="JAVA">
-        <div class="tags-list-item">JAVA</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" 
-        title="最小生成树">
-        <div class="tags-list-item">最小生成树</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%80%9D%E8%80%83%E9%A2%98/" 
-        title="思考题">
-        <div class="tags-list-item">思考题</div>
-      </a>
-    
-      <a 
-        href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/" 
-        title="乘法逆元">
-        <div class="tags-list-item">乘法逆元</div>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
-  
-</div>
-            </aside>
-            <aside class="right-column">
-              <div class="sticky-widescreen">
-  
-  
-    <article class="card card-content toc-card">
-      <div class="toc-header">
-  <i 
-    class="iconfont icon-menu" 
-    style="padding-right: 2px;">
-  </i>目录
-</div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%96%87%E5%AD%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%88%87%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="toc-text">图形模式与文字模式的切换方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-%E5%85%B3%E6%9C%BA"><span class="toc-text">Linux 关机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">处理目录的常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">ls (列出目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-text">cd (切换目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">pwd (显示目前所在的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="toc-text">mkdir (创建新目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">rmdir (删除空的目录)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-text">cp (复制文件或目录)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%9F%E5%93%A5%E7%9A%84Linux%E7%A7%81%E6%88%BF%E8%8F%9C"><span class="toc-text">鸟哥的Linux私房菜</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li></ol></li></ol>
-    </article>
-  
-  
-  <article class="card card-content">
-    <div class="recent-posts-card">
-  <div class="recent-posts-header">
-    <i 
-      class="iconfont icon-wenzhang_huaban" 
-      style="padding-right: 2px;">
-    </i>最近文章
-  </div>
-  <div class="recent-posts-list">
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-08</div>
-        <a href="/23955"><div class="recent-posts-item-content">fabric开发入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/63228"><div class="recent-posts-item-content">树莓派入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/21062"><div class="recent-posts-item-content">Python入门</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2022-01-07</div>
-        <a href="/10811"><div class="recent-posts-item-content">git入门</div></a>
-      </div>
-    
-  </div>
-</div>
-  </article>
-  
-  
-</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <footer class="footer">
-  <div class="footer-container">
-    <div>
-      <div class="footer-dsc">
-        <span>
-          Copyright ©
-          
-            2020 -
-          
-          2022
-        </span>
-        &nbsp;
-        <a 
-          href="/" 
-          class="footer-link">
-          Dicemy 的博客
-        </a>
-      </div>
-    </div>
-
-    
-    
-    
-    
-      <div class="footer-dsc">
-        
-          本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        
-        
-          <span>&nbsp;|&nbsp;</span>
-        
-        
-          本站总访客数<span id="busuanzi_value_site_uv"></span>次
-        
-      </div>
-      
-    
-</footer> 
-    
-  <a 
-    role="button" 
-    id="scrollbutton" 
-    class="basebutton" 
-    aria-label="回到顶部">
-    <i class="iconfont icon-arrowleft button-icon"></i>
-  </a>
-
-<a 
-  role="button" 
-  id="menubutton"
-  aria-label="menu button"
-  class="basebutton">
-  <i class="iconfont icon-menu button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="popbutton" 
-  class="basebutton" 
-  aria-label="控制中心">
-  <i class="iconfont icon-expand button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="darkbutton" 
-  class="basebutton darkwidget" 
-  aria-label="夜色模式">
-  <i class="iconfont icon-weather button-icon"></i>
-</a>
-<a 
-  role="button" 
-  id="searchbutton" 
-  class="basebutton searchwidget" 
-  aria-label="搜索">
-  <i class="iconfont icon-search button-icon"></i>
-</a> 
-     
-     
-      
- 
-     
-     
-      <script>
-  var addImgLayout = function () {
-    var img = document.querySelectorAll('.post-content img')
-    var i
-    for (i = 0; i < img.length; i++) {
-      var wrapper = document.createElement('a')
-      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
-      wrapper.setAttribute('aria-label', 'illustration')
-      wrapper.style.cssText =
-        'width: 100%; display: flex; justify-content: center;'
-      if (img[i].alt) wrapper.dataset.caption = img[i].alt
-      wrapper.dataset.nolink = true
-      img[i].before(wrapper)
-      wrapper.append(img[i])
-      var divWrap = document.createElement('div')
-      divWrap.classList.add('gallery')
-      wrapper.before(divWrap)
-      divWrap.append(wrapper)
-    }
-    baguetteBox.run('.gallery')
-  }
-</script>
-<script>
-  loadScript(
-    "/js/lib/lightbox/baguetteBox.min.js",
-    addImgLayout
-  )
-</script>
- 
-     
-     
-    <script src="/js/main.js"></script> 
-    
-      <script> 
-        loadScript('/js/lib/busuanzi.min.js') 
-      </script>
-     
-    
-      <script>
-        var addLazyload = function () {
-          var observer = lozad('.lozad', {
-            load: function (el) {
-              el.srcset = el.getAttribute('data-src')
-            },
-            loaded: function (el) {
-              el.classList.add('loaded')
-            },
-          })
-          observer.observe()
-        }
-      </script>
-      <script>
-        loadScript('/js/lib/lozad.min.js', addLazyload)
-      </script>
-     
-    
-      <script>
-        var googleAnalytics = function () {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag('js', new Date())
-          gtag('config', 'G-3BC8TV17YR')
-        }
-    </script>
-      <script>
-        loadScript(
-          'https://www.googletagmanager.com/gtag/js?id=' +
-            'G-3BC8TV17YR',
-          googleAnalytics
-        )
-      </script>
-    
-    
-      <script>
-        setTimeout(() => {localSearch("search.json")}, 0)
-      </script>
-    
-  </body>
-</html>
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
