@@ -7,14 +7,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-05T15:07:03.000Z" title="2021/8/5 下午11:07:03">2021-08-05</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:41.213Z" title="2022/2/12 上午10:52:41">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">21 分钟读完 (大约3080个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">河南大学暑假集训的日常（2）</h1><div class="content"><h2 id="DAY3（并查集）"><a href="#DAY3（并查集）" class="headerlink" title="DAY3（并查集）"></a>DAY3（并查集）</h2><span id="more"></span>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-05T15:07:03.000Z" title="2021/8/5 下午11:07:03">2021-08-05</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:41.213Z" title="2022/2/12 上午10:52:41">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">21 分钟读完 (大约3080个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">河南大学暑假集训的日常（2）</h1><div class="content"><h2 id="DAY3（并查集）"><a href="#DAY3（并查集）" class="headerlink" title="DAY3（并查集）"></a>DAY3（并查集）</h2><span id="more"></span>
 
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1213/origin"><strong>HDU - 1213 How Many Tables</strong></a>（并查集）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210805231634.png" alt="RE是因为数组开小了"></p>
 <p>简单题。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">11000</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> T<span class="token punctuation">,</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
@@ -39,7 +38,7 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-3038/origin"><strong>HDU - 3038 How Many Answers Are Wrong</strong></a>（带边权并查集）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210805231600.png" alt="image-20210805231600087"></p>
 <p>该题是一道时带边权的并查集。</p>
@@ -50,7 +49,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210805123734.png" alt="该笔记是针对左节点并入右节点中，若是右节点并入左节点，则将向量的方向改变一下"></p>
 <p>带边权并查集<a target="_blank" rel="noopener" href="https://blog.csdn.net/yjr3426619/article/details/82315133">参考博客</a></p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -88,11 +87,11 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-2492/origin"><strong>POJ - 2492A Bug’s Life</strong></a>（种类并查集/拓展域并查集）</p>
 <p>开两倍的f数组，x+n表示与x不相同的种类，（这种方法也叫作拆点）每一对虫子只需要保证性别不同即可，即x和y+n是联通的x+n和y也是联通的，但是x和y并不联通。如果在同一种类一侧出现了连接，即为产生了矛盾。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">2010</span><span class="token punctuation">;</span>
@@ -128,11 +127,11 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-1988/origin"><strong>POJ - 1988 Cube Stacking</strong></a>（带边权并查集）</p>
 <p>这道题同样也是带边权的并查集，有点像<em>银河英雄传说</em>这道题。每一个节点需要维护的值有到底部的距离和该栈的元素个数。核心部分还是在合并时权值的处理。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -177,7 +176,7 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-1182/origin"><strong>POJ - 1182食物链</strong></a>（拓展域并查集）</p>
 <p>经典的拓展域并查集。</p>
 <blockquote>
@@ -186,7 +185,7 @@
 </blockquote>
 <p>开三倍的数组，除了本身的域之外拓展的两个域表示域和本身的关系。分别表示天敌和捕食。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">define</span> rep(i, a, n) for (ll i=a;i&lt;=n;++i)</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> per(i, n, a) for (ll i=n;i>=a;--i)</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> IOS std::ios::sync_with_stdio(false)</span>
@@ -228,11 +227,11 @@
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="DAY4（树状数组）"><a href="#DAY4（树状数组）" class="headerlink" title="DAY4（树状数组）"></a>DAY4（树状数组）</h2><p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-3468/origin"><strong>POJ - 3468A Simple Problem with Integers</strong></a>（<strong>线段树</strong>/树状数组）</p>
 <p>一个简单的区间修改和区间求和的板子题。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
@@ -319,11 +318,11 @@ ll  <span class="token function">ask</span><span class="token punctuation">(</sp
     <span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1166/origin"><strong>HDU - 1166敌兵布阵</strong></a>（树状数组）</p>
 <p>单点修改区间求和的树状数组板子题。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
@@ -365,13 +364,13 @@ string od<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-1394/origin"><strong>HDU - 1394Minimum Inversion Number</strong></a>（逆序对/树状数组）</p>
 <p>树状数组求逆序对数的改进版，需要在题中所给的序列生成的一系列序列中找到逆序对数最小的那一组。</p>
 <p>关于求一个数列的逆序对数，可以用树状数组来维护一个数字前面比自己大的数的个数。树状数组可以方便的在线求前缀和，所以说可以用树状数组来完成这道题。</p>
 <p>树状数组求逆序对<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiongmao-cpp/p/5043340.html">参考博客</a></p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
@@ -406,12 +405,12 @@ string od<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/HDU-2795/origin"><strong>HDU - 2795Billboard</strong></a>（线段树）</p>
 <p>这道题的实现其实不太难，难点是如何建树。</p>
 <p>由题可知，我们可以在广告牌的高度上建树，然后对于每一个新的广告，查找最靠下的可以满足当前广告牌的位置插入，实际上就是维护了一个区间的最大值，来进行判断当前广告是否可以放到该区间中。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
@@ -459,11 +458,11 @@ ll <span class="token function">ask</span><span class="token punctuation">(</spa
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-2777/origin"><strong>POJ - 2777Count Color</strong></a>（线段树+状态压缩）</p>
 <p>用位运算来保存颜色的状态，加上懒惰标记，然后update维护父子节点的信息会不太一样。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">define</span> int ll</span>
@@ -513,7 +512,7 @@ ll <span class="token function">ask</span><span class="token punctuation">(</spa
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 </div><div class="article-licensing box"><div class="licensing-title"><p>河南大学暑假集训的日常（2）</p><p><a href="https://dicemy.com/8528">https://dicemy.com/8528</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-08-05</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-02-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/58095"><i class="level-item fas fa-chevron-left"></i><span class="level-item">TobinMEng的代码模板大合集</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/16332"><span class="level-item">河南大学暑假集训的日常（1）</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",

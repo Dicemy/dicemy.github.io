@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-24T11:04:38.000Z" title="2021/2/24 下午7:04:38">2021-02-24</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:51:13.875Z" title="2022/2/12 上午10:51:13">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">12 分钟读完 (大约1727个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">2021牛客寒假算法基础集训营6</h1><div class="content"><p>2021牛客寒假算法基础集训营6的补题记录</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-24T11:04:38.000Z" title="2021/2/24 下午7:04:38">2021-02-24</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:51:13.875Z" title="2022/2/12 上午10:51:13">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">12 分钟读完 (大约1727个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">2021牛客寒假算法基础集训营6</h1><div class="content"><p>2021牛客寒假算法基础集训营6的补题记录</p>
 <span id="more"></span>
 
 <h1 id="A题-回文括号序列计数"><a href="#A题-回文括号序列计数" class="headerlink" title="A题  回文括号序列计数"></a>A题  回文括号序列计数</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9986/A">https://ac.nowcoder.com/acm/contest/9986/A</a><br>来源：牛客网</p>
@@ -37,7 +36,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210224190915.png" style="zoom:33%;" />看看这迷人的通过率，还浪费了我大把的卡常时间。</p>
 <p>说实话我现在还是没有看懂题，啥叫“一个字符串S是回文的，表示S的左右反转和S相同。”</p>
 <p>PS：在题解文档出来之后，并且翻阅了好多其他人的题解之后我懂了这个“（）”为什么不是回文：它指的回文是”abba”但是很显然（与）是两个符号。所以并不是aa形而是ab形，所以“（）”并不是一个回文序列。同理根据题中所给的构造条件可知，长度大于0的串都不可能是回文串。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -52,7 +51,7 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>这短小精湛的代码告诉我们，写题之前先读题。</p>
 <p>（出题人还让答案对一个数取模，看起来跟真的似的，给忽悠瘸了）</p>
 <h1 id="J题-天空之城"><a href="#J题-天空之城" class="headerlink" title="J题  天空之城"></a>J题  天空之城</h1><p>链接：<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/9986/J">https://ac.nowcoder.com/acm/contest/9986/J</a><br>来源：牛客网</p>
@@ -98,7 +97,7 @@ Aed Orz 3
 <p>图论题，由题可知我们要求一个图中的最小生成树。</p>
 <p>复习一下Kruskal算法。</p>
 <p>Kruskal算法的核心是贪心算法，我们根据边权进行从小到大排序，每次取出边权最小的那一个，然后将两点加入到生成树中，在添加的过程中需要注意的是，维护一个并查集，实时监测是否出现了环，如果出现了环那么这条边舍弃，结束的条件是当加入了n-1条边之后，最小生成树即建成。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span> </span>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span> </span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">5005</span><span class="token punctuation">;</span>
@@ -155,7 +154,7 @@ ll <span class="token function">find</span><span class="token punctuation">(</sp
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <blockquote>
 <p>来总结一下Kruskal的一些小细节，首先是并查集函数的背诵和f数组的初始化不要忘。</p>
 <p>然后就是存贮边的结构体中要重载一下小于号的运算符，以w为排序的依据。</p>

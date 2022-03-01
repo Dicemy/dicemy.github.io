@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T02:25:12.000Z" title="2021/7/16 上午10:25:12">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:24.595Z" title="2022/2/12 上午10:52:24">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">19 分钟读完 (大约2784个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Hyperledger-Fabric试验快速搭建</h1><div class="content"><p>本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T02:25:12.000Z" title="2021/7/16 上午10:25:12">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:24.595Z" title="2022/2/12 上午10:52:24">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">19 分钟读完 (大约2784个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Hyperledger-Fabric试验快速搭建</h1><div class="content"><p>本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记</p>
 <span id="more"></span>
 
 <h1 id="Hyperledger-Fabric文档阅读"><a href="#Hyperledger-Fabric文档阅读" class="headerlink" title="Hyperledger Fabric文档阅读"></a>Hyperledger Fabric文档阅读</h1><h2 id="介绍（自己总结的）"><a href="#介绍（自己总结的）" class="headerlink" title="介绍（自己总结的）"></a>介绍（自己总结的）</h2><p><strong>区块链：</strong> <em>分布式</em>网络，<em>节点</em>维护，不可篡改的<em>账本</em>，<em>共识协议</em>来验证<em>交易</em>，节点执行交易来维护账本的副本，账本以<em>区块</em>的方式存在，区块通过<em>哈希</em>和之前的区块相连。</p>
@@ -73,7 +72,7 @@ go env -w GOPROXY=https://goproxy.cn,direct
 </li>
 </ol>
 <h3 id="mwget安装"><a href="#mwget安装" class="headerlink" title="mwget安装"></a>mwget安装</h3><p>wget太慢使用mwget</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2
 yum <span class="token function">install</span> <span class="token function">bzip2</span> gcc-c++ openssl-devel intltool -y
 <span class="token function">bzip2</span> -d mwget_0.1.0.orig.tar.bz2
 <span class="token function">tar</span> -xvf mwget_0.1.0.orig.tar 
@@ -83,7 +82,7 @@ yum <span class="token function">install</span> <span class="token function">bzi
 <span class="token function">make</span> <span class="token function">install</span>　　<span class="token keyword">echo</span> <span class="token string">"至此，安装完成"</span>
 % 断点续传
 <span class="token function">wget</span> -c 要下载的文件，实现断点续传。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="最后的配置工作"><a href="#最后的配置工作" class="headerlink" title="最后的配置工作"></a>最后的配置工作</h3><p>生成身份材料</p>
 <ol>
 <li><p>进入BasicNetwork-2.0/artifacts/channel目录，执行</p>
@@ -131,24 +130,24 @@ yum <span class="token function">install</span> <span class="token function">bzi
 <pre><code>[ip地址]:5984/_utils
 </code></pre>
 <h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>超级账本的下载地址：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+</code></pre>
 <p>超级账本的解压缩：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class=" language-shell"><code class="language-shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz
+</code></pre>
 <p>超级账本的bin目录内的东西放到/usr/local/bin下</p>
-<pre class="line-numbers language-shell"><code class="language-shell">sudo mv ./bin/* /usr/local/bin
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class=" language-shell"><code class="language-shell">sudo mv ./bin/* /usr/local/bin
+</code></pre>
 <p>把BasicNetwork-2.0/artifacts/channel下的crypto-config拷贝到ContainerisingBlockExplorer下</p>
-<pre class="line-numbers language-shell"><code class="language-shell">sudo mv BasicNetwork-2.0/artifacts/channel/crypto-config ContainerisingBlockchainExplorer
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class=" language-shell"><code class="language-shell">sudo mv BasicNetwork-2.0/artifacts/channel/crypto-config ContainerisingBlockchainExplorer
+</code></pre>
 <p>在ContainerisingBlockchainExplorer下创建data和walletstore文件夹</p>
-<pre class="line-numbers language-shell"><code class="language-shell">sudo mkdir data
+<pre class=" language-shell"><code class="language-shell">sudo mkdir data
 sudo mkdir walletstore
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</code></pre>
 <p>查看Centos的ip（看en33那个ip）</p>
-<pre class="line-numbers language-shell"><code class="language-shell">ip add
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class=" language-shell"><code class="language-shell">ip add
+</code></pre>
 <p>启动docker服务</p>
 <pre><code>systemctl restart docker.service
 </code></pre>

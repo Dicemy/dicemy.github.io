@@ -7,11 +7,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T07:40:57.000Z" title="2021/6/18 下午3:40:57">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:11.634Z" title="2022/2/12 上午10:52:11">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">34 分钟读完 (大约5148个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">MySql数据库入门</h1><div class="content"><p>本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T07:40:57.000Z" title="2021/6/18 下午3:40:57">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:11.634Z" title="2022/2/12 上午10:52:11">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">34 分钟读完 (大约5148个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">MySql数据库入门</h1><div class="content"><p>本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分</p>
 <span id="more"></span>
 
-<h1 id="MySql数据库SQL语言学习"><a href="#MySql数据库SQL语言学习" class="headerlink" title="MySql数据库SQL语言学习"></a>MySql数据库SQL语言学习</h1><h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#创建一个数据库
+<h1 id="MySql数据库SQL语言学习"><a href="#MySql数据库SQL语言学习" class="headerlink" title="MySql数据库SQL语言学习"></a>MySql数据库SQL语言学习</h1><h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><pre class=" language-mysql"><code class="language-mysql">#创建一个数据库
 create database [database_name]; 
 
 #创建一个表
@@ -39,9 +38,9 @@ create user [user_name] identified by [user_password]
 
 #创建数据库角色
 create role 'R1';
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"></p>
-<h2 id="Grant-命令"><a href="#Grant-命令" class="headerlink" title="Grant 命令"></a>Grant 命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#授予某个用户权限
+<h2 id="Grant-命令"><a href="#Grant-命令" class="headerlink" title="Grant 命令"></a>Grant 命令</h2><pre class=" language-mysql"><code class="language-mysql">#授予某个用户权限
 Grant <权限>[,<权限>]...
 [on <对象类型> <对象名>] #对象可以是一个表或者是一个视图，或者是一个数据库
 to <用户>[,<用户>]
@@ -55,16 +54,16 @@ with grant option.
 #将某个角色授予某个用户
 Grant 'role_name' to [user_name];
 #这样可以批量修改一类用户的权限。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Revoke命令"><a href="#Revoke命令" class="headerlink" title="Revoke命令"></a>Revoke命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#收回某个用户的权限
+</code></pre>
+<h2 id="Revoke命令"><a href="#Revoke命令" class="headerlink" title="Revoke命令"></a>Revoke命令</h2><pre class=" language-mysql"><code class="language-mysql">#收回某个用户的权限
 Revoke <权限>[,<权限>]...
 [on<对象类型><对象名>]
 From <用户>[,<用户>]...
 
 #Revoke权限时可以用all表示收回所有的权限，或者也可以是select等具体的权限。
 #From的后面也可是一个角色。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Alter命令"><a href="#Alter命令" class="headerlink" title="Alter命令"></a>Alter命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#Alter命令是在建好表后修改表结构时使用的语句。
+</code></pre>
+<h2 id="Alter命令"><a href="#Alter命令" class="headerlink" title="Alter命令"></a>Alter命令</h2><pre class=" language-mysql"><code class="language-mysql">#Alter命令是在建好表后修改表结构时使用的语句。
 alter table [table_name] 
 add [column_name] [数据类型] [完整性约束] 
 #在表中添加一个新列
@@ -80,17 +79,17 @@ alter table [table_name] drop primary key;
 #删除表的主键
 alter table [table_name] drop foreign key [key_name];
 #删除表的一个外键
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#Drop命令是删除表或者数据库结构时使用的语句。
+</code></pre>
+<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><pre class=" language-mysql"><code class="language-mysql">#Drop命令是删除表或者数据库结构时使用的语句。
 drop database [database_name]; # 删除一个数据库
 drop table [table_name]; # 删除一个数据库中的表
 #注意：如果有外键，不能删除表，应该先删除外键或者先删除外键连接的表。
 
 #删除登录用户
 drop user [user_name]
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <hr>
-<h2 id="Insert命令"><a href="#Insert命令" class="headerlink" title="Insert命令"></a>Insert命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#插入一条元组
+<h2 id="Insert命令"><a href="#Insert命令" class="headerlink" title="Insert命令"></a>Insert命令</h2><pre class=" language-mysql"><code class="language-mysql">#插入一条元组
 insert into [table_name]([column_name1], [column_name2] ...)
 values([column_name1_value], [column_name2_value] ...);
 #如果table_name后面属性列为空，则默认为定义表时的属性和顺序。
@@ -109,14 +108,14 @@ values([column_name1_value], [column_name2_value] ...),
 ([column_name1_value], [column_name2_value] ...),
 ([column_name1_value], [column_name2_value] ...),
 ... ;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Update命令"><a href="#Update命令" class="headerlink" title="Update命令"></a>Update命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#带子查询的修改语句（修改满足条件的元组）
+</code></pre>
+<h2 id="Update命令"><a href="#Update命令" class="headerlink" title="Update命令"></a>Update命令</h2><pre class=" language-mysql"><code class="language-mysql">#带子查询的修改语句（修改满足条件的元组）
 update [table_name] set [column_name1] = [column_name1_value]，[column_name2] = [column_name2_value]，
 where [column_name] = [column_name_value]
 #在修改值时注意实体完整性和参照完整性。
 #主码不允许修改，用户定义的完整性，NOT NULL约束，UNIQUE约束，值域约束
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Select命令"><a href="#Select命令" class="headerlink" title="Select命令"></a>Select命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#一个查询语句的基本结构
+</code></pre>
+<h2 id="Select命令"><a href="#Select命令" class="headerlink" title="Select命令"></a>Select命令</h2><pre class=" language-mysql"><code class="language-mysql">#一个查询语句的基本结构
 select [all/distinct]  
 <目标列表达式1>, <目标列表达式2>,  ... 
 from <table_name1>, <table_name2>, ...
@@ -240,8 +239,8 @@ from ...
 where ...
 表示将查询结果保存到table_name的表中。
 */
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><pre class="line-numbers language-mysql"><code class="language-mysql">/*连接查询*/
+</code></pre>
+<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><pre class=" language-mysql"><code class="language-mysql">/*连接查询*/
 #将两个表进行自然连接
 select *
 from A, b
@@ -317,29 +316,29 @@ where exists (
 #集合查询：交并差查询
 #Union, Intersect, Except。
 /**/
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">#带查询的删除（删除满足条件的元组）
+</code></pre>
+<h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><pre class=" language-mysql"><code class="language-mysql">#带查询的删除（删除满足条件的元组）
 delete 
 from [table_name]
 where ...
 #where中的语句格式和select的where一样。
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><pre class="line-numbers language-mysql"><code class="language-mysql">show databases;
+</code></pre>
+<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><pre class=" language-mysql"><code class="language-mysql">show databases;
 select database();
 use [database_name];
 DESC [table_name];#查看该表的结构
 select user();#查看当前用户
 select * from mysql.user #查看所有用户
 #用户授权
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><pre class="line-numbers language-mysql"><code class="language-mysql">int
+</code></pre>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><pre class=" language-mysql"><code class="language-mysql">int
 smallint
 char([num])
 varchar([num])#变长字符串
 date
 enum(a, b, ...) #枚举类型，值只能是枚举集合中的一个元素
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="常用约束条件"><a href="#常用约束条件" class="headerlink" title="常用约束条件"></a>常用约束条件</h2><pre class="line-numbers language-mysql"><code class="language-mysql">default [val] # 默认值
+</code></pre>
+<h2 id="常用约束条件"><a href="#常用约束条件" class="headerlink" title="常用约束条件"></a>常用约束条件</h2><pre class=" language-mysql"><code class="language-mysql">default [val] # 默认值
 unique # 唯一性约束
 not null # 非空值约束
 primary key([column_name],...) # 主码约束
@@ -357,13 +356,13 @@ on update
     cascade 
     set null
 #针对外键被参照的元组的属性进行更新值时进行参照的元组的属性值的变化情况
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="常用列函数"><a href="#常用列函数" class="headerlink" title="常用列函数"></a>常用列函数</h2><pre class="line-numbers language-mysql"><code class="language-mysql">Count()    #统计某一列的元组数量，某一列的Count运算结果和Count(*)的结果是相等的。
+</code></pre>
+<h2 id="常用列函数"><a href="#常用列函数" class="headerlink" title="常用列函数"></a>常用列函数</h2><pre class=" language-mysql"><code class="language-mysql">Count()    #统计某一列的元组数量，某一列的Count运算结果和Count(*)的结果是相等的。
 Sum()    
 Avg()
 Max()
 Min()
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h1 id="数据库考试复习笔记"><a href="#数据库考试复习笔记" class="headerlink" title="数据库考试复习笔记"></a>数据库考试复习笔记</h1><h2 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点</strong>：</h2><p>三类经典的数据模型是：1.层次模型，2.网状模型和3.关系模型。</p>
 <p>数据库的保护措施有1.安全性控制，2.完整性控制，3.并发控制和4.数据库恢复等。</p>
 <p>事务的四个性质是：1.原子性，2.一致性，3.隔离性，4.持久性。</p>

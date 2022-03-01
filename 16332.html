@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-02T03:08:35.000Z" title="2021/8/2 上午11:08:35">2021-08-02</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:36.776Z" title="2022/2/12 上午10:52:36">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">16 分钟读完 (大约2460个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">河南大学暑假集训的日常（1）</h1><div class="content"><h2 id="DAY1-STL"><a href="#DAY1-STL" class="headerlink" title="DAY1(STL)"></a>DAY1(STL)</h2><span id="more"></span>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-02T03:08:35.000Z" title="2021/8/2 上午11:08:35">2021-08-02</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:36.776Z" title="2022/2/12 上午10:52:36">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span><span class="level-item">16 分钟读完 (大约2460个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">河南大学暑假集训的日常（1）</h1><div class="content"><h2 id="DAY1-STL"><a href="#DAY1-STL" class="headerlink" title="DAY1(STL)"></a>DAY1(STL)</h2><span id="more"></span>
 
 <p><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=1880"><strong>HDU1880魔咒词典</strong></a>（<strong>字符串Hash</strong>/map/）</p>
 <blockquote>
@@ -20,7 +19,7 @@
 <p>是的，我MLE了20多次，都是在尝试调数组的大小。。。。。</p>
 <p>正解应该是Hash+挂链法或者寻址法，但是我写的挂链法也还是MLE。。。最后选择了zy选择的vector。<br>但是注意：这个代码也还是可以被卡掉，这个hash并没有处理字符串冲突的情况。</p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
@@ -67,13 +66,13 @@ string t1<span class="token punctuation">,</span> t2<span class="token punctuati
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=1276"><strong>HDU1276士兵队列训练问题</strong></a>（<strong>模拟</strong>/约瑟夫环）</p>
 <p>用vector完成，简单模拟，水题。</p>
 <p>第一遍没有注意输出空格PE了一次，第二遍A了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210802204312.png" alt="image-20210802204312738"></p>
 <p>代码（比较丑陋）：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;map></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;map></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
@@ -135,12 +134,12 @@ vector<span class="token operator">&lt;</span><span class="token keyword">int</s
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/15029"><strong>牛客 吐泡泡</strong></a>（<strong>栈</strong>）</p>
 <p>点开之后发现5月的时候写过了。。。看了一下发现记不得自己是怎么做了，估计是要老年痴呆了（确信）<br>简单的栈应用。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210802204921.png" alt="image-20210802204921301"></p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">define</span> rep(i, a, n) for (int i=a;i&lt;=n;++i)</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> per(i, n, a) for (int i=n;i>=a;--i)</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> enter putchar('\n')</span>
@@ -180,12 +179,12 @@ stack<span class="token operator">&lt;</span><span class="token keyword">char</s
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h2 id="DAY2-单调栈、单调队列、ST表"><a href="#DAY2-单调栈、单调队列、ST表" class="headerlink" title="DAY2(单调栈、单调队列、ST表)"></a>DAY2(单调栈、单调队列、ST表)</h2><p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-3250/origin"><strong>POJ - 3250Bad Hair Day</strong></a>（单调栈）</p>
 <p>由题可知将答案求每个羊可以看到多少只右边的羊转化为求每一个羊可以被多少左边的羊看到，然后在纸上模拟一下就可以发现单调栈满足这个过程。单调栈和单调队列难都是在思路的转换，一眼会想不到。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210803180847.png" alt="image-20210803180847778"></p>
 <p>代码（摘了眼镜看形状好奇怪啊。。）：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stack></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
@@ -204,7 +203,7 @@ ll n<span class="token punctuation">,</span> ans<span class="token punctuation">
     cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-2823/origin"><strong>POJ - 2823 Sliding Window</strong></a>（单调队列）</p>
 <p>如果我们要得到区间的最大值，那我们可以维护一个队列，在里面存一些我们遇到过的比较大的值，并且保证这个队列是递减的。那么如果我们这时拿到一个新的数据，我们只需要把这个数据放到当前队列的正确的位置然后取队首元素就能找到最大值了。</p>
 <p>由于该队列是单调递增的，所以只需要将新的数据和队尾的值进行比较，如果队尾的值比较小，那么直接扔掉，因为我们要得到的是区间的最大值，所以舍去一些比较小并且比较旧的值并没有什么影响。</p>
@@ -214,7 +213,7 @@ ll n<span class="token punctuation">,</span> ans<span class="token punctuation">
 <p>这道题还有一些小坑。因为在POJ上，会比较慢，用deque会T掉，可以用数组模拟一个双端队列。然后常数大也会被卡掉，所以要用快读。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210803181557.png" alt="image-20210803181557248"></p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstdio></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;deque></span></span>
@@ -267,7 +266,7 @@ pair<span class="token operator">&lt;</span><span class="token keyword">int</spa
     <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-3264/origin"><strong>POJ - 3264 Balanced Lineup</strong></a>（<strong>ST表</strong>/线段树/树状数组）</p>
 <p>这道题是学长讲的ST表的例题，本质是一个RMQ。</p>
 <p>ST表，是利用倍增和动态规划的思想处理出的一个查询表，需要用nlogn的时间预处理，得到ST表之后，就可用O(1)的时间查询任意区间内的极值。</p>
@@ -277,7 +276,7 @@ pair<span class="token operator">&lt;</span><span class="token keyword">int</spa
 <img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210803195444.png"/>
 
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
@@ -321,14 +320,14 @@ pair<span class="token operator">&lt;</span><span class="token keyword">int</spa
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://vjudge.net/problem/POJ-2559/origin"><strong>POJ - 2559 Largest Rectangle in a Histogram</strong> </a>（单调栈）</p>
 <p>单调栈的应用。</p>
 <p>对于每一个长方形来说，如果不重复计算的话，这道题的答案就是每个长方形向右画的长方形中面积最大的那一个。</p>
 <p>接着想，对于某个长方形，它所能画出的最大高度就是他本身，最大宽度就是他往右的连续的不低于他的长方形的宽度。<br>对于一个高度上升的长方形序列，其中一个长方形所能达到的最大面积就是向右不低于该长方形的所有长方形的宽度和，所以，对于一个还在上升的序列，并不能知道它最右边能够到达的宽度有多少，所以将其加入栈中，如果发现了一个长方形的高度下降，那么这个长方形一定可以作为上升序列中的一些长方形的右边界。此时开始计算，直到序列恢复递增为止。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210803195601.png" alt="image-20210803195601171"></p>
 <p>代码：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
@@ -370,7 +369,7 @@ ll n<span class="token punctuation">,</span> a<span class="token punctuation">[<
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 </div><div class="article-licensing box"><div class="licensing-title"><p>河南大学暑假集训的日常（1）</p><p><a href="https://dicemy.com/16332">https://dicemy.com/16332</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-08-02</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-02-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/8528"><i class="level-item fas fa-chevron-left"></i><span class="level-item">河南大学暑假集训的日常（2）</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/35840"><span class="level-item">数学建模入门</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
