@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>MySql数据库入门 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"><meta property="og:type" content="blog"><meta property="og:title" content="MySql数据库入门"><meta property="og:url" content="https://dicemy.com/51347"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"><meta property="article:published_time" content="2021-06-18T07:40:57.000Z"><meta property="article:modified_time" content="2022-02-12T02:52:11.634Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="数据库"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/51347"},"headline":"MySql数据库入门","image":["https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"],"datePublished":"2021-06-18T07:40:57.000Z","dateModified":"2022-02-12T02:52:11.634Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"}</script><link rel="canonical" href="https://dicemy.com/51347"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>MySql数据库入门 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"><meta property="og:type" content="blog"><meta property="og:title" content="MySql数据库入门"><meta property="og:url" content="https://dicemy.com/51347"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"><meta property="article:published_time" content="2021-06-18T07:40:57.000Z"><meta property="article:modified_time" content="2022-02-12T02:52:11.634Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="数据库"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/51347"},"headline":"MySql数据库入门","image":["https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"],"datePublished":"2021-06-18T07:40:57.000Z","dateModified":"2022-02-12T02:52:11.634Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分"}</script><link rel="canonical" href="https://dicemy.com/51347"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
@@ -7,362 +7,39 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T07:40:57.000Z" title="2021/6/18 下午3:40:57">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:11.634Z" title="2022/2/12 上午10:52:11">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">34 分钟读完 (大约5148个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">MySql数据库入门</h1><div class="content"><p>本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T07:40:57.000Z" title="2021/6/18 下午3:40:57">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:11.634Z" title="2022/2/12 上午10:52:11">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">34 分钟读完 (大约5148个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">MySql数据库入门</h1><div class="content"><p>本文包括了MySql数据库SQL语言学习和数据库考试复习笔记两部分</p>
 <span id="more"></span>
 
-<h1 id="MySql数据库SQL语言学习"><a href="#MySql数据库SQL语言学习" class="headerlink" title="MySql数据库SQL语言学习"></a>MySql数据库SQL语言学习</h1><h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><pre class=" language-mysql"><code class="language-mysql">#创建一个数据库
-create database [database_name]; 
+<h1 id="MySql数据库SQL语言学习"><a href="#MySql数据库SQL语言学习" class="headerlink" title="MySql数据库SQL语言学习"></a>MySql数据库SQL语言学习</h1><h2 id="Create命令"><a href="#Create命令" class="headerlink" title="Create命令"></a>Create命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#创建一个数据库<br>create database [database_name]; <br><br>#创建一个表<br>create table [table_name] (<br>    &lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt; ]<br> [，&lt;列名&gt; &lt;数据类型&gt;[ &lt;列级完整性约束条件&gt;] ] …<br> [，&lt;表级完整性约束条件&gt; ] <br>); <br><br>#创建一个视图<br>create view &lt;视图名&gt;  [(&lt;列名&gt;  [，&lt;列名&gt;]…)]<br>as<br>select [查询内容]<br>[WITH  CHECK  OPTION]；<br>/*<br>子查询不允许含有 order by 和 distinct 语句。<br>视图只是一个表结构，不储存数据。<br>使用视图和使用表的语法基本相同。<br>WITH CHECK OPTION 语句使得插入操作只能插入满足视图的限制条件的元组。<br>*/<br><br>#创建登录用户 <br>create user [user_name] identified by [user_password]<br>#创建一个普通用户<br><br>#创建数据库角色<br>create role &#x27;R1&#x27;;<br></code></pre></td></tr></table></figure>
 
-#创建一个表
-create table [table_name] (
-    <列名> <数据类型>[ <列级完整性约束条件> ]
- [，<列名> <数据类型>[ <列级完整性约束条件>] ] …
- [，<表级完整性约束条件> ] 
-); 
-
-#创建一个视图
-create view <视图名>  [(<列名>  [，<列名>]…)]
-as
-select [查询内容]
-[WITH  CHECK  OPTION]；
-/*
-子查询不允许含有 order by 和 distinct 语句。
-视图只是一个表结构，不储存数据。
-使用视图和使用表的语法基本相同。
-WITH CHECK OPTION 语句使得插入操作只能插入满足视图的限制条件的元组。
-*/
-
-#创建登录用户 
-create user [user_name] identified by [user_password]
-#创建一个普通用户
-
-#创建数据库角色
-create role 'R1';
-</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/Dicemy/blog-img/20210522162824.png"></p>
-<h2 id="Grant-命令"><a href="#Grant-命令" class="headerlink" title="Grant 命令"></a>Grant 命令</h2><pre class=" language-mysql"><code class="language-mysql">#授予某个用户权限
-Grant <权限>[,<权限>]...
-[on <对象类型> <对象名>] #对象可以是一个表或者是一个视图，或者是一个数据库
-to <用户>[,<用户>]
-with grant option.
+<h2 id="Grant-命令"><a href="#Grant-命令" class="headerlink" title="Grant 命令"></a>Grant 命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#授予某个用户权限<br>Grant &lt;权限&gt;[,&lt;权限&gt;]...<br>[on &lt;对象类型&gt; &lt;对象名&gt;] #对象可以是一个表或者是一个视图，或者是一个数据库<br>to &lt;用户&gt;[,&lt;用户&gt;]<br>with grant option.<br><br>#with grant option子句表示该权限可以进行传播，否则不能。<br>#grant权限时可以用all表示所有的权限，或者也可以是select等具体的权限。<br>#在进行授权的时候可以具体到某一个列比如说: Grant update(cname) on ...<br>#to的后面也可是一个角色。<br><br>#将某个角色授予某个用户<br>Grant &#x27;role_name&#x27; to [user_name];<br>#这样可以批量修改一类用户的权限。<br></code></pre></td></tr></table></figure>
 
-#with grant option子句表示该权限可以进行传播，否则不能。
-#grant权限时可以用all表示所有的权限，或者也可以是select等具体的权限。
-#在进行授权的时候可以具体到某一个列比如说: Grant update(cname) on ...
-#to的后面也可是一个角色。
+<h2 id="Revoke命令"><a href="#Revoke命令" class="headerlink" title="Revoke命令"></a>Revoke命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#收回某个用户的权限<br>Revoke &lt;权限&gt;[,&lt;权限&gt;]...<br>[on&lt;对象类型&gt;&lt;对象名&gt;]<br>From &lt;用户&gt;[,&lt;用户&gt;]...<br><br>#Revoke权限时可以用all表示收回所有的权限，或者也可以是select等具体的权限。<br>#From的后面也可是一个角色。<br></code></pre></td></tr></table></figure>
 
-#将某个角色授予某个用户
-Grant 'role_name' to [user_name];
-#这样可以批量修改一类用户的权限。
-</code></pre>
-<h2 id="Revoke命令"><a href="#Revoke命令" class="headerlink" title="Revoke命令"></a>Revoke命令</h2><pre class=" language-mysql"><code class="language-mysql">#收回某个用户的权限
-Revoke <权限>[,<权限>]...
-[on<对象类型><对象名>]
-From <用户>[,<用户>]...
+<h2 id="Alter命令"><a href="#Alter命令" class="headerlink" title="Alter命令"></a>Alter命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#Alter命令是在建好表后修改表结构时使用的语句。<br>alter table [table_name] <br>add [column_name] [数据类型] [完整性约束] <br>#在表中添加一个新列<br>alter table [table_name] <br>add foreign key([column_name]) references [table_name]([column_name])<br>#在表中添加一外键<br>alter table [table_name] <br>modify column [column_name] &lt;数据类型&gt; [完整性约束]；<br>#修改表中的一列<br>alter table [table_name] drop column [column_name]<br>#删除表中的一列<br>alter table [table_name] drop primary key;<br>#删除表的主键<br>alter table [table_name] drop foreign key [key_name];<br>#删除表的一个外键<br></code></pre></td></tr></table></figure>
 
-#Revoke权限时可以用all表示收回所有的权限，或者也可以是select等具体的权限。
-#From的后面也可是一个角色。
-</code></pre>
-<h2 id="Alter命令"><a href="#Alter命令" class="headerlink" title="Alter命令"></a>Alter命令</h2><pre class=" language-mysql"><code class="language-mysql">#Alter命令是在建好表后修改表结构时使用的语句。
-alter table [table_name] 
-add [column_name] [数据类型] [完整性约束] 
-#在表中添加一个新列
-alter table [table_name] 
-add foreign key([column_name]) references [table_name]([column_name])
-#在表中添加一外键
-alter table [table_name] 
-modify column [column_name] <数据类型> [完整性约束]；
-#修改表中的一列
-alter table [table_name] drop column [column_name]
-#删除表中的一列
-alter table [table_name] drop primary key;
-#删除表的主键
-alter table [table_name] drop foreign key [key_name];
-#删除表的一个外键
-</code></pre>
-<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><pre class=" language-mysql"><code class="language-mysql">#Drop命令是删除表或者数据库结构时使用的语句。
-drop database [database_name]; # 删除一个数据库
-drop table [table_name]; # 删除一个数据库中的表
-#注意：如果有外键，不能删除表，应该先删除外键或者先删除外键连接的表。
+<h2 id="Drop命令"><a href="#Drop命令" class="headerlink" title="Drop命令"></a>Drop命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#Drop命令是删除表或者数据库结构时使用的语句。<br>drop database [database_name]; # 删除一个数据库<br>drop table [table_name]; # 删除一个数据库中的表<br>#注意：如果有外键，不能删除表，应该先删除外键或者先删除外键连接的表。<br><br>#删除登录用户<br>drop user [user_name]<br></code></pre></td></tr></table></figure>
 
-#删除登录用户
-drop user [user_name]
-</code></pre>
 <hr>
-<h2 id="Insert命令"><a href="#Insert命令" class="headerlink" title="Insert命令"></a>Insert命令</h2><pre class=" language-mysql"><code class="language-mysql">#插入一条元组
-insert into [table_name]([column_name1], [column_name2] ...)
-values([column_name1_value], [column_name2_value] ...);
-#如果table_name后面属性列为空，则默认为定义表时的属性和顺序。
-#在table_name后面的属性可以自定义顺序。
-#插入的属性值可以是default, null或者具体的值。
+<h2 id="Insert命令"><a href="#Insert命令" class="headerlink" title="Insert命令"></a>Insert命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#插入一条元组<br>insert into [table_name]([column_name1], [column_name2] ...)<br>values([column_name1_value], [column_name2_value] ...);<br>#如果table_name后面属性列为空，则默认为定义表时的属性和顺序。<br>#在table_name后面的属性可以自定义顺序。<br>#插入的属性值可以是default, null或者具体的值。<br><br>#插入子查询的结果<br>insert into [table_name]([column_name1], [column_name2] ...)<br>select ...<br>from ...<br>where ...<br><br>#插入多条元组<br>insert into [table_name]([column_name1], [column_name2] ...)<br>values([column_name1_value], [column_name2_value] ...),<br>([column_name1_value], [column_name2_value] ...),<br>([column_name1_value], [column_name2_value] ...),<br>... ;<br></code></pre></td></tr></table></figure>
 
-#插入子查询的结果
-insert into [table_name]([column_name1], [column_name2] ...)
-select ...
-from ...
-where ...
+<h2 id="Update命令"><a href="#Update命令" class="headerlink" title="Update命令"></a>Update命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#带子查询的修改语句（修改满足条件的元组）<br>update [table_name] set [column_name1] = [column_name1_value]，[column_name2] = [column_name2_value]，<br>where [column_name] = [column_name_value]<br>#在修改值时注意实体完整性和参照完整性。<br>#主码不允许修改，用户定义的完整性，NOT NULL约束，UNIQUE约束，值域约束<br></code></pre></td></tr></table></figure>
 
-#插入多条元组
-insert into [table_name]([column_name1], [column_name2] ...)
-values([column_name1_value], [column_name2_value] ...),
-([column_name1_value], [column_name2_value] ...),
-([column_name1_value], [column_name2_value] ...),
-... ;
-</code></pre>
-<h2 id="Update命令"><a href="#Update命令" class="headerlink" title="Update命令"></a>Update命令</h2><pre class=" language-mysql"><code class="language-mysql">#带子查询的修改语句（修改满足条件的元组）
-update [table_name] set [column_name1] = [column_name1_value]，[column_name2] = [column_name2_value]，
-where [column_name] = [column_name_value]
-#在修改值时注意实体完整性和参照完整性。
-#主码不允许修改，用户定义的完整性，NOT NULL约束，UNIQUE约束，值域约束
-</code></pre>
-<h2 id="Select命令"><a href="#Select命令" class="headerlink" title="Select命令"></a>Select命令</h2><pre class=" language-mysql"><code class="language-mysql">#一个查询语句的基本结构
-select [all/distinct]  
-<目标列表达式1>, <目标列表达式2>,  ... 
-from <table_name1>, <table_name2>, ...
-where <条件表达式>
-group by <column_name1>    having <条件表达式>
-order by <column_name1> [asc/desc]    limit (num)
+<h2 id="Select命令"><a href="#Select命令" class="headerlink" title="Select命令"></a>Select命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#一个查询语句的基本结构<br>select [all/distinct]  <br>&lt;目标列表达式1&gt;, &lt;目标列表达式2&gt;,  ... <br>from &lt;table_name1&gt;, &lt;table_name2&gt;, ...<br>where &lt;条件表达式&gt;<br>group by &lt;column_name1&gt;	having &lt;条件表达式&gt;<br>order by &lt;column_name1&gt; [asc/desc]	limit (num)<br><br>/*选择表中的若干列*/<br>#如果选中所有的属性列那么用*来表示<br>#DISTINCT关键词消除取值重复的行，如果没有指定，则缺省为ALL <br>#如果要将属性列更名的话在需要更名的列后面加上 as 新名字<br>#在查询语句中还可以自定义表名，方法为 from [table_name] as [new_name]<br>#在定义别名的时候可以省略 as ，但是不建议。<br>#目标列表达式可以为：<br>/*<br>算术表达式	2016 - Sage<br>字符串常量	&#x27;出生年份：&#x27;<br>函数	year(curdate()) //表示当前的年份<br>列别名 sno as 学号<br>*/<br><br>/*<br>常用的查询条件:<br>比较运算符：=，&gt;，&lt;，&gt;=，&lt;=，!=，&lt;&gt;，!&gt;，!&lt;；<br>确定范围：<br>	BETWEEN &lt;..&gt; AND &lt;..&gt;，<br>	NOT BETWEEN &lt;..&gt; AND &lt;..&gt;<br>确定集合:<br>	IN(...)，<br>	NOT IN(...)<br>字符匹配：<br>	LIKE &#x27;&#x27;，<br>	NOT LIKE &#x27;&#x27;<br>通配符：<br>	% 任意长度的字符<br>	_ 一个长度的字符<br>	/ 将后面紧跟的一个符号转义成正常符号<br>空值：<br>	IS NULL，<br>	IS NOT NULL<br>多重条件（逻辑运算）:<br>	AND，OR，NOT	<br>	可以用括号改变优先级<br>*/<br><br>/*ORDER BY子句*/<br>#可以按照一个或者多个属性进行排序<br>#升序：ASC；降序：DESC；缺省值为升序<br>#当排序列含空值时<br>#ASC：排序列为空值的元组最后显示<br>#DESC：排序列为空值的元组最先显示 <br>#e.g.	ORDER BY Grade DESC；<br>#e.g.	ORDER BY Sdept，Sage DESC； <br>#limit后面跟的数字为输出表中的前几行。<br><br>/*自然连接*/<br>SELECT  Student.*，SC.*<br>FROM    Student，SC<br>WHERE   Student.Sno = SC.Sno；<br>#将student和sc表将sno相同的元组自然连接然后输出<br><br>/*聚集函数*/<br>#聚集函数：<br>/*<br>计数<br>	COUNT（[ DISTINCT | ALL ] *）<br>	COUNT（[ DISTINCT | ALL ] &lt;列名&gt;）//这两个值在all条件下是相等的<br>计算总和<br>	SUM（[ DISTINCT | ALL ] &lt;列名&gt;）	<br>计算平均值<br>	AVG（[ DISTINCT | ALL ] &lt;列名&gt;）<br>最大最小值<br>	MAX（[ DISTINCT | ALL ] &lt;列名&gt;）<br>	MIN（[ DISTINCT | ALL ] &lt;列名&gt;）<br>*/<br><br>/*GROUP BY子句*/<br>#细化聚集函数的作用对象<br>/*<br> 未对查询结果分组，聚集函数将作用于整个查询结果<br> 对查询结果分组后，聚集函数将分别作用于每个组 <br> 作用对象是查询的中间结果表<br> 按指定的一列或多列值分组，值相等的为一组<br>*/<br><br>/*Having子句*/<br>#Having短语作用于组，从中选择满足条件的组<br>#Where子句作用于基表或者视图，从中选择满足条件的元组<br><br>/*ORDER BY子句*/<br>#将结果进行排序之后再输出<br>/*<br>ASC 升序（小的在前面）<br>DESC 降序（大的在前面）<br>缺省为升序<br>order by 后面可以跟多个列名，按照顺序进行排序。<br>*/<br>#当排序存在空值时<br>/*<br>ASC 空值的元组最后显示<br>DESC 空值的元组最先显示<br>*/<br><br>/*limit子句*/<br>#只输出排序结果中的前num个元组。<br>#limit 3 的意思是输出前三行，limit 1,3 的意思是输出2道4行<br>#表中的元组的序号是从0开始的<br><br>/*Percent子句（！该知识点没有细讲，考试不考）*/<br>/*<br>select top &lt;n&gt; percent ...<br>from ...<br>where ...<br>表示输出前半分之n的数据，如果结果不够一条的话会向上取整为一条。<br>*/<br><br>/*into子句（！该知识点没有细讲，考试不考）*/<br>/*<br>select * into [table_name] <br>from ...<br>where ...<br>表示将查询结果保存到table_name的表中。<br>*/<br></code></pre></td></tr></table></figure>
 
-/*选择表中的若干列*/
-#如果选中所有的属性列那么用*来表示
-#DISTINCT关键词消除取值重复的行，如果没有指定，则缺省为ALL 
-#如果要将属性列更名的话在需要更名的列后面加上 as 新名字
-#在查询语句中还可以自定义表名，方法为 from [table_name] as [new_name]
-#在定义别名的时候可以省略 as ，但是不建议。
-#目标列表达式可以为：
-/*
-算术表达式    2016 - Sage
-字符串常量    '出生年份：'
-函数    year(curdate()) //表示当前的年份
-列别名 sno as 学号
-*/
+<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs mysql">/*连接查询*/<br>#将两个表进行自然连接<br>select *<br>from A, b<br>where A.a = B.a;<br>#将三个表进行自然连接<br>select *<br>from A, B, C<br>where A.a = B.a and A.a = C.a;<br>#将一个表进行自身连接<br>select A.a, A.pa, B.pa<br>from table1 as A, table1 as B<br>where A.pa = B.a;<br>/*<br>[例35]查询每一门课的间接先修课（即先修课的先修课），输出：课程号、先修课的课程号、先修课的先修课的课程号。<br>*/<br>/*<br>SELECT  FIRST.Cno, FIRST.Cpno, SECOND.Cpno<br>FROM  Course As FIRST，Course As SECOND<br>WHERE FIRST.Cpno = SECOND.Cno；<br>*/<br>#两个表用inner join来写自然连接<br>select *<br>from A inner join B on (A.a = A.b)<br>where ...<br>#两个表用left outer join来写左外连接<br>select *<br>from A left outer join B on(A.a = B.a)<br>where ...<br>#两个表用right outer join来写右外连接<br>select *<br>from A right outer join B on(A.a = B.a)<br>where ...<br>#嵌套查询<br>/*将一个查询块嵌套在另一个查询块的WHERE子句或HAVING短语的条件中的查询称为嵌套查询*/<br>#不相关子查询<br>select *<br>from A <br>where a in (<br>    select a<br>    from B<br>    where ...<br>);<br>#相关子查询<br>select *<br>from A <br>where a in (<br>    select a<br>    from B<br>    where A.b = B.b and ... <br>);<br>/*可以进行多层嵌套，当可以确定内层返回为单值的话，in可以用=或者&lt;，&gt;等代替。*/<br>#带有ANY和ALL谓词的子查询<br>select *<br>from A<br>where a &gt;= ANY(<br>    select a<br>    from B<br>    where ...<br>);<br>/*ANY表示查询结果中的某个值，ALL表示查询结果中的所有值*/<br>#带有EXISTS谓词的子查询<br>/*存在谓词谓词的查询不返回任何数据，只产生逻辑真值或者逻辑假值，若内层查询为空则返回假，若内层查询为非空则返回为真。<br>EXISTS内层只要有结果，外层对应的记录就输出。<br>NOT EXISTS内层只要没有结果，外层就被输出。<br>*/<br>select *<br>from A<br>where exists (<br>    select *<br>    from B<br>    where ...<br>)<br>#集合查询：交并差查询<br>#Union, Intersect, Except。<br>/**/<br></code></pre></td></tr></table></figure>
 
-/*
-常用的查询条件:
-比较运算符：=，>，<，>=，<=，!=，<>，!>，!<；
-确定范围：
-    BETWEEN <..> AND <..>，
-    NOT BETWEEN <..> AND <..>
-确定集合:
-    IN(...)，
-    NOT IN(...)
-字符匹配：
-    LIKE ''，
-    NOT LIKE ''
-通配符：
-    % 任意长度的字符
-    _ 一个长度的字符
-    / 将后面紧跟的一个符号转义成正常符号
-空值：
-    IS NULL，
-    IS NOT NULL
-多重条件（逻辑运算）:
-    AND，OR，NOT    
-    可以用括号改变优先级
-*/
+<h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">#带查询的删除（删除满足条件的元组）<br>delete <br>from [table_name]<br>where ...<br>#where中的语句格式和select的where一样。<br></code></pre></td></tr></table></figure>
 
-/*ORDER BY子句*/
-#可以按照一个或者多个属性进行排序
-#升序：ASC；降序：DESC；缺省值为升序
-#当排序列含空值时
-#ASC：排序列为空值的元组最后显示
-#DESC：排序列为空值的元组最先显示 
-#e.g.    ORDER BY Grade DESC；
-#e.g.    ORDER BY Sdept，Sage DESC； 
-#limit后面跟的数字为输出表中的前几行。
+<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show databases;<br>select database();<br>use [database_name];<br>DESC [table_name];#查看该表的结构<br>select user();#查看当前用户<br>select * from mysql.user #查看所有用户<br>#用户授权<br></code></pre></td></tr></table></figure>
 
-/*自然连接*/
-SELECT  Student.*，SC.*
-FROM    Student，SC
-WHERE   Student.Sno = SC.Sno；
-#将student和sc表将sno相同的元组自然连接然后输出
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mysql">int<br>smallint<br>char([num])<br>varchar([num])#变长字符串<br>date<br>enum(a, b, ...) #枚举类型，值只能是枚举集合中的一个元素<br></code></pre></td></tr></table></figure>
 
-/*聚集函数*/
-#聚集函数：
-/*
-计数
-    COUNT（[ DISTINCT | ALL ] *）
-    COUNT（[ DISTINCT | ALL ] <列名>）//这两个值在all条件下是相等的
-计算总和
-    SUM（[ DISTINCT | ALL ] <列名>）    
-计算平均值
-    AVG（[ DISTINCT | ALL ] <列名>）
-最大最小值
-    MAX（[ DISTINCT | ALL ] <列名>）
-    MIN（[ DISTINCT | ALL ] <列名>）
-*/
+<h2 id="常用约束条件"><a href="#常用约束条件" class="headerlink" title="常用约束条件"></a>常用约束条件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs mysql">default [val] # 默认值<br>unique # 唯一性约束<br>not null # 非空值约束<br>primary key([column_name],...) # 主码约束<br>foreign key([column_name]) references [table_name]([column_name]) # 外键约束<br>chekc([条件])	# 用户定义<br>auto_increment # 序号自动加一<br>constraint [constraint_name] &lt;限制条件&gt; # 为后面的限制条件起一个名字<br>on delete <br>	no action<br>	cascade<br>	set null<br>#在外键被参照的元组的属性进行删除时进行参照的元组的属性值的变化情况<br>on update <br>	no action<br>	cascade <br>	set null<br>#针对外键被参照的元组的属性进行更新值时进行参照的元组的属性值的变化情况<br></code></pre></td></tr></table></figure>
 
-/*GROUP BY子句*/
-#细化聚集函数的作用对象
-/*
- 未对查询结果分组，聚集函数将作用于整个查询结果
- 对查询结果分组后，聚集函数将分别作用于每个组 
- 作用对象是查询的中间结果表
- 按指定的一列或多列值分组，值相等的为一组
-*/
+<h2 id="常用列函数"><a href="#常用列函数" class="headerlink" title="常用列函数"></a>常用列函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">Count()	#统计某一列的元组数量，某一列的Count运算结果和Count(*)的结果是相等的。<br>Sum()	<br>Avg()<br>Max()<br>Min()<br></code></pre></td></tr></table></figure>
 
-/*Having子句*/
-#Having短语作用于组，从中选择满足条件的组
-#Where子句作用于基表或者视图，从中选择满足条件的元组
-
-/*ORDER BY子句*/
-#将结果进行排序之后再输出
-/*
-ASC 升序（小的在前面）
-DESC 降序（大的在前面）
-缺省为升序
-order by 后面可以跟多个列名，按照顺序进行排序。
-*/
-#当排序存在空值时
-/*
-ASC 空值的元组最后显示
-DESC 空值的元组最先显示
-*/
-
-/*limit子句*/
-#只输出排序结果中的前num个元组。
-#limit 3 的意思是输出前三行，limit 1,3 的意思是输出2道4行
-#表中的元组的序号是从0开始的
-
-/*Percent子句（！该知识点没有细讲，考试不考）*/
-/*
-select top <n> percent ...
-from ...
-where ...
-表示输出前半分之n的数据，如果结果不够一条的话会向上取整为一条。
-*/
-
-/*into子句（！该知识点没有细讲，考试不考）*/
-/*
-select * into [table_name] 
-from ...
-where ...
-表示将查询结果保存到table_name的表中。
-*/
-</code></pre>
-<h2 id="Select查询进阶"><a href="#Select查询进阶" class="headerlink" title="Select查询进阶"></a>Select查询进阶</h2><pre class=" language-mysql"><code class="language-mysql">/*连接查询*/
-#将两个表进行自然连接
-select *
-from A, b
-where A.a = B.a;
-#将三个表进行自然连接
-select *
-from A, B, C
-where A.a = B.a and A.a = C.a;
-#将一个表进行自身连接
-select A.a, A.pa, B.pa
-from table1 as A, table1 as B
-where A.pa = B.a;
-/*
-[例35]查询每一门课的间接先修课（即先修课的先修课），输出：课程号、先修课的课程号、先修课的先修课的课程号。
-*/
-/*
-SELECT  FIRST.Cno, FIRST.Cpno, SECOND.Cpno
-FROM  Course As FIRST，Course As SECOND
-WHERE FIRST.Cpno = SECOND.Cno；
-*/
-#两个表用inner join来写自然连接
-select *
-from A inner join B on (A.a = A.b)
-where ...
-#两个表用left outer join来写左外连接
-select *
-from A left outer join B on(A.a = B.a)
-where ...
-#两个表用right outer join来写右外连接
-select *
-from A right outer join B on(A.a = B.a)
-where ...
-#嵌套查询
-/*将一个查询块嵌套在另一个查询块的WHERE子句或HAVING短语的条件中的查询称为嵌套查询*/
-#不相关子查询
-select *
-from A 
-where a in (
-    select a
-    from B
-    where ...
-);
-#相关子查询
-select *
-from A 
-where a in (
-    select a
-    from B
-    where A.b = B.b and ... 
-);
-/*可以进行多层嵌套，当可以确定内层返回为单值的话，in可以用=或者<，>等代替。*/
-#带有ANY和ALL谓词的子查询
-select *
-from A
-where a >= ANY(
-    select a
-    from B
-    where ...
-);
-/*ANY表示查询结果中的某个值，ALL表示查询结果中的所有值*/
-#带有EXISTS谓词的子查询
-/*存在谓词谓词的查询不返回任何数据，只产生逻辑真值或者逻辑假值，若内层查询为空则返回假，若内层查询为非空则返回为真。
-EXISTS内层只要有结果，外层对应的记录就输出。
-NOT EXISTS内层只要没有结果，外层就被输出。
-*/
-select *
-from A
-where exists (
-    select *
-    from B
-    where ...
-)
-#集合查询：交并差查询
-#Union, Intersect, Except。
-/**/
-</code></pre>
-<h2 id="Delete命令"><a href="#Delete命令" class="headerlink" title="Delete命令"></a>Delete命令</h2><pre class=" language-mysql"><code class="language-mysql">#带查询的删除（删除满足条件的元组）
-delete 
-from [table_name]
-where ...
-#where中的语句格式和select的where一样。
-</code></pre>
-<h2 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h2><pre class=" language-mysql"><code class="language-mysql">show databases;
-select database();
-use [database_name];
-DESC [table_name];#查看该表的结构
-select user();#查看当前用户
-select * from mysql.user #查看所有用户
-#用户授权
-</code></pre>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><pre class=" language-mysql"><code class="language-mysql">int
-smallint
-char([num])
-varchar([num])#变长字符串
-date
-enum(a, b, ...) #枚举类型，值只能是枚举集合中的一个元素
-</code></pre>
-<h2 id="常用约束条件"><a href="#常用约束条件" class="headerlink" title="常用约束条件"></a>常用约束条件</h2><pre class=" language-mysql"><code class="language-mysql">default [val] # 默认值
-unique # 唯一性约束
-not null # 非空值约束
-primary key([column_name],...) # 主码约束
-foreign key([column_name]) references [table_name]([column_name]) # 外键约束
-chekc([条件])    # 用户定义
-auto_increment # 序号自动加一
-constraint [constraint_name] <限制条件> # 为后面的限制条件起一个名字
-on delete 
-    no action
-    cascade
-    set null
-#在外键被参照的元组的属性进行删除时进行参照的元组的属性值的变化情况
-on update 
-    no action
-    cascade 
-    set null
-#针对外键被参照的元组的属性进行更新值时进行参照的元组的属性值的变化情况
-</code></pre>
-<h2 id="常用列函数"><a href="#常用列函数" class="headerlink" title="常用列函数"></a>常用列函数</h2><pre class=" language-mysql"><code class="language-mysql">Count()    #统计某一列的元组数量，某一列的Count运算结果和Count(*)的结果是相等的。
-Sum()    
-Avg()
-Max()
-Min()
-</code></pre>
 <h1 id="数据库考试复习笔记"><a href="#数据库考试复习笔记" class="headerlink" title="数据库考试复习笔记"></a>数据库考试复习笔记</h1><h2 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点</strong>：</h2><p>三类经典的数据模型是：1.层次模型，2.网状模型和3.关系模型。</p>
 <p>数据库的保护措施有1.安全性控制，2.完整性控制，3.并发控制和4.数据库恢复等。</p>
 <p>事务的四个性质是：1.原子性，2.一致性，3.隔离性，4.持久性。</p>
@@ -470,7 +147,7 @@ Min()
             
             enableQQ: false,
             requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#MySql数据库SQL语言学习"><span class="level-left"><span class="level-item">1</span><span class="level-item">MySql数据库SQL语言学习</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Create命令"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Create命令</span></span></a></li><li><a class="level is-mobile" href="#Grant-命令"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Grant 命令</span></span></a></li><li><a class="level is-mobile" href="#Revoke命令"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Revoke命令</span></span></a></li><li><a class="level is-mobile" href="#Alter命令"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Alter命令</span></span></a></li><li><a class="level is-mobile" href="#Drop命令"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Drop命令</span></span></a></li><li><a class="level is-mobile" href="#Insert命令"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Insert命令</span></span></a></li><li><a class="level is-mobile" href="#Update命令"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Update命令</span></span></a></li><li><a class="level is-mobile" href="#Select命令"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Select命令</span></span></a></li><li><a class="level is-mobile" href="#Select查询进阶"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">Select查询进阶</span></span></a></li><li><a class="level is-mobile" href="#Delete命令"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">Delete命令</span></span></a></li><li><a class="level is-mobile" href="#其他常用命令"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">其他常用命令</span></span></a></li><li><a class="level is-mobile" href="#数据类型"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">数据类型</span></span></a></li><li><a class="level is-mobile" href="#常用约束条件"><span class="level-left"><span class="level-item">1.13</span><span class="level-item">常用约束条件</span></span></a></li><li><a class="level is-mobile" href="#常用列函数"><span class="level-left"><span class="level-item">1.14</span><span class="level-item">常用列函数</span></span></a></li></ul></li><li><a class="level is-mobile" href="#数据库考试复习笔记"><span class="level-left"><span class="level-item">2</span><span class="level-item">数据库考试复习笔记</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#知识点："><span class="level-left"><span class="level-item">2.1</span><span class="level-item">知识点：</span></span></a></li><li><a class="level is-mobile" href="#易错点："><span class="level-left"><span class="level-item">2.2</span><span class="level-item">易错点：</span></span></a></li><li><a class="level is-mobile" href="#简答："><span class="level-left"><span class="level-item">2.3</span><span class="level-item">简答：</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#MySql数据库SQL语言学习"><span class="level-left"><span class="level-item">1</span><span class="level-item">MySql数据库SQL语言学习</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Create命令"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">Create命令</span></span></a></li><li><a class="level is-mobile" href="#Grant-命令"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">Grant 命令</span></span></a></li><li><a class="level is-mobile" href="#Revoke命令"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Revoke命令</span></span></a></li><li><a class="level is-mobile" href="#Alter命令"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">Alter命令</span></span></a></li><li><a class="level is-mobile" href="#Drop命令"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">Drop命令</span></span></a></li><li><a class="level is-mobile" href="#Insert命令"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">Insert命令</span></span></a></li><li><a class="level is-mobile" href="#Update命令"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">Update命令</span></span></a></li><li><a class="level is-mobile" href="#Select命令"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">Select命令</span></span></a></li><li><a class="level is-mobile" href="#Select查询进阶"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">Select查询进阶</span></span></a></li><li><a class="level is-mobile" href="#Delete命令"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">Delete命令</span></span></a></li><li><a class="level is-mobile" href="#其他常用命令"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">其他常用命令</span></span></a></li><li><a class="level is-mobile" href="#数据类型"><span class="level-left"><span class="level-item">1.12</span><span class="level-item">数据类型</span></span></a></li><li><a class="level is-mobile" href="#常用约束条件"><span class="level-left"><span class="level-item">1.13</span><span class="level-item">常用约束条件</span></span></a></li><li><a class="level is-mobile" href="#常用列函数"><span class="level-left"><span class="level-item">1.14</span><span class="level-item">常用列函数</span></span></a></li></ul></li><li><a class="level is-mobile" href="#数据库考试复习笔记"><span class="level-left"><span class="level-item">2</span><span class="level-item">数据库考试复习笔记</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#知识点："><span class="level-left"><span class="level-item">2.1</span><span class="level-item">知识点：</span></span></a></li><li><a class="level is-mobile" href="#易错点："><span class="level-left"><span class="level-item">2.2</span><span class="level-item">易错点：</span></span></a></li><li><a class="level is-mobile" href="#简答："><span class="level-left"><span class="level-item">2.3</span><span class="level-item">简答：</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hyperledger-Fabric试验快速搭建 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"><meta property="og:type" content="blog"><meta property="og:title" content="Hyperledger-Fabric试验快速搭建"><meta property="og:url" content="https://dicemy.com/29920"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://dicemy.com/img/og_image.png"><meta property="article:published_time" content="2021-07-16T02:25:12.000Z"><meta property="article:modified_time" content="2022-02-12T02:52:24.595Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="Hyperledger"><meta property="article:tag" content="fabric"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/29920"},"headline":"Hyperledger-Fabric试验快速搭建","image":["https://dicemy.com/img/og_image.png"],"datePublished":"2021-07-16T02:25:12.000Z","dateModified":"2022-02-12T02:52:24.595Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"}</script><link rel="canonical" href="https://dicemy.com/29920"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Hyperledger-Fabric试验快速搭建 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"><meta property="og:type" content="blog"><meta property="og:title" content="Hyperledger-Fabric试验快速搭建"><meta property="og:url" content="https://dicemy.com/29920"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://dicemy.com/img/og_image.png"><meta property="article:published_time" content="2021-07-16T02:25:12.000Z"><meta property="article:modified_time" content="2022-02-12T02:52:24.595Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="Hyperledger"><meta property="article:tag" content="fabric"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/29920"},"headline":"Hyperledger-Fabric试验快速搭建","image":["https://dicemy.com/img/og_image.png"],"datePublished":"2021-07-16T02:25:12.000Z","dateModified":"2022-02-12T02:52:24.595Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记"}</script><link rel="canonical" href="https://dicemy.com/29920"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T02:25:12.000Z" title="2021/7/16 上午10:25:12">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:24.595Z" title="2022/2/12 上午10:52:24">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">19 分钟读完 (大约2784个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Hyperledger-Fabric试验快速搭建</h1><div class="content"><p>本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-16T02:25:12.000Z" title="2021/7/16 上午10:25:12">2021-07-16</time>发表</span><span class="level-item"><time dateTime="2022-02-12T02:52:24.595Z" title="2022/2/12 上午10:52:24">2022-02-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">19 分钟读完 (大约2784个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Hyperledger-Fabric试验快速搭建</h1><div class="content"><p>本文包括了Hyperledger Fabric文档阅读和Hyperledger Fabric平台搭建笔记</p>
 <span id="more"></span>
 
 <h1 id="Hyperledger-Fabric文档阅读"><a href="#Hyperledger-Fabric文档阅读" class="headerlink" title="Hyperledger Fabric文档阅读"></a>Hyperledger Fabric文档阅读</h1><h2 id="介绍（自己总结的）"><a href="#介绍（自己总结的）" class="headerlink" title="介绍（自己总结的）"></a>介绍（自己总结的）</h2><p><strong>区块链：</strong> <em>分布式</em>网络，<em>节点</em>维护，不可篡改的<em>账本</em>，<em>共识协议</em>来验证<em>交易</em>，节点执行交易来维护账本的副本，账本以<em>区块</em>的方式存在，区块通过<em>哈希</em>和之前的区块相连。</p>
@@ -50,113 +50,97 @@
 <h2 id="Go语言安装"><a href="#Go语言安装" class="headerlink" title="Go语言安装"></a>Go语言安装</h2><ol start="2">
 <li><p>Go语言安装</p>
 <p>从官网下载最新的linux-amd64.tar.gz压缩包（这里是go1.15.6.linux-amd64.tar.gz）</p>
-<pre><code>wget https://golang.google.cn/dl/go1.15.6.linux-amd64.tar.gz
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">wget https://golang.google.cn/dl/go1.15.6.linux-amd64.tar.gz<br></code></pre></td></tr></table></figure>
+
 <p>将其解压到/usr/local目录下：</p>
-<pre><code>sudo tar -C /usr/local -zxf [压缩包名]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo tar -C /usr/local -zxf [压缩包名]<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>配置环境变量，在/etc/profile文件的末尾加入（在加入之前创建/home/gopath目录）</p>
-<pre><code>export GOPATH=/home/gopath
-export PATH=$PATH:/usr/local/go/bin
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">export GOPATH=/home/gopath<br>export PATH=$PATH:/usr/local/go/bin<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>配置中国的代理</p>
-<pre><code>go env -w GO111MODULE=on
-go env -w GOPROXY=https://goproxy.cn,direct
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go env -w GO111MODULE=on<br>go env -w GOPROXY=https://goproxy.cn,direct<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>查看是否配置成功</p>
-<pre><code>go env
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">go env<br></code></pre></td></tr></table></figure>
+
+
 </li>
 </ol>
 <h3 id="mwget安装"><a href="#mwget安装" class="headerlink" title="mwget安装"></a>mwget安装</h3><p>wget太慢使用mwget</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2
-yum <span class="token function">install</span> <span class="token function">bzip2</span> gcc-c++ openssl-devel intltool -y
-<span class="token function">bzip2</span> -d mwget_0.1.0.orig.tar.bz2
-<span class="token function">tar</span> -xvf mwget_0.1.0.orig.tar 
-<span class="token function">cd</span> mwget_0.1.0.orig
-./configure 
-<span class="token function">make</span>
-<span class="token function">make</span> <span class="token function">install</span>　　<span class="token keyword">echo</span> <span class="token string">"至此，安装完成"</span>
-% 断点续传
-<span class="token function">wget</span> -c 要下载的文件，实现断点续传。
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget http://jaist.dl.sourceforge.net/project/kmphpfm/mwget/0.1/mwget_0.1.0.orig.tar.bz2<br>yum install bzip2 gcc-c++ openssl-devel intltool -y<br>bzip2 -d mwget_0.1.0.orig.tar.bz2<br>tar -xvf mwget_0.1.0.orig.tar <br><span class="hljs-built_in">cd</span> mwget_0.1.0.orig<br>./configure <br>make<br>make install　　<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;至此，安装完成&quot;</span><br>% 断点续传<br>wget -c 要下载的文件，实现断点续传。<br></code></pre></td></tr></table></figure>
+
 <h3 id="最后的配置工作"><a href="#最后的配置工作" class="headerlink" title="最后的配置工作"></a>最后的配置工作</h3><p>生成身份材料</p>
 <ol>
 <li><p>进入BasicNetwork-2.0/artifacts/channel目录，执行</p>
-<pre><code>./create-artifacts.sh
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./create-artifacts.sh<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>进入BasicNetwork-2.0/artifacts目录执行</p>
-<pre><code>./docker-compose up -d
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./docker-compose up -d<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>进入BasicNetwork-2.0</p>
-<pre><code>./createChannel.sh
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./createChannel.sh<br></code></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p>智能合约部署</p>
 <ol>
 <li>进入BasicNetwork-2.0/artifacts/src/github.com/fabcar/go/目录下，执行（为智能合约安装依赖）</li>
 </ol>
-<pre><code>GO111MODULE=on go mod vendor
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GO111MODULE=on go mod vendor<br></code></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>进入BasicNetwork-2.0/，执行智能合约的部署和测试在执行<code>deployChaincode.sh</code>之前，按以下命令修改文件夹的权限</li>
 </ol>
-<pre><code>sudo chmod 777 /home/gopath/*
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo chmod 777 /home/gopath/*<br></code></pre></td></tr></table></figure>
+
 <ol start="3">
 <li>开始部署</li>
 </ol>
-<pre><code>./deployChaincode.sh
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./deployChaincode.sh<br></code></pre></td></tr></table></figure>
+
 <p>部署explorer</p>
 <ol>
 <li><p>启动Explorer, 进入ContainerisingBlockchainExplorer目录下</p>
-<pre><code>docker-compose up -d
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker-compose up -d<br></code></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p>服务全部启动成功，可以在windows上查看相关的服务。</p>
 <p><strong>注意：</strong>hyperledge Fabric搭建完成后将虚拟机挂起后再重新开启并不能恢复所有的服务，需要重新开启一遍。</p>
 <h3 id="平台使用"><a href="#平台使用" class="headerlink" title="平台使用"></a>平台使用</h3><p>查看可视化的区块链信息，访问：</p>
-<pre><code>[ip地址]:8080
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[ip地址]:8080<br></code></pre></td></tr></table></figure>
+
 <p>查看产的最新状态，访问：</p>
-<pre><code>[ip地址]:5984/_utils
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[ip地址]:5984/_utils<br></code></pre></td></tr></table></figure>
+
 <h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><p>超级账本的下载地址：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget -c https://github.com/hyperledger/fabric/releases/download/v2.2.1/hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre></td></tr></table></figure>
+
 <p>超级账本的解压缩：</p>
-<pre class=" language-shell"><code class="language-shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo tar -C ./ -zxf hyperledger-fabric-linux-amd64-2.2.1.tar.gz<br></code></pre></td></tr></table></figure>
+
 <p>超级账本的bin目录内的东西放到/usr/local/bin下</p>
-<pre class=" language-shell"><code class="language-shell">sudo mv ./bin/* /usr/local/bin
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mv ./bin/* /usr/local/bin<br></code></pre></td></tr></table></figure>
+
 <p>把BasicNetwork-2.0/artifacts/channel下的crypto-config拷贝到ContainerisingBlockExplorer下</p>
-<pre class=" language-shell"><code class="language-shell">sudo mv BasicNetwork-2.0/artifacts/channel/crypto-config ContainerisingBlockchainExplorer
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mv BasicNetwork-2.0/artifacts/channel/crypto-config ContainerisingBlockchainExplorer<br></code></pre></td></tr></table></figure>
+
 <p>在ContainerisingBlockchainExplorer下创建data和walletstore文件夹</p>
-<pre class=" language-shell"><code class="language-shell">sudo mkdir data
-sudo mkdir walletstore
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo mkdir data<br>sudo mkdir walletstore<br></code></pre></td></tr></table></figure>
+
 <p>查看Centos的ip（看en33那个ip）</p>
-<pre class=" language-shell"><code class="language-shell">ip add
-</code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ip add<br></code></pre></td></tr></table></figure>
+
 <p>启动docker服务</p>
-<pre><code>systemctl restart docker.service
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">systemctl restart docker.service<br></code></pre></td></tr></table></figure>
+
 <p>关闭所有运行着的docker容器</p>
-<pre><code>docker rm -f $(docker ps -a -q)
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker rm -f $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+
 <p>tips:</p>
-<pre><code>注意go的版本
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">注意go的版本<br></code></pre></td></tr></table></figure>
+
 <p>参考资料：</p>
 <p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=1d093d10-a21e-4640-852e-87fc4d68456c&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=003vny0w36jQEW2ofd0w3ju6IV2vny0O&channelId=wx75425a38a3ed6402">实验平台在服务器上的基于脚本的自动化部署[1]</a></p>
 <p><a target="_blank" rel="noopener" href="https://detail.yinxiang.com/index.html?guid=91104fed-4f7d-481e-9ac2-8008b8d2fff3&loginName=%E5%8E%BB%E6%9C%88%E7%90%83&token=undefined&at=false&platformType=1&deviceinfo=%7B%22application%22:%22android_miniapp%22,%22applicationVersion%22:%221.1.20%22,%22platform%22:%22microsoft%22,%22platformVersion%22:%22Windows%2010%20x64%22,%22locale%22:%22zh_CN%22%7D&unionId=6e4d7dd0b0996a216344dce0b7edc6d9&userId=33691989&sessionId=043YQkll27EWj74Kggll2454aR2YQkl0&channelId=wx75425a38a3ed6402">区块链实验平台部署[2]</a></p>
@@ -178,7 +162,7 @@ sudo mkdir walletstore
             
             enableQQ: false,
             requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Hyperledger-Fabric文档阅读"><span class="level-left"><span class="level-item">1</span><span class="level-item">Hyperledger Fabric文档阅读</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#介绍（自己总结的）"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">介绍（自己总结的）</span></span></a></li><li><a class="level is-mobile" href="#介绍"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">介绍</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Hyperledger-Fabric平台搭建笔记"><span class="level-left"><span class="level-item">2</span><span class="level-item">Hyperledger Fabric平台搭建笔记</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#centos7-9系统的安装和基础配置"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">centos7.9系统的安装和基础配置</span></span></a></li><li><a class="level is-mobile" href="#Go语言安装"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Go语言安装</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#mwget安装"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">mwget安装</span></span></a></li><li><a class="level is-mobile" href="#最后的配置工作"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">最后的配置工作</span></span></a></li><li><a class="level is-mobile" href="#平台使用"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">平台使用</span></span></a></li><li><a class="level is-mobile" href="#常用操作"><span class="level-left"><span class="level-item">2.2.4</span><span class="level-item">常用操作</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Hyperledger-Fabric文档阅读"><span class="level-left"><span class="level-item">1</span><span class="level-item">Hyperledger Fabric文档阅读</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#介绍（自己总结的）"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">介绍（自己总结的）</span></span></a></li><li><a class="level is-mobile" href="#介绍"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">介绍</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Hyperledger-Fabric平台搭建笔记"><span class="level-left"><span class="level-item">2</span><span class="level-item">Hyperledger Fabric平台搭建笔记</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#centos7-9系统的安装和基础配置"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">centos7.9系统的安装和基础配置</span></span></a></li><li><a class="level is-mobile" href="#Go语言安装"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Go语言安装</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#mwget安装"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">mwget安装</span></span></a></li><li><a class="level is-mobile" href="#最后的配置工作"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">最后的配置工作</span></span></a></li><li><a class="level is-mobile" href="#平台使用"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">平台使用</span></span></a></li><li><a class="level is-mobile" href="#常用操作"><span class="level-left"><span class="level-item">2.2.4</span><span class="level-item">常用操作</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
