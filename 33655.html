@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>SSM入门 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"><meta property="og:type" content="blog"><meta property="og:title" content="SSM入门"><meta property="og:url" content="https://dicemy.com/33655"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"><meta property="article:published_time" content="2022-05-15T11:02:27.000Z"><meta property="article:modified_time" content="2022-06-14T11:49:04.631Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="Java"><meta property="article:tag" content="SpringMVC"><meta property="article:tag" content="Spring"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/33655"},"headline":"SSM入门","image":["https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"],"datePublished":"2022-05-15T11:02:27.000Z","dateModified":"2022-06-14T11:49:04.631Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"}</script><link rel="canonical" href="https://dicemy.com/33655"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>SSM入门 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"><meta property="og:type" content="blog"><meta property="og:title" content="SSM入门"><meta property="og:url" content="https://dicemy.com/33655"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"><meta property="article:published_time" content="2022-05-15T11:02:27.000Z"><meta property="article:modified_time" content="2022-06-15T12:40:48.830Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="Java"><meta property="article:tag" content="SpringMVC"><meta property="article:tag" content="Spring"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/33655"},"headline":"SSM入门","image":["https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png"],"datePublished":"2022-05-15T11:02:27.000Z","dateModified":"2022-06-15T12:40:48.830Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"Java_SSM入门 参考课程：黑马程序员2022最新SSM框架教程"}</script><link rel="canonical" href="https://dicemy.com/33655"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png" alt="SSM入门"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-15T11:02:27.000Z" title="2022/5/15 下午7:02:27">2022-05-15</time>发表</span><span class="level-item"><time dateTime="2022-06-14T11:49:04.631Z" title="2022/6/14 下午7:49:04">2022-06-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">1 小时读完 (大约6717个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">SSM入门</h1><div class="content"><p>Java_SSM入门</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png" alt="SSM入门"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-15T11:02:27.000Z" title="2022/5/15 下午7:02:27">2022-05-15</time>发表</span><span class="level-item"><time dateTime="2022-06-15T12:40:48.830Z" title="2022/6/15 下午8:40:48">2022-06-15</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">1 小时读完 (大约8103个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">SSM入门</h1><div class="content"><p>Java_SSM入门</p>
 <p>参考课程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Fi4y1S7ix?spm_id_from=333.851.header_right.fav_list.click&vd_source=9471f1d092696b810d533da52467e07f">黑马程序员2022最新SSM框架教程</a></p>
 <span id="more"></span>
 
@@ -776,7 +776,219 @@
 <p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206141945772.png" alt="image-20220614194558593"></p>
 </li>
 </ul>
-<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2></div><div class="article-licensing box"><div class="licensing-title"><p>SSM入门</p><p><a href="https://dicemy.com/33655">https://dicemy.com/33655</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-05-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-06-14</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/tags/SpringMVC/">SpringMVC</a><a class="link-muted mr-2" rel="tag" href="/tags/Spring/">Spring</a></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/60206"><span class="level-item">JavaWeb</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h3 id="SpringMVC简介"><a href="#SpringMVC简介" class="headerlink" title="SpringMVC简介"></a>SpringMVC简介</h3><h4 id="SpringMVC概述"><a href="#SpringMVC概述" class="headerlink" title="SpringMVC概述"></a>SpringMVC概述</h4><ul>
+<li>SpringMVC技术与Servlet技术功能等同，均属于web层开发技术 </li>
+<li>SpringMVC是一种基于Java实现MVC模型的轻量级Web框架</li>
+<li>优点<ul>
+<li>使用简单，开发便捷（相比于Servlet）</li>
+<li>灵活性强 </li>
+</ul>
+</li>
+</ul>
+<h4 id="SpringMVC入门案例"><a href="#SpringMVC入门案例" class="headerlink" title="SpringMVC入门案例"></a>SpringMVC入门案例</h4><ol>
+<li><p>使用SpringMVC技术需要先导入SpringMVC坐标与Servlet坐标</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151747523.png" alt="image-20220615174727543"></p>
+</li>
+<li><p>创建SpringMVC控制器类（等同于Servlet功能）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151748250.png" alt="image-20220615174818486"></p>
+</li>
+<li><p>初始化SpringMVC环境（同Spring环境），设定SpringMVC加载对应的bean</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151749560.png" alt="image-20220615174951940"></p>
+</li>
+<li><p>初始化Servlet容器，加载SpringMVC环境，并设置SpringMVC技术处理的请求</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151750412.png" alt="image-20220615175057491"></p>
+</li>
+</ol>
+<ul>
+<li><p>SpringMVC入门程序开发总结（1+N）</p>
+<ul>
+<li>一次性工作<ul>
+<li>创建工程，设置服务器，加载工程</li>
+<li>导入坐标</li>
+<li>创建web容器启动类，加载SpringMVC配置，并设置SpringMVC请求拦截路径</li>
+<li>SpringMVC核心配置类（设置配置类，扫描Controller包，加载Controller控制器bean）</li>
+</ul>
+</li>
+<li>多次工作<ul>
+<li>定义处理请求的控制类</li>
+<li>定义处理请求的控制器方法，并配置映射路径（@RequestMapping）与返回json数据（@ResponseBody）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>AbstractDispatcherServletInitializer类是SpringMVC提供的快速初始化Web3.0容器的抽象类</p>
+</li>
+<li><p>AbstractDispatcherServletInitializer提供三个接口方法供用户实现</p>
+<ul>
+<li><p>createServletApplicationContext（）方法，创建Servlet容器时，加载SpringMVC对应的bean并放入WebApplicationContext对象范围中，而WebApplicationContext的作用范围为ServletContext范围，即整个Web容器范围。</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151833074.png" alt="image-20220615183305357"></p>
+</li>
+<li><p>getServletMappings（）方法，设定SpringMVC对应的请求映射路径，设置为/表示拦截所有请求，任意请求都将转入到SpringMVC进行处理</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151834647.png" alt="image-20220615183451977"></p>
+</li>
+<li><p>createRootApplicationContext（）方法，如果创建Servlet容器时需要加载非SpringMVC对应的bean，使用当前方法进行，使用方式同createServletApplicationContext（）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151840089.png" alt="image-20220615184012470"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="SpringMVC注解"><a href="#SpringMVC注解" class="headerlink" title="SpringMVC注解"></a>SpringMVC注解</h4><ul>
+<li><p>@Controller</p>
+<ul>
+<li><p>名称：@Controller</p>
+</li>
+<li><p>类型：类注解</p>
+</li>
+<li><p>位置：SpringMVC控制器类定义上方</p>
+</li>
+<li><p>作用：设定SpringMVC的核心控制器bean</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151819370.png" alt="image-20220615181914511"></p>
+</li>
+</ul>
+</li>
+<li><p>@RequestMapping</p>
+<ul>
+<li><p>名称：@RequestMapping</p>
+</li>
+<li><p>类型：方法注解 类注解</p>
+</li>
+<li><p>位置：SpringMVC控制器方法定义上方</p>
+</li>
+<li><p>作用：设置当前控制器方法请求访问路径，如果设置在类上统一设置当前控制器方法请求访问路径前缀</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151820940.png" alt="image-20220615182056355"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206152038661.png" alt="image-20220615203838755"></p>
+</li>
+<li><p>相关属性</p>
+<ul>
+<li>value（默认）：请求访问路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>@ResponseBody</p>
+<ul>
+<li><p>名称：@ResponseBody</p>
+</li>
+<li><p>类型：方法注解</p>
+</li>
+<li><p>位置：SpringMVC控制器方法定义上方</p>
+</li>
+<li><p>作用：设置当前控制器方法相应内容为当前返回值，无需解析</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151822241.png" alt="image-20220615182234492"></p>
+</li>
+</ul>
+</li>
+<li><p>@ComponentScan</p>
+<ul>
+<li><p>名称：@ComponentScan</p>
+</li>
+<li><p>类型：类注解</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151951542.png" alt="image-20220615195103912"></p>
+</li>
+<li><p>属性</p>
+<ul>
+<li>excludeFilters：排除扫描路径中加载的bean，需要指定类别（Type）与具体项（classes）</li>
+<li>includeFilters：加载指定的bean，需要指定类别（Type）与具体项（classes）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="入门案例工作流程分析"><a href="#入门案例工作流程分析" class="headerlink" title="入门案例工作流程分析"></a>入门案例工作流程分析</h4><ul>
+<li><p>启动服务器初始化过程</p>
+<ol>
+<li>服务器启动，执行ServletContainersInitConfig类，初始化Web容器</li>
+<li>执行createServletApplicationContext方法，创建了WebApplicationContext对象</li>
+<li>加载SpringMvcConfig</li>
+<li>执行@ComponentScan加载对应的bean</li>
+<li>加载UserController，每个@RequestMapping的名称对应一个具体的方法</li>
+<li>执行getServletMapping方法，定义所有的请求都通过SpringMVC</li>
+</ol>
+</li>
+<li><p>单次请求过程</p>
+<ol>
+<li>发送请求localhost/save</li>
+<li>web容器发现所有请求都经过SpringMVC，将请求交给SpringMVC处理</li>
+<li>解析请求路径/save</li>
+<li>由/save匹配中对应的方法save（）</li>
+<li>执行save（）</li>
+<li>检测到有@ResponseBody直接将save（）方法的返回值作为响应体返回给请求方</li>
+</ol>
+<img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151926067.png" alt="image-20220615192648084" style="zoom:50%;" />
+
+<img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151926221.png" style="zoom:50%;" />
+
+</li>
+</ul>
+<h4 id="Controller加载控制与业务bean加载控制"><a href="#Controller加载控制与业务bean加载控制" class="headerlink" title="Controller加载控制与业务bean加载控制"></a>Controller加载控制与业务bean加载控制</h4><ul>
+<li><p>SpringMVC相关bean（表现层bean）</p>
+</li>
+<li><p>Spring控制的bean</p>
+<ul>
+<li>业务bean（Service）</li>
+<li>功能bean（DataSource等）</li>
+</ul>
+</li>
+<li><p>SpringMVC相关bean加载控制</p>
+<ul>
+<li>SpringMVC加载的bean对应的包均在com.dicemy.controller包内</li>
+</ul>
+</li>
+<li><p>Spring相关bean加载控制</p>
+<ul>
+<li>方式一：Spring加载的bean设定扫描范围为com.dicemy，排除掉controller包内的bean</li>
+<li>方式二：Spring加载的bean设定扫描范围为精确范围，例如Service包，dao包等</li>
+<li>方式三：不区分Spring与SpringMVC的环境，加载到同一个环境中</li>
+</ul>
+</li>
+<li><p>bean的加载格式</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151953037.png" alt="image-20220615195342115"></p>
+</li>
+<li><p>简化开发</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206151957992.png" alt="image-20220615195709259"></p>
+</li>
+</ul>
+<ol>
+<li>因为功能不同，如何避免Spring错误的加载到SpringMVC的bean？<ul>
+<li>SpringMVC的bean—加载Spring控制的bean的时候排除掉SpringMVC控制的bean</li>
+</ul>
+</li>
+</ol>
+<h3 id="PostMan"><a href="#PostMan" class="headerlink" title="PostMan"></a>PostMan</h3><h4 id="PostMan简介"><a href="#PostMan简介" class="headerlink" title="PostMan简介"></a>PostMan简介</h4><ul>
+<li>Postman是一款功能强大的网页调试与发送网页HTTP请求的Chrome插件</li>
+<li>作用：常用于进行接口测试</li>
+<li>特征<ul>
+<li>简单</li>
+<li>实用</li>
+<li>美观</li>
+<li>大方</li>
+</ul>
+</li>
+</ul>
+<h4 id="PostMan基本使用"><a href="#PostMan基本使用" class="headerlink" title="PostMan基本使用"></a>PostMan基本使用</h4><ul>
+<li>注册登录</li>
+<li>创建工作空间/进入工作空间</li>
+<li>发起请求测试结果</li>
+</ul>
+<h3 id="请求与相应"><a href="#请求与相应" class="headerlink" title="请求与相应"></a>请求与相应</h3><h4 id="请求映射路径"><a href="#请求映射路径" class="headerlink" title="请求映射路径"></a>请求映射路径</h4><ol>
+<li>团队多人开发，每人设置不同的请求路径，冲突问题如何解决？<ul>
+<li>设置模块名作为请求路径前缀</li>
+</ul>
+</li>
+</ol>
+<h4 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h4><ul>
+<li>Get请求</li>
+<li>Post请求</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>SSM入门</p><p><a href="https://dicemy.com/33655">https://dicemy.com/33655</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-05-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-06-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/tags/SpringMVC/">SpringMVC</a><a class="link-muted mr-2" rel="tag" href="/tags/Spring/">Spring</a></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2607"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java常用数据结构</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/60206"><span class="level-item">JavaWeb</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
             appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
@@ -794,7 +1006,7 @@
             
             enableQQ: false,
             requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">38</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">25</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Spring"><span class="level-left"><span class="level-item">1</span><span class="level-item">Spring</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#学习预备"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">学习预备</span></span></a></li><li><a class="level is-mobile" href="#初识Spring"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">初识Spring</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Spring Framework</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Spring-Framework系统架构"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">Spring Framework系统架构</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework学习路线"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">Spring Framework学习路线</span></span></a></li><li><a class="level is-mobile" href="#核心容器的核心概念"><span class="level-left"><span class="level-item">1.3.3</span><span class="level-item">核心容器的核心概念</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例思路分析"><span class="level-left"><span class="level-item">1.3.4</span><span class="level-item">IoC入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例（XML版）"><span class="level-left"><span class="level-item">1.3.5</span><span class="level-item">IoC入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例思路分析"><span class="level-left"><span class="level-item">1.3.6</span><span class="level-item">DI入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例（XML版）"><span class="level-left"><span class="level-item">1.3.7</span><span class="level-item">DI入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#bean基础配置"><span class="level-left"><span class="level-item">1.3.8</span><span class="level-item">bean基础配置</span></span></a></li><li><a class="level is-mobile" href="#bean实例化"><span class="level-left"><span class="level-item">1.3.9</span><span class="level-item">bean实例化</span></span></a></li><li><a class="level is-mobile" href="#bean的生命周期"><span class="level-left"><span class="level-item">1.3.10</span><span class="level-item">bean的生命周期</span></span></a></li><li><a class="level is-mobile" href="#依赖注入方式"><span class="level-left"><span class="level-item">1.3.11</span><span class="level-item">依赖注入方式</span></span></a></li><li><a class="level is-mobile" href="#依赖自动装配"><span class="level-left"><span class="level-item">1.3.12</span><span class="level-item">依赖自动装配</span></span></a></li><li><a class="level is-mobile" href="#集合注入"><span class="level-left"><span class="level-item">1.3.13</span><span class="level-item">集合注入</span></span></a></li><li><a class="level is-mobile" href="#第三方资源配置管理"><span class="level-left"><span class="level-item">1.3.14</span><span class="level-item">第三方资源配置管理</span></span></a></li><li><a class="level is-mobile" href="#加载properties文件"><span class="level-left"><span class="level-item">1.3.15</span><span class="level-item">加载properties文件</span></span></a></li><li><a class="level is-mobile" href="#容器"><span class="level-left"><span class="level-item">1.3.16</span><span class="level-item">容器</span></span></a></li><li><a class="level is-mobile" href="#核心容器总结"><span class="level-left"><span class="level-item">1.3.17</span><span class="level-item">核心容器总结</span></span></a></li><li><a class="level is-mobile" href="#注解开发"><span class="level-left"><span class="level-item">1.3.18</span><span class="level-item">注解开发</span></span></a></li><li><a class="level is-mobile" href="#注解开发总结"><span class="level-left"><span class="level-item">1.3.19</span><span class="level-item">注解开发总结</span></span></a></li><li><a class="level is-mobile" href="#Spring整合MyBatis"><span class="level-left"><span class="level-item">1.3.20</span><span class="level-item">Spring整合MyBatis</span></span></a></li><li><a class="level is-mobile" href="#Spring整合JUnit"><span class="level-left"><span class="level-item">1.3.21</span><span class="level-item">Spring整合JUnit</span></span></a></li><li><a class="level is-mobile" href="#AOP简介"><span class="level-left"><span class="level-item">1.3.22</span><span class="level-item">AOP简介</span></span></a></li><li><a class="level is-mobile" href="#AOP入门案例"><span class="level-left"><span class="level-item">1.3.23</span><span class="level-item">AOP入门案例</span></span></a></li><li><a class="level is-mobile" href="#AOP工作流程"><span class="level-left"><span class="level-item">1.3.24</span><span class="level-item">AOP工作流程</span></span></a></li><li><a class="level is-mobile" href="#AOP核心概念"><span class="level-left"><span class="level-item">1.3.25</span><span class="level-item">AOP核心概念</span></span></a></li><li><a class="level is-mobile" href="#AOP切入点表达式"><span class="level-left"><span class="level-item">1.3.26</span><span class="level-item">AOP切入点表达式</span></span></a></li><li><a class="level is-mobile" href="#AOP通知类型"><span class="level-left"><span class="level-item">1.3.27</span><span class="level-item">AOP通知类型</span></span></a></li><li><a class="level is-mobile" href="#案例：测量业务层接口执行效率（万次核心代码执行效率）"><span class="level-left"><span class="level-item">1.3.28</span><span class="level-item">案例：测量业务层接口执行效率（万次核心代码执行效率）</span></span></a></li><li><a class="level is-mobile" href="#AOP通知获取数据"><span class="level-left"><span class="level-item">1.3.29</span><span class="level-item">AOP通知获取数据</span></span></a></li><li><a class="level is-mobile" href="#案例：百度网盘密码数据兼容处理"><span class="level-left"><span class="level-item">1.3.30</span><span class="level-item">案例：百度网盘密码数据兼容处理</span></span></a></li><li><a class="level is-mobile" href="#AOP总结"><span class="level-left"><span class="level-item">1.3.31</span><span class="level-item">AOP总结</span></span></a></li><li><a class="level is-mobile" href="#Spring事务简介"><span class="level-left"><span class="level-item">1.3.32</span><span class="level-item">Spring事务简介</span></span></a></li><li><a class="level is-mobile" href="#Spring事务角色"><span class="level-left"><span class="level-item">1.3.33</span><span class="level-item">Spring事务角色</span></span></a></li><li><a class="level is-mobile" href="#事务相关配置"><span class="level-left"><span class="level-item">1.3.34</span><span class="level-item">事务相关配置</span></span></a></li><li><a class="level is-mobile" href="#事故传播行为"><span class="level-left"><span class="level-item">1.3.35</span><span class="level-item">事故传播行为</span></span></a></li></ul></li><li><a class="level is-mobile" href="#SpringMVC"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">SpringMVC</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">39</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">25</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Spring"><span class="level-left"><span class="level-item">1</span><span class="level-item">Spring</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#学习预备"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">学习预备</span></span></a></li><li><a class="level is-mobile" href="#初识Spring"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">初识Spring</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">Spring Framework</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Spring-Framework系统架构"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">Spring Framework系统架构</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework学习路线"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">Spring Framework学习路线</span></span></a></li><li><a class="level is-mobile" href="#核心容器的核心概念"><span class="level-left"><span class="level-item">1.3.3</span><span class="level-item">核心容器的核心概念</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例思路分析"><span class="level-left"><span class="level-item">1.3.4</span><span class="level-item">IoC入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例（XML版）"><span class="level-left"><span class="level-item">1.3.5</span><span class="level-item">IoC入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例思路分析"><span class="level-left"><span class="level-item">1.3.6</span><span class="level-item">DI入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例（XML版）"><span class="level-left"><span class="level-item">1.3.7</span><span class="level-item">DI入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#bean基础配置"><span class="level-left"><span class="level-item">1.3.8</span><span class="level-item">bean基础配置</span></span></a></li><li><a class="level is-mobile" href="#bean实例化"><span class="level-left"><span class="level-item">1.3.9</span><span class="level-item">bean实例化</span></span></a></li><li><a class="level is-mobile" href="#bean的生命周期"><span class="level-left"><span class="level-item">1.3.10</span><span class="level-item">bean的生命周期</span></span></a></li><li><a class="level is-mobile" href="#依赖注入方式"><span class="level-left"><span class="level-item">1.3.11</span><span class="level-item">依赖注入方式</span></span></a></li><li><a class="level is-mobile" href="#依赖自动装配"><span class="level-left"><span class="level-item">1.3.12</span><span class="level-item">依赖自动装配</span></span></a></li><li><a class="level is-mobile" href="#集合注入"><span class="level-left"><span class="level-item">1.3.13</span><span class="level-item">集合注入</span></span></a></li><li><a class="level is-mobile" href="#第三方资源配置管理"><span class="level-left"><span class="level-item">1.3.14</span><span class="level-item">第三方资源配置管理</span></span></a></li><li><a class="level is-mobile" href="#加载properties文件"><span class="level-left"><span class="level-item">1.3.15</span><span class="level-item">加载properties文件</span></span></a></li><li><a class="level is-mobile" href="#容器"><span class="level-left"><span class="level-item">1.3.16</span><span class="level-item">容器</span></span></a></li><li><a class="level is-mobile" href="#核心容器总结"><span class="level-left"><span class="level-item">1.3.17</span><span class="level-item">核心容器总结</span></span></a></li><li><a class="level is-mobile" href="#注解开发"><span class="level-left"><span class="level-item">1.3.18</span><span class="level-item">注解开发</span></span></a></li><li><a class="level is-mobile" href="#注解开发总结"><span class="level-left"><span class="level-item">1.3.19</span><span class="level-item">注解开发总结</span></span></a></li><li><a class="level is-mobile" href="#Spring整合MyBatis"><span class="level-left"><span class="level-item">1.3.20</span><span class="level-item">Spring整合MyBatis</span></span></a></li><li><a class="level is-mobile" href="#Spring整合JUnit"><span class="level-left"><span class="level-item">1.3.21</span><span class="level-item">Spring整合JUnit</span></span></a></li><li><a class="level is-mobile" href="#AOP简介"><span class="level-left"><span class="level-item">1.3.22</span><span class="level-item">AOP简介</span></span></a></li><li><a class="level is-mobile" href="#AOP入门案例"><span class="level-left"><span class="level-item">1.3.23</span><span class="level-item">AOP入门案例</span></span></a></li><li><a class="level is-mobile" href="#AOP工作流程"><span class="level-left"><span class="level-item">1.3.24</span><span class="level-item">AOP工作流程</span></span></a></li><li><a class="level is-mobile" href="#AOP核心概念"><span class="level-left"><span class="level-item">1.3.25</span><span class="level-item">AOP核心概念</span></span></a></li><li><a class="level is-mobile" href="#AOP切入点表达式"><span class="level-left"><span class="level-item">1.3.26</span><span class="level-item">AOP切入点表达式</span></span></a></li><li><a class="level is-mobile" href="#AOP通知类型"><span class="level-left"><span class="level-item">1.3.27</span><span class="level-item">AOP通知类型</span></span></a></li><li><a class="level is-mobile" href="#案例：测量业务层接口执行效率（万次核心代码执行效率）"><span class="level-left"><span class="level-item">1.3.28</span><span class="level-item">案例：测量业务层接口执行效率（万次核心代码执行效率）</span></span></a></li><li><a class="level is-mobile" href="#AOP通知获取数据"><span class="level-left"><span class="level-item">1.3.29</span><span class="level-item">AOP通知获取数据</span></span></a></li><li><a class="level is-mobile" href="#案例：百度网盘密码数据兼容处理"><span class="level-left"><span class="level-item">1.3.30</span><span class="level-item">案例：百度网盘密码数据兼容处理</span></span></a></li><li><a class="level is-mobile" href="#AOP总结"><span class="level-left"><span class="level-item">1.3.31</span><span class="level-item">AOP总结</span></span></a></li><li><a class="level is-mobile" href="#Spring事务简介"><span class="level-left"><span class="level-item">1.3.32</span><span class="level-item">Spring事务简介</span></span></a></li><li><a class="level is-mobile" href="#Spring事务角色"><span class="level-left"><span class="level-item">1.3.33</span><span class="level-item">Spring事务角色</span></span></a></li><li><a class="level is-mobile" href="#事务相关配置"><span class="level-left"><span class="level-item">1.3.34</span><span class="level-item">事务相关配置</span></span></a></li><li><a class="level is-mobile" href="#事故传播行为"><span class="level-left"><span class="level-item">1.3.35</span><span class="level-item">事故传播行为</span></span></a></li></ul></li><li><a class="level is-mobile" href="#SpringMVC"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">SpringMVC</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringMVC简介"><span class="level-left"><span class="level-item">1.4.1</span><span class="level-item">SpringMVC简介</span></span></a></li><li><a class="level is-mobile" href="#PostMan"><span class="level-left"><span class="level-item">1.4.2</span><span class="level-item">PostMan</span></span></a></li><li><a class="level is-mobile" href="#请求与相应"><span class="level-left"><span class="level-item">1.4.3</span><span class="level-item">请求与相应</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
