@@ -7,90 +7,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><a class="image is-7by3" href="/36034"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206230831623.png" alt="SpringBoot2"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-06-23T00:00:08.000Z" title="2022/6/23 上午8:00:08">2022-06-23</time>发表</span><span class="level-item"><time dateTime="2022-06-23T03:14:38.117Z" title="2022/6/23 上午11:14:38">2022-06-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">5 分钟读完 (大约771个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/36034">SpringBoot2</a></h1><div class="content"><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="SpringBoot入门程序开发"><a href="#SpringBoot入门程序开发" class="headerlink" title="SpringBoot入门程序开发"></a>SpringBoot入门程序开发</h2><ul>
-<li><p>SpringBoot是用来<strong>简化</strong>Spring应用的初始搭建以及开发过程</p>
-</li>
-<li><p>Spring程序与SpringBoot程序对比</p>
-<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206230831157.png" alt="image-20220623083126102"></p>
-</li>
-</ul>
-<h3 id="基于阿里云创建项目"><a href="#基于阿里云创建项目" class="headerlink" title="基于阿里云创建项目"></a>基于阿里云创建项目</h3><ul>
-<li><p>基于阿里云创建项目，地址：<a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com</a></p>
-<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206230842222.png" alt="image-20220623084220151"></p>
-</li>
-</ul>
-<h3 id="手工创建项目"><a href="#手工创建项目" class="headerlink" title="手工创建项目"></a>手工创建项目</h3><ul>
-<li><p>手工创建项目（手工导入坐标）</p>
-</li>
-<li><p>手工创建项目（手工制作引导类）</p>
-<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206230846512.png" alt="image-20220623084650462"></p>
-</li>
-</ul>
-<h3 id="Idea中隐藏指定文件或指定类型文件"><a href="#Idea中隐藏指定文件或指定类型文件" class="headerlink" title="Idea中隐藏指定文件或指定类型文件"></a>Idea中隐藏指定文件或指定类型文件</h3><ul>
-<li>Setting -&gt; File Types -&gt; Ignored Files and Folders</li>
-<li>输入要隐藏的文件名，支持*号通配符</li>
-<li>回车确认添加</li>
-</ul>
-<h3 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h3><ul>
-<li>parent<ul>
-<li>所有SpringBoot项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到<strong>减少依赖冲突</strong>的目的</li>
-<li>parent各版本间存在着诸多坐标版本不同</li>
-</ul>
-</li>
-</ul>
-<h3 id="starter"><a href="#starter" class="headerlink" title="starter"></a>starter</h3><ul>
-<li><p>starter</p>
-<ul>
-<li>spring-boot-starter-web.pom</li>
-<li>SpringBoot中常见项目名称，定义了当前项目使用的所有依赖坐标，以达到<strong>减少依赖配置</strong>的目的</li>
-</ul>
-</li>
-<li><p>开发SpringBoot程序需要导入坐标时通常导入对应的starter，通常一个starter会依赖多个坐标，使用starter可以起到快速配置的作用，达到简化配置的目的</p>
-</li>
-</ul>
-<h3 id="引导类"><a href="#引导类" class="headerlink" title="引导类"></a>引导类</h3><ul>
-<li>SpringBoot的引导类是Boot工程的执行入口，运行main方法就可以启动项目。</li>
-<li>SpringBoot工程运行后初始化Spring容器，扫描引导类所在包加载bean</li>
-</ul>
-<h3 id="内嵌tomcat"><a href="#内嵌tomcat" class="headerlink" title="内嵌tomcat"></a>内嵌tomcat</h3><ul>
-<li>Jetty比Tomcat更轻量级，可扩展性更强（相较于Tomcat），谷歌应用引擎（GAE）已全面切换为Jetty</li>
-</ul>
-<h3 id="内置服务器"><a href="#内置服务器" class="headerlink" title="内置服务器"></a>内置服务器</h3><ol>
-<li>内嵌tomcat服务器是SpringBoot辅助功能之一</li>
-<li>内嵌Tomcat工作原理是将Tomcat服务器作为对象运行，并将该对象交给Spring容器管理</li>
-<li>变更内嵌服务器思想是去除现有服务器，添加全新的服务器</li>
-</ol>
-<ul>
-<li>tomcat（默认）    apache出品，粉丝多，应用面广，负载了若干较重的插件</li>
-<li>Jetty    更轻量级，负载性能远不及tomcat</li>
-<li>undertow    undertow，负载性能勉强跑赢tomcat</li>
-</ul>
-<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><h4 id="复制工程"><a href="#复制工程" class="headerlink" title="复制工程"></a>复制工程</h4><ul>
-<li><p>原则</p>
-<ul>
-<li>保留工程基础结构</li>
-<li>抹掉原式工程痕迹</li>
-</ul>
-</li>
-<li><p>步骤</p>
-<ol>
-<li>在工作空间中复制对应工程，并修改工程名称</li>
-<li>删除与Idea相关配置文件，仅保留src目录与pom.xml文件</li>
-<li>修改pom.xml文件中的artifactId与新工程/模块名相同</li>
-<li>删除name标签</li>
-<li>保留备份工程供后期使用</li>
-</ol>
-</li>
-<li><p>SpringBoot中文文档：<a target="_blank" rel="noopener" href="https://geekdoc.top/docs/languages/java/spring/spring-boot/2.5.5/reference/html/index.html">https://geekdoc.top/docs/languages/java/spring/spring-boot/2.5.5/reference/html/index.html</a></p>
-</li>
-<li><p>配置相关参考文档中：Application.Properties</p>
-</li>
-<li><p>若properties配置文件，yml配置文件，yaml配置文件同时存在，则相同的依次覆盖，不同的全都生效</p>
-</li>
-</ul>
-<h3 id="yaml语法规则"><a href="#yaml语法规则" class="headerlink" title="yaml语法规则"></a>yaml语法规则</h3><p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20220623111320989.png" alt="image-20220623111320989"></p>
-<p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20220623111352113.png" alt="image-20220623111352113"></p>
-</div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/33655"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png" alt="SSM入门"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-15T11:02:27.000Z" title="2022/5/15 下午7:02:27">2022-05-15</time>发表</span><span class="level-item"><time dateTime="2022-06-23T00:03:02.783Z" title="2022/6/23 上午8:03:02">2022-06-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">2 小时读完 (大约17620个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/33655">SSM入门</a></h1><div class="content"><p>Java_SSM入门</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><a class="image is-7by3" href="/36034"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206230831623.png" alt="SpringBoot2"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-06-23T00:00:08.000Z" title="2022/6/23 上午8:00:08">2022-06-23</time>发表</span><span class="level-item"><time dateTime="2022-06-23T03:23:29.157Z" title="2022/6/23 上午11:23:29">2022-06-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">5 分钟读完 (大约807个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/36034">SpringBoot2</a></h1><div class="content"><p>Java_SSM入门</p>
+<p>SpringBoot2 入门</p>
+<p>参考课程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15b4y1a7yG?p=1">黑马程序员SpringBoot2全套视频教程</a></p></div><a class="article-more button is-small is-size-7" href="/36034#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/33655"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206111510573.png" alt="SSM入门"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-15T11:02:27.000Z" title="2022/5/15 下午7:02:27">2022-05-15</time>发表</span><span class="level-item"><time dateTime="2022-06-23T03:23:33.168Z" title="2022/6/23 上午11:23:33">2022-06-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">2 小时读完 (大约17620个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/33655">SSM入门</a></h1><div class="content"><p>Java_SSM入门</p>
 <p>参考课程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Fi4y1S7ix?spm_id_from=333.851.header_right.fav_list.click&vd_source=9471f1d092696b810d533da52467e07f">黑马程序员2022最新SSM框架教程</a></p></div><a class="article-more button is-small is-size-7" href="/33655#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/60206"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202204140130264.png" alt="JavaWeb"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-04-14T16:20:54.000Z" title="2022/4/15 上午12:20:54">2022-04-15</time>发表</span><span class="level-item"><time dateTime="2022-05-23T14:58:02.458Z" title="2022/5/23 下午10:58:02">2022-05-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">1 小时读完 (大约9584个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/60206">JavaWeb</a></h1><div class="content"><p>JavaWeb入门</p>
 <p>参考课程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Qf4y1T7Hx?spm_id_from=333.851.header_right.fav_list.click">Java web从入门到企业实战完整版</a></p></div><a class="article-more button is-small is-size-7" href="/60206#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/23955"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202202150113550.png" alt="Hyperledger fabric开发入门"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-08T10:08:35.000Z" title="2022/1/8 下午6:08:35">2022-01-08</time>发表</span><span class="level-item"><time dateTime="2022-05-23T14:56:57.451Z" title="2022/5/23 下午10:56:57">2022-05-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">1 小时读完 (大约8644个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/23955">Hyperledger fabric开发入门</a></h1><div class="content"><p><strong>注意</strong>：不要在有生产环境的服务器上进行学习测试，（docker-compose关闭服务的时候会清除服务器上所有正在运行的的docker容器）</p>
 <p>参考课程：<a target="_blank" rel="noopener" href="https://edu.csdn.net/course/detail/32721">CSDN_超级账本智能合约与DApp</a></p></div><a class="article-more button is-small is-size-7" href="/23955#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/63228"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202201112341284.jpeg" alt="树莓派入门"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-07T09:39:21.000Z" title="2022/1/7 下午5:39:21">2022-01-07</time>发表</span><span class="level-item"><time dateTime="2022-06-20T11:34:24.918Z" title="2022/6/20 下午7:34:24">2022-06-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">11 分钟读完 (大约1689个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/63228">树莓派入门</a></h1><div class="content"><p>找点事干，摸摸硬件</p></div><a class="article-more button is-small is-size-7" href="/63228#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/12732"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202202150106241.jpg" alt="离散数学复习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-04T08:01:41.000Z" title="2022/1/4 下午4:01:41">2022-01-04</time>发表</span><span class="level-item"><time dateTime="2022-05-23T14:59:09.738Z" title="2022/5/23 下午10:59:09">2022-05-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></span><span class="level-item">33 分钟读完 (大约4935个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/12732">离散数学复习</a></h1><div class="content"><p>期末的小小总结</p></div><a class="article-more button is-small is-size-7" href="/12732#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/11651"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201946537.png" alt="数据结构复习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-01-04T04:28:51.000Z" title="2022/1/4 下午12:28:51">2022-01-04</time>发表</span><span class="level-item"><time dateTime="2022-06-20T11:47:11.855Z" title="2022/6/20 下午7:47:11">2022-06-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></span><span class="level-item">8 分钟读完 (大约1240个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/11651">数据结构复习</a></h1><div class="content"><p>期末的小小总结</p></div><a class="article-more button is-small is-size-7" href="/11651#more">阅读更多</a></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/16132"><img class="fill" src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202202201057198.jpg" alt="数字逻辑复习"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-12-24T03:44:19.000Z" title="2021/12/24 上午11:44:19">2021-12-24</time>发表</span><span class="level-item"><time dateTime="2022-05-23T14:59:59.129Z" title="2022/5/23 下午10:59:59">2022-05-23</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E5%8C%96%E8%AF%BE/">文化课</a></span><span class="level-item">35 分钟读完 (大约5280个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/16132">数字逻辑复习</a></h1><div class="content"><p>期末的小小总结</p></div><a class="article-more button is-small is-size-7" href="/16132#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-07T14:27:40.000Z" title="2021/11/7 下午10:27:40">2021-11-07</time>发表</span><span class="level-item"><time dateTime="2022-05-23T15:00:25.634Z" title="2022/5/23 下午11:00:25">2022-05-23</time>更新</span><span class="level-item">4 分钟读完 (大约538个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/17211">2021ccpc省赛总结</a></h1><div class="content"><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/20211107224612.png"></p>
