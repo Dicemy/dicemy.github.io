@@ -1664,4 +1664,813 @@
 </ul>
 <h3 id="继承关系步骤"><a href="#继承关系步骤" class="headerlink" title="继承关系步骤"></a>继承关系步骤</h3><ol>
 <li><p>创建Maven模块，设置打包类型为pom</p>
-<p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710982.png" alt="image-20220620165604985"></p>
+</li>
+<li><p>在父工程的pom文件中配置依赖关系（子工程将沿用父工程的依赖关系）</p>
+<p> <img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710129.png" alt="image-20220620165705707"></p>
+</li>
+<li><p>配置子工程中可选的依赖关系</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710334.png" alt="image-20220620165735214"></p>
+</li>
+<li><p>在子工程中配置当前工程所继承的父工程</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710162.png" alt="image-20220620165824082"></p>
+</li>
+<li><p>在子工程中配置使用父工程中可选依赖的坐标</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710106.png" alt="image-20220620165908627"></p>
+</li>
+</ol>
+<h3 id="聚合与继承的区别"><a href="#聚合与继承的区别" class="headerlink" title="聚合与继承的区别"></a>聚合与继承的区别</h3><ul>
+<li>作用<ul>
+<li>聚合用于快速构建项目</li>
+<li>继承用于快速配置</li>
+</ul>
+</li>
+<li>相同点：<ul>
+<li>聚合与继承的pom.xml文件打包方式均为pom，可以将两种关系制作到同一个pom文件中</li>
+<li>聚合与继承均属于设计性模块，并无实际的模块内容</li>
+</ul>
+</li>
+<li>不同点：<ul>
+<li>聚合是在当前模块中配置关系，聚合可以感知到参与聚合的模块有哪些</li>
+<li>继承是在子模块中配置关系，父模块无法感知哪些子模块继承了自己</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="属性配置与使用"><a href="#属性配置与使用" class="headerlink" title="属性配置与使用"></a>属性配置与使用</h3><ol>
+<li><p>定义属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710245.png" alt="image-20220620171008635"></p>
+</li>
+<li><p>引用属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201710198.png" alt="image-20220620171023538"></p>
+</li>
+</ol>
+<h3 id="资源文件引用属性步骤"><a href="#资源文件引用属性步骤" class="headerlink" title="资源文件引用属性步骤"></a>资源文件引用属性步骤</h3><ol>
+<li><p>定义属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201808406.png" alt="image-20220620180832616"></p>
+</li>
+<li><p>引用属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201808375.png" alt="image-20220620180844675"></p>
+</li>
+<li><p>开启资源文件目录加载属性的过滤器</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201809302.png" alt="image-20220620180949473"></p>
+</li>
+<li><p>配置maven大war包时，忽略web.xml检查</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201810777.png" alt="image-20220620181031162"></p>
+</li>
+</ol>
+<h3 id="其他属性（了解）"><a href="#其他属性（了解）" class="headerlink" title="其他属性（了解）"></a>其他属性（了解）</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201812168.png" alt="image-20220620181158934"></p>
+<p>属性列表</p>
+<ol>
+<li>自定义属性（常用）</li>
+<li>内置属性</li>
+<li>Setting属性</li>
+<li>Java系统属性</li>
+<li>环境变量属性</li>
+</ol>
+<h3 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h3><ul>
+<li>工程版本<ul>
+<li>SNAPSHOT（快照版本）<ul>
+<li>项目开发过程中临时输出的版本，称为快照版本</li>
+<li>快照版本会随着开发的进展不断更新</li>
+</ul>
+</li>
+<li>RELEASE（发布版本）<ul>
+<li>项目开发到进入阶段里程碑后，向团队外部发布较为稳定的版本，这种版本所对应的构建文件是稳定的，即便进行功能的后续开发，也不会改变当前发布版本内容，这种版本称为发布版本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>发布版本<ul>
+<li>alpha版</li>
+<li>beta版</li>
+<li>纯数字版</li>
+</ul>
+</li>
+</ul>
+<h2 id="多环境开发"><a href="#多环境开发" class="headerlink" title="多环境开发"></a>多环境开发</h2><ul>
+<li>maven提供配置多种环境的设定，帮助开发者使用过程中快速切换环境</li>
+</ul>
+<h3 id="多环境开发步骤"><a href="#多环境开发步骤" class="headerlink" title="多环境开发步骤"></a>多环境开发步骤</h3><ol>
+<li><p>定义多环境</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201830163.png" alt="image-20220620183032591"></p>
+</li>
+<li><p>使用多环境（构建过程）</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201831627.png" alt="image-20220620183126702"></p>
+<h3 id="跳过测试"><a href="#跳过测试" class="headerlink" title="跳过测试"></a>跳过测试</h3><ul>
+<li><p>应用场景</p>
+<ul>
+<li>功能更新中并且没有开发完毕</li>
+<li>快速打包</li>
+<li>……</li>
+</ul>
+</li>
+<li><p>跳过测试</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201916586.png" alt="image-20220620191625871"></p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201916367.png" alt="image-20220620191635002"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201916449.png" alt="image-20220620191651618"></p>
+<ul>
+<li><p>细粒度控制跳过测试</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206201917480.png" alt="image-20220620191733686"></p>
+</li>
+</ul>
+<h2 id="私服"><a href="#私服" class="headerlink" title="私服"></a>私服</h2><h3 id="团队开发分析"><a href="#团队开发分析" class="headerlink" title="团队开发分析"></a>团队开发分析</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210758766.png" alt="image-20220621075829683"></p>
+<h3 id="私服简介"><a href="#私服简介" class="headerlink" title="私服简介"></a>私服简介</h3><ul>
+<li>私服是一台独立的服务器，用于解决团队内部的资源共享与资源同步问题</li>
+<li>Nexus<ul>
+<li>Sonatype公司的一款maven私服产品</li>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://help.sonatype.com/repomanager3/product-information/download">https://help.sonatype.com/repomanager3/product-information/download</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Nexus安装与启动"><a href="#Nexus安装与启动" class="headerlink" title="Nexus安装与启动"></a>Nexus安装与启动</h3><ul>
+<li><p>启动服务器（命令行启动）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210809267.png" alt="image-20220621080903604"></p>
+</li>
+<li><p>访问服务器（默认端口：8081）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210809882.png" alt="image-20220621080927036"></p>
+</li>
+<li><p>修改基础配置信息</p>
+<ul>
+<li>安装路径下etc目录中nexus-default.properties文件中保存有nexus基础配置信息，例如默认访问端口</li>
+</ul>
+</li>
+<li><p>修改服务器运行配置信息</p>
+<ul>
+<li>安装路径下bin目录中nexus.vmoptions文件保存有nexus服务器启动对应的配置信息，例如默认占用内存空间</li>
+</ul>
+</li>
+</ul>
+<h3 id="私服资源操作流程分析"><a href="#私服资源操作流程分析" class="headerlink" title="私服资源操作流程分析"></a>私服资源操作流程分析</h3><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210846012.png" alt="image-20220621081624975" style="zoom:67%;" />
+
+<h3 id="私服仓库分类"><a href="#私服仓库分类" class="headerlink" title="私服仓库分类"></a>私服仓库分类</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210846560.png" alt="image-20220621081720614"></p>
+<h3 id="资源上传与下载"><a href="#资源上传与下载" class="headerlink" title="资源上传与下载"></a>资源上传与下载</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210846139.png" alt="image-20220621082000608"></p>
+<h3 id="本地私服访问私服权限设置"><a href="#本地私服访问私服权限设置" class="headerlink" title="本地私服访问私服权限设置"></a>本地私服访问私服权限设置</h3><h4 id="本地仓库访问私服权限设置"><a href="#本地仓库访问私服权限设置" class="headerlink" title="本地仓库访问私服权限设置"></a>本地仓库访问私服权限设置</h4><ul>
+<li><p>配置位置（setting.xml文件中）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210846000.png" alt="image-20220621084627916"></p>
+</li>
+<li><p>配置位置（setting.xml文件中）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210847342.png" alt="image-20220621084728761"></p>
+</li>
+</ul>
+<h4 id="工程上传到私服服务器设置"><a href="#工程上传到私服服务器设置" class="headerlink" title="工程上传到私服服务器设置"></a>工程上传到私服服务器设置</h4><ul>
+<li><p>配置位置（工程pom文件中）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210847008.png" alt="image-20220621084754353"></p>
+</li>
+<li><p>发布命令</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210848427.png" alt="image-20220621084811663"></p>
+</li>
+</ul>
+<h4 id="私服访问中央服务器设置"><a href="#私服访问中央服务器设置" class="headerlink" title="私服访问中央服务器设置"></a>私服访问中央服务器设置</h4><ul>
+<li><p>配置位置（nexus服务器页面设置）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210852974.png" alt="image-20220621085251063"></p>
+</li>
+</ul>
+<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><h2 id="SpringBoot简介"><a href="#SpringBoot简介" class="headerlink" title="SpringBoot简介"></a>SpringBoot简介</h2><ul>
+<li>SpringBoot是由Pivotal团队提供的全新框架，其设计目的是用来简化Spring应用的初始搭建以及开发过程</li>
+</ul>
+<h3 id="入门案例-2"><a href="#入门案例-2" class="headerlink" title="入门案例"></a>入门案例</h3><ul>
+<li><p>原生开发SpringMVC程序过程</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210858010.png" alt="image-20220621085838350"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210859262.png" alt="image-20220621085907608"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210859729.png" alt="image-20220621085915049"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210859413.png" alt="image-20220621085941740"></p>
+</li>
+<li><p>最简SpringBoot程序所包含的基础文件</p>
+<ul>
+<li>pom.xml</li>
+<li>Application类</li>
+</ul>
+</li>
+<li><p>Spring程序与SpringBoot程序对比</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210943302.png" alt="image-20220621094259659"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210943224.png" alt="image-20220621094334366"></p>
+</li>
+</ul>
+<h4 id="SpingBoot入门程序步骤"><a href="#SpingBoot入门程序步骤" class="headerlink" title="SpingBoot入门程序步骤"></a>SpingBoot入门程序步骤</h4><ol>
+<li><p>创建新模块，选择Spring初始化，并配置模块相关基础信息</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210934926.png" alt="image-20220621093446969"></p>
+</li>
+<li><p>选择当前模块需要的技术集</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210935848.png" alt="image-20220621093525193"></p>
+</li>
+<li><p>开发控制器类</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210935610.png" alt="image-20220621093554702"></p>
+</li>
+<li><p>运行自动生成的Application类</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206210936659.png" alt="image-20220621093620257"></p>
+</li>
+</ol>
+<h3 id="SpringBoot项目快速启动"><a href="#SpringBoot项目快速启动" class="headerlink" title="SpringBoot项目快速启动"></a>SpringBoot项目快速启动</h3><ol>
+<li><p>对SpringBoot项目打包（执行Maven构建指令package）</p>
+</li>
+<li><p>执行启动指令</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211102648.png" alt="image-20220621095140689"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211102887.png" alt="image-20220621095234903"></p>
+</li>
+</ol>
+<h3 id="SpringBoot概述"><a href="#SpringBoot概述" class="headerlink" title="SpringBoot概述"></a>SpringBoot概述</h3><ul>
+<li>SpringBoot是由SpringBoot是由Pivotal团队提供的全新框架，其设计目的是用来<strong>简化</strong>Spring应用的<strong>初始搭建</strong>以及<strong>开发过程</strong></li>
+<li>Spring程序缺点<ul>
+<li>配置繁琐</li>
+<li>依赖设置繁琐</li>
+</ul>
+</li>
+<li>SpringBoot程序优点<ul>
+<li>自动配置</li>
+<li>起步依赖（简化依赖配置）</li>
+<li>辅助功能（内置服务器，……）</li>
+</ul>
+</li>
+<li>起步依赖</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211007885.png" alt="image-20220621100240236"></p>
+<ul>
+<li>starter<ul>
+<li>SpringBoot中常见项目名称，定义了当前项目使用的所有项目坐标，以达到减少依赖配置的目的</li>
+</ul>
+</li>
+<li>parent<ul>
+<li>所有SpringBoot项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到减少依赖冲突的目的</li>
+<li>spring-boot-starter-parent（2.5.0）与spring-boot-starter-parent（2.4.6）共计57处版本不同</li>
+</ul>
+</li>
+<li>实际开发<ul>
+<li>使用任意坐标时，仅书写GAV中的G和A，V由SpringBoot提供</li>
+<li>如发生坐标错误，再指定version（要小心版本冲突）</li>
+</ul>
+</li>
+<li>辅助功能</li>
+</ul>
+<h3 id="SpringBoot程序启动"><a href="#SpringBoot程序启动" class="headerlink" title="SpringBoot程序启动"></a>SpringBoot程序启动</h3><ul>
+<li><p>启动方式</p>
+</li>
+<li><p>SpringBoot在创建项目时，采用jar的打包方式</p>
+</li>
+<li><p>SpringBoot的引导类是项目的入口，运行main方法就可以启动项目</p>
+</li>
+<li><p>使用maven依赖管理变更起步依赖项</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211019181.png" alt="image-20220621101903914"></p>
+</li>
+<li><p>Jetty比Tomcat更轻量级，可扩展性更强（相较于Tomcat），谷歌应用引擎（GAE）已经全面切换为Jetty</p>
+</li>
+</ul>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><h3 id="配置格式"><a href="#配置格式" class="headerlink" title="配置格式"></a>配置格式</h3><ul>
+<li><p>修改服务器端口</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211108218.png" alt="image-20220621110822646"></p>
+</li>
+<li><p>SpringBoot提供了多种属性配置方式</p>
+<ul>
+<li><p>application.properties</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211114108.png" alt="image-20220621111424476"></p>
+</li>
+<li><p>application.yml</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211114972.png" alt="image-20220621111432391"></p>
+</li>
+<li><p>application.yaml</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211114057.png" alt="image-20220621111439571"></p>
+</li>
+</ul>
+</li>
+<li><p>SpringBoot配置文件加载顺序（了解）</p>
+<ul>
+<li>application.properties &gt; application.yml &gt; application.yaml</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211116871.png" alt="image-20220621111618293"></p>
+</li>
+</ul>
+<h3 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h3><ul>
+<li>YAML（YAML Ain’t Markup Language），一种数据序列化格式</li>
+<li>优点：<ul>
+<li>容易阅读</li>
+<li>容易与脚本语言交互</li>
+<li>以数据为核心，重数据轻格式</li>
+</ul>
+</li>
+<li>YAML文件扩展名<ul>
+<li>.yml（主流）</li>
+<li>.yaml</li>
+</ul>
+</li>
+</ul>
+<h4 id="yaml语法格式"><a href="#yaml语法格式" class="headerlink" title="yaml语法格式"></a>yaml语法格式</h4><ul>
+<li><p>大小写敏感</p>
+</li>
+<li><p>属性层级关系使用多行描述，每行结尾使用冒号结束</p>
+</li>
+<li><p>使用缩进表示层级关系，同层级左侧对齐，只允许使用空格（不允许使用tab键）</p>
+</li>
+<li><p>属性前面添加空格（属性名与属性之间的冒号+空格作为分隔）</p>
+</li>
+<li><p>#表示注释</p>
+</li>
+<li><p>核心规则：数据前面要加空格与冒号隔开</p>
+</li>
+<li><p>数组数据在书写位置的下方使用减号作为数据开始符号，每行书写一个数据，减号与数据间<strong>空格</strong>分隔</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211126238.png" alt="image-20220621112607646"></p>
+</li>
+</ul>
+<h4 id="yaml数据读取"><a href="#yaml数据读取" class="headerlink" title="yaml数据读取"></a>yaml数据读取</h4><ul>
+<li><p>使用@Value读取单个数据，属性名引用方式：${一级属性名.二级属性名}</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555161.png" alt="image-20220621154714236"></p>
+</li>
+<li><p>封装全部数据到Environment对象</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555535.png" alt="image-20220621154751040"></p>
+</li>
+<li><p>自定义对象封装指定数据</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555326.png" alt="image-20220621154854841"></p>
+</li>
+</ul>
+<h4 id="自定义对象封装数据警告解决方案"><a href="#自定义对象封装数据警告解决方案" class="headerlink" title="自定义对象封装数据警告解决方案"></a>自定义对象封装数据警告解决方案</h4><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555757.png" alt="image-20220621154957525"></p>
+<h3 id="多环境启动"><a href="#多环境启动" class="headerlink" title="多环境启动"></a>多环境启动</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555191.png" alt="image-20220621155505224"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211555696.png" alt="image-20220621155542788"></p>
+<h4 id="properties文件多环境启动"><a href="#properties文件多环境启动" class="headerlink" title="properties文件多环境启动"></a>properties文件多环境启动</h4><ul>
+<li><p>主启动配置文件application.properties</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211557568.png" alt="image-20220621155716933"></p>
+</li>
+<li><p>环境分类配置文件application-pro.properties</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211557235.png" alt="image-20220621155725631"></p>
+</li>
+<li><p>环境分类配置文件application-dev.properties</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211557938.png" alt="image-20220621155734356"></p>
+</li>
+<li><p>环境分类配置文件application-test.properties</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211557620.png" alt="image-20220621155749970"></p>
+</li>
+</ul>
+<h4 id="多环境启动命令格式"><a href="#多环境启动命令格式" class="headerlink" title="多环境启动命令格式"></a>多环境启动命令格式</h4><ul>
+<li><p>带参数启动SpringBoot</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211604429.png" alt="image-20220621160438838"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211605918.png" alt="image-20220621160512289"></p>
+</li>
+</ul>
+<h4 id="参数加载优先顺序"><a href="#参数加载优先顺序" class="headerlink" title="参数加载优先顺序"></a>参数加载优先顺序</h4><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211613567.png" alt="image-20220621160706026"></p>
+<h4 id="Maven与SpringBoot多环境兼容步骤"><a href="#Maven与SpringBoot多环境兼容步骤" class="headerlink" title="Maven与SpringBoot多环境兼容步骤"></a>Maven与SpringBoot多环境兼容步骤</h4><ol>
+<li><p>Maven中设置多环境属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211614992.png" alt="image-20220621161429290"></p>
+</li>
+<li><p>SpringBoot中引用Maven属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211615964.png" alt="image-20220621161533015"></p>
+</li>
+<li><p>对资源文件开启对默认占位符的解析</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211616212.png" alt="image-20220621161632318"></p>
+</li>
+<li><p>Maven打包加载到属性，打包顺利通过<br> <img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211617953.png" alt="image-20220621161707457"></p>
+</li>
+</ol>
+<h3 id="配置文件分类"><a href="#配置文件分类" class="headerlink" title="配置文件分类"></a>配置文件分类</h3><ul>
+<li>SpringBoot中4级配置文件<ul>
+<li>1级：file：config/application.yml    【最高】</li>
+<li>2级：file：application.yml</li>
+<li>3级：classpath：config/application.yml</li>
+<li>4级：classpath：application.yml    【最低】</li>
+</ul>
+</li>
+<li>作用：<ul>
+<li>一级与二级留作系统打包后设置通用属性</li>
+<li>三级与四级用于系统开发阶段设置通用属性</li>
+</ul>
+</li>
+</ul>
+<h2 id="整合第三方技术"><a href="#整合第三方技术" class="headerlink" title="整合第三方技术"></a>整合第三方技术</h2><h3 id="SpringBoot注解"><a href="#SpringBoot注解" class="headerlink" title="SpringBoot注解"></a>SpringBoot注解</h3><ul>
+<li><p>@SpringBootTest</p>
+<ul>
+<li><p>名称：@SpringBootTest</p>
+</li>
+<li><p>类型：测试类注解</p>
+</li>
+<li><p>位置：测试类定义上方</p>
+</li>
+<li><p>作用：设置JUnit加载的SpringBoot启动类</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211823913.png" alt="image-20220621182346521"></p>
+</li>
+<li><p>相关属性</p>
+<ul>
+<li>classes：设置SpringBoot启动类</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211824094.png" alt="image-20220621182429459"></p>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h3 id="整合JUnit"><a href="#整合JUnit" class="headerlink" title="整合JUnit"></a>整合JUnit</h3><ul>
+<li><p>Spring整合JUnit（复习）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211734414.png" alt="image-20220621173414193"></p>
+</li>
+<li><p>SpringBoot整合JUnit</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211821601.png" alt="image-20220621182115860"></p>
+<h3 id="基于SpringBoot实现SSM整合"><a href="#基于SpringBoot实现SSM整合" class="headerlink" title="基于SpringBoot实现SSM整合"></a>基于SpringBoot实现SSM整合</h3></li>
+<li><p>SpringBoot整合Spring（不存在）</p>
+</li>
+<li><p>SpringBoot整合SpringMVC（不存在）</p>
+</li>
+<li><p>SpringBoot整合MyBatis（主要）</p>
+</li>
+</ul>
+<h3 id="整合MyBatis"><a href="#整合MyBatis" class="headerlink" title="整合MyBatis"></a>整合MyBatis</h3><ul>
+<li>SpringConfig<ul>
+<li>导入JdbcConfig</li>
+<li>导入MyBatisConfig</li>
+</ul>
+</li>
+<li>JDBCConfig<ul>
+<li>定义数据源（加载properties配置项：driver、url、username、password）</li>
+</ul>
+</li>
+<li>MyBatisConfig<ul>
+<li>定义SQLSessionFactoryBean</li>
+<li>定义映射配置</li>
+</ul>
+</li>
+</ul>
+<h4 id="SpringBoot整合MyBatis步骤"><a href="#SpringBoot整合MyBatis步骤" class="headerlink" title="SpringBoot整合MyBatis步骤"></a>SpringBoot整合MyBatis步骤</h4><ol>
+<li><p>创建新模块，选择Spring初始化，并配置模块相关基础信息</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211847507.png" alt="image-20220621184741435"></p>
+</li>
+<li><p>选择当前模块需要的技术集（MyBatis、Mysql）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211848605.png" alt="image-20220621184829834"></p>
+</li>
+<li><p>设置数据源参数</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211848755.png" alt="image-20220621184856160"></p>
+</li>
+<li><p>定义数据层接口与映射配置</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211849771.png" alt="image-20220621184933213"></p>
+</li>
+<li><p>测试类中注入dao接口，测试功能</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206211849058.png" alt="image-20220621184957476"></p>
+</li>
+</ol>
+<h3 id="基于SpringBoot的SSM整合案例"><a href="#基于SpringBoot的SSM整合案例" class="headerlink" title="基于SpringBoot的SSM整合案例"></a>基于SpringBoot的SSM整合案例</h3><ol>
+<li><p>pom.xml</p>
+<p>设置起步依赖，必要的资源坐标（druid）</p>
+</li>
+<li><p>application.yml</p>
+<p>设置数据源、端口等</p>
+</li>
+<li><p>配置类</p>
+<p>全部删除</p>
+</li>
+<li><p>dao</p>
+<p>设置@Mapper</p>
+</li>
+<li><p>测试类</p>
+</li>
+<li><p>页面</p>
+<p>放置在resource目录下的static目录中</p>
+<h1 id="MyBatis-Plus"><a href="#MyBatis-Plus" class="headerlink" title="MyBatis Plus"></a>MyBatis Plus</h1></li>
+</ol>
+<h2 id="MyBatisPlus简介"><a href="#MyBatisPlus简介" class="headerlink" title="MyBatisPlus简介"></a>MyBatisPlus简介</h2><ul>
+<li><p>MyBatis Plus（简称MP）是基于MyBatis框架基础上开发的增强型工具，旨在简化开发、提高效率。</p>
+</li>
+<li><p>开发方式</p>
+<ul>
+<li>基于MyBatis使用MyBatisPlus</li>
+<li>基于Spring使用MyBatisPlus</li>
+<li><strong>基于SpringBoot使用MyBatisPlus</strong></li>
+</ul>
+</li>
+<li><p>SpringBoot整合MyBatis开发过程（复习）</p>
+<ul>
+<li>创建SpringBoot工程</li>
+<li>勾选配置使用的技术</li>
+<li>设置DataSource相关属性（JDBC参数）</li>
+<li>定义数据层接口映射配置</li>
+</ul>
+</li>
+</ul>
+<h3 id="SpringBoot整合MyBatisPlus入门程序步骤"><a href="#SpringBoot整合MyBatisPlus入门程序步骤" class="headerlink" title="SpringBoot整合MyBatisPlus入门程序步骤"></a>SpringBoot整合MyBatisPlus入门程序步骤</h3><ol>
+<li><p>创建新模块，选择Spring初始化，并配置模块相关基础信息</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221115619.png" alt="image-20220622111533403"></p>
+</li>
+<li><p>选择当前模块需要使用的技术集（仅保留JDBC）</p>
+</li>
+<li><p>手动添加mp起步依赖</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221116661.png" alt="image-20220622111622251"></p>
+</li>
+<li><p>设置JDBC参数（application.yml）</p>
+</li>
+<li><p>制作实体类与表结构（类名与表名对应，属性名与字段名对应）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221117321.png" alt="image-20220622111732486"></p>
+</li>
+<li><p>定义数据接口，继承BaseMapper&lt;User&gt;</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221118570.png" alt="image-20220622111808547"></p>
+</li>
+</ol>
+<h3 id="MyBatisPlus特性"><a href="#MyBatisPlus特性" class="headerlink" title="MyBatisPlus特性"></a>MyBatisPlus特性</h3><ul>
+<li>无侵入：只做增强不做改变，不会对现有工程产生影响</li>
+<li>强大的CRUD操作：你日志通用Mapper，少量配置即可实现单表CRUD操作</li>
+<li>支持Lambda：编写查询条件无需担心字段写错</li>
+<li>支持主键自动生成</li>
+<li>内置分页插件</li>
+<li>…</li>
+</ul>
+<h2 id="标准数据层开发"><a href="#标准数据层开发" class="headerlink" title="标准数据层开发"></a>标准数据层开发</h2><h3 id="标准数据层CRUD功能"><a href="#标准数据层CRUD功能" class="headerlink" title="标准数据层CRUD功能"></a>标准数据层CRUD功能</h3><p> <img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221124770.png" alt="image-20220622112425924"></p>
+<h3 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h3><ul>
+<li><p>Lombok，一个Java类库，提供了一组注解，简化POJO实体类开发</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221135692.png" alt="image-20220622113549240"></p>
+</li>
+<li><p>常用注解：@Data</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221136478.png" alt="image-20220622113610820"></p>
+</li>
+<li><p>为当前实体类在编译期设置对应的get/set方法，无参/有参构造方法，toString方法，hashCode方法，equals方法等 </p>
+</li>
+</ul>
+<h3 id="分页功能"><a href="#分页功能" class="headerlink" title="分页功能"></a>分页功能</h3><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221618638.png" alt="image-20220622114915641"></p>
+<h4 id="MP分页查询功能步骤"><a href="#MP分页查询功能步骤" class="headerlink" title="MP分页查询功能步骤"></a>MP分页查询功能步骤</h4><ol>
+<li><p>设置分页拦截器作为Spring管理的Bean</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221618704.png" alt="image-20220622115008003"></p>
+</li>
+<li><p>执行分页查询</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221618968.png" alt="image-20220622115038871"></p>
+</li>
+<li><p>开启日志</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221618219.png" alt="image-20220622115111108"></p>
+</li>
+</ol>
+<h2 id="DQL编程控制"><a href="#DQL编程控制" class="headerlink" title="DQL编程控制"></a>DQL编程控制</h2><h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><ul>
+<li><p>MyBatisPlus将书写复杂的SQL查询条件进行了封装，使用编程的形式完成查询条件的组合</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221600476.png" alt="image-20220622160034869"></p>
+</li>
+</ul>
+<h4 id="条件查询——设置查询条件"><a href="#条件查询——设置查询条件" class="headerlink" title="条件查询——设置查询条件"></a>条件查询——设置查询条件</h4><ul>
+<li><p>格式一：常规格式</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221636883.png" alt="image-20220622163629211"></p>
+</li>
+<li><p>格式二：链式编程格式</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221636944.png" alt="image-20220622163638393"></p>
+</li>
+<li><p>格式三：lambda格式（推荐）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221637793.png" alt="image-20220622163728095"></p>
+</li>
+<li><p>格式四：lambda格式（推荐）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221637915.png" alt="image-20220622163737296"></p>
+</li>
+</ul>
+<h4 id="条件查询——组合查询条件"><a href="#条件查询——组合查询条件" class="headerlink" title="条件查询——组合查询条件"></a>条件查询——组合查询条件</h4><ul>
+<li><p>并且（and）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221638909.png" alt="image-20220622163834217"></p>
+</li>
+<li><p>或者（or）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221638621.png" alt="image-20220622163847166"></p>
+</li>
+</ul>
+<h4 id="条件查询——null值处理"><a href="#条件查询——null值处理" class="headerlink" title="条件查询——null值处理"></a>条件查询——null值处理</h4><ul>
+<li><p>if语句控制条件追加</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221649138.png" alt="image-20220622164917589"></p>
+</li>
+<li><p>条件参数控制</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221649106.png" alt="image-20220622164948610"></p>
+</li>
+<li><p>条件参数控制（链式编程）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221649939.png" alt="image-20220622164956469"></p>
+</li>
+</ul>
+<h3 id="查询投影"><a href="#查询投影" class="headerlink" title="查询投影"></a>查询投影</h3><ul>
+<li><p>查询结果包含模型类中部分属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221702228.png" alt="image-20220622170256561"></p>
+</li>
+<li><p>查询结果包含模型类中未定义的属性</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221703960.png" alt="image-20220622170305424"></p>
+</li>
+</ul>
+<h3 id="查询条件"><a href="#查询条件" class="headerlink" title="查询条件"></a>查询条件</h3><ul>
+<li><p>范围匹配（&gt;、=、between）</p>
+</li>
+<li><p>模糊匹配（like）</p>
+</li>
+<li><p>空判定（null）</p>
+</li>
+<li><p>包含性判定（in）</p>
+</li>
+<li><p>分组（group）</p>
+</li>
+<li><p>排序（order）</p>
+</li>
+<li><p>……</p>
+</li>
+<li><p>用户登录（eq匹配）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221718667.png" alt="image-20220622171852007"></p>
+</li>
+<li><p>购物设定价格区间、户籍设定年龄区间（le ge匹配，或 between匹配）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221719947.png" alt="image-20220622171937545"></p>
+</li>
+<li><p>查信息，搜索新闻（非全文检索版：like匹配）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221721745.png" alt="image-20220622172101840"></p>
+</li>
+<li><p>统计报表（分组查询聚合函数）</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221721373.png" alt="image-20220622172123041"></p>
+</li>
+<li><p>更多查询条件设置：<a target="_blank" rel="noopener" href="https://www.mybatis-plus.com/guide/wrapper.html#abstractwrapper">https://www.mybatis-plus.com/guide/wrapper.html#abstractwrapper</a></p>
+</li>
+</ul>
+<h3 id="字段映射与表名映射"><a href="#字段映射与表名映射" class="headerlink" title="字段映射与表名映射"></a>字段映射与表名映射</h3><h4 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h4><ul>
+<li><p>问题一：表字段与编码属性设计不同步</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221740664.png" alt="image-20220622174050052"></p>
+</li>
+<li><p>问题二：编码中添加了数据库中未定义的属性</p>
+<p><img src="C:/Users/aa/AppData/Roaming/Typora/typora-user-images/image-20220622174628053.png" alt="image-20220622174628053"></p>
+</li>
+<li><p>问题三：采用默认查询开发了更多的字段查看权限</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221753712.png" alt="image-20220622175341066"></p>
+</li>
+<li><p>问题四：表名与编码开发设计不同步</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221755527.png" alt="image-20220622175528986"></p>
+</li>
+</ul>
+<h4 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h4><ul>
+<li><p>@TableField</p>
+<ul>
+<li><p>名称：@TableField</p>
+</li>
+<li><p>类型：属性注解</p>
+</li>
+<li><p>位置：模型类属性定义上方</p>
+</li>
+<li><p>作用：设置当前属性对应的数据库表中的字段关系</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221744330.png" alt="image-20220622174422331"></p>
+</li>
+<li><p>相关属性</p>
+<ul>
+<li>value（默认）：设置数据库表字段名称</li>
+<li>exist：设置属性在数据库表字段中是否存在，默认为true。此属性无法与value合并使用</li>
+<li>select：设置属性是否参与查询，此属性与select（）映射配置不冲突</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>@TableName</p>
+<ul>
+<li><p>名称：@TableName</p>
+</li>
+<li><p>类型：类注解</p>
+</li>
+<li><p>位置：模型类定义上方</p>
+</li>
+<li><p>作用：设置当前类对应的数据库表关系</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221756694.png" alt="image-20220622175632790"></p>
+</li>
+<li><p>相关属性</p>
+<ul>
+<li>value：设置数据库表名称</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="id生成策略控制"><a href="#id生成策略控制" class="headerlink" title="id生成策略控制"></a>id生成策略控制</h3><ul>
+<li><p>不同的表应用不同的id生成策略</p>
+<ul>
+<li>日志：自增（1,2,3,4……）</li>
+<li>购物定单：特殊规则</li>
+<li>外卖单：管理地区日期等信息</li>
+<li>关系表：可省略id</li>
+<li>…..</li>
+</ul>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221832336.png" alt="image-20220622183217162" style="zoom: 67%;" />
+
+<h4 id="注解-1"><a href="#注解-1" class="headerlink" title="注解"></a>注解</h4><ul>
+<li><p>名称：@TableId</p>
+</li>
+<li><p>类型：属性注解</p>
+</li>
+<li><p>位置：模型类中用于表示主键的属性定义上方</p>
+</li>
+<li><p>作用：设置当前类中主键属性的生成策略</p>
+</li>
+<li><p>范例：</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221821630.png" alt="image-20220622182133879"></p>
+</li>
+<li><p>相关属性</p>
+<ul>
+<li>value：设置数据库主键名称</li>
+<li>type：设置主键属性的生成策略，值参照IdType枚举值</li>
+</ul>
+</li>
+</ul>
+<h4 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h4><p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221837927.png" alt="image-20220622183705281"></p>
+<h3 id="多记录操作"><a href="#多记录操作" class="headerlink" title="多记录操作"></a>多记录操作</h3><ul>
+<li><p>按照主键删除多条记录</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221843095.png" alt="image-20220622184312330"></p>
+</li>
+<li><p>根据主键查询多条记录</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221843558.png" alt="image-20220622184319104"></p>
+</li>
+</ul>
+<h3 id="逻辑删除"><a href="#逻辑删除" class="headerlink" title="逻辑删除"></a>逻辑删除</h3><ul>
+<li>删除操作业务问题：业务数据从数据库中丢弃 </li>
+<li>逻辑删除：为设置数据是否可用状态字段，删除时设置状态字段为不可用状态，数据保留在数据库汇中</li>
+</ul>
+<h4 id="逻辑删除案例步骤"><a href="#逻辑删除案例步骤" class="headerlink" title="逻辑删除案例步骤"></a>逻辑删除案例步骤</h4><ol>
+<li><p>数据库表中条件逻辑删除标记字段</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221856102.png" alt="image-20220622185623689"></p>
+</li>
+<li><p>实体类中添加对应字段，并设定当前子墩为逻辑删除标记字段</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221857535.png" alt="image-20220622185655698"></p>
+</li>
+<li><p>配置逻辑删除字面值</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221859426.png" alt="image-20220622185928366"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221859298.png" alt="image-20220622185959224"></p>
+</li>
+</ol>
+<h3 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h3><ul>
+<li>业务并发现象带来的问题：秒杀</li>
+</ul>
+<h4 id="乐观锁案例步骤"><a href="#乐观锁案例步骤" class="headerlink" title="乐观锁案例步骤"></a>乐观锁案例步骤</h4><ol>
+<li><p>数据库表中添加锁标记字段</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221916248.png" alt="image-20220622191644186"></p>
+</li>
+<li><p>实体类中添加对应字段，并设定当前字段为逻辑删除标记字段</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221917156.png" alt="image-20220622191718092"></p>
+</li>
+<li><p>配置乐观锁拦截器实现锁机制对应的动态SQL语句拼装</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221917037.png" alt="image-20220622191754968"></p>
+</li>
+<li><p>使用乐观锁机制在修改前必须先获取到对应数据的version方可正常进行</p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221918269.png" alt="image-20220622191834165"></p>
+<p><img src="https://raw.githubusercontent.com/Dicemy/blog-img/main/202206221918112.png" alt="image-20220622191847049"></p>
+</li>
+</ol>
+<h2 id="快速开发"><a href="#快速开发" class="headerlink" title="快速开发"></a>快速开发</h2><h3 id="代码生成器"><a href="#代码生成器" class="headerlink" title="代码生成器"></a>代码生成器</h3><ul>
+<li>模板：MyBatisPlus提供</li>
+<li>数据库相关配置：读取数据库获取信息</li>
+<li>开发者自定义配置：手工配置</li>
+</ul>
+<hr>
+<p>完结撒花~</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>SSM入门</p><p><a href="https://dicemy.com/33655">https://dicemy.com/33655</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-05-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-06-23</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/tags/SpringBoot/">SpringBoot</a><a class="link-muted mr-2" rel="tag" href="/tags/SpringMVC/">SpringMVC</a><a class="link-muted mr-2" rel="tag" href="/tags/Spring/">Spring</a><a class="link-muted mr-2" rel="tag" href="/tags/SSM/">SSM</a><a class="link-muted mr-2" rel="tag" href="/tags/MyBatisPlus/">MyBatisPlus</a></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/36034"><i class="level-item fas fa-chevron-left"></i><span class="level-item">SpringBoot2</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/60206"><span class="level-item">JavaWeb</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
+            appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
+            placeholder: "输入你的评论\\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！",
+            avatar: "mp",
+            avatarForce: false,
+            meta: ["nick","mail"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: true,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">42</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#学习预备"><span class="level-left"><span class="level-item">1</span><span class="level-item">学习预备</span></span></a></li><li><a class="level is-mobile" href="#初识Spring"><span class="level-left"><span class="level-item">2</span><span class="level-item">初识Spring</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework"><span class="level-left"><span class="level-item">3</span><span class="level-item">Spring Framework</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Spring-Framework系统架构"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Spring Framework系统架构</span></span></a></li><li><a class="level is-mobile" href="#Spring-Framework学习路线"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">Spring Framework学习路线</span></span></a></li><li><a class="level is-mobile" href="#核心容器的核心概念"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">核心容器的核心概念</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例思路分析"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">IoC入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#IoC入门案例（XML版）"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">IoC入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例思路分析"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">DI入门案例思路分析</span></span></a></li><li><a class="level is-mobile" href="#DI入门案例（XML版）"><span class="level-left"><span class="level-item">3.7</span><span class="level-item">DI入门案例（XML版）</span></span></a></li><li><a class="level is-mobile" href="#bean基础配置"><span class="level-left"><span class="level-item">3.8</span><span class="level-item">bean基础配置</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#bean别名配置"><span class="level-left"><span class="level-item">3.8.1</span><span class="level-item">bean别名配置</span></span></a></li><li><a class="level is-mobile" href="#bean作用范围配置"><span class="level-left"><span class="level-item">3.8.2</span><span class="level-item">bean作用范围配置</span></span></a></li></ul></li><li><a class="level is-mobile" href="#bean实例化"><span class="level-left"><span class="level-item">3.9</span><span class="level-item">bean实例化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#实例化bean的三种方式——构造方法（常用）"><span class="level-left"><span class="level-item">3.9.1</span><span class="level-item">实例化bean的三种方式——构造方法（常用）</span></span></a></li><li><a class="level is-mobile" href="#实例化bean的三种方式——静态工厂（了解）"><span class="level-left"><span class="level-item">3.9.2</span><span class="level-item">实例化bean的三种方式——静态工厂（了解）</span></span></a></li><li><a class="level is-mobile" href="#实例化bean的三种方式——实例工厂"><span class="level-left"><span class="level-item">3.9.3</span><span class="level-item">实例化bean的三种方式——实例工厂</span></span></a></li><li><a class="level is-mobile" href="#实例化bean的第四种方式——FactoryBean（实用）"><span class="level-left"><span class="level-item">3.9.4</span><span class="level-item">实例化bean的第四种方式——FactoryBean（实用）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#bean的生命周期"><span class="level-left"><span class="level-item">3.10</span><span class="level-item">bean的生命周期</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#bean生命周期控制"><span class="level-left"><span class="level-item">3.10.1</span><span class="level-item">bean生命周期控制</span></span></a></li><li><a class="level is-mobile" href="#bean生命周期控制——接口控制（了解）"><span class="level-left"><span class="level-item">3.10.2</span><span class="level-item">bean生命周期控制——接口控制（了解）</span></span></a></li><li><a class="level is-mobile" href="#bean生命周期"><span class="level-left"><span class="level-item">3.10.3</span><span class="level-item">bean生命周期</span></span></a></li><li><a class="level is-mobile" href="#bean销毁时机"><span class="level-left"><span class="level-item">3.10.4</span><span class="level-item">bean销毁时机</span></span></a></li></ul></li><li><a class="level is-mobile" href="#依赖注入方式"><span class="level-left"><span class="level-item">3.11</span><span class="level-item">依赖注入方式</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#setter注入——引用类型"><span class="level-left"><span class="level-item">3.11.1</span><span class="level-item">setter注入——引用类型</span></span></a></li><li><a class="level is-mobile" href="#setter注入——简单类型"><span class="level-left"><span class="level-item">3.11.2</span><span class="level-item">setter注入——简单类型</span></span></a></li><li><a class="level is-mobile" href="#构造器注入——引用类型（了解）"><span class="level-left"><span class="level-item">3.11.3</span><span class="level-item">构造器注入——引用类型（了解）</span></span></a></li><li><a class="level is-mobile" href="#构造器注入——简单类型（了解）"><span class="level-left"><span class="level-item">3.11.4</span><span class="level-item">构造器注入——简单类型（了解）</span></span></a></li><li><a class="level is-mobile" href="#构造器注入——参数适配（了解）"><span class="level-left"><span class="level-item">3.11.5</span><span class="level-item">构造器注入——参数适配（了解）</span></span></a></li><li><a class="level is-mobile" href="#依赖注入方式选择"><span class="level-left"><span class="level-item">3.11.6</span><span class="level-item">依赖注入方式选择</span></span></a></li></ul></li><li><a class="level is-mobile" href="#依赖自动装配"><span class="level-left"><span class="level-item">3.12</span><span class="level-item">依赖自动装配</span></span></a></li><li><a class="level is-mobile" href="#集合注入"><span class="level-left"><span class="level-item">3.13</span><span class="level-item">集合注入</span></span></a></li><li><a class="level is-mobile" href="#第三方资源配置管理"><span class="level-left"><span class="level-item">3.14</span><span class="level-item">第三方资源配置管理</span></span></a></li><li><a class="level is-mobile" href="#加载properties文件"><span class="level-left"><span class="level-item">3.15</span><span class="level-item">加载properties文件</span></span></a></li><li><a class="level is-mobile" href="#容器"><span class="level-left"><span class="level-item">3.16</span><span class="level-item">容器</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#创建容器"><span class="level-left"><span class="level-item">3.16.1</span><span class="level-item">创建容器</span></span></a></li><li><a class="level is-mobile" href="#获取bean"><span class="level-left"><span class="level-item">3.16.2</span><span class="level-item">获取bean</span></span></a></li><li><a class="level is-mobile" href="#容器类层次结构图"><span class="level-left"><span class="level-item">3.16.3</span><span class="level-item">容器类层次结构图</span></span></a></li><li><a class="level is-mobile" href="#BeanFactory初始化"><span class="level-left"><span class="level-item">3.16.4</span><span class="level-item">BeanFactory初始化</span></span></a></li></ul></li><li><a class="level is-mobile" href="#核心容器总结"><span class="level-left"><span class="level-item">3.17</span><span class="level-item">核心容器总结</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#bean相关"><span class="level-left"><span class="level-item">3.17.1</span><span class="level-item">bean相关</span></span></a></li><li><a class="level is-mobile" href="#依赖注入相关"><span class="level-left"><span class="level-item">3.17.2</span><span class="level-item">依赖注入相关</span></span></a></li></ul></li><li><a class="level is-mobile" href="#注解开发"><span class="level-left"><span class="level-item">3.18</span><span class="level-item">注解开发</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#注解开发定义bean"><span class="level-left"><span class="level-item">3.18.1</span><span class="level-item">注解开发定义bean</span></span></a></li><li><a class="level is-mobile" href="#纯注解开发"><span class="level-left"><span class="level-item">3.18.2</span><span class="level-item">纯注解开发</span></span></a></li><li><a class="level is-mobile" href="#bean作用范围"><span class="level-left"><span class="level-item">3.18.3</span><span class="level-item">bean作用范围</span></span></a></li><li><a class="level is-mobile" href="#bean生命周期-1"><span class="level-left"><span class="level-item">3.18.4</span><span class="level-item">bean生命周期</span></span></a></li><li><a class="level is-mobile" href="#依赖注入"><span class="level-left"><span class="level-item">3.18.5</span><span class="level-item">依赖注入</span></span></a></li><li><a class="level is-mobile" href="#加载properties文件-1"><span class="level-left"><span class="level-item">3.18.6</span><span class="level-item">加载properties文件</span></span></a></li><li><a class="level is-mobile" href="#第三方bean管理"><span class="level-left"><span class="level-item">3.18.7</span><span class="level-item">第三方bean管理</span></span></a></li><li><a class="level is-mobile" href="#第三方bean依赖注入"><span class="level-left"><span class="level-item">3.18.8</span><span class="level-item">第三方bean依赖注入</span></span></a></li></ul></li><li><a class="level is-mobile" href="#注解开发总结"><span class="level-left"><span class="level-item">3.19</span><span class="level-item">注解开发总结</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#XML配置与注解配置比较"><span class="level-left"><span class="level-item">3.19.1</span><span class="level-item">XML配置与注解配置比较</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Spring整合MyBatis"><span class="level-left"><span class="level-item">3.20</span><span class="level-item">Spring整合MyBatis</span></span></a></li><li><a class="level is-mobile" href="#Spring整合JUnit"><span class="level-left"><span class="level-item">3.21</span><span class="level-item">Spring整合JUnit</span></span></a></li><li><a class="level is-mobile" href="#AOP简介"><span class="level-left"><span class="level-item">3.22</span><span class="level-item">AOP简介</span></span></a></li><li><a class="level is-mobile" href="#AOP入门案例"><span class="level-left"><span class="level-item">3.23</span><span class="level-item">AOP入门案例</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#AOP入门案例（注解版）"><span class="level-left"><span class="level-item">3.23.1</span><span class="level-item">AOP入门案例（注解版）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#AOP工作流程"><span class="level-left"><span class="level-item">3.24</span><span class="level-item">AOP工作流程</span></span></a></li><li><a class="level is-mobile" href="#AOP核心概念"><span class="level-left"><span class="level-item">3.25</span><span class="level-item">AOP核心概念</span></span></a></li><li><a class="level is-mobile" href="#AOP切入点表达式"><span class="level-left"><span class="level-item">3.26</span><span class="level-item">AOP切入点表达式</span></span></a></li><li><a class="level is-mobile" href="#AOP通知类型"><span class="level-left"><span class="level-item">3.27</span><span class="level-item">AOP通知类型</span></span></a></li><li><a class="level is-mobile" href="#案例：测量业务层接口执行效率（万次核心代码执行效率）"><span class="level-left"><span class="level-item">3.28</span><span class="level-item">案例：测量业务层接口执行效率（万次核心代码执行效率）</span></span></a></li><li><a class="level is-mobile" href="#AOP通知获取数据"><span class="level-left"><span class="level-item">3.29</span><span class="level-item">AOP通知获取数据</span></span></a></li><li><a class="level is-mobile" href="#案例：百度网盘密码数据兼容处理"><span class="level-left"><span class="level-item">3.30</span><span class="level-item">案例：百度网盘密码数据兼容处理</span></span></a></li><li><a class="level is-mobile" href="#AOP总结"><span class="level-left"><span class="level-item">3.31</span><span class="level-item">AOP总结</span></span></a></li><li><a class="level is-mobile" href="#Spring事务简介"><span class="level-left"><span class="level-item">3.32</span><span class="level-item">Spring事务简介</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#案例：银行账户转账"><span class="level-left"><span class="level-item">3.32.1</span><span class="level-item">案例：银行账户转账</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Spring事务角色"><span class="level-left"><span class="level-item">3.33</span><span class="level-item">Spring事务角色</span></span></a></li><li><a class="level is-mobile" href="#事务相关配置"><span class="level-left"><span class="level-item">3.34</span><span class="level-item">事务相关配置</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#案例：转账业务追加日志"><span class="level-left"><span class="level-item">3.34.1</span><span class="level-item">案例：转账业务追加日志</span></span></a></li></ul></li><li><a class="level is-mobile" href="#事故传播行为"><span class="level-left"><span class="level-item">3.35</span><span class="level-item">事故传播行为</span></span></a></li></ul></li><li><a class="level is-mobile" href="#SpringMVC"><span class="level-left"><span class="level-item">4</span><span class="level-item">SpringMVC</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringMVC简介"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">SpringMVC简介</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringMVC概述"><span class="level-left"><span class="level-item">4.1.1</span><span class="level-item">SpringMVC概述</span></span></a></li><li><a class="level is-mobile" href="#SpringMVC入门案例"><span class="level-left"><span class="level-item">4.1.2</span><span class="level-item">SpringMVC入门案例</span></span></a></li><li><a class="level is-mobile" href="#SpringMVC注解"><span class="level-left"><span class="level-item">4.1.3</span><span class="level-item">SpringMVC注解</span></span></a></li><li><a class="level is-mobile" href="#入门案例工作流程分析"><span class="level-left"><span class="level-item">4.1.4</span><span class="level-item">入门案例工作流程分析</span></span></a></li><li><a class="level is-mobile" href="#Controller加载控制与业务bean加载控制"><span class="level-left"><span class="level-item">4.1.5</span><span class="level-item">Controller加载控制与业务bean加载控制</span></span></a></li></ul></li><li><a class="level is-mobile" href="#PostMan"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">PostMan</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#PostMan简介"><span class="level-left"><span class="level-item">4.2.1</span><span class="level-item">PostMan简介</span></span></a></li><li><a class="level is-mobile" href="#PostMan基本使用"><span class="level-left"><span class="level-item">4.2.2</span><span class="level-item">PostMan基本使用</span></span></a></li></ul></li><li><a class="level is-mobile" href="#请求与相应"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">请求与相应</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#请求映射路径"><span class="level-left"><span class="level-item">4.3.1</span><span class="level-item">请求映射路径</span></span></a></li><li><a class="level is-mobile" href="#请求方式"><span class="level-left"><span class="level-item">4.3.2</span><span class="level-item">请求方式</span></span></a></li><li><a class="level is-mobile" href="#Get请求传参"><span class="level-left"><span class="level-item">4.3.3</span><span class="level-item">Get请求传参</span></span></a></li><li><a class="level is-mobile" href="#请求参数"><span class="level-left"><span class="level-item">4.3.4</span><span class="level-item">请求参数</span></span></a></li><li><a class="level is-mobile" href="#请求参数（传递json数据）"><span class="level-left"><span class="level-item">4.3.5</span><span class="level-item">请求参数（传递json数据）</span></span></a></li><li><a class="level is-mobile" href="#RequestBody与-RequestParam区别"><span class="level-left"><span class="level-item">4.3.6</span><span class="level-item">@RequestBody与@RequestParam区别</span></span></a></li><li><a class="level is-mobile" href="#日期类型参数传递"><span class="level-left"><span class="level-item">4.3.7</span><span class="level-item">日期类型参数传递</span></span></a></li><li><a class="level is-mobile" href="#类型转换器"><span class="level-left"><span class="level-item">4.3.8</span><span class="level-item">类型转换器</span></span></a></li><li><a class="level is-mobile" href="#响应"><span class="level-left"><span class="level-item">4.3.9</span><span class="level-item">响应</span></span></a></li></ul></li><li><a class="level is-mobile" href="#REST风格"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">REST风格</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#入门案例"><span class="level-left"><span class="level-item">4.4.1</span><span class="level-item">入门案例</span></span></a></li><li><a class="level is-mobile" href="#RequestBody-RequestParam-PathVariable"><span class="level-left"><span class="level-item">4.4.2</span><span class="level-item">@RequestBody @RequestParam @PathVariable</span></span></a></li><li><a class="level is-mobile" href="#RESTful快速开发"><span class="level-left"><span class="level-item">4.4.3</span><span class="level-item">RESTful快速开发</span></span></a></li><li><a class="level is-mobile" href="#案例：基于RESTful页面数据交互"><span class="level-left"><span class="level-item">4.4.4</span><span class="level-item">案例：基于RESTful页面数据交互</span></span></a></li></ul></li><li><a class="level is-mobile" href="#SSM整合"><span class="level-left"><span class="level-item">4.5</span><span class="level-item">SSM整合</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SSM整合流程"><span class="level-left"><span class="level-item">4.5.1</span><span class="level-item">SSM整合流程</span></span></a></li><li><a class="level is-mobile" href="#表现层数据封装"><span class="level-left"><span class="level-item">4.5.2</span><span class="level-item">表现层数据封装</span></span></a></li><li><a class="level is-mobile" href="#异常处理器"><span class="level-left"><span class="level-item">4.5.3</span><span class="level-item">异常处理器</span></span></a></li><li><a class="level is-mobile" href="#项目异常处理方案"><span class="level-left"><span class="level-item">4.5.4</span><span class="level-item">项目异常处理方案</span></span></a></li></ul></li><li><a class="level is-mobile" href="#拦截器"><span class="level-left"><span class="level-item">4.6</span><span class="level-item">拦截器</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#拦截器概念"><span class="level-left"><span class="level-item">4.6.1</span><span class="level-item">拦截器概念</span></span></a></li><li><a class="level is-mobile" href="#拦截器与过滤器的区别"><span class="level-left"><span class="level-item">4.6.2</span><span class="level-item">拦截器与过滤器的区别</span></span></a></li><li><a class="level is-mobile" href="#入门案例-1"><span class="level-left"><span class="level-item">4.6.3</span><span class="level-item">入门案例</span></span></a></li><li><a class="level is-mobile" href="#执行流程"><span class="level-left"><span class="level-item">4.6.4</span><span class="level-item">执行流程</span></span></a></li><li><a class="level is-mobile" href="#拦截器参数"><span class="level-left"><span class="level-item">4.6.5</span><span class="level-item">拦截器参数</span></span></a></li><li><a class="level is-mobile" href="#多拦截器执行顺序"><span class="level-left"><span class="level-item">4.6.6</span><span class="level-item">多拦截器执行顺序</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Maven进阶"><span class="level-left"><span class="level-item">5</span><span class="level-item">Maven进阶</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#分模块开发与设计"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">分模块开发与设计</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#分模块开发意义"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">分模块开发意义</span></span></a></li><li><a class="level is-mobile" href="#分模块开发步骤"><span class="level-left"><span class="level-item">5.1.2</span><span class="level-item">分模块开发步骤</span></span></a></li></ul></li><li><a class="level is-mobile" href="#依赖管理"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">依赖管理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#依赖传递"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item">依赖传递</span></span></a></li><li><a class="level is-mobile" href="#可选依赖"><span class="level-left"><span class="level-item">5.2.2</span><span class="level-item">可选依赖</span></span></a></li><li><a class="level is-mobile" href="#排除依赖"><span class="level-left"><span class="level-item">5.2.3</span><span class="level-item">排除依赖</span></span></a></li></ul></li><li><a class="level is-mobile" href="#聚合"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">聚合</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#聚合工程开发步骤"><span class="level-left"><span class="level-item">5.3.1</span><span class="level-item">聚合工程开发步骤</span></span></a></li></ul></li><li><a class="level is-mobile" href="#继承"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">继承</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#继承关系步骤"><span class="level-left"><span class="level-item">5.4.1</span><span class="level-item">继承关系步骤</span></span></a></li><li><a class="level is-mobile" href="#聚合与继承的区别"><span class="level-left"><span class="level-item">5.4.2</span><span class="level-item">聚合与继承的区别</span></span></a></li></ul></li><li><a class="level is-mobile" href="#属性"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">属性</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#属性配置与使用"><span class="level-left"><span class="level-item">5.5.1</span><span class="level-item">属性配置与使用</span></span></a></li><li><a class="level is-mobile" href="#资源文件引用属性步骤"><span class="level-left"><span class="level-item">5.5.2</span><span class="level-item">资源文件引用属性步骤</span></span></a></li><li><a class="level is-mobile" href="#其他属性（了解）"><span class="level-left"><span class="level-item">5.5.3</span><span class="level-item">其他属性（了解）</span></span></a></li><li><a class="level is-mobile" href="#版本管理"><span class="level-left"><span class="level-item">5.5.4</span><span class="level-item">版本管理</span></span></a></li></ul></li><li><a class="level is-mobile" href="#多环境开发"><span class="level-left"><span class="level-item">5.6</span><span class="level-item">多环境开发</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#多环境开发步骤"><span class="level-left"><span class="level-item">5.6.1</span><span class="level-item">多环境开发步骤</span></span></a></li><li><a class="level is-mobile" href="#跳过测试"><span class="level-left"><span class="level-item">5.6.2</span><span class="level-item">跳过测试</span></span></a></li></ul></li><li><a class="level is-mobile" href="#私服"><span class="level-left"><span class="level-item">5.7</span><span class="level-item">私服</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#团队开发分析"><span class="level-left"><span class="level-item">5.7.1</span><span class="level-item">团队开发分析</span></span></a></li><li><a class="level is-mobile" href="#私服简介"><span class="level-left"><span class="level-item">5.7.2</span><span class="level-item">私服简介</span></span></a></li><li><a class="level is-mobile" href="#Nexus安装与启动"><span class="level-left"><span class="level-item">5.7.3</span><span class="level-item">Nexus安装与启动</span></span></a></li><li><a class="level is-mobile" href="#私服资源操作流程分析"><span class="level-left"><span class="level-item">5.7.4</span><span class="level-item">私服资源操作流程分析</span></span></a></li><li><a class="level is-mobile" href="#私服仓库分类"><span class="level-left"><span class="level-item">5.7.5</span><span class="level-item">私服仓库分类</span></span></a></li><li><a class="level is-mobile" href="#资源上传与下载"><span class="level-left"><span class="level-item">5.7.6</span><span class="level-item">资源上传与下载</span></span></a></li><li><a class="level is-mobile" href="#本地私服访问私服权限设置"><span class="level-left"><span class="level-item">5.7.7</span><span class="level-item">本地私服访问私服权限设置</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#SpringBoot"><span class="level-left"><span class="level-item">6</span><span class="level-item">SpringBoot</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringBoot简介"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">SpringBoot简介</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#入门案例-2"><span class="level-left"><span class="level-item">6.1.1</span><span class="level-item">入门案例</span></span></a></li><li><a class="level is-mobile" href="#SpringBoot项目快速启动"><span class="level-left"><span class="level-item">6.1.2</span><span class="level-item">SpringBoot项目快速启动</span></span></a></li><li><a class="level is-mobile" href="#SpringBoot概述"><span class="level-left"><span class="level-item">6.1.3</span><span class="level-item">SpringBoot概述</span></span></a></li><li><a class="level is-mobile" href="#SpringBoot程序启动"><span class="level-left"><span class="level-item">6.1.4</span><span class="level-item">SpringBoot程序启动</span></span></a></li></ul></li><li><a class="level is-mobile" href="#基础配置"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">基础配置</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#配置格式"><span class="level-left"><span class="level-item">6.2.1</span><span class="level-item">配置格式</span></span></a></li><li><a class="level is-mobile" href="#yaml"><span class="level-left"><span class="level-item">6.2.2</span><span class="level-item">yaml</span></span></a></li><li><a class="level is-mobile" href="#多环境启动"><span class="level-left"><span class="level-item">6.2.3</span><span class="level-item">多环境启动</span></span></a></li><li><a class="level is-mobile" href="#配置文件分类"><span class="level-left"><span class="level-item">6.2.4</span><span class="level-item">配置文件分类</span></span></a></li></ul></li><li><a class="level is-mobile" href="#整合第三方技术"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">整合第三方技术</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringBoot注解"><span class="level-left"><span class="level-item">6.3.1</span><span class="level-item">SpringBoot注解</span></span></a></li><li><a class="level is-mobile" href="#整合JUnit"><span class="level-left"><span class="level-item">6.3.2</span><span class="level-item">整合JUnit</span></span></a></li><li><a class="level is-mobile" href="#基于SpringBoot实现SSM整合"><span class="level-left"><span class="level-item">6.3.3</span><span class="level-item">基于SpringBoot实现SSM整合</span></span></a></li><li><a class="level is-mobile" href="#整合MyBatis"><span class="level-left"><span class="level-item">6.3.4</span><span class="level-item">整合MyBatis</span></span></a></li><li><a class="level is-mobile" href="#基于SpringBoot的SSM整合案例"><span class="level-left"><span class="level-item">6.3.5</span><span class="level-item">基于SpringBoot的SSM整合案例</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#MyBatis-Plus"><span class="level-left"><span class="level-item">7</span><span class="level-item">MyBatis Plus</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#MyBatisPlus简介"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">MyBatisPlus简介</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#SpringBoot整合MyBatisPlus入门程序步骤"><span class="level-left"><span class="level-item">7.1.1</span><span class="level-item">SpringBoot整合MyBatisPlus入门程序步骤</span></span></a></li><li><a class="level is-mobile" href="#MyBatisPlus特性"><span class="level-left"><span class="level-item">7.1.2</span><span class="level-item">MyBatisPlus特性</span></span></a></li></ul></li><li><a class="level is-mobile" href="#标准数据层开发"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">标准数据层开发</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#标准数据层CRUD功能"><span class="level-left"><span class="level-item">7.2.1</span><span class="level-item">标准数据层CRUD功能</span></span></a></li><li><a class="level is-mobile" href="#lombok"><span class="level-left"><span class="level-item">7.2.2</span><span class="level-item">lombok</span></span></a></li><li><a class="level is-mobile" href="#分页功能"><span class="level-left"><span class="level-item">7.2.3</span><span class="level-item">分页功能</span></span></a></li></ul></li><li><a class="level is-mobile" href="#DQL编程控制"><span class="level-left"><span class="level-item">7.3</span><span class="level-item">DQL编程控制</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#条件查询"><span class="level-left"><span class="level-item">7.3.1</span><span class="level-item">条件查询</span></span></a></li><li><a class="level is-mobile" href="#查询投影"><span class="level-left"><span class="level-item">7.3.2</span><span class="level-item">查询投影</span></span></a></li><li><a class="level is-mobile" href="#查询条件"><span class="level-left"><span class="level-item">7.3.3</span><span class="level-item">查询条件</span></span></a></li><li><a class="level is-mobile" href="#字段映射与表名映射"><span class="level-left"><span class="level-item">7.3.4</span><span class="level-item">字段映射与表名映射</span></span></a></li><li><a class="level is-mobile" href="#id生成策略控制"><span class="level-left"><span class="level-item">7.3.5</span><span class="level-item">id生成策略控制</span></span></a></li><li><a class="level is-mobile" href="#多记录操作"><span class="level-left"><span class="level-item">7.3.6</span><span class="level-item">多记录操作</span></span></a></li><li><a class="level is-mobile" href="#逻辑删除"><span class="level-left"><span class="level-item">7.3.7</span><span class="level-item">逻辑删除</span></span></a></li><li><a class="level is-mobile" href="#乐观锁"><span class="level-left"><span class="level-item">7.3.8</span><span class="level-item">乐观锁</span></span></a></li></ul></li><li><a class="level is-mobile" href="#快速开发"><span class="level-left"><span class="level-item">7.4</span><span class="level-item">快速开发</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#代码生成器"><span class="level-left"><span class="level-item">7.4.1</span><span class="level-item">代码生成器</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2023 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
