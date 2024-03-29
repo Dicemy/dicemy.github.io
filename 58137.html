@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>密码学的数学原理 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:type" content="blog"><meta property="og:title" content="密码学的数学原理"><meta property="og:url" content="https://dicemy.com/58137"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://cdn.dicemy.work/202403261856420.jpg"><meta property="article:published_time" content="2024-03-26T10:54:53.000Z"><meta property="article:modified_time" content="2024-03-29T05:16:04.602Z"><meta property="article:author" content="Dicemy"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://cdn.dicemy.work/202403261856420.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/58137"},"headline":"密码学的数学原理","image":["http://cdn.dicemy.work/202403261856420.jpg"],"datePublished":"2024-03-26T10:54:53.000Z","dateModified":"2024-03-29T05:16:04.602Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"}</script><link rel="canonical" href="https://dicemy.com/58137"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-3BC8TV17YR');</script><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a><a class="navbar-item" href="/picwall">照片墙</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Jupyter" href="https://www.dicemy.top/"><i class="fa fa-spinner"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="http://cdn.dicemy.work/202403261856420.jpg" alt="密码学的数学原理"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-03-26T10:54:53.000Z" title="2024/3/26 下午6:54:53">2024-03-26</time>发表</span><span class="level-item"><time dateTime="2024-03-29T05:16:04.602Z" title="2024/3/29 下午1:16:04">2024-03-29</time>更新</span><span class="level-item">18 分钟读完 (大约2660个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">密码学的数学原理</h1><div class="content"><p>本篇文章用来记录密码学中用到的数学知识。</p>
+<p>参考文献：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qs4y1s7kv/?p=5&spm_id_from=pageDriver&vd_source=9471f1d092696b810d533da52467e07f">密码学的数学原理 - 群论</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1341341598358192128">初等数论及其应用</a></li>
+</ul>
+<span id="more"></span>
+
+<h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h2 id="代数结构"><a href="#代数结构" class="headerlink" title="代数结构"></a>代数结构</h2><p>如（G,*,#…）这个形式定义。需要注意的是：</p>
+<ol>
+<li>集合G是非空的，必须要有元素。</li>
+<li>运算必须是二元的。</li>
+</ol>
+<p>若括号定义的这个东西加上一个性质，封闭性。就成为了代数结构（抽象代数中主要讨论的东西）。</p>
+<p>封闭性的意思是，若集合G中的任意两个元素进行运算，结果跑不出该集合，结果仍然是这个集合中的元素。</p>
+<h2 id="群"><a href="#群" class="headerlink" title="群"></a>群</h2><p>定义：（G，*）是一个群，则它满足以下性质：</p>
+<ul>
+<li>封闭性：任意a，b属于G，a * b 结果属于G。</li>
+<li>结合律：任意a，b，c属于G，a * (b * c) = (a * b) * c。</li>
+<li>单位元：存在单位元e，任意a属于G，a * e = e * a = a。</li>
+<li>逆元：任意a属于G，存在b属于G，a * b = b * a = e，此时b称为a的逆元。</li>
+</ul>
+<p>e的逆元是e的本身。逆元的意义是提供 * 的逆运算。</p>
+<p>习惯地，（G，*）是一个群，通常简写为G是一个群。</p>
+<p>群是抽象的概念，通过群的基本性质推出的性质是所有群共有的性质。</p>
+<ul>
+<li><p><strong>阶</strong>：</p>
+</li>
+<li><p>有限群：G是有限集，称G里元素的个数为群的阶。</p>
+</li>
+<li><p>无限群：G是无限集，群G的阶为无限阶。</p>
+</li>
+<li><p><strong>单位元、逆元</strong>：</p>
+</li>
+<li><p>封闭性 =》 左单位元 = 右单位元 = 单位元</p>
+</li>
+<li><p>结合律 =》 左逆元 = 右逆元 = 逆元</p>
+</li>
+<li><p><strong>定理</strong>：</p>
+</li>
+<li><p>定理1：群里的单位元是唯一的。（反证法可证）</p>
+<p>群里只有一个元素时，称为“平凡群”。唯一元素就是单位元。</p>
+</li>
+<li><p>定理2：每个元素只有唯一的逆元。（反证法可证）</p>
+<p>消去律：a * b = a * c =》 b = c。</p>
+<p>方程a * x = b 有唯一解 x 属于G</p>
+<p>（a * b ）的逆元 等于（b的逆元 * a的逆元）</p>
+<p>a的逆的逆 等于 a</p>
+</li>
+</ul>
+<h2 id="阿贝尔群"><a href="#阿贝尔群" class="headerlink" title="阿贝尔群"></a>阿贝尔群</h2><p>又称 交换群。</p>
+<ul>
+<li>定义：如果对于群G中的任意元素a，b属于G，都有a * b = b * a，则称G为阿贝尔群。</li>
+<li>定理：群G是阿贝尔群，当且仅当，对于任意a，b属于G，有（a * b）的平方 等于 a的平方 * b的平方。</li>
+<li>群的简记符号：a的t次方指的是t个a一起运算。t是整数，a是群元素。</li>
+<li>定理：G是阿贝尔群，对于任意a，b属于G，有（a * b）的 t 次方 等于 a的t次方 * b的t次方。</li>
+</ul>
+<h2 id="子群"><a href="#子群" class="headerlink" title="子群"></a>子群</h2><p>集合论中的集合和子集概念，其中子集扩展了集合的性质。同理群论中的子群概念扩展了群的性质。</p>
+<ul>
+<li><p>定义：设G是一个群，H是G的子集，如果H是一个群，则称H是G的子群。</p>
+</li>
+<li><p>平凡子群：（{e}, <em>）、（G，\</em>）。单位元群和群G本身都是群G的平凡子群。</p>
+</li>
+<li><p>非平凡子群：（H，*）且H 不等于 {e}和G（又称真子群）</p>
+</li>
+<li><p>定理：H是群G的子群，e属于G是单位元，则e也是子群H的单位元（群的单位元也是其子群的单位元）</p>
+</li>
+<li><p>定理：H是群G的子群，a属于H，则a的逆也属于H。</p>
+</li>
+<li><p>判断子群定理（1）：H是群G的非空子集，对于任意a，b属于H，都有a * b的逆属于H，则H是G的子群。</p>
+<p>该定理其实是证明了H满足1.非空子集，2.封闭性，3.结合律，4.单位元，5.逆元 五个性质。</p>
+</li>
+<li><p>判断子群定理（2）：H是群G的非空子集，如果H是有限集，而且G的运算*在H上满足封闭性，则H是G的子群。</p>
+</li>
+</ul>
+<h2 id="子群的构造"><a href="#子群的构造" class="headerlink" title="子群的构造"></a>子群的构造</h2><p>针对阿贝尔群：</p>
+<ul>
+<li><p>定理（1）：G是阿贝尔群，m属于Z，则G的m次方是G的子群。</p>
+<p>例子：</p>
+<ol>
+<li>(Z*_p)的平方，即整数在模p（奇素数）的平方群是(Z*_p)的子群。</li>
+<li>(Z*_n)的m次方，即整数在模自然数n的m次方群是(Z*_n)的子群。</li>
+<li>mZ是Z的子群。</li>
+<li>mZ_n是Z_n的子群。</li>
+</ol>
+</li>
+<li><p>定理（2）：G是阿贝尔群，m属于Z，则G中所有元素的m次方等于e的元素构成的群G{m}是G的子群。</p>
+<p>例子：</p>
+<ol>
+<li>构造Z_n的子集Z_n{m}：设d = gcd(n, m)，使得mZ同余0modn，可得Z同余0mod(n/d)，即为{0,n/d,2n/d,3n/d…}。考虑Z_n{d}，根据定义可知，z属于dZ同余0modn集合，即也为{0,n/d,2n/d,3n/d…}。即Z_n{d} = Z_n{m} = (n/d)Z_n {d = gcd(n, m)}</li>
+</ol>
+</li>
+<li><p>性质：Z_n{d} = Z_n{m} = (n/d)Z_n {d = gcd(n, m)}</p>
+</li>
+</ul>
+<p>对于Z_p群来说，例如Z_15群，其子群中通过两种定理构造的子群存在关联，对于定理（1）来说，构造出来的5Z_15子群就和Z_15{6}子群是相等的。</p>
+<h2 id="整数群的子群"><a href="#整数群的子群" class="headerlink" title="整数群的子群"></a>整数群的子群</h2><ul>
+<li><p>定理1：H是Z的子群，则存在唯一的负整数m，使得H=mZ。</p>
+</li>
+<li><p>定理2：m1和m2是非负整数，则m2是m1的因数，当且仅当，m1Z是m2的子集。</p>
+<p>例子：27Z包含于9Z包含于3Z包含于Z。</p>
+</li>
+<li><p>定理3：H是Z_n的子群，</p>
+<ul>
+<li>存在n的唯一正因子m，使得H = mZ_n。</li>
+<li>m1和m2是n的正因子，则m2是m1的因子，当且仅当，m1Z_n 包含于 m2Z_n。</li>
+</ul>
+</li>
+</ul>
+<h2 id="子群构造子群"><a href="#子群构造子群" class="headerlink" title="子群构造子群"></a>子群构造子群</h2><p>用子群来构造新的子群。</p>
+<ul>
+<li><p>定理（1）：H1和H2是阿贝尔群G的子群，则H := H1H2也是G的子群，其中H := H1H2 := {a1 * a2 | a1属于H1， a2属于H2}</p>
+<p>注意：通常H1H1 ≠ 2H1。例如Z + Z = Z，但是 Z ≠ 2Z。即 Z + Z ≠ 2Z</p>
+<p>扩展：H1，…，Hn是阿贝尔群G的子群，则H1…Hn也是G的子群。</p>
+</li>
+<li><p>定理（2）：H1和H2是群G的子群，则H := H1∩H2也是G的子群。（即子群的交集也是子群）（该方法没有限制阿贝尔群，因为证明时没有用到交换律）</p>
+<p>扩展：H1，…，Hn是阿贝尔群G的子群，则H1∩…∩Hn也是G的子群。</p>
+<p>子群的并集未必是子集，例如：2Z∪3Z就不是一个子群，因为2+3=5，而5不在2Z∪3Z中，不满足封闭性。</p>
+</li>
+<li><p>定理（3）：H1和H2是G的非平凡子群，则G≠H1∪H2。</p>
+</li>
+</ul>
+<h2 id="陪集"><a href="#陪集" class="headerlink" title="陪集"></a>陪集</h2><p>  <img src="http://cdn.dicemy.work/202403281258648.png" alt="陪集的重要性"></p>
+<ul>
+<li>定义：H是群G的子群，<strong>a属于G</strong>，则aH := {a * h |h属于H}称为H关于a在G中的左陪集。同理，Ha := {h * a|h属于H}称为H关于a在G中的右陪集。如果aH = Ha，称为H关于a在G中的陪集。a称为代表元。陪集的表示方法：[a]H</li>
+<li>性质1：a属于[a]H</li>
+<li>性质2-1：[e]H = H （平凡陪集）</li>
+<li>性质2-2：若a属于H，当且仅当，[a]H = H </li>
+<li>性质3：[a]H = [b]H，当且仅当，(a的逆 * b)属于H</li>
+</ul>
+<h2 id="拉格朗日定理"><a href="#拉格朗日定理" class="headerlink" title="拉格朗日定理"></a>拉格朗日定理</h2><p>由陪集的性质3可知，若b = a * h，h属于H，此时a和b会被分配在同一个陪集中。</p>
+<p>引入二元关系符号≡，式子：a≡b(mod H)表示a和b在同一个（由H构造）的陪集里。</p>
+<p><img src="http://cdn.dicemy.work/202403281318486.png" alt="a和b在同一个陪集里"></p>
+<p>所以[a]H的含义可以为：1.以a为代表元的陪集，2.a和H构造的陪集，3.H为分类依据时，a被分配到的陪集。</p>
+<p><img src="http://cdn.dicemy.work/202403281320327.png" alt="image-20240328132056256"></p>
+<ul>
+<li>性质：任意两个陪集[a]H和[b]H之间存在双射。任意陪集[a]H和子群H是等势的。（即子群H构造的陪集的大小和子群H是相等的）</li>
+<li>定理：G是有限群，H是G的任意子群，则|H| ||G|，即H内元素的个数必须是G内元素的个数的因数。</li>
+</ul>
+<h2 id="商群"><a href="#商群" class="headerlink" title="商群"></a>商群</h2><ul>
+<li><p>正规子群：</p>
+<ul>
+<li>定义：设N是群G的子群，如果对于任意a属于G，都有aN = Na，称N为G的正规子群。</li>
+</ul>
+</li>
+<li><p>商群：</p>
+<ul>
+<li>定义：集合G/N := {[a]N | a属于G}，即由正规子群N构造的所有陪集。定义陪集间二元运算[a]N * [b]N := [a * b]N，即两个陪集的单位元先进行群G的二元运算*之后再构造群G的陪集。该集合为一个群，(G/N,*)。叫做群G在模N下的商群。</li>
+<li>商群G/N的阶：[G:N]表示商群G/N的阶。</li>
+<li>定理（1）：G是有限群，N是G的正规子群，则[G:N] = |G| / |N|</li>
+<li>定理（2）：G是有限群，N是G的正规子群，K是N的正规子群，则[G:K] = [G:N][N:K]</li>
+</ul>
+</li>
+<li><p>阿贝尔群：</p>
+<ul>
+<li><p>性质（1）：H是阿贝尔群G的子群，对于任意a属于G，有aH = Ha (=[a]H)</p>
+<p>注意：如果对于任意a属于G，都有aH = Ha，则G未必是阿贝尔群。</p>
+</li>
+<li><p>性质（2）：阿贝尔群的子群都是正规子群。</p>
+</li>
+<li><p>性质（3）：阿贝尔群的任意子群都可以构造商群。</p>
+</li>
+<li><p>性质（4）：阿贝尔群的子群构造的商群也是阿贝尔群。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="群同态"><a href="#群同态" class="headerlink" title="群同态"></a>群同态</h2></div><div class="article-licensing box"><div class="licensing-title"><p>密码学的数学原理</p><p><a href="https://dicemy.com/58137">https://dicemy.com/58137</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-03-26</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-03-29</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/34724"><span class="level-item">现代密码学初探</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
+            appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
+            placeholder: "输入你的评论\\n昵称为必填项目，在昵称处输入QQ号可以直接获取你的用户名和头像哦！",
+            avatar: "mp",
+            avatarForce: false,
+            meta: ["nick","mail"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: true,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">43</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#群论"><span class="level-left"><span class="level-item">1</span><span class="level-item">群论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#代数结构"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">代数结构</span></span></a></li><li><a class="level is-mobile" href="#群"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">群</span></span></a></li><li><a class="level is-mobile" href="#阿贝尔群"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">阿贝尔群</span></span></a></li><li><a class="level is-mobile" href="#子群"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">子群</span></span></a></li><li><a class="level is-mobile" href="#子群的构造"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">子群的构造</span></span></a></li><li><a class="level is-mobile" href="#整数群的子群"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">整数群的子群</span></span></a></li><li><a class="level is-mobile" href="#子群构造子群"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">子群构造子群</span></span></a></li><li><a class="level is-mobile" href="#陪集"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">陪集</span></span></a></li><li><a class="level is-mobile" href="#拉格朗日定理"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">拉格朗日定理</span></span></a></li><li><a class="level is-mobile" href="#商群"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">商群</span></span></a></li><li><a class="level is-mobile" href="#群同态"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">群同态</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2024 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
