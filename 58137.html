@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>密码学的数学原理 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:type" content="blog"><meta property="og:title" content="密码学的数学原理"><meta property="og:url" content="https://dicemy.com/58137"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://cdn.dicemy.work/202403261856420.jpg"><meta property="article:published_time" content="2024-03-26T10:54:53.000Z"><meta property="article:modified_time" content="2024-03-29T05:16:04.602Z"><meta property="article:author" content="Dicemy"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://cdn.dicemy.work/202403261856420.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/58137"},"headline":"密码学的数学原理","image":["http://cdn.dicemy.work/202403261856420.jpg"],"datePublished":"2024-03-26T10:54:53.000Z","dateModified":"2024-03-29T05:16:04.602Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"}</script><link rel="canonical" href="https://dicemy.com/58137"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>密码学的数学原理 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:type" content="blog"><meta property="og:title" content="密码学的数学原理"><meta property="og:url" content="https://dicemy.com/58137"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://cdn.dicemy.work/202403261856420.jpg"><meta property="article:published_time" content="2024-03-26T10:54:53.000Z"><meta property="article:modified_time" content="2024-04-04T05:44:03.036Z"><meta property="article:author" content="Dicemy"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://cdn.dicemy.work/202403261856420.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/58137"},"headline":"密码学的数学原理","image":["http://cdn.dicemy.work/202403261856420.jpg"],"datePublished":"2024-03-26T10:54:53.000Z","dateModified":"2024-04-04T05:44:03.036Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本篇文章用来记录密码学中用到的数学知识。 参考文献：  密码学的数学原理 - 群论 初等数论及其应用"}</script><link rel="canonical" href="https://dicemy.com/58137"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a><a class="navbar-item" href="/picwall">照片墙</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Jupyter" href="https://www.dicemy.top/"><i class="fa fa-spinner"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="http://cdn.dicemy.work/202403261856420.jpg" alt="密码学的数学原理"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-03-26T10:54:53.000Z" title="2024/3/26 下午6:54:53">2024-03-26</time>发表</span><span class="level-item"><time dateTime="2024-03-29T05:16:04.602Z" title="2024/3/29 下午1:16:04">2024-03-29</time>更新</span><span class="level-item">18 分钟读完 (大约2660个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">密码学的数学原理</h1><div class="content"><p>本篇文章用来记录密码学中用到的数学知识。</p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a><a class="navbar-item" href="/picwall">照片墙</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Jupyter" href="https://www.dicemy.top/"><i class="fa fa-spinner"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="http://cdn.dicemy.work/202403261856420.jpg" alt="密码学的数学原理"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-03-26T10:54:53.000Z" title="2024/3/26 下午6:54:53">2024-03-26</time>发表</span><span class="level-item"><time dateTime="2024-04-04T05:44:03.036Z" title="2024/4/4 下午1:44:03">2024-04-04</time>更新</span><span class="level-item">35 分钟读完 (大约5182个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">密码学的数学原理</h1><div class="content"><p>本篇文章用来记录密码学中用到的数学知识。</p>
 <p>参考文献：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qs4y1s7kv/?p=5&spm_id_from=pageDriver&vd_source=9471f1d092696b810d533da52467e07f">密码学的数学原理 - 群论</a></li>
@@ -15,6 +15,42 @@
 </ul>
 <span id="more"></span>
 
+<h1 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>数论主要研究整数集合的性质，以及整数之间的关系。</p>
+<ul>
+<li><strong>良序性质：每个非空的正整数集合都有一个最小元。</strong>正整数集合是良序的，但是有些整数集合不是良序的，因为其中没有最小的元素，比如负整数集合、偶数集合等。根据良序性质，我们可以得到一个与之对称的关于负整数的性质：<strong>每个非空的负整数集合都有一个最大元</strong>。</li>
+<li><strong>定义1.1</strong>：若存在整数 p 和 q≠0 ，使得 r=p/q ，则称实数 r 是<strong>有理数</strong>，否则是<strong>无理数</strong>（所有整数 n 都是有理数，即整数是有理数的子集，因为有 n=n/1）</li>
+<li><strong>定义1.2</strong>：若数 x 是整系数多项式的根，即存在整数 a0,a1,…,an 使得 an x^n+an-1 x^(n−1+…+a0=0 ，则称数 x 是<strong>代数数</strong>，否则是<strong>超越数</strong></li>
+<li><strong>定义1.3</strong>：<strong>取整函数</strong> [x] 表示小于或者等于实数 x 的最大整数，有 [x]≤x&lt;[x]+1，这表示<strong>整数 −[−x] 是大于或者等于实数 x 的最小整数</strong>。</li>
+<li><strong>推论1.1</strong>：对于任意实数 x 和整数 n ，都有 [x+n]=[x]+n</li>
+<li><strong>定义1.4</strong>：实数 x 的<strong>分数部分</strong> {x} 表示 x,[x] 之差，即 {x}=x−[x]</li>
+<li><strong>推论1.2</strong>：对于任意实数 x ，都有 0≤{x}&lt;1</li>
+<li><strong>定义1.5</strong>：若一个集合是有限的，或者集合是无穷的，但是与正整数集合之间存在一个双射，则称集合是<strong>可数的</strong>，否则是<strong>不可数的</strong>（有限集合都是可数的，不可数的集合都是无穷集合）</li>
+<li><strong>推论1.3</strong>：整数集合是可数的</li>
+<li><strong>定义1.6</strong>：对于a,b∈Z ，其中 a≠0 ，若存在 c∈Z 使得 b=ac ，则称 a<strong>整除</strong> b ， a是 b 的一个因子， b 是 a 的一个倍数，并且记为 a∣b ，否则称 a 不能整除 b ，记为 a∤b。（对于所有整数 n ，有 1∣n,n∣n）</li>
+<li><strong>定理1.4</strong>：若 a,b,c∈Z ，并且 a∣b,b∣c ，则有 a∣c</li>
+<li><strong>定理1.5</strong>：若 a,b,c,m,n∈Z ，并且 a∣b,a∣c ，则有 a∣(ma+nb)</li>
+<li><strong>定理1.6</strong>：若 a,b,c,d∈Z ，其中 a,c≠0 ，并且 a∣b,c∣d ，则有 ac∣bd</li>
+<li><strong>定理1.7</strong>：若 a,b,c∈Z ，其中 a≠0 ，则 a∣b 等价于 ac∣bc</li>
+<li><strong>定理1.8</strong>：若 a,b∈Z ，并且 a∣b ，则对于任意正整数 k 都有 a^k∣b^k</li>
+<li><strong>带余除法</strong>：若 a,b∈Z ，其中 b&gt;0 ，则存在唯一的整数 r,q ，使得 a=bq+r ，其中 0≤r&lt;b</li>
+</ul>
+<h2 id="素数和公因子"><a href="#素数和公因子" class="headerlink" title="素数和公因子"></a>素数和公因子</h2><ul>
+<li><strong>定义2.1</strong>：<strong>素数</strong>是大于 1 的正整数，并且只有两个正整数因子，<strong>合数</strong>是大于 1 的并且不是素数的正整数，即对于合数 n ，存在整数 a ，有1&lt;a&lt;n 并且 a∣n 。</li>
+<li><strong>定理2.1</strong>：所有大于 1 的正整数都有素因子</li>
+<li><strong>定理2.2</strong>：存在无穷多个素数</li>
+<li><strong>定理2.3</strong>：若整数 n 是合数，则 n 一定有不超过 根号n 的素因子</li>
+<li><strong>定理2.4</strong>：对于任意正整数 n ，存在至少 n 个连续的正合数</li>
+<li>一个正整数的所有因子构成一个有限的集合，那么两个正整数的因子集合的交集就是这两个数的<strong>公共因子</strong>，能够同时整除这两个数，其中最大的那个公共因子非常重要。</li>
+<li><strong>定义2.2</strong>：不同时为零的整数 a,b 的<strong>最大公因子</strong>是指能够<strong>同时整除</strong> a,b 的最大整数，记为 (a,b) 或者 gcd(a,b)。虽然任意非零整数都是 0 的因子，但是我们定义 (0,0)=0 。对于正整数 n 有 (n,0)=(n,n)=n 。对于整数 m 有 (m,1)=1</li>
+<li><strong>定义2.3</strong>：对于都不为零的整数 a,b ，若最大公因子 (a,b)=1 ，则称 a,b <strong>互素</strong>。若有两个整数 p,q 并且 (p,q)=1 ，其中 p≠0 ，则分数 p/q 称为<strong>既约分数</strong>。</li>
+<li><strong>定理2.5</strong>：对于整数 a,b ，若 (a,b)=d&gt;0 ，则有 (a/d,b/d)=1</li>
+<li><strong>推论2.2</strong>：若 a,b 为整数，并且 b≠0 ，则存在整数 p,q 互素，并且 a/b=p/q ，其中 q≠0</li>
+<li><strong>定理2.6</strong>：对于整数 a,b,c 有 (a+cb,b)=(a,b)</li>
+<li><strong>定义2.4</strong>：若 a,b 为整数，则其<strong>线性组合</strong>为 ma+nb ，其中 m,n 是整数</li>
+<li><strong>定理2.7</strong>：不同时为零的整数 a,b 的最大公因子是 a,b 的线性组合中最小的正整数</li>
+<li><strong>推论2.3</strong>：若 a,b 为整数，则存在整数 m,n 使得 (a,b)=ma+nb</li>
+<li><strong>推论2.4</strong>：两个整数 a,b 互素等价于存在整数 m,n 使得 ma+nb=1</li>
+</ul>
 <h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h2 id="代数结构"><a href="#代数结构" class="headerlink" title="代数结构"></a>代数结构</h2><p>如（G,*,#…）这个形式定义。需要注意的是：</p>
 <ol>
 <li>集合G是非空的，必须要有元素。</li>
@@ -81,13 +117,15 @@
 </li>
 <li><p>判断子群定理（2）：H是群G的非空子集，如果H是有限集，而且G的运算*在H上满足封闭性，则H是G的子群。</p>
 </li>
+<li><p>其实子群指的是 群 的特殊的非空子集。 群G的非空子集H，若对G的乘法也成为群，则称H为G的子群。</p>
+</li>
 </ul>
 <h2 id="子群的构造"><a href="#子群的构造" class="headerlink" title="子群的构造"></a>子群的构造</h2><p>针对阿贝尔群：</p>
 <ul>
 <li><p>定理（1）：G是阿贝尔群，m属于Z，则G的m次方是G的子群。</p>
 <p>例子：</p>
 <ol>
-<li>(Z*_p)的平方，即整数在模p（奇素数）的平方群是(Z*_p)的子群。</li>
+<li>(Z*_p)的平方，即整数在模p（奇素数）的平方群是(Z*_p)的子群。    </li>
 <li>(Z*_n)的m次方，即整数在模自然数n的m次方群是(Z*_n)的子群。</li>
 <li>mZ是Z的子群。</li>
 <li>mZ_n是Z_n的子群。</li>
@@ -174,7 +212,103 @@
 </ul>
 </li>
 </ul>
-<h2 id="群同态"><a href="#群同态" class="headerlink" title="群同态"></a>群同态</h2></div><div class="article-licensing box"><div class="licensing-title"><p>密码学的数学原理</p><p><a href="https://dicemy.com/58137">https://dicemy.com/58137</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-03-26</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-03-29</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/34724"><span class="level-item">现代密码学初探</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+<h2 id="群同态"><a href="#群同态" class="headerlink" title="群同态"></a>群同态</h2><p>群同态本质上就是定义在群和群之间的映射，或者说函数，但是是一种特殊的函数。需要满足映射完的元素还可以进行运算。</p>
+<p><img src="http://cdn.dicemy.work/202403301127991.png" alt="image-20240330112717830"></p>
+<ul>
+<li><p>定义：设群（G,*）和群（G’,x），如果函数f: G -&gt; G’对于任意a，b属于G，都有 f(a * b) = f(a) x f(b)，则称f为群（G,*）和群（G’,x）的群同态。（群同态可能有多个，可能不唯一）</p>
+<p>判断两个群是否群同态只需检验 f(a * b) = f(a) x f(b) 即可。</p>
+</li>
+<li><p>同态像：有些元素经f映射之后的落点可能只是G‘的子集，也就是说G’中的一些元素在G中可能找不到原像。那些G‘中可以找到原像的那些元素构成的子集叫做同态像。记为Im f。Im f := f(G) := {f(a) | a 属于 G}</p>
+</li>
+<li><p>同态核：记为Ker f。G中经过f映射后等于G’中单位元的那些元素就是核里的元素。Ker f := {a 属于 G | f(a) = e’} （e’代表G’中的单位元）</p>
+</li>
+<li><p> 嵌入映射：子群到群的嵌入映射是个群同态。f(a) = a。并且原像到像之间是一对一的。</p>
+</li>
+<li><p>单一同态：f是单射。</p>
+</li>
+<li><p>自然映射：G到G/N的映射，N是G的正规子群，G/N是对G中元素的划分，则f(a) = [a]N即将G中的每个元素划分进相应的陪集。这个函数就是一个群同态。定义域是G，值域就是对应的商群。</p>
+<p>其中N也是G/N商群的元素，称为平凡陪集。所以，自然映射的同态核就是正规子群N。</p>
+<p>自然映射的例子：Z/nZ，其核就是正规子群nZ。</p>
+</li>
+<li><p>满同态：f是满射。</p>
+</li>
+<li><p>m次方映射：对于阿贝尔群G，设f(a) = (a)^m。则f是m次方映射，也是一个同态。Im f = G^m，Ker f = G{m}。</p>
+</li>
+<li><p>雅可比映射。</p>
+</li>
+</ul>
+<h2 id="群同态的性质"><a href="#群同态的性质" class="headerlink" title="群同态的性质"></a>群同态的性质</h2><ul>
+<li><p>性质（1）：f(e) = e’ (e和e’分别是群G和群G’的单位元)</p>
+</li>
+<li><p>性质（2）：f(a的逆元) = f(a)的逆元，任意a属于G。</p>
+</li>
+<li><p>性质（3）：H是G的子群  =&gt; f(H)是G‘ 的子群。</p>
+<p>扩展：H := G  =&gt; f(G) = Im f （同态Im f 是G的子群）</p>
+</li>
+<li><p>性质（4）：H’是G’的子群， =&gt; f的逆运算(H’) 是G的子群。f的逆运算表示求H’的原像集合。</p>
+</li>
+<li><p>性质（5）：f(a^m) = f(a)^m</p>
+</li>
+<li><p>结论：同态核Ker f 是G的子群，同态像Im f是G‘的子群。</p>
+</li>
+<li><p>群同态的复合</p>
+<ul>
+<li>定理：f是(G,*)到(G’,x)的群同态，f’是(G’,x)到(G’’,田)的群同态，则f和f’的复合 f’of: G -&gt; G’’也是群同态。</li>
+</ul>
+</li>
+<li><p>同态核的穿越</p>
+<ul>
+<li>定理：f: G - &gt; G’是群同态，则Ker f是正规子群。</li>
+</ul>
+</li>
+<li><p>如何判断单一同态</p>
+<ul>
+<li>定理（1）：f: G -&gt;G’ 是群同态，任意a，b属于G，有f(a) = f(b)，当且仅当，a 同余 b (mod Ker f)。</li>
+<li>定理（2）：f: G - &gt;G’是群同态，有f是单射，当且仅当，Ker f = {e}。  </li>
+</ul>
+</li>
+<li><p>判断方法</p>
+<ul>
+<li>f是单一同态，当且仅当，Ker f = {e}。  </li>
+<li>f是满同态，当且仅当，同态像Im f = G。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第一同构定理"><a href="#第一同构定理" class="headerlink" title="第一同构定理"></a>第一同构定理</h2><ul>
+<li>双射：既是单射又是满射</li>
+<li>若一个群同态是一个双射函数，它就叫群同构。（群同构是一种特殊形式的群同态）。</li>
+<li>G与G‘同构，指G到G’之间存在一个群同构。群同构也可以定义在自身上，G到G的同构，称为G的自同构。</li>
+<li>群同构的意义：指群同构的群，本质上是同一个群。所以只需研究其中一个群的性质即可。</li>
+</ul>
+<p>第一同构定理（又称，基本同态定理）：</p>
+<ul>
+<li><p>定理：设群（G,*）和群（G’,x），f:G-&gt;G’是群同态（同态核是Ker f，同态像是Im f）。</p>
+<p>则G/ Ker f 同构与 Im f，其中同态运算ρ: [a]Kerf -&gt; f(a)，该运算ρ是将商群里的陪集映射成代表元的像。</p>
+<p>理解：G/ Ker f 这个商集其实是对于同态f的同态核求的剩余类，而该剩余类的代表元进行f同态运算之后得到的就是Im f。第一同构定理告诉我们，同态核构造的商群和同态像是同构的。</p>
+</li>
+<li><p>若将同态运算进行修改，ρ’ : G/Ker f -&gt; G’ ，ρ’ 可能不是满射，但是可知ρ’ 是单一同态。</p>
+</li>
+</ul>
+<h2 id="循环群"><a href="#循环群" class="headerlink" title="循环群"></a>循环群</h2><p>构造子群的一种方法：</p>
+<ul>
+<li>定理：设G是群，a属于G，则&lt;a&gt; := {a^z | z∈Z}是由a生成的G的子群。</li>
+</ul>
+<p>循环群的概念：</p>
+<ul>
+<li>定义：设G是群，g属于G，如果G = &lt;g&gt;，则称G是循环群，g是循环群G的生成元。</li>
+<li>例子<ul>
+<li>整数群Z是加法循环群。记为&lt;1&gt;，&lt;-1&gt;</li>
+<li>mZ是加法循环群。记为&lt;m&gt;，&lt;-m&gt;</li>
+<li>Z*_5是乘法循环群。记为&lt;2&gt;，&lt;3&gt;</li>
+</ul>
+</li>
+<li>循环群根据元素是否是有限的可分为：无限循环群和有限循环群。</li>
+<li>一个循环群可能有很多生成元。有限循环群的生成元个数是可以计算的，任意无限循环群都只有两个生成元。</li>
+<li>定理（1）：任意循环群都是阿贝尔群。</li>
+<li>定理（2）：循环群的子群是循环群。</li>
+<li>定理（3）：设G是循环群，H是其子群，则商群G/H是循环群。设G的生成元为g，则G/H的生成元就是[g]H。</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>密码学的数学原理</p><p><a href="https://dicemy.com/58137">https://dicemy.com/58137</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-03-26</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-04-04</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/34724"><span class="level-item">现代密码学初探</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
             appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
@@ -192,7 +326,7 @@
             
             enableQQ: false,
             requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">43</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#群论"><span class="level-left"><span class="level-item">1</span><span class="level-item">群论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#代数结构"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">代数结构</span></span></a></li><li><a class="level is-mobile" href="#群"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">群</span></span></a></li><li><a class="level is-mobile" href="#阿贝尔群"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">阿贝尔群</span></span></a></li><li><a class="level is-mobile" href="#子群"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">子群</span></span></a></li><li><a class="level is-mobile" href="#子群的构造"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">子群的构造</span></span></a></li><li><a class="level is-mobile" href="#整数群的子群"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">整数群的子群</span></span></a></li><li><a class="level is-mobile" href="#子群构造子群"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">子群构造子群</span></span></a></li><li><a class="level is-mobile" href="#陪集"><span class="level-left"><span class="level-item">1.8</span><span class="level-item">陪集</span></span></a></li><li><a class="level is-mobile" href="#拉格朗日定理"><span class="level-left"><span class="level-item">1.9</span><span class="level-item">拉格朗日定理</span></span></a></li><li><a class="level is-mobile" href="#商群"><span class="level-left"><span class="level-item">1.10</span><span class="level-item">商群</span></span></a></li><li><a class="level is-mobile" href="#群同态"><span class="level-left"><span class="level-item">1.11</span><span class="level-item">群同态</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2024 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">43</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#数论"><span class="level-left"><span class="level-item">1</span><span class="level-item">数论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#基础知识"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">基础知识</span></span></a></li><li><a class="level is-mobile" href="#素数和公因子"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">素数和公因子</span></span></a></li></ul></li><li><a class="level is-mobile" href="#群论"><span class="level-left"><span class="level-item">2</span><span class="level-item">群论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#代数结构"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">代数结构</span></span></a></li><li><a class="level is-mobile" href="#群"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">群</span></span></a></li><li><a class="level is-mobile" href="#阿贝尔群"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">阿贝尔群</span></span></a></li><li><a class="level is-mobile" href="#子群"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">子群</span></span></a></li><li><a class="level is-mobile" href="#子群的构造"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">子群的构造</span></span></a></li><li><a class="level is-mobile" href="#整数群的子群"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">整数群的子群</span></span></a></li><li><a class="level is-mobile" href="#子群构造子群"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">子群构造子群</span></span></a></li><li><a class="level is-mobile" href="#陪集"><span class="level-left"><span class="level-item">2.8</span><span class="level-item">陪集</span></span></a></li><li><a class="level is-mobile" href="#拉格朗日定理"><span class="level-left"><span class="level-item">2.9</span><span class="level-item">拉格朗日定理</span></span></a></li><li><a class="level is-mobile" href="#商群"><span class="level-left"><span class="level-item">2.10</span><span class="level-item">商群</span></span></a></li><li><a class="level is-mobile" href="#群同态"><span class="level-left"><span class="level-item">2.11</span><span class="level-item">群同态</span></span></a></li><li><a class="level is-mobile" href="#群同态的性质"><span class="level-left"><span class="level-item">2.12</span><span class="level-item">群同态的性质</span></span></a></li><li><a class="level is-mobile" href="#第一同构定理"><span class="level-left"><span class="level-item">2.13</span><span class="level-item">第一同构定理</span></span></a></li><li><a class="level is-mobile" href="#循环群"><span class="level-left"><span class="level-item">2.14</span><span class="level-item">循环群</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2024 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
