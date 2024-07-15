@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>现代密码学初探 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"><meta property="og:type" content="blog"><meta property="og:title" content="现代密码学初探"><meta property="og:url" content="https://dicemy.com/34724"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://cdn.dicemy.work/202310100924145.jpg"><meta property="article:published_time" content="2023-10-10T01:23:34.000Z"><meta property="article:modified_time" content="2024-04-26T11:33:02.140Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="密码学"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://cdn.dicemy.work/202310100924145.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/34724"},"headline":"现代密码学初探","image":["http://cdn.dicemy.work/202310100924145.jpg"],"datePublished":"2023-10-10T01:23:34.000Z","dateModified":"2024-04-26T11:33:02.140Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"}</script><link rel="canonical" href="https://dicemy.com/34724"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>现代密码学初探 - Dicemy 的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Dicemy"><meta name="msapplication-TileImage" content="/img/biaoti.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Dicemy"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"><meta property="og:type" content="blog"><meta property="og:title" content="现代密码学初探"><meta property="og:url" content="https://dicemy.com/34724"><meta property="og:site_name" content="Dicemy 的博客"><meta property="og:description" content="本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://cdn.dicemy.work/202310100924145.jpg"><meta property="article:published_time" content="2023-10-10T01:23:34.000Z"><meta property="article:modified_time" content="2024-07-15T15:04:17.278Z"><meta property="article:author" content="Dicemy"><meta property="article:tag" content="密码学"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="http://cdn.dicemy.work/202310100924145.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://dicemy.com/34724"},"headline":"现代密码学初探","image":["http://cdn.dicemy.work/202310100924145.jpg"],"datePublished":"2023-10-10T01:23:34.000Z","dateModified":"2024-07-15T15:04:17.278Z","author":{"@type":"Person","name":"Dicemy"},"publisher":{"@type":"Organization","name":"Dicemy 的博客","logo":{"@type":"ImageObject","url":"https://dicemy.com/img/biaoti.png"}},"description":"本博文是学习斯坦福-密码学课程的笔记，参考视频：【完整版-斯坦福-密码学】全13讲 在这个仓库里Crypto_Implement，我使用C++对密码学基本算法进行了实现。"}</script><link rel="canonical" href="https://dicemy.com/34724"><link rel="icon" href="/img/biaoti.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/default.css"><link rel="dns-prefetch" href="http://dicemy.com/"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-3BC8TV17YR" async></script><script>window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a><a class="navbar-item" href="/picwall">照片墙</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Jupyter" href="https://www.dicemy.top/"><i class="fa fa-spinner"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="http://cdn.dicemy.work/202310100924145.jpg" alt="现代密码学初探"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-10-10T01:23:34.000Z" title="2023/10/10 上午9:23:34">2023-10-10</time>发表</span><span class="level-item"><time dateTime="2024-04-26T11:33:02.140Z" title="2024/4/26 下午7:33:02">2024-04-26</time>更新</span><span class="level-item">2 小时读完 (大约13591个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">现代密码学初探</h1><div class="content"><p>本博文是学习斯坦福-密码学课程的笔记，参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ht411w7Re/?buvid=ZF4D60FAE1A18B9C40309B6F3ED9B48ACE67&is_story_h5=false&mid=HXlL8u0PiahjD6MyIFVwIg==&p=1&plat_id=116&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=ED4B6BCB-4E4E-4F99-B614-A33C046372B6&share_source=QQ&share_tag=s_i&timestamp=1694779451&unique_k=oq8X2Qb&up_id=51222390&vd_source=9471f1d092696b810d533da52467e07f">【完整版-斯坦福-密码学】全13讲</a></p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">时间轴</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于我</a><a class="navbar-item" href="/picwall">照片墙</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Jupyter" href="https://www.dicemy.top/"><i class="fa fa-spinner"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="http://cdn.dicemy.work/202310100924145.jpg" alt="现代密码学初探"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-10-10T01:23:34.000Z" title="2023/10/10 上午9:23:34">2023-10-10</time>发表</span><span class="level-item"><time dateTime="2024-07-15T15:04:17.278Z" title="2024/7/15 下午11:04:17">2024-07-15</time>更新</span><span class="level-item">2 小时读完 (大约20547个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">现代密码学初探</h1><div class="content"><p>本博文是学习斯坦福-密码学课程的笔记，参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ht411w7Re/?buvid=ZF4D60FAE1A18B9C40309B6F3ED9B48ACE67&is_story_h5=false&mid=HXlL8u0PiahjD6MyIFVwIg==&p=1&plat_id=116&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=ED4B6BCB-4E4E-4F99-B614-A33C046372B6&share_source=QQ&share_tag=s_i&timestamp=1694779451&unique_k=oq8X2Qb&up_id=51222390&vd_source=9471f1d092696b810d533da52467e07f">【完整版-斯坦福-密码学】全13讲</a></p>
 <p>在这个仓库里<a target="_blank" rel="noopener" href="https://github.com/Dicemy/Crypto_Implement">Crypto_Implement</a>，我使用C++对密码学基本算法进行了实现。</p>
 <span id="more"></span>
 
@@ -557,7 +557,7 @@
 <ul>
 <li>课程建议忘掉AES和3DES的内部原理只需要记住这是两个安全的PRP即可（好耶），然后看如何使用他们</li>
 </ul>
-<h3 id="一次性密码来使用分组密码"><a href="#一次性密码来使用分组密码" class="headerlink" title="一次性密码来使用分组密码"></a>一次性密码来使用分组密码</h3><ul>
+<h3 id="一次性密码来使用分组密码（ECB）"><a href="#一次性密码来使用分组密码（ECB）" class="headerlink" title="一次性密码来使用分组密码（ECB）"></a>一次性密码来使用分组密码（ECB）</h3><ul>
 <li>电子密码本（ECB）已经被完全破解了！即使用相同的秘钥，但是把明文分组，对于不同的分组使用相同的密钥进行加密。</li>
 <li>一个问题是，如果明文分组中有两组的明文完全相同，则不需要知道密钥即可知道这两组明文是相同的。然而这是不应该的。</li>
 <li>我们要达到的目的是一次密钥的语义安全性。对于攻击者A来说，无法分别出通过加密算法加密明文m0或m1的加密结果的明文到底是m0还是m1。 </li>
@@ -566,7 +566,7 @@
 <ul>
 <li>对于ECB来说，攻击者如果想，总能区分出m0和m1，所以ECB不是语义安全的。得到的结论是，不要使用ECB加密超过一个的分组。</li>
 </ul>
-<h3 id="计数器模式"><a href="#计数器模式" class="headerlink" title="计数器模式"></a>计数器模式</h3><ul>
+<h3 id="计数器模式（CTR）"><a href="#计数器模式（CTR）" class="headerlink" title="计数器模式（CTR）"></a>计数器模式（CTR）</h3><ul>
 <li>一种新的模式是计数器模式（CTR），使用安全的PRF即AES或则3DES，可以生成伪随机密钥，这个伪随机密钥和明文异或生成的流密码就是安全的。</li>
 </ul>
 <p><img src="http://cdn.dicemy.work/image-20240417194535833.png" alt="image-20240417194535833"></p>
@@ -575,7 +575,7 @@
 <li>Q:但是对于m0和m1中出现重复的情况下，加密后得到的c还是有部分相同？</li>
 <li>A:并不会，对于PRF来说是可能的，对于流密码来说是不成立的。</li>
 </ul>
-<h3 id="选择明文攻击的语义安全性"><a href="#选择明文攻击的语义安全性" class="headerlink" title="选择明文攻击的语义安全性"></a>选择明文攻击的语义安全性</h3><ul>
+<h3 id="选择明文攻击的语义安全性（CPA）"><a href="#选择明文攻击的语义安全性（CPA）" class="headerlink" title="选择明文攻击的语义安全性（CPA）"></a>选择明文攻击的语义安全性（CPA）</h3><ul>
 <li>攻击者的能力：选择明文攻击（CPA）。</li>
 <li>在选择明文攻击下定义语义安全，需要两个实验。和之前的实验相同的部分是，b=0的实验和b=1的实验分别代表加密者加密了m0或者m1。</li>
 <li>不同的部分是：攻击者可以重复上述实验最多Q次，加密者对于每次请求返回的实验类型相同，即都是实验0进行的加密或者实验1进行的加密，攻击者需要综合Q次实验分辨出自己处于实验0还是实验1。</li>
@@ -587,7 +587,7 @@
 </ul>
 <p>对于选择明文攻击来说，一次性密码和计数器模式在选择明文攻击下都是不安全的。</p>
 <ul>
-<li>所以对于选择明文攻击来说，需要相同的明文输出的密文也不同才可以保证安全性。 即，这样的加密对于相同的输入来说输出完全相同。</li>
+<li>所以对于选择明文攻击来说，<strong>需要相同的明文输出的密文也不同才可以保证安全性</strong>。 即，这样的加密对于相同的输入来说输出完全相同。</li>
 <li>  两个场景来说：1.如果硬盘上加密了两个相同的文件，攻击者可以在不解密的情况下知道这两个文件是相同的，但是这不应该让攻击者学习到。2.对于加密传输的两个网络包来说，如果两个加密包是相同的，攻击者也可以通过选择明文攻击的方式得知这两个加密包是相同的。</li>
 </ul>
 <h3 id="基于新鲜值的加密"><a href="#基于新鲜值的加密" class="headerlink" title="基于新鲜值的加密"></a>基于新鲜值的加密</h3><ul>
@@ -607,7 +607,7 @@
 <li><p>我们常说基于新鲜值的加密是针对于选择明文攻击是安全的。</p>
 </li>
 <li><p>因为对于真随机函数来说也无法区分基于新鲜值的加密的选择明文攻击的不同处，所以通过PRFs加密的也是安全的。</p>
-<h3 id="密码分组链接模式"><a href="#密码分组链接模式" class="headerlink" title="密码分组链接模式"></a>密码分组链接模式</h3></li>
+<h3 id="密码分组链接模式（CBC）"><a href="#密码分组链接模式（CBC）" class="headerlink" title="密码分组链接模式（CBC）"></a>密码分组链接模式（CBC）</h3></li>
 <li><p>密码分组链接模式（CBC）是一种对于CPA安全的密码模式。</p>
 </li>
 <li><p>首先是基于随机向量IV（意思是初始向量）的密码分组链接模式：  </p>
@@ -690,7 +690,7 @@
 <li>以上是对MAC安全性游戏的定义，并且定义攻击者的优势，只有攻击者的优势是可忽略的，这样的MAC才是安全的。 </li>
 <li>例子：系统中的文件被用户密码产生的k 所加密的MAC函数保护。对于恶意攻击者来说，无法创造满足MAC校验的文件，即可保护电脑中的文件不被损坏和增添。</li>
 </ul>
-<h3 id="第一类安全的MACs"><a href="#第一类安全的MACs" class="headerlink" title="第一类安全的MACs"></a>第一类安全的MACs</h3><ul>
+<h3 id="一类安全的MACs"><a href="#一类安全的MACs" class="headerlink" title="一类安全的MACs"></a>一类安全的MACs</h3><ul>
 <li>很显然的是，一个安全的PRF，是一个安全的MAC，只需将加密的密文c作为标签t即可。</li>
 <li> 一个坏的例子是：将信息通过k操作之后得到一个10位的标签Y，这样的MAC是不安全的，因为Y的空间太小了。</li>
 <li>得到一个推论是：对于使用PRF构造的MACs，攻击者的优势是PRF的优势加上1/|Y|。所以当标签空间很大时，优势可忽略。</li>
@@ -796,7 +796,415 @@
 <ul>
 <li>其中SHA-1算法已经不安全了，2的51次方次运算对于一个家用计算机来说可能几个月也就可以构造一个碰撞。</li>
 </ul>
-<h3 id="Merkle-Damgard机制"><a href="#Merkle-Damgard机制" class="headerlink" title="Merkle-Damgard机制"></a>Merkle-Damgard机制</h3></div><div class="article-licensing box"><div class="licensing-title"><p>现代密码学初探</p><p><a href="https://dicemy.com/34724">https://dicemy.com/34724</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-10-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-04-26</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/58137"><i class="level-item fas fa-chevron-left"></i><span class="level-item">密码学的数学原理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/36858"><span class="level-item">深度学习&lt;Dive into deep learning&gt;_2预备知识</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
+<h3 id="Merkle-Damgard机制"><a href="#Merkle-Damgard机制" class="headerlink" title="Merkle-Damgard机制"></a>Merkle-Damgard机制</h3><p>C.R. 是指 collision resistance（碰撞避免）</p>
+<ul>
+<li>第一步：给一个短消息的CR函数，可以得到一个长消息的CR函数。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202404271223568.png" alt="image-20240427122316404"></p>
+<ul>
+<li>这就是Merkle-Damgard机制，可以将一个短消息的CR函数转换成一个长消息的CR函数。可以通过反证法来证明：</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202404271229040.png" alt="image-20240427122907906"></p>
+<ul>
+<li>由右下小方块的结论可得知，一直往前推，总有一个小的h中的参数不一样，就找到了一个小h的hash碰撞，所以得证h是CR的H也是CR的。</li>
+<li> 使用分组密码构造  令h(H, m) = E(m, H) xor H。E是一个分组密码。这种构造叫做：Davies-Meyer构造。</li>
+<li>如果不xorH的后果，构造H’ = D(m’, E(m, H))。此时E(m’, H’) = E(m, H)，就构造出了一组碰撞。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/image-20240427160942189.png" alt="image-20240427160942189"></p>
+<ul>
+<li>使用分组密码构造h的方法有很多，除了最后一个以外都是安全的。同时，异或一个H是很重要的，不然将很轻易构造出一个碰撞。</li>
+<li>SHA-256就是使用Merkle-Damgard方法和Davies-Meyer构造方法的加密函数，其中使用的h分组加密函数是SHACAL-2函数，输入为512bit。</li>
+</ul>
+<h3 id="可证明的压缩函数"><a href="#可证明的压缩函数" class="headerlink" title="可证明的压缩函数"></a>可证明的压缩函数</h3><ul>
+<li>一些压缩函数的原理是建立在数论困难问题上的，和这些困难问题等价，所以是安全的。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/image-20240427162119406.png" alt="image-20240427162119406"></p>
+<ul>
+<li><p>其基础是一个离散对数困难问题。但是计算很慢，所以一般不用。</p>
+<h3 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h3></li>
+<li><p>如果H是一个CR的Merkle-Damgard 哈希函数，考虑能否使用H(k || m)作为MAC函数S(k, m)？</p>
+</li>
+<li><p>不可以，因为攻击者可以方便的在后面添加一个新的字段。给了H(k||m)可以计算出H(k||m||w)对于任意的w。</p>
+</li>
+<li><p>一个标准的方法叫做HMAC（Hash-MAC）</p>
+</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/image-20240427164234148.png" alt="image-20240427164234148"></p>
+<p><img src="http://cdn.dicemy.work/image-20240427164407701.png" alt="image-20240427164407701"></p>
+<ul>
+<li>用图展示的话就是如上图的过程。如果将上面第一个h的输出看做k1，下面第一个h的输出看做k2，则可以发现这是一个NMAC机制。</li>
+<li>同样的安全性能分析，假设h是安全的PRF，可以证明HMAC也是安全的，在TLS中就使用了HMAC，其h函数是SHA-1，虽然SHA-1是不安全的，但是因为SHA-1是PRF，所以并没有什么问题。</li>
+</ul>
+<h3 id="MAC的计时攻击"><a href="#MAC的计时攻击" class="headerlink" title="MAC的计时攻击"></a>MAC的计时攻击</h3><ul>
+<li>对于Python实现的一个验签的函数来说，判断相等是通过循环来判断，当出现某字节不相等时退出。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/image-20240427165602065.png" alt="image-20240427165602065"></p>
+<ul>
+<li>攻击者通过测试每一个字节的返回时间，来判断该字节是否正确，从而实验出所有的字节，从而得到明文m的签名。 解决方法是测试完所有的字节后统一返回。</li>
+<li>但是需要注意编译器可能会“帮助”你优化完成找到不同才返回。</li>
+<li>还有一种防御方式是，将正确的mac计算出来之后，将正确mac和sig_bytes都再求一遍HMAC，之后对比这两个值。</li>
+<li>启发是，即使专家也会出错，同时自己不要实现密码，因为极有可能实现的密码对于旁道攻击是脆弱的。请使用标准库。</li>
+</ul>
+<h1 id="06-认证加密"><a href="#06-认证加密" class="headerlink" title="06-认证加密"></a>06-认证加密</h1><h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ul>
+<li>私密性：加密使信息获得语义安全性来对抗选择明文攻击。只提供了对抗窃听的安全性。攻击者不会篡改数据包。需要对抗可以篡改信息的攻击者。</li>
+<li>完整性：消息本身不是私密的，只确保信息在传输过程中没被修改。信息验证码MAC算法对选择信息攻击提供了不可存在性伪造的性质。</li>
+<li>本章需要将私密性和完整性机制组合起来。来对抗更加强大的攻击者，即攻击者可以修改网络通信内容，感染数据包，封锁特定数据包等等。</li>
+<li>目标是对抗上述攻击者，仍要保持私密性，即攻击者无法学习到明文内容，无法修改密文。</li>
+</ul>
+<h2 id="一个简单的攻击例子"><a href="#一个简单的攻击例子" class="headerlink" title="一个简单的攻击例子"></a>一个简单的攻击例子</h2><p><img src="http://cdn.dicemy.work/202405231059994.png" alt="image-20240523105924888"></p>
+<ul>
+<li><p>攻击者通过修改随机的IV值，将数据包中的端口号更改为25，服务器之后将该数据包解密之后转发给Bob。Bob作为攻击者就可以看到数据包中的明文。</p>
+</li>
+<li><p>因为CBC模式加密，加密者会将密文和随机向量IV一起发送给解密者。所以攻击者只需修改随机向量IV即可修改第一个组的明文的值。</p>
+<p><img src="http://cdn.dicemy.work/202405231112284.png" alt="image-20240523111228196"></p>
+</li>
+<li><p>这个例子说明，如果没有完整性，一个CPA安全的加密也不可能提供私密性。</p>
+</li>
+<li><p>CPA安全加密只能在攻击者只能窃听数据这一假设下，提供私密性。攻击者不能在途中修改密文。 </p>
+</li>
+<li><p>本章中的许多攻击例子被叫做主动攻击，攻击者可以修改途中的通信。所以CPA安全对于主动攻击者不能保证安全。不仅不能保证完整性，而且连私密性都无法保证。</p>
+</li>
+<li><p>如果只需要完整性，则MAC即可。如果同时需要私密性，则需要一个认证加密模式。</p>
+</li>
+</ul>
+<h2 id="认证加密"><a href="#认证加密" class="headerlink" title="认证加密"></a>认证加密</h2><ul>
+<li><p>认证加密在存在主动攻击者的情况下也能保持安全。一个认证加密系统的解密会产生明文信息或者底（⊥），若⊥出现则表示该信息应该被抛弃。其中底不在明文空间中。</p>
+<p><img src="http://cdn.dicemy.work/202405231605028.png" alt="image-20240523160550860"></p>
+</li>
+<li><p>密文完整性的定义为以下攻击挑战游戏：</p>
+<p><img src="http://cdn.dicemy.work/202405231609030.png" alt="image-20240523160859933"></p>
+</li>
+<li><p>于是我们定义认证加密（AE）：</p>
+<ul>
+<li>是语义安全的。</li>
+<li>具有密文完整性。</li>
+</ul>
+</li>
+<li><p>一个反面例子就是使用随机IV的CBC加密，因为这种加密模式不会输出⊥，攻击者输入什么总会得到一些输出信息。一些随机的密文会被解密成某些不是符号⊥的东西。</p>
+</li>
+<li><p>加密认证的影响：</p>
+<ul>
+<li><p>影响一：认证。攻击者无法欺骗接受者Bob认为一条信息是Alice发送的。（认证加密无法抵抗重放攻击）</p>
+</li>
+<li><p>影响二： 认证加密可以抵抗选择密文攻击。</p>
+</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202405251507627.png" alt="image-20240525150704525"></p>
+</li>
+</ul>
+<h2 id="选择密文安全（CCA）"><a href="#选择密文安全（CCA）" class="headerlink" title="选择密文安全（CCA）"></a>选择密文安全（CCA）</h2><ul>
+<li><p>攻击者的能力：选择明文攻击（CPA）和选择密文攻击（CCA）</p>
+<ul>
+<li>攻击者可以获得任意选择信息的加密。</li>
+<li>攻击者可以解密他选择的任意密文。（在现实生活中攻击者欺骗解密者解密特定的密文，但不是所有的密文）</li>
+</ul>
+</li>
+<li><p>攻击者的目标是：破坏语义安全。</p>
+<p><img src="http://cdn.dicemy.work/202405251639323.png" alt="image-20240525163917223"></p>
+</li>
+<li><p>攻击者在q轮询问中，可以选择CPA询问，或者CCA询问。需要注意的是，攻击者在CCA询问中不可以询问在CPA询问中获得的密文。</p>
+</li>
+<li><p>这个攻击者十分强大，如果攻击者可以获得除了挑战密文以外的所有密文也无法区分自己处于试验0还是试验1的话。那么我们可以说密码是CCA安全的。</p>
+</li>
+<li><p>一个反例就是CPA安全的密码不是CCA安全的，以基于随机IV的CBC密码为例：</p>
+<p><img src="http://cdn.dicemy.work/202405251646632.png" alt="image-20240525164635537"></p>
+</li>
+</ul>
+<h2 id="认证安全是CCA安全的"><a href="#认证安全是CCA安全的" class="headerlink" title="认证安全是CCA安全的"></a>认证安全是CCA安全的</h2><ul>
+<li><p>如果一个密码可以提供认证加密，那么这个密码就是CCA安全的。以下是图片证明：</p>
+<p><img src="http://cdn.dicemy.work/202405251656469.png" alt="image-20240525165651377"></p>
+</li>
+<li><p>所以左上和左下在概率上也是相同的，攻击者不能区分左上和左下。</p>
+</li>
+<li><p>所以认证加密保证了可以对抗解密一部分密文的攻击者，使明文具有私密性，但是还有一些局限：</p>
+<ul>
+<li>不能抵御重放攻击。</li>
+<li>解密者不能透露更多的信息（旁道攻击），比如时间，或者为什么返回⊥等信息。</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用MACs和加密构建认证加密"><a href="#使用MACs和加密构建认证加密" class="headerlink" title="使用MACs和加密构建认证加密"></a>使用MACs和加密构建认证加密</h2><ul>
+<li><p>认证加密第一次被突出是在2000年的一篇论文中，之前的人们已经开始尝试组合CPA安全的加密和MAC在一起了。但是没有一个组合是满足认证加密的。以下是结合MAC和加密来实现CCA安全的一些例子：</p>
+<p><img src="http://cdn.dicemy.work/202405251713625.png" alt="image-20240525171341500"></p>
+</li>
+<li><p>对于例子3（加密且MAC），MAC签名算法是为完整性设计的，一些MAC签名算法的输出会泄露明文中的一些位，所以最后不是CPA安全的。</p>
+</li>
+<li><p>对于例子2（先加密后MAC），这种是推荐的。因为无论使用什么加密和MAC的组合，组合总能提供认证加密。</p>
+</li>
+<li><p>对于例子1（先MAC后加密），在一些病态的例子中，一些MAC和加密会有一些互动，导致没有起到认证加密的效果。</p>
+</li>
+<li><p><strong>定理</strong>：</p>
+<ul>
+<li><p>先加密后MAC，总能达到认证加密的效果。</p>
+</li>
+<li><p>先MAC后加密，可能可以对抗CCA。随机VI的CBC加密和随机CTR加密中线MAC后加密是能起到认证加密效果的。</p>
+<p><img src="http://cdn.dicemy.work/202405251717147.png" alt="image-20240525171745064"></p>
+</li>
+<li><p>在一些情况下，使用一次安全的MAC和随机CTR加密实现先MAC后加密可以提高效率。</p>
+</li>
+</ul>
+</li>
+<li><p>以下是一些认证加密标准：</p>
+<p><img src="http://cdn.dicemy.work/202405251725015.png" alt="image-20240525172517927"></p>
+</li>
+<li><p>以上的所有模式叫做：带相关数据的认证加密（AEAD）。是认证加密的拓展，意思是，只有部分是加密的，但是全部都是被认证的，这在网络协议中被广泛使用。比如说IP包，包含报文头和封装数据，其中报文头不被加密，被加密的是封装数据。 但是报文头会被认证。</p>
+</li>
+<li><p>以下是在OpenSSL中一个接口的示例：</p>
+<p><img src="http://cdn.dicemy.work/202405251731543.png" alt="image-20240525173130435"></p>
+</li>
+</ul>
+<h2 id="MAC安全性回顾"><a href="#MAC安全性回顾" class="headerlink" title="MAC安全性回顾"></a>MAC安全性回顾</h2><ul>
+<li>为什么MAC安全性需要实现给定明文，标签对（m，t）不能产生（m，t‘）？</li>
+<li>这样就会造成一个不安全的先加密后MAC模式。保证不了密文的完整性。</li>
+<li>如果MAC不再安全，则先加密后MAC模式也将不再安全。 </li>
+</ul>
+<h2 id="OCB算法和性能对比"><a href="#OCB算法和性能对比" class="headerlink" title="OCB算法和性能对比"></a>OCB算法和性能对比</h2><ul>
+<li><p>OCB是可以并行的，每个分组可以被单独加密。 </p>
+<p><img src="http://cdn.dicemy.work/202405261139230.png" alt="image-20240526113921110"></p>
+</li>
+<li><p>OCB是一个高效的算法，但OCB没被应用的主要原因是专利等限制。 </p>
+<p><img src="http://cdn.dicemy.work/202405261151433.png" alt="image-20240526115106353"></p>
+</li>
+<li><p>以上是各个加密算法的速度和性能的比较。GCM的性能在代码大小不受限制和设备性能不受限制的情况下表现很好。OCB的性能也很好。</p>
+</li>
+<li><p>如果要使用加密，一定要使用认证加密，并且使用推荐的GCM，CCM或者EAX标准中的一个。不要自己实现认证加密。</p>
+</li>
+</ul>
+<h2 id="认证加密的例子"><a href="#认证加密的例子" class="headerlink" title="认证加密的例子"></a>认证加密的例子</h2><h3 id="TLS-1"><a href="#TLS-1" class="headerlink" title="TLS"></a>TLS</h3><h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4><ul>
+<li>双方持有单项秘钥，对于用户和服务器持有两个单向秘钥。这两个秘钥还是对称加密的密钥。</li>
+<li>基于状态的加密，即双方持有一个计数器，对于每一个接收到的包，计数器都会增长。目的是防止重放攻击。</li>
+<li>TLS是先MAC后加密的。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202406230907523.png" alt="image-20240623090715393"></p>
+<h4 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h4><ul>
+<li>如果没有通过验证，会向服务器发送一个bad_record_mac警告，并断开连接，如果需要重新发送，需要重新协商出新的秘钥。</li>
+<li>如果发生了重放攻击，在tag中的计数器的值将通不过验证。</li>
+<li>TLS提供了认证加密，只有在解密时没有信息泄露才是。</li>
+<li>解密时不应该泄露密文被拒绝的原因，不然将不是认证加密。</li>
+</ul>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>当IV可以被预测的时候，加密是CPA不安全的。这种IV叫做链式IV。TLS1.1中将链式IV升级为显性IV，每一个TLS记录都有一个随机的IV值。</li>
+<li>在早版本的TLS中，加密过程中的补齐出错的返回和其他错误的返回是不同的，攻击者可以观察返回的错误提示来得知密文的补齐是否有效。在1.1版本中将不再报告解密失败的原因。</li>
+<li>一个经验是：如果解密失败，不要告诉为什么解密失败。（在密码学和网络协议中不一样，在网络协议中常常会告诉失败的原因，但是在密码学中很可能会造成一个攻击。）</li>
+</ul>
+<h3 id="802-11b-WEP"><a href="#802-11b-WEP" class="headerlink" title="802.11b WEP"></a>802.11b WEP</h3><p><img src="http://cdn.dicemy.work/202406230929857.png" alt="image-20240623092902760"></p>
+<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>IV是重复的，于是可以进行二次密码本攻击。</li>
+<li>秘钥的关系比较紧密，这是IV和K的连接，K不变，IV在变。</li>
+</ul>
+<h4 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h4><ul>
+<li>CRC是线性的，如果想要知道CRC（m xor p）则计算CRC（m）和F（p）的异或即可。</li>
+<li>可以对转发端口号处进行攻击，使得80异或一个值XX等于特定的值比如25，并将该修改改变的tag通过CRC异或一个F改变成正确的tag。</li>
+</ul>
+<h2 id="针对认证加密系统的攻击"><a href="#针对认证加密系统的攻击" class="headerlink" title="针对认证加密系统的攻击"></a>针对认证加密系统的攻击</h2><h3 id="回顾-1"><a href="#回顾-1" class="headerlink" title="回顾"></a>回顾</h3><ul>
+<li>认证加密等于CPA安全性加上密文完整性。</li>
+<li>有主动攻击者的情况下，攻击者不能以任何形式修改密文且不被检测到。</li>
+<li>认证加密可以阻止强大的选择密文攻击。</li>
+<li>局限：不能承受不好的实现，如果不正确的实现认证加密，那么实现对主动攻击仍将是脆弱的。</li>
+<li>标准：GCM，CCM，EAX。</li>
+<li>一般情况下：先加密后MAC。</li>
+</ul>
+<h3 id="针对TLS的攻击（当使用CBC加密时）"><a href="#针对TLS的攻击（当使用CBC加密时）" class="headerlink" title="针对TLS的攻击（当使用CBC加密时）"></a>针对TLS的攻击（当使用CBC加密时）</h3><h4 id="解密步骤"><a href="#解密步骤" class="headerlink" title="解密步骤"></a>解密步骤</h4><ul>
+<li>CBC通过K_enc解密TLS包。</li>
+<li>检查补齐，不合格就拒绝。</li>
+<li>检查由MAC产生的tag，不合格就拒绝。</li>
+<li>于是存在两种错误，即补齐错误和tag错误。重要的是不要告诉攻击者发生了哪种错误。</li>
+</ul>
+<h4 id="攻击-1"><a href="#攻击-1" class="headerlink" title="攻击"></a>攻击</h4><ul>
+<li>针对这样的攻击叫做Padding oracle（补齐神谕）</li>
+<li>攻击者可以通过向服务器发送不同的TLS包来检查补齐的后缀是什么，这将帮助攻击者获取一些信息。</li>
+<li>在改进后的SSL中，虽然返回的错误类型是相同的，但是返回所需要的时间是不同的。这导致了还是存在补齐神谕告诉出错的原因。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202406230954296.png" alt="image-20240623095411198"></p>
+<ul>
+<li>在上述图片的攻击中，通过猜测每一个明文分组的末尾的值，从而想办法构造出合法的TLS包，若通过了服务器中补齐的检测。则可以得知任意处的明文的值。</li>
+<li>因为0x01代表一个已此分组作为结尾的正确的补齐。</li>
+<li>通过将猜测分组的上一个分组的末尾的值异或上猜测的g和0x01来凭借CBC解密的特性通过补全测试。</li>
+<li>在得到字节的值之后，可以使用相同的方法来得到倒数第二个字节的值。使用(02,02)来对上一个分组的倒数两个字节进行异或，并异或猜测的值。直到通过补齐测试。</li>
+<li>因为CBC中一个分组是16个字节，则通过256*16次测试就可以得到这个分组的全部值了。</li>
+<li>TLS针对这个攻击的防御措施是，如果收到错误MAC警告之后就断开连接并重新协商秘钥。</li>
+</ul>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><ul>
+<li>IMAP的底层是TLS实现的。</li>
+<li>客户端会每5分钟登录一次服务器来检查是否有新的邮件，等于攻击者每5分钟就获得一个同样信息的加密。那么攻击者每5分钟就可以猜一次包含密码的分组。</li>
+<li>防御攻击的方法是让检测补全和检测MAC所花的时间相同，从而避免计时攻击。</li>
+</ul>
+<h4 id="启示"><a href="#启示" class="headerlink" title="启示"></a>启示</h4><ul>
+<li>如果先加密后MAC，则不会出现针对这样的攻击。因为如果MAC是错误的，分组将直接丢弃，而不会进入到检测补齐的环节。</li>
+<li>MAC之后CBC提供认证加密当且仅当不提供其他信息的时候可以。因为补齐神谕的存在破坏了认证加密的性质。</li>
+</ul>
+<h4 id="提问"><a href="#提问" class="headerlink" title="提问"></a>提问</h4><ul>
+<li>如果使用MAC之后CTR加密的形式，补齐神谕的攻击是否有效？</li>
+<li>答案是无效，因为CTR不进行补齐。</li>
+<li>TLS也支持CTR加密，CTR加密将不会受补齐神谕攻击的影响。</li>
+</ul>
+<h3 id="SSH二元数据包协议"><a href="#SSH二元数据包协议" class="headerlink" title="SSH二元数据包协议"></a>SSH二元数据包协议</h3><p><img src="http://cdn.dicemy.work/202406251024805.png" alt="image-20240625102437668"></p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><ul>
+<li>SSH是一个标准的安全远程shell应用。</li>
+<li>SSH使用加密并且MAC，（此处的MAC是明文的MAC而不是密文的MAC）</li>
+</ul>
+<h4 id="攻击-2"><a href="#攻击-2" class="headerlink" title="攻击"></a>攻击</h4><ul>
+<li>SSH协议中，会首先将发送的密文的第一个block解密，这个意味着整个密文c的长度。</li>
+<li>则攻击者只需将想要解密的block发送给服务器，然后数接下来向服务器发送了多少个block即可得出想要解密的block的值。</li>
+</ul>
+<h4 id="启示-1"><a href="#启示-1" class="headerlink" title="启示"></a>启示</h4><ul>
+<li>错误一：解密不是原子操作。解密算法不取整个数据包作为输入。服务器部分的解密了密文。</li>
+<li>错误二：在正确认证之前就使用了长度域。</li>
+</ul>
+<h4 id="提问-1"><a href="#提问-1" class="headerlink" title="提问"></a>提问</h4><ul>
+<li>Q：如何进行最小的修改使得SSH可以满足安全性？</li>
+<li>A：以明文的形式发送长度域，和TLS一样。这样就避免了攻击者的选择密文攻击。</li>
+<li>A：或者对长度域进行单独计算MAC，这样长度域被解密时需要先进行认证。</li>
+</ul>
+<h1 id="07-零碎"><a href="#07-零碎" class="headerlink" title="07-零碎"></a>07-零碎</h1><h2 id="如何通过一个key推出所有key"><a href="#如何通过一个key推出所有key" class="headerlink" title="如何通过一个key推出所有key"></a>如何通过一个key推出所有key</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="源秘钥的来源"><a href="#源秘钥的来源" class="headerlink" title="源秘钥的来源"></a>源秘钥的来源</h4><ul>
+<li>硬件随机数生成器</li>
+<li>秘钥交换协议</li>
+</ul>
+<h4 id="需要很多key来保证安全交流"><a href="#需要很多key来保证安全交流" class="headerlink" title="需要很多key来保证安全交流"></a>需要很多key来保证安全交流</h4><ul>
+<li>mac的key，IV等。</li>
+</ul>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>生成许多key通过一个源key。</li>
+<li>使用KDF函数（密钥推导函数）来生成。</li>
+</ul>
+<h4 id="均匀分布的SK"><a href="#均匀分布的SK" class="headerlink" title="均匀分布的SK"></a>均匀分布的SK</h4><p><img src="http://cdn.dicemy.work/202407121623397.png" alt="image-20240712162355281"></p>
+<ul>
+<li><p>其中sk是源密钥，ctx是上下文信息，L是长度。</p>
+</li>
+<li><p>此处需要保证sk是在密钥空间K中均匀的一个密钥。</p>
+</li>
+<li><p>CTX是一个和应用相关的string。不同的应用会有不同的CTX</p>
+</li>
+</ul>
+<h4 id="不均匀分布的SK"><a href="#不均匀分布的SK" class="headerlink" title="不均匀分布的SK"></a>不均匀分布的SK</h4><ul>
+<li>密钥交换协议中生成的高熵的key并不是在K中均匀的。</li>
+<li>硬件随机数生成器生成的key也可能不均匀。</li>
+</ul>
+<h3 id="先提取后拓展KDF"><a href="#先提取后拓展KDF" class="headerlink" title="先提取后拓展KDF"></a>先提取后拓展KDF</h3><h4 id="提取均匀随机的key"><a href="#提取均匀随机的key" class="headerlink" title="提取均匀随机的key"></a>提取均匀随机的key</h4><p><img src="http://cdn.dicemy.work/202407121635270.png" alt="image-20240712163530169"></p>
+<ul>
+<li>提取出伪随机中的k，并加上盐来使得随机不可以被区分，这个盐是公开的。</li>
+<li>使得得到的结果是均匀分布的K空间。</li>
+</ul>
+<h4 id="拓展出均匀随机的key（HKDF为例）"><a href="#拓展出均匀随机的key（HKDF为例）" class="headerlink" title="拓展出均匀随机的key（HKDF为例）"></a>拓展出均匀随机的key（HKDF为例）</h4><ul>
+<li>使用HMAC，以高熵的SK为信息，加上盐加密得到提取的密钥k。</li>
+<li>然后使用HMAC算法作为PRF扩展k。</li>
+</ul>
+<h4 id="基于密码的KDF（PBKDF）"><a href="#基于密码的KDF（PBKDF）" class="headerlink" title="基于密码的KDF（PBKDF）"></a>基于密码的KDF（PBKDF）</h4><ul>
+<li>从key中推导出密码：<ul>
+<li>不要使用HKDF：对于字典攻击来说是脆弱的。</li>
+</ul>
+</li>
+<li>PBKDF的定义：使用盐和慢hash函数</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407121646597.png" alt="image-20240712164644476"></p>
+<ul>
+<li>慢hash的意思是这个hash操作会执行很多次。</li>
+<li>慢hash的作用是抵御字典攻击，对于字典攻击者来说每试一个字典中的key都需要执行c次哈希。</li>
+</ul>
+<h2 id="确定性加密系统"><a href="#确定性加密系统" class="headerlink" title="确定性加密系统"></a>确定性加密系统</h2><p><img src="http://cdn.dicemy.work/202407121654897.png" alt="image-20240712165435788"></p>
+<ul>
+<li>在这个系统中，数据库是完全不知情的。所发送和处理的信息都是密文形式。</li>
+</ul>
+<h4 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>这样的系统不是选择明文安全的，即不是CPA安全的。</li>
+<li>如果攻击者看到了相同的密文两次，就可以知道被加密的明文也是相同的。换句话，通过看密文，攻击者可以学习到对应明文的信息。</li>
+<li>在现实中，特别是如果明文空间M很小的情况下。</li>
+</ul>
+<h4 id="回顾-2"><a href="#回顾-2" class="headerlink" title="回顾"></a>回顾</h4><ul>
+<li>确定性的加密是不可能赢得CPA安全的。可以回顾之前的攻击。</li>
+<li>即攻击者能学习比他应该知道的更多的信息。</li>
+</ul>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><ul>
+<li>永远不要使用单个密钥来加密同样的明文信息。换句话说，信息秘钥对总是不同的（k，m）。</li>
+<li>选择信息随机地从巨大的消息空间中，例如key</li>
+<li>消息结构确保了唯一性，例如用户id。</li>
+</ul>
+<h3 id="确定性加密的CPA安全"><a href="#确定性加密的CPA安全" class="headerlink" title="确定性加密的CPA安全"></a>确定性加密的CPA安全</h3><p><img src="http://cdn.dicemy.work/202407121716015.png" alt="image-20240712171629763"></p>
+<ul>
+<li>通过这个定义的CPA安全游戏，即要求发送的消息每次不能相同来确保了确定性CPA安全。</li>
+</ul>
+<h4 id="使用带固定IV的CBC加密"><a href="#使用带固定IV的CBC加密" class="headerlink" title="使用带固定IV的CBC加密"></a>使用带固定IV的CBC加密</h4><p><img src="http://cdn.dicemy.work/202407121722832.png" alt="image-20240712172232733"></p>
+<ul>
+<li>第一组可以很容易得被区分出来。</li>
+<li>所以使用带固定IV的确定性CPA是不安全的。</li>
+</ul>
+<h3 id="确定性加密是需要的"><a href="#确定性加密是需要的" class="headerlink" title="确定性加密是需要的"></a>确定性加密是需要的</h3><ul>
+<li>加密数据库索引记录就需要。</li>
+<li>确定性加密是不可能选择明文攻击安全的。</li>
+<li>于是定义了确定性选择明文安全的定义。</li>
+</ul>
+<h4 id="机制一：合成IV"><a href="#机制一：合成IV" class="headerlink" title="机制一：合成IV"></a>机制一：合成IV</h4><p><img src="http://cdn.dicemy.work/202407141723707.png" alt="image-20240714172338595"></p>
+<ul>
+<li>通过明文来推导出随机性。然后使用这个随机性来加密信息。</li>
+<li>同时CTR的SIV是DAE（确定性认证加密）的。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407141732134.png" alt="image-20240714173206023"></p>
+<ul>
+<li>其中的IV用于密文的解密，并且解密后得到的明文会重新通过F来得到IV，进行验证。这样就保证了密文安全性。保证不会产生合法的其他密文可以通过IV的测试。</li>
+<li>这个SIV-CTR模式适合明文比较长的场景，（因为是流密码加密）。对于更短的明文可以使用机制二。</li>
+</ul>
+<h4 id="机制二：直接使用PRP"><a href="#机制二：直接使用PRP" class="headerlink" title="机制二：直接使用PRP"></a>机制二：直接使用PRP</h4><p><img src="http://cdn.dicemy.work/202407141800815.png" alt="image-20240714180022717"></p>
+<ul>
+<li>当明文小于16字节直接使用AES就可以保证确定CPA安全（因为对于16字节来说，AES是PRP的）。但是没有保证完整性。</li>
+<li>对于大于16字节长度的加密算法EME也可以实现确定CPA安全。通过小的PRP来构造大的PRP。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407141806957.png" alt="image-20240714180605825"></p>
+<ul>
+<li>但是十分的麻烦，一倍慢与SIV算法。</li>
+<li>对于PRP的认证加密，在尾部附着若干个0即可。在解密完成之后检查尾部是否有规定个数的0即可。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407141808713.png" alt="image-20240714180853612"></p>
+<ul>
+<li>这个认证加密起作用的前提是PRP和足够多的0。因为加密和解密使用的是真随机，所以解密后尾部有规定个0的密文被伪造的概率是可忽略不计的。</li>
+</ul>
+<h3 id="微调加密"><a href="#微调加密" class="headerlink" title="微调加密"></a>微调加密</h3><h4 id="硬盘加密问题"><a href="#硬盘加密问题" class="headerlink" title="硬盘加密问题"></a>硬盘加密问题</h4><ul>
+<li>硬盘加密是另一个确定性加密问题。</li>
+<li>要实现加密不扩展的情况，即密文空间和明文空间一样大。那么密文的大小将和明文一样大。同时只能选择使用确定性加密，因为密文和明文一样大，没有多余的空间来存储随机性。所以最严格的也就是确定性CPA安全。</li>
+<li>满足这样的加密方案只能是PRP，就是上文中机制二。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152052395.png" alt="image-20240715205226260"></p>
+<ul>
+<li>避免确定性CPA的问题，如果扇区1和3使用相同的k，则会出现CPA问题，若1和3中都为0，则攻击者可以知道1和3都为空。</li>
+<li>以上问题可以通过1和3使用不同的密钥来解决。但是还有一个问题是，如果1经过修改之后又撤销，原状态和撤销状态会相同，同样会给攻击者泄露相关信息。</li>
+<li>方案就是通过主k来生成每一个扇区的k，通过一个PRF来对第t个扇区的密钥做生成操作。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152058990.png" alt="image-20240715205834881"></p>
+<ul>
+<li>定义一个微调函数，对于每一个微调T，可以生成一个PRP，使得X在PRP上可逆。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152059066.png" alt="image-20240715205927953"></p>
+<ul>
+<li>定义这个博弈，与普通的PRP不同的是，普通PRP博弈是与一个置换进行交互。但是这个是和T个置换进行操作。</li>
+<li>如果T个置换和T和随机函数不可区分，则微调函数是安全的。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152108603.png" alt="image-20240715210819489"></p>
+<p><img src="http://cdn.dicemy.work/202407152111095.png" alt="image-20240715211124991"></p>
+<ul>
+<li>图中显示的是块级的PRP而不是扇区级的PRP。</li>
+<li>XTS提供了扇区级的确定性CPA安全。</li>
+<li>这些都是窄分组方案，为16字节的分组提供了微调分组密码。EME比XTS慢两倍，因为灭有缓存N。</li>
+</ul>
+<h2 id="保格式加密"><a href="#保格式加密" class="headerlink" title="保格式加密"></a>保格式加密</h2><ul>
+<li>常用来加密银行卡号。</li>
+<li>16位信用卡号的前6位叫做BIN，确定了开卡银行的信息。后9位为卡号。最后一个为校验和。</li>
+<li>即端到端加密，从加密端到解密端，信息的格式不发生变化。中间传输过程中密文也是16位的数字。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152118880.png" alt="image-20240715211813784"></p>
+<ul>
+<li>我们的做法是将卡号映射到一个大小为s的集合上，并通过一个PRP加密，之后将加密结果映射回卡号集合中。</li>
+<li>最好的方法其实就是截断，之后补齐放入AES中，并将结果截断。另一个方法是：</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152123728.png" alt="image-20240715212347600"></p>
+<ul>
+<li>首先，将n位明文空间映射到t位空间中。</li>
+</ul>
+<p><img src="http://cdn.dicemy.work/202407152127089.png" alt="image-20240715212718970"></p>
+<ul>
+<li>第二步，一直使用E直到x的结果落到给定区间中，即得到y。这一操作可逆。</li>
+<li>并且这一操作的平均开销为2次。</li>
+<li>这里可以取得的安全性是确定性CPA安全。</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>现代密码学初探</p><p><a href="https://dicemy.com/34724">https://dicemy.com/34724</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Dicemy</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-10-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-07-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a></div><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/css/share.min.css"><div class="social-share"></div><script src="https://cdnjs.loli.net/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/58137"><i class="level-item fas fa-chevron-left"></i><span class="level-item">密码学的数学原理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/36858"><span class="level-item">深度学习&lt;Dive into deep learning&gt;_2预备知识</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/valine/1.4.16/Valine.min.js"></script><script>new Valine({
             el: '#valine-thread',
             appId: "FE3KQNXvpvsHJmJl9idhXhp1-9Nh9j0Va",
             appKey: "CLLAhwQhbW5KCgp3CCPkAItO",
@@ -814,7 +1222,7 @@
             
             enableQQ: false,
             requiredFields: [],
-        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">43</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#01-绪论"><span class="level-left"><span class="level-item">1</span><span class="level-item">01-绪论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#课程目标"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">课程目标</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#密码学无处不在"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">密码学无处不在</span></span></a></li><li><a class="level is-mobile" href="#安全通信"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">安全通信</span></span></a></li><li><a class="level is-mobile" href="#保护磁盘上的文件"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">保护磁盘上的文件</span></span></a></li><li><a class="level is-mobile" href="#Things-to-remember"><span class="level-left"><span class="level-item">1.1.4</span><span class="level-item">Things to remember</span></span></a></li></ul></li><li><a class="level is-mobile" href="#什么是密码学"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">什么是密码学</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Crypto-Core"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">Crypto Core</span></span></a></li><li><a class="level is-mobile" href="#一些例子"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">一些例子</span></span></a></li><li><a class="level is-mobile" href="#协议"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">协议</span></span></a></li><li><a class="level is-mobile" href="#Crypto-magic"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">Crypto magic</span></span></a></li><li><a class="level is-mobile" href="#A-rigorous-Science（严谨的科学）"><span class="level-left"><span class="level-item">1.2.5</span><span class="level-item">A rigorous Science（严谨的科学）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#密码学历史"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">密码学历史</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#对称密码"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">对称密码</span></span></a></li><li><a class="level is-mobile" href="#历史上的例子（all-badly-broken）"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">历史上的例子（all badly broken）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#离散概率"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">离散概率</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#概率分布"><span class="level-left"><span class="level-item">1.4.1</span><span class="level-item">概率分布</span></span></a></li><li><a class="level is-mobile" href="#事件"><span class="level-left"><span class="level-item">1.4.2</span><span class="level-item">事件</span></span></a></li><li><a class="level is-mobile" href="#并集上界"><span class="level-left"><span class="level-item">1.4.3</span><span class="level-item">并集上界</span></span></a></li><li><a class="level is-mobile" href="#随机变量"><span class="level-left"><span class="level-item">1.4.4</span><span class="level-item">随机变量</span></span></a></li><li><a class="level is-mobile" href="#独立性"><span class="level-left"><span class="level-item">1.4.5</span><span class="level-item">独立性</span></span></a></li><li><a class="level is-mobile" href="#异或"><span class="level-left"><span class="level-item">1.4.6</span><span class="level-item">异或</span></span></a></li><li><a class="level is-mobile" href="#生日悖论"><span class="level-left"><span class="level-item">1.4.7</span><span class="level-item">生日悖论</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#02-对称密码"><span class="level-left"><span class="level-item">2</span><span class="level-item">02-对称密码</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#密码的定义"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">密码的定义</span></span></a></li><li><a class="level is-mobile" href="#一次性密码本"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">一次性密码本</span></span></a></li><li><a class="level is-mobile" href="#信息安全论"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">信息安全论</span></span></a></li><li><a class="level is-mobile" href="#一次性密码本完美安全证明"><span class="level-left"><span class="level-item">2.1.4</span><span class="level-item">一次性密码本完美安全证明</span></span></a></li><li><a class="level is-mobile" href="#香农的结论"><span class="level-left"><span class="level-item">2.1.5</span><span class="level-item">香农的结论</span></span></a></li><li><a class="level is-mobile" href="#流密码"><span class="level-left"><span class="level-item">2.1.6</span><span class="level-item">流密码</span></span></a></li><li><a class="level is-mobile" href="#脆弱的PRG例子"><span class="level-left"><span class="level-item">2.1.7</span><span class="level-item">脆弱的PRG例子</span></span></a></li><li><a class="level is-mobile" href="#针对一次性密码本的攻击"><span class="level-left"><span class="level-item">2.1.8</span><span class="level-item">针对一次性密码本的攻击</span></span></a></li><li><a class="level is-mobile" href="#好的流密码"><span class="level-left"><span class="level-item">2.1.9</span><span class="level-item">好的流密码</span></span></a></li><li><a class="level is-mobile" href="#PRG安全性定义"><span class="level-left"><span class="level-item">2.1.10</span><span class="level-item">PRG安全性定义</span></span></a></li><li><a class="level is-mobile" href="#流密码的安全性"><span class="level-left"><span class="level-item">2.1.11</span><span class="level-item">流密码的安全性</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#03-分组密码"><span class="level-left"><span class="level-item">3</span><span class="level-item">03-分组密码</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#3DES"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">3DES</span></span></a></li><li><a class="level is-mobile" href="#PRPs-和-PRFs-的安全性"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">PRPs 和 PRFs 的安全性</span></span></a></li><li><a class="level is-mobile" href="#Feistel网络"><span class="level-left"><span class="level-item">3.1.3</span><span class="level-item">Feistel网络</span></span></a></li><li><a class="level is-mobile" href="#对DES的攻击"><span class="level-left"><span class="level-item">3.1.4</span><span class="level-item">对DES的攻击</span></span></a></li><li><a class="level is-mobile" href="#AES算法"><span class="level-left"><span class="level-item">3.1.5</span><span class="level-item">AES算法</span></span></a></li><li><a class="level is-mobile" href="#使用PRG来构造PRF"><span class="level-left"><span class="level-item">3.1.6</span><span class="level-item">使用PRG来构造PRF</span></span></a></li><li><a class="level is-mobile" href="#安全PRF定义"><span class="level-left"><span class="level-item">3.1.7</span><span class="level-item">安全PRF定义</span></span></a></li><li><a class="level is-mobile" href="#安全PRP的例子："><span class="level-left"><span class="level-item">3.1.8</span><span class="level-item">安全PRP的例子：</span></span></a></li><li><a class="level is-mobile" href="#一次性密码来使用分组密码"><span class="level-left"><span class="level-item">3.1.9</span><span class="level-item">一次性密码来使用分组密码</span></span></a></li><li><a class="level is-mobile" href="#计数器模式"><span class="level-left"><span class="level-item">3.1.10</span><span class="level-item">计数器模式</span></span></a></li><li><a class="level is-mobile" href="#选择明文攻击的语义安全性"><span class="level-left"><span class="level-item">3.1.11</span><span class="level-item">选择明文攻击的语义安全性</span></span></a></li><li><a class="level is-mobile" href="#基于新鲜值的加密"><span class="level-left"><span class="level-item">3.1.12</span><span class="level-item">基于新鲜值的加密</span></span></a></li><li><a class="level is-mobile" href="#密码分组链接模式"><span class="level-left"><span class="level-item">3.1.13</span><span class="level-item">密码分组链接模式</span></span></a></li><li><a class="level is-mobile" href="#随机计数器模式"><span class="level-left"><span class="level-item">3.1.14</span><span class="level-item">随机计数器模式</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#04-信息完整性"><span class="level-left"><span class="level-item">4</span><span class="level-item">04-信息完整性</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#MACs的安全性"><span class="level-left"><span class="level-item">4.1.1</span><span class="level-item">MACs的安全性</span></span></a></li><li><a class="level is-mobile" href="#第一类安全的MACs"><span class="level-left"><span class="level-item">4.1.2</span><span class="level-item">第一类安全的MACs</span></span></a></li><li><a class="level is-mobile" href="#CBC-MAC和NMAC"><span class="level-left"><span class="level-item">4.1.3</span><span class="level-item">CBC-MAC和NMAC</span></span></a></li><li><a class="level is-mobile" href="#对原CBC和NMAC级联的攻击"><span class="level-left"><span class="level-item">4.1.4</span><span class="level-item">对原CBC和NMAC级联的攻击</span></span></a></li><li><a class="level is-mobile" href="#MAC填充"><span class="level-left"><span class="level-item">4.1.5</span><span class="level-item">MAC填充</span></span></a></li><li><a class="level is-mobile" href="#并行计算的MAC"><span class="level-left"><span class="level-item">4.1.6</span><span class="level-item">并行计算的MAC</span></span></a></li><li><a class="level is-mobile" href="#一次性MAC"><span class="level-left"><span class="level-item">4.1.7</span><span class="level-item">一次性MAC</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#05-抗碰撞"><span class="level-left"><span class="level-item">5</span><span class="level-item">05-抗碰撞</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#使用抗碰撞函数构造MACs"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">使用抗碰撞函数构造MACs</span></span></a></li><li><a class="level is-mobile" href="#针对防碰撞的通用攻击"><span class="level-left"><span class="level-item">5.1.2</span><span class="level-item">针对防碰撞的通用攻击</span></span></a></li><li><a class="level is-mobile" href="#Merkle-Damgard机制"><span class="level-left"><span class="level-item">5.1.3</span><span class="level-item">Merkle-Damgard机制</span></span></a></li></ul></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2024 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/touxiang.jpg" alt="Dicemy"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Dicemy</p><p class="is-size-6 is-block">一只菜鸡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 · 开封</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">30</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="http://dicemy.com/about/" target="_blank" rel="noopener">关于我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="tencent://message/?uin=1583925267"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/16023197"><i class="fas fa-tv"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#01-绪论"><span class="level-left"><span class="level-item">1</span><span class="level-item">01-绪论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#课程目标"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">课程目标</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#密码学无处不在"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">密码学无处不在</span></span></a></li><li><a class="level is-mobile" href="#安全通信"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">安全通信</span></span></a></li><li><a class="level is-mobile" href="#保护磁盘上的文件"><span class="level-left"><span class="level-item">1.1.3</span><span class="level-item">保护磁盘上的文件</span></span></a></li><li><a class="level is-mobile" href="#Things-to-remember"><span class="level-left"><span class="level-item">1.1.4</span><span class="level-item">Things to remember</span></span></a></li></ul></li><li><a class="level is-mobile" href="#什么是密码学"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">什么是密码学</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Crypto-Core"><span class="level-left"><span class="level-item">1.2.1</span><span class="level-item">Crypto Core</span></span></a></li><li><a class="level is-mobile" href="#一些例子"><span class="level-left"><span class="level-item">1.2.2</span><span class="level-item">一些例子</span></span></a></li><li><a class="level is-mobile" href="#协议"><span class="level-left"><span class="level-item">1.2.3</span><span class="level-item">协议</span></span></a></li><li><a class="level is-mobile" href="#Crypto-magic"><span class="level-left"><span class="level-item">1.2.4</span><span class="level-item">Crypto magic</span></span></a></li><li><a class="level is-mobile" href="#A-rigorous-Science（严谨的科学）"><span class="level-left"><span class="level-item">1.2.5</span><span class="level-item">A rigorous Science（严谨的科学）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#密码学历史"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">密码学历史</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#对称密码"><span class="level-left"><span class="level-item">1.3.1</span><span class="level-item">对称密码</span></span></a></li><li><a class="level is-mobile" href="#历史上的例子（all-badly-broken）"><span class="level-left"><span class="level-item">1.3.2</span><span class="level-item">历史上的例子（all badly broken）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#离散概率"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">离散概率</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#概率分布"><span class="level-left"><span class="level-item">1.4.1</span><span class="level-item">概率分布</span></span></a></li><li><a class="level is-mobile" href="#事件"><span class="level-left"><span class="level-item">1.4.2</span><span class="level-item">事件</span></span></a></li><li><a class="level is-mobile" href="#并集上界"><span class="level-left"><span class="level-item">1.4.3</span><span class="level-item">并集上界</span></span></a></li><li><a class="level is-mobile" href="#随机变量"><span class="level-left"><span class="level-item">1.4.4</span><span class="level-item">随机变量</span></span></a></li><li><a class="level is-mobile" href="#独立性"><span class="level-left"><span class="level-item">1.4.5</span><span class="level-item">独立性</span></span></a></li><li><a class="level is-mobile" href="#异或"><span class="level-left"><span class="level-item">1.4.6</span><span class="level-item">异或</span></span></a></li><li><a class="level is-mobile" href="#生日悖论"><span class="level-left"><span class="level-item">1.4.7</span><span class="level-item">生日悖论</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#02-对称密码"><span class="level-left"><span class="level-item">2</span><span class="level-item">02-对称密码</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#密码的定义"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">密码的定义</span></span></a></li><li><a class="level is-mobile" href="#一次性密码本"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">一次性密码本</span></span></a></li><li><a class="level is-mobile" href="#信息安全论"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">信息安全论</span></span></a></li><li><a class="level is-mobile" href="#一次性密码本完美安全证明"><span class="level-left"><span class="level-item">2.1.4</span><span class="level-item">一次性密码本完美安全证明</span></span></a></li><li><a class="level is-mobile" href="#香农的结论"><span class="level-left"><span class="level-item">2.1.5</span><span class="level-item">香农的结论</span></span></a></li><li><a class="level is-mobile" href="#流密码"><span class="level-left"><span class="level-item">2.1.6</span><span class="level-item">流密码</span></span></a></li><li><a class="level is-mobile" href="#脆弱的PRG例子"><span class="level-left"><span class="level-item">2.1.7</span><span class="level-item">脆弱的PRG例子</span></span></a></li><li><a class="level is-mobile" href="#针对一次性密码本的攻击"><span class="level-left"><span class="level-item">2.1.8</span><span class="level-item">针对一次性密码本的攻击</span></span></a></li><li><a class="level is-mobile" href="#好的流密码"><span class="level-left"><span class="level-item">2.1.9</span><span class="level-item">好的流密码</span></span></a></li><li><a class="level is-mobile" href="#PRG安全性定义"><span class="level-left"><span class="level-item">2.1.10</span><span class="level-item">PRG安全性定义</span></span></a></li><li><a class="level is-mobile" href="#流密码的安全性"><span class="level-left"><span class="level-item">2.1.11</span><span class="level-item">流密码的安全性</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#03-分组密码"><span class="level-left"><span class="level-item">3</span><span class="level-item">03-分组密码</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#3DES"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">3DES</span></span></a></li><li><a class="level is-mobile" href="#PRPs-和-PRFs-的安全性"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">PRPs 和 PRFs 的安全性</span></span></a></li><li><a class="level is-mobile" href="#Feistel网络"><span class="level-left"><span class="level-item">3.1.3</span><span class="level-item">Feistel网络</span></span></a></li><li><a class="level is-mobile" href="#对DES的攻击"><span class="level-left"><span class="level-item">3.1.4</span><span class="level-item">对DES的攻击</span></span></a></li><li><a class="level is-mobile" href="#AES算法"><span class="level-left"><span class="level-item">3.1.5</span><span class="level-item">AES算法</span></span></a></li><li><a class="level is-mobile" href="#使用PRG来构造PRF"><span class="level-left"><span class="level-item">3.1.6</span><span class="level-item">使用PRG来构造PRF</span></span></a></li><li><a class="level is-mobile" href="#安全PRF定义"><span class="level-left"><span class="level-item">3.1.7</span><span class="level-item">安全PRF定义</span></span></a></li><li><a class="level is-mobile" href="#安全PRP的例子："><span class="level-left"><span class="level-item">3.1.8</span><span class="level-item">安全PRP的例子：</span></span></a></li><li><a class="level is-mobile" href="#一次性密码来使用分组密码（ECB）"><span class="level-left"><span class="level-item">3.1.9</span><span class="level-item">一次性密码来使用分组密码（ECB）</span></span></a></li><li><a class="level is-mobile" href="#计数器模式（CTR）"><span class="level-left"><span class="level-item">3.1.10</span><span class="level-item">计数器模式（CTR）</span></span></a></li><li><a class="level is-mobile" href="#选择明文攻击的语义安全性（CPA）"><span class="level-left"><span class="level-item">3.1.11</span><span class="level-item">选择明文攻击的语义安全性（CPA）</span></span></a></li><li><a class="level is-mobile" href="#基于新鲜值的加密"><span class="level-left"><span class="level-item">3.1.12</span><span class="level-item">基于新鲜值的加密</span></span></a></li><li><a class="level is-mobile" href="#密码分组链接模式（CBC）"><span class="level-left"><span class="level-item">3.1.13</span><span class="level-item">密码分组链接模式（CBC）</span></span></a></li><li><a class="level is-mobile" href="#随机计数器模式"><span class="level-left"><span class="level-item">3.1.14</span><span class="level-item">随机计数器模式</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#04-信息完整性"><span class="level-left"><span class="level-item">4</span><span class="level-item">04-信息完整性</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#MACs的安全性"><span class="level-left"><span class="level-item">4.1.1</span><span class="level-item">MACs的安全性</span></span></a></li><li><a class="level is-mobile" href="#一类安全的MACs"><span class="level-left"><span class="level-item">4.1.2</span><span class="level-item">一类安全的MACs</span></span></a></li><li><a class="level is-mobile" href="#CBC-MAC和NMAC"><span class="level-left"><span class="level-item">4.1.3</span><span class="level-item">CBC-MAC和NMAC</span></span></a></li><li><a class="level is-mobile" href="#对原CBC和NMAC级联的攻击"><span class="level-left"><span class="level-item">4.1.4</span><span class="level-item">对原CBC和NMAC级联的攻击</span></span></a></li><li><a class="level is-mobile" href="#MAC填充"><span class="level-left"><span class="level-item">4.1.5</span><span class="level-item">MAC填充</span></span></a></li><li><a class="level is-mobile" href="#并行计算的MAC"><span class="level-left"><span class="level-item">4.1.6</span><span class="level-item">并行计算的MAC</span></span></a></li><li><a class="level is-mobile" href="#一次性MAC"><span class="level-left"><span class="level-item">4.1.7</span><span class="level-item">一次性MAC</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#05-抗碰撞"><span class="level-left"><span class="level-item">5</span><span class="level-item">05-抗碰撞</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#使用抗碰撞函数构造MACs"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">使用抗碰撞函数构造MACs</span></span></a></li><li><a class="level is-mobile" href="#针对防碰撞的通用攻击"><span class="level-left"><span class="level-item">5.1.2</span><span class="level-item">针对防碰撞的通用攻击</span></span></a></li><li><a class="level is-mobile" href="#Merkle-Damgard机制"><span class="level-left"><span class="level-item">5.1.3</span><span class="level-item">Merkle-Damgard机制</span></span></a></li><li><a class="level is-mobile" href="#可证明的压缩函数"><span class="level-left"><span class="level-item">5.1.4</span><span class="level-item">可证明的压缩函数</span></span></a></li><li><a class="level is-mobile" href="#HMAC"><span class="level-left"><span class="level-item">5.1.5</span><span class="level-item">HMAC</span></span></a></li><li><a class="level is-mobile" href="#MAC的计时攻击"><span class="level-left"><span class="level-item">5.1.6</span><span class="level-item">MAC的计时攻击</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#06-认证加密"><span class="level-left"><span class="level-item">6</span><span class="level-item">06-认证加密</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#回顾"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">回顾</span></span></a></li><li><a class="level is-mobile" href="#一个简单的攻击例子"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">一个简单的攻击例子</span></span></a></li><li><a class="level is-mobile" href="#认证加密"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">认证加密</span></span></a></li><li><a class="level is-mobile" href="#选择密文安全（CCA）"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">选择密文安全（CCA）</span></span></a></li><li><a class="level is-mobile" href="#认证安全是CCA安全的"><span class="level-left"><span class="level-item">6.5</span><span class="level-item">认证安全是CCA安全的</span></span></a></li><li><a class="level is-mobile" href="#使用MACs和加密构建认证加密"><span class="level-left"><span class="level-item">6.6</span><span class="level-item">使用MACs和加密构建认证加密</span></span></a></li><li><a class="level is-mobile" href="#MAC安全性回顾"><span class="level-left"><span class="level-item">6.7</span><span class="level-item">MAC安全性回顾</span></span></a></li><li><a class="level is-mobile" href="#OCB算法和性能对比"><span class="level-left"><span class="level-item">6.8</span><span class="level-item">OCB算法和性能对比</span></span></a></li><li><a class="level is-mobile" href="#认证加密的例子"><span class="level-left"><span class="level-item">6.9</span><span class="level-item">认证加密的例子</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#TLS-1"><span class="level-left"><span class="level-item">6.9.1</span><span class="level-item">TLS</span></span></a></li><li><a class="level is-mobile" href="#802-11b-WEP"><span class="level-left"><span class="level-item">6.9.2</span><span class="level-item">802.11b WEP</span></span></a></li></ul></li><li><a class="level is-mobile" href="#针对认证加密系统的攻击"><span class="level-left"><span class="level-item">6.10</span><span class="level-item">针对认证加密系统的攻击</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#回顾-1"><span class="level-left"><span class="level-item">6.10.1</span><span class="level-item">回顾</span></span></a></li><li><a class="level is-mobile" href="#针对TLS的攻击（当使用CBC加密时）"><span class="level-left"><span class="level-item">6.10.2</span><span class="level-item">针对TLS的攻击（当使用CBC加密时）</span></span></a></li><li><a class="level is-mobile" href="#SSH二元数据包协议"><span class="level-left"><span class="level-item">6.10.3</span><span class="level-item">SSH二元数据包协议</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#07-零碎"><span class="level-left"><span class="level-item">7</span><span class="level-item">07-零碎</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#如何通过一个key推出所有key"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">如何通过一个key推出所有key</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#背景"><span class="level-left"><span class="level-item">7.1.1</span><span class="level-item">背景</span></span></a></li><li><a class="level is-mobile" href="#先提取后拓展KDF"><span class="level-left"><span class="level-item">7.1.2</span><span class="level-item">先提取后拓展KDF</span></span></a></li></ul></li><li><a class="level is-mobile" href="#确定性加密系统"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">确定性加密系统</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#确定性加密的CPA安全"><span class="level-left"><span class="level-item">7.2.1</span><span class="level-item">确定性加密的CPA安全</span></span></a></li><li><a class="level is-mobile" href="#确定性加密是需要的"><span class="level-left"><span class="level-item">7.2.2</span><span class="level-item">确定性加密是需要的</span></span></a></li><li><a class="level is-mobile" href="#微调加密"><span class="level-left"><span class="level-item">7.2.3</span><span class="level-item">微调加密</span></span></a></li></ul></li><li><a class="level is-mobile" href="#保格式加密"><span class="level-left"><span class="level-item">7.3</span><span class="level-item">保格式加密</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/biaoti.png" alt="Dicemy 的博客" height="28"></a><p class="is-size-7"><span>&copy; 2024 Dicemy</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客, <span id="busuanzi_value_site_pv">0</span>次访问</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="知识共享" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Dicemy"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
